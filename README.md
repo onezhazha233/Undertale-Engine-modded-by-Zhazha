@@ -30,6 +30,7 @@
 ##### v1.0 最初版本的整合版ute
 ##### v1.1 框可以修改外框和背景的颜色了，修复了主框无法改变坐标和角度的问题
 ##### v1.2 添加了圆形加框
+##### v1.3 改进了加框顶点连接处的视觉效果，把加框的旋转改为了逆时针
 
 
 # Undertale Engine modded by Zhazha
@@ -65,3 +66,4 @@
 ##### v1.0 The frist version of ute modded by zhazha
 ##### v1.1 You can modify the color of board,and fixed the problem that the position and angle can't be modified
 ##### v1.2 Added circle Extra-Board
+##### v1.3 Fixed the visual effect of vertexes of Extra-Board,and the rotate direction is counterclockwise

@@ -18,8 +18,8 @@ function Battle_CreateBoardExtraRect(){
 	rect = instance_create_depth(X,Y,0,battle_board_extra);
 	ds_list_add(rect.listVertex,[-WIDTH/2,-HEIGHT/2],[WIDTH/2,-HEIGHT/2],[WIDTH/2,HEIGHT/2],[-WIDTH/2,HEIGHT/2]);
 	rect.updateDivide();
-	rect.rot = -ANGLE;
-	rect.rotSpeed = -ROT;
+	rect.rot = ANGLE;
+	rect.rotSpeed = ROT;
 	array_insert(global.borders,array_length(global.borders),rect);
 	
 	return rect;

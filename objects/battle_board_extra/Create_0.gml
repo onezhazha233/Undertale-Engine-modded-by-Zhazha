@@ -1,9 +1,8 @@
 depth = DEPTH_BATTLE.BOARD;
 listVertex = ds_list_create();	//多边形的顶点，请使用ds_list_add、ds_list_delete等进行操作
 listDivideIndex = ds_list_create();	//多边形的三角剖分
-rot = 0;	//旋转角度（顺时针）
+rot = 0;	//旋转角度（逆时针）
 rotSpeed = 0;	//旋转速度
-isAutoDrawBorder = true;	//是否自动绘制框，如果为false可以在其他地方手动调用drawBorder
 
 // [返回点是否在多边形内]
 // 传入参数:
@@ -22,7 +21,7 @@ function relativeContains(_x, _y, _listVertex = listVertex) {
 	if(size < 2)	//若顶点数量不足则返回false
 		return false;
 		
-	var vsin = dsin(-rot), vcos = dcos(-rot);
+	var vsin = dsin(rot), vcos = dcos(rot);
 	var xx = _x * vcos - _y * vsin, yy = _x * vsin + _y * vcos;
 	
 	//从末尾开始遍历得到第一个不为水平的线的 走向 和 交点情况
@@ -91,7 +90,7 @@ function limit(_x, _y) {
 	
 	_x -= x;
 	_y -= y;
-	var vsin = dsin(rot), vcos = dcos(rot);
+	var vsin = dsin(-rot), vcos = dcos(-rot);
 	var xx = _x * vcos + _y * vsin, yy = -_x * vsin + _y * vcos;
 	
 	var nearestPos, nearestDis = -1;
@@ -236,7 +235,7 @@ function replaceSurfaceAlpha(_surf, _xOffset = 0, _yOffset = 0, _fillAlpha = tru
 	
 	//挖空
 	draw_set_alpha(1);
-	var vsin = dsin(rot), vcos = dcos(rot);
+	var vsin = dsin(-rot), vcos = dcos(-rot);
 	var size = ds_list_size(listDivideIndex);
 	for(var i = 0; i < size; i++) {	//遍历所有的三角
 		var di = listDivideIndex[| i];
@@ -258,7 +257,7 @@ function replaceSurfaceAlpha(_surf, _xOffset = 0, _yOffset = 0, _fillAlpha = tru
 
 // 用于绘制边框，如果isAutoDrawBorder为true，则会自动调用
 function drawBorder() {
-	var vsin = dsin(rot), vcos = dcos(rot);
+	var vsin = dsin(-rot), vcos = dcos(-rot);
 	for(var i = 0; i < ds_list_size(listVertex); i++) {
 		var a = listVertex[| i], b = listVertex[| iloop(i + 1)];
 		var ax = a[0] * vcos - a[1] * vsin;
@@ -266,7 +265,7 @@ function drawBorder() {
 		var bx = b[0] * vcos - b[1] * vsin;
 		var by = b[0] * vsin + b[1] * vcos;
 		
-		draw_sprite_ext(spr_pixel,0,x + ax,y + ay,5,point_distance(ax,ay,bx,by)+5,point_direction(ax,ay,bx,by)+90,battle_board.color_frame,1);
+		draw_sprite_ext(spr_pixel,0,x + ax - 5*cos(degtorad(floor(point_direction(ax,ay,bx,by)))),y + ay + 5*sin(degtorad(floor(point_direction(ax,ay,bx,by)))),5,point_distance(ax,ay,bx,by)+5+5*cos(degtorad((point_direction(ax,ay,bx,by)%45))),point_direction(ax,ay,bx,by)+90,battle_board.color_frame,1);
 	}
 }
 // 辅助函数，用于当_index超出边界时循环

@@ -16,12 +16,11 @@ right=BATTLE_BOARD.RIGHT;
 
 angle=0;
 color_bg=c_black;
-color_frame=c_green;
+color_frame=c_white;
 
 
 _point_x=0;
 _point_y=0;
 
 _angle=0;
-New_use = true;
 event_user(5);

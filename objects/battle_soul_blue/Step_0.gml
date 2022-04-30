@@ -14,10 +14,10 @@ else if (dir == 0)
 	var isInside2 = false;
 	var isInside3 = false;
 	var isInside4 = false;
-global.borderCount = array_length(global.borders);
+
 var STATE=Battle_GetState();
 if(STATE==BATTLE_STATE.TURN_PREPARATION||STATE==BATTLE_STATE.IN_TURN){
-	if(instance_exists(battle_soul)) && (battle_board.New_use){
+	if(instance_exists(battle_soul)){
 
 		for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
 			if(global.borders[i].contains(battle_soul.x - sprite_width/2-1, battle_soul.y)){

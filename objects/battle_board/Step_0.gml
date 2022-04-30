@@ -8,3 +8,5 @@ mainboard.x = x
 mainboard.y = y
 mainboard.rot = angle
 mainboard.color_frame = color_frame
+
+global.borderCount = array_length(global.borders)

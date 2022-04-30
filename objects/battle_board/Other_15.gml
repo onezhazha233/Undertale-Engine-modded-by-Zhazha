@@ -10,7 +10,6 @@ ds_list_add(
 mainboard.updateDivide();
 
 global.borders = [mainboard];
-battle_board.New_use = true;
 mainboard.color_frame = color_frame
 mainboard.color_bg = color_bg
 mainboard.rot = angle

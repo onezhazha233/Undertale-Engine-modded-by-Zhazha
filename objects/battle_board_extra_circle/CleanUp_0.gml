@@ -1,0 +1,1 @@
+array_delete(global.borders,board_number,1)

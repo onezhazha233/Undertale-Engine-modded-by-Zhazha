@@ -13,7 +13,7 @@ Battle_AddBoardExtraVertex(aa,lengthdir_x(50,90-36-72*3),lengthdir_y(50,90-36-72
 Battle_AddBoardExtraVertex(aa,lengthdir_x(100,90-72*4),lengthdir_y(100,90-72*4))
 Battle_AddBoardExtraVertex(aa,lengthdir_x(50,90-36-72*4),lengthdir_y(50,90-36-72*4))
 
-Battle_CreateBoardExtraRect(320,320,40,40,30,0)
+//Battle_CreateBoardExtraRect(320,320,40,40,30,0)
 
 instance_create_depth(0,500,0,battle_bg)
 

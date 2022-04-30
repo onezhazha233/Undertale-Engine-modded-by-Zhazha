@@ -6,7 +6,7 @@ if(Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.HP)<=0){
 global.borderCount = array_length(global.borders);
 var STATE=Battle_GetState();
 if(STATE==BATTLE_STATE.TURN_PREPARATION||STATE==BATTLE_STATE.IN_TURN){
-	if(instance_exists(battle_soul)) && (battle_board.New_use){
+	if(instance_exists(battle_soul)){
 		var isInside1 = false;
 		var isInside2 = false;
 		var isInside3 = false;

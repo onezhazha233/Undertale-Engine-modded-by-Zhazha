@@ -3,6 +3,7 @@ listVertex = ds_list_create();	//多边形的顶点，请使用ds_list_add、ds_
 listDivideIndex = ds_list_create();	//多边形的三角剖分
 rot = 0;	//旋转角度（逆时针）
 rotSpeed = 0;	//旋转速度
+board_number = global.borderCount
 
 // [返回点是否在多边形内]
 // 传入参数:

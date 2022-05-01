@@ -20,7 +20,8 @@ for(var i = 0; i < global.borderCount; i++){
 }
 
 for(var i = 0; i < global.borderCount; i++){	//遍历所有框，应用遮罩效果
-	if(instance_exists(global.borders[i])){global.borders[i].replaceSurfaceAlpha(_surface, 0, 0, i == 0);
+	if(instance_exists(global.borders[i])){
+		global.borders[i].replaceSurfaceAlpha(_surface, 0, 0, i == 0);
 		with(global.borders[i]){
 			drawBorder();
 		}

@@ -8,7 +8,7 @@ function Battle_CreateBoardExtraCircle(){
 	
 	circle = instance_create_depth(X,Y,0,battle_board_extra_circle);
 	circle.radius = RADIUS;
-	array_insert(global.borders,array_length(global.borders),circle);
+	ds_list_add(global.borders_list,circle);
 	
 	return circle;
 }

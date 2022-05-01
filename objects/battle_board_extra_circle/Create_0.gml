@@ -1,3 +1,4 @@
+depth = DEPTH_BATTLE.BOARD;
 radius = 60;	//圆的半径
 board_number = global.borderCount
 

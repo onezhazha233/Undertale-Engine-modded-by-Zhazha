@@ -1,26 +1,31 @@
 ///@arg x
 ///@arg y
-///@arg width
-///@arg height
+///@arg up
+///@arg down
+///@arg left
+///@arg right
 ///@arg angle
 ///@arg *rot
 function Battle_CreateBoardExtraRect(){
 	var X = argument[0];
 	var Y = argument[1];
-	var WIDTH = argument[2];
-	var HEIGHT = argument[3];
-	var ANGLE = argument[4];
+	var UP = argument[2];
+	var DOWN = argument[3];
+	var LEFT = argument[4];
+	var RIGHT = argument[5];
+	var ANGLE = argument[6];
 	var ROT = 0;
-	if(argument_count >= 6){
-		ROT = argument[5];
+	if(argument_count >= 8){
+		ROT = argument[7];
 	}
 	
-	rect = instance_create_depth(X,Y,0,battle_board_extra);
-	ds_list_add(rect.listVertex,[-WIDTH/2,-HEIGHT/2],[WIDTH/2,-HEIGHT/2],[WIDTH/2,HEIGHT/2],[-WIDTH/2,HEIGHT/2]);
-	rect.updateDivide();
-	rect.rot = ANGLE;
-	rect.rotSpeed = ROT;
-	array_insert(global.borders,array_length(global.borders),rect);
+	rect = instance_create_depth(X,Y,0,battle_board_extra_rect);
+	rect.up = UP;
+	rect.down = DOWN;
+	rect.left = LEFT;
+	rect.right = RIGHT;
+	rect.angle = ANGLE;
+	rect.rot = ROT;
 	
 	return rect;
 }

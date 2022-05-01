@@ -11,7 +11,7 @@ function Battle_CreateBoardExtra(){
 	
 	extra = instance_create_depth(X,Y,0,battle_board_extra);
 	extra.rotSpeed = ROT;
-	array_insert(global.borders,array_length(global.borders),extra);
+	ds_list_add(global.borders_list,extra);
 	
 	return extra;
 }

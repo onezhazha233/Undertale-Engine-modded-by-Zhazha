@@ -1,1 +1,1 @@
-array_delete(global.borders,board_number,1)
+ds_list_set(global.borders_list,ds_list_find_index(global.borders_list,id),noone)

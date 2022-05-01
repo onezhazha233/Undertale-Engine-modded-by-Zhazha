@@ -14,13 +14,16 @@ gpu_set_colorwriteenable(1, 1, 1, 1)
 surface_reset_target()
 
 for(var i = 0; i < global.borderCount; i++){
-	global.borders[i].replaceSurfaceAlpha(_surface, 0, 0, i == 0);
+	if(instance_exists(global.borders[i])){
+		global.borders[i].replaceSurfaceAlpha(_surface, 0, 0, i == 0);
+	}
 }
 
 for(var i = 0; i < global.borderCount; i++){	//遍历所有框，应用遮罩效果
-	global.borders[i].replaceSurfaceAlpha(_surface, 0, 0, i == 0);
-	with(global.borders[i]){
-		drawBorder();
+	if(instance_exists(global.borders[i])){global.borders[i].replaceSurfaceAlpha(_surface, 0, 0, i == 0);
+		with(global.borders[i]){
+			drawBorder();
+		}
 	}
 }
 draw_surface(_surface,0,0);

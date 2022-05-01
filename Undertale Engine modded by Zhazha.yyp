@@ -7,6 +7,7 @@
     {"id":{"name":"spr_hint_bgm","path":"sprites/spr_hint_bgm/spr_hint_bgm.yy",},"order":1,},
     {"id":{"name":"spr_hint_landmark","path":"sprites/spr_hint_landmark/spr_hint_landmark.yy",},"order":3,},
     {"id":{"name":"spr_hint_border","path":"sprites/spr_hint_border/spr_hint_border.yy",},"order":5,},
+    {"id":{"name":"battle_board_extra_rect","path":"objects/battle_board_extra_rect/battle_board_extra_rect.yy",},"order":5,},
     {"id":{"name":"spr_hint_half_size","path":"sprites/spr_hint_half_size/spr_hint_half_size.yy",},"order":7,},
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},"order":9,},
     {"id":{"name":"battle_soul_blue","path":"objects/battle_soul_blue/battle_soul_blue.yy",},"order":6,},

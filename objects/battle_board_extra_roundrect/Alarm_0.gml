@@ -1,5 +1,5 @@
-hrect = Battle_CreateBoardExtraRect(x,y,size,size-precision*2,angle)
-vrect = Battle_CreateBoardExtraRect(x,y,size-precision*2,size,angle)
+hrect = Battle_CreateBoardExtraRect(x,y,size/2,size/2,(size-precision*2)/2,(size-precision*2)/2,angle)
+vrect = Battle_CreateBoardExtraRect(x,y,(size-precision*2)/2,(size-precision*2)/2,size/2,size/2,angle)
 circle_0 = Battle_CreateBoardExtraCircle(x+(size-precision*2)/2-1,y-(size-precision*2)/2-1,precision)
 circle_1 = Battle_CreateBoardExtraCircle(x-(size-precision*2)/2-1,y-(size-precision*2)/2-1,precision)
 circle_2 = Battle_CreateBoardExtraCircle(x-(size-precision*2)/2-1,y+(size-precision*2)/2-1,precision)

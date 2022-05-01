@@ -1,24 +1,22 @@
 if(instance_exists(hrect)){
 	hrect.angle = angle;
-	ds_list_clear(hrect.listVertex);
-	ds_list_add(
-	hrect.listVertex,
-	[-size/2,-(size-precision*2)/2],[size/2,-(size-precision*2)/2],[size/2,(size-precision*2)/2],[-size/2,(size-precision*2)/2]
-	);
+	hrect.up = size/2;
+	hrect.down = size/2;
+	hrect.left = (size-precision*2)/2;
+	hrect.right = (size-precision*2)/2;
 	hrect.x = x;
 	hrect.y = y;
-	hrect.rot = angle;
+	hrect.angle = angle;
 }
 if(instance_exists(vrect)){
 	vrect.angle = angle;
-	ds_list_clear(vrect.listVertex);
-	ds_list_add(
-	vrect.listVertex,
-	[-(size-precision*2)/2,-size/2],[(size-precision*2)/2,-size/2],[(size-precision*2)/2,size/2],[-(size-precision*2)/2,size/2]
-	);
+	vrect.up = (size-precision*2)/2;
+	vrect.down = (size-precision*2)/2;
+	vrect.left = size/2;
+	vrect.right = size/2;
 	vrect.x = x;
 	vrect.y = y;
-	vrect.rot = angle;
+	vrect.angle = angle;
 }
 if(instance_exists(circle_0)){
 	circle_0.radius = precision;

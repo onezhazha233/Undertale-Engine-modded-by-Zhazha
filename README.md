@@ -32,6 +32,7 @@
 ##### v1.3 改进了加框顶点连接处的视觉效果，把加框的旋转改为了逆时针
 ##### v1.4 添加了圆角矩形的加框，本质上是两个矩形和四个圆形的组合
 ##### v1.5 创建矩形加框的脚本可以设置更多参数了（从只能设置宽窄改成了可以设置上下左右的大小），修复了同时销毁多个加框会报错的问题
+##### v1.6 减框从可以设置宽窄改成了可以设置上下左右，也就是和原版ute的主框一样
 
 
 # Undertale Engine modded by Zhazha
@@ -69,3 +70,4 @@
 ##### v1.3 Fixed the visual effect of vertexes of Extra-Board,and the rotate direction is counterclockwise
 ##### v1.4 Added roundrect Extra-Board,it's a combination of 2 rects and 4 circles.
 ##### v1.5 You can set more arguments when you use "Battle_CreateBoardExtraRect"(from you can only set width and height to you can set length of up,down,left,right),and fixed a error problem when you destroy several Extra-Boards.
+##### v1.6 Extended arguments of Cover-Board,from [xscale] and [yscale] to [up],[down],[left] and [right],codes are from original ute, in fact.

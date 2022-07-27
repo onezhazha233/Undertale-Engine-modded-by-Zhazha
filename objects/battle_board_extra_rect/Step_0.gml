@@ -6,4 +6,6 @@ if(instance_exists(rect)){
 	);
 	rect.rot = angle;
 	rect.rotSpeed = rot;
+	rect.x = x;
+	rect.y = y;
 }

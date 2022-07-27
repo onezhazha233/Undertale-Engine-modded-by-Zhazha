@@ -14,16 +14,16 @@
 ## 目前已知的问题
 ### 减框速度太快会把灵魂卡到奇奇怪怪的地方，这个问题来源于ute原生的灵魂限制代码，要修复这个问题可能要重写部分代码所以我放着不管了
 ### 灵魂或者加框速度太快会穿过边角，我同样也修不了
-#### 对了，还有感谢名单：
+### 加框及其控制的obj（如圆角矩形）在销毁时随缘报错，我都不知道这是怎么出现的，不能完全修复
+## 对了，还有感谢名单：
 ###### 绘制在减框上面的背景效果的代码来自于[Siki]
 ###### 减框原理+初步实现的代码来自于[穹c啋f汾]，他的b站uid是1438530442
 ###### 加框原理+完全实现代码由[奇迹丶零]移植入ute，原代码来自Gitee的jkjkil4，[奇迹丶零]的b站uid是375539491
-###### 可旋转的表面效果的代码来自于[一只鸽子_Official]，他的b站uid是520829726
 ###### 由[1个渣渣]整合了这些代码，我的b站uid是25245703
 ###### 由[Sanesss]等人帮助测试
 ###### ute由[糖萌芦]编写
 
-##### 你可以直接检测灵魂的[moving]变量来判断灵魂是否在移动（蓝魂滞空时一直都是移动状态）
+#### 你可以直接检测灵魂的[moving]变量来判断灵魂是否在移动（蓝魂滞空时一直都是移动状态）
 
 ## 以下是版本更新概要
 ##### v1.0 最初版本的整合版ute
@@ -32,7 +32,7 @@
 ##### v1.3 改进了加框顶点连接处的视觉效果，把加框的旋转改为了逆时针
 ##### v1.4 添加了圆角矩形的加框，本质上是两个矩形和四个圆形的组合
 ##### v1.5 创建矩形加框的脚本可以设置更多参数了（从只能设置宽窄改成了可以设置上下左右的大小），修复了同时销毁多个加框会报错的问题
-##### v1.6 减框从可以设置宽窄改成了可以设置上下左右，也就是和原版ute的主框一样
+#### v1.6 减框从可以设置宽窄改成了可以设置上下左右，也就是和原版ute的主框一样
 
 
 # Undertale Engine modded by Zhazha
@@ -51,17 +51,17 @@
 ## Known problems
 ### If speed of Cover-Board is too fast,soul will be wrong position,the problem came from original codes of Undertale Engine,maybe rewrite codes if fix this problem so I left it alone.
 ### If speed of soul or Extra-Board is too fast,the soul will cross over the edges,I can't fix it too.
+### when the Extra-Board and the obj that controls it(such as roundrect)destroy, it will error randomly, I even don't know why, so it's impossible to fix it completely.
 
-#### And the credits:
+## And the credits:
 ###### Codes to draw background effect are from [Siki].
 ###### Theory and codes of preliminary implementation of Cover-Board are from [穹c啋f汾],his Bilibili UID is 1438530442.
 ###### Theory and codes of completely implementation of Extra-Board are grafted from [奇迹丶零],the original codes are from [jkjkil4] from Gitee,[奇迹丶零]'s Bilibili UID is 375539491.
-###### Code of rotatable surface effect are from [一只鸽子_Official],his Bilibili UID is 520829726.
 ###### [1个渣渣] integrated these codes,my Bilibili UID is 25245703.
 ###### Tested with the help of [saness] et al.
 ###### Undertale Engine by [TML].
 
-##### You can emaxine [moving] variable directly to judge it's moving or not.(When the bluesoul is in the air,it's always moving)
+### You can emaxine [moving] variable directly to judge it's moving or not.(When the bluesoul is in the air,it's always moving)
 
 ## Update details
 ##### v1.0 The frist version of ute modded by zhazha

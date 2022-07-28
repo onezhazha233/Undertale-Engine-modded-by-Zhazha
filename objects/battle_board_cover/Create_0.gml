@@ -1,7 +1,5 @@
 depth=DEPTH_BATTLE.BOARD;
 
-_surface=-1;
-
 up=40;
 down=40;
 left=40;

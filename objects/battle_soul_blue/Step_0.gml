@@ -10,15 +10,14 @@ else if (dir == 180)
     image_angle = -90
 else if (dir == 0)
     image_angle = 90
-	var isInside1 = false;
-	var isInside2 = false;
-	var isInside3 = false;
-	var isInside4 = false;
+	/*var */isInside1 = false;
+	/*var */isInside2 = false;
+	/*var */isInside3 = false;
+	/*var */isInside4 = false;
 
 var STATE=Battle_GetState();
 if(STATE==BATTLE_STATE.TURN_PREPARATION||STATE==BATTLE_STATE.IN_TURN){
 	if(instance_exists(battle_soul)){
-
 		for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
 			if(global.borders[i].contains(battle_soul.x - sprite_width/2-1, battle_soul.y)){
 				isInside1 = true;
@@ -44,21 +43,38 @@ if(STATE==BATTLE_STATE.TURN_PREPARATION||STATE==BATTLE_STATE.IN_TURN){
 			}
 		}
 	
-		if(!isInside4&&dir = 270){	//如果出框
+		if(!isInside4&&dir = 270){	//方向为下时碰到下方框
 			bbb = 1;
 			move = 0;
 		}
-		if(!isInside3&&dir = 90){	//如果出框
+		if(!isInside3&&dir = 90){	//方向为上时碰到上方框
 			bbb = 1;
 			move = 0;
 		}
-		if(!isInside2&&dir = 0){	//如果出框
+		if(!isInside2&&dir = 0){	//方向为右时碰到右方框
 			bbb = 1;
 			move = 0;
 		}
-		if(!isInside1&&dir = 180){	//如果出框
+		if(!isInside1&&dir = 180){	//方向为左时碰到左方框
 			bbb = 1;
 			move = 0;
+		}
+		
+		if(!isInside3&&dir = 270){	//方向为下时碰到上方框
+			move = 0;
+			Anim_Create(id,"move",0,0,0,-0.001,4);
+		}
+		if(!isInside4&&dir = 90){	//方向为上时碰到下方框
+			move = 0;
+			Anim_Create(id,"move",0,0,0,-0.001,4);
+		}
+		if(!isInside3&&dir = 270){	//方向为下时碰到上方框
+			move = 0;
+			Anim_Create(id,"move",0,0,0,-0.001,4);
+		}
+		if(!isInside3&&dir = 270){	//方向为下时碰到上方框
+			move = 0;
+			Anim_Create(id,"move",0,0,0,-0.001,4);
 		}
 	}
 }

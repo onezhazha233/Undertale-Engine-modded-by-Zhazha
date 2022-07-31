@@ -15,3 +15,8 @@ aaa = 0
 blockk = 0
 plat = 0
 bbb = 0
+
+isInside1 = false;
+isInside2 = false;
+isInside3 = false;
+isInside4 = false;

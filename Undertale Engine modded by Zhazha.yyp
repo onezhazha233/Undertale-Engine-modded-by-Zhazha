@@ -497,6 +497,7 @@
     {"id":{"name":"item_stick","path":"objects/item_stick/item_stick.yy",},"order":3,},
     {"id":{"name":"item_bandage","path":"objects/item_bandage/item_bandage.yy",},"order":5,},
     {"id":{"name":"item_toy_knife","path":"objects/item_toy_knife/item_toy_knife.yy",},"order":7,},
+    {"id":{"name":"snd_dong","path":"sounds/snd_dong/snd_dong.yy",},"order":52,},
     {"id":{"name":"item_faded_ribbon","path":"objects/item_faded_ribbon/item_faded_ribbon.yy",},"order":9,},
     {"id":{"name":"item_tml","path":"objects/item_tml/item_tml.yy",},"order":11,},
     {"id":{"name":"phone","path":"objects/phone/phone.yy",},"order":1,},

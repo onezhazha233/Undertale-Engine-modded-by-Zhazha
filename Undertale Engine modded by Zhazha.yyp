@@ -170,7 +170,6 @@
     {"id":{"name":"Battle_IsEnemySlotValid","path":"scripts/Battle_IsEnemySlotValid/Battle_IsEnemySlotValid.yy",},"order":13,},
     {"id":{"name":"Battle_GetEnemyName","path":"scripts/Battle_GetEnemyName/Battle_GetEnemyName.yy",},"order":1,},
     {"id":{"name":"Battle_SetEnemyName","path":"scripts/Battle_SetEnemyName/Battle_SetEnemyName.yy",},"order":3,},
-    {"id":{"name":"spr_pixel_big","path":"sprites/spr_pixel_big/spr_pixel_big.yy",},"order":13,},
     {"id":{"name":"Battle_GetEnemyActionName","path":"scripts/Battle_GetEnemyActionName/Battle_GetEnemyActionName.yy",},"order":1,},
     {"id":{"name":"turn_test","path":"objects/turn_test/turn_test.yy",},"order":2,},
     {"id":{"name":"Battle_SetEnemyActionName","path":"scripts/Battle_SetEnemyActionName/Battle_SetEnemyActionName.yy",},"order":3,},

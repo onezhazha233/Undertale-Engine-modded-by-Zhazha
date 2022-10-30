@@ -9,4 +9,4 @@ mainboard.y = y
 mainboard.rot = angle
 mainboard.color_frame = color_frame
 
-global.borderCount = array_length(global.borders)
+global.borderCount = ds_list_size(global.borders_list)

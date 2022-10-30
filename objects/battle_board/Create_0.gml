@@ -23,4 +23,6 @@ _point_x=0;
 _point_y=0;
 
 _angle=0;
+global.borderCount = 0
+global.borders_list = ds_list_create()
 event_user(5);

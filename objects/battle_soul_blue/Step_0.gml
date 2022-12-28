@@ -1,5 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
 var SPD, xx, yy, input, fx, fy, mx, my, cx, cy, inst, m, _temp_local_var_9;
 event_inherited()
 if (dir == 270)
@@ -110,7 +108,7 @@ if((Battle_GetState() == 3)&&moveable){
     xx = 0
     yy = 0
     if (dir == 270)
-        yy = ((sprite_height / 2) + 1)
+        yy = ((sprite_height / 2) + 0.1)
     else if (dir == 90)
         yy = (((- sprite_height) / 2) - 0.1)
     else if (dir == 180)
@@ -160,8 +158,11 @@ if((Battle_GetState() == 3)&&moveable){
             if impact
             {
                 impact = 0
-                audio_play_sound(snd_dong, 0, 0)
-                Camera_Shake(8, 8, 1, 1, 1, 1)
+                audio_play_sound(snd_impact, 0, 0)
+				if(impact_shake)
+					Camera_Shake(8, 8, 1, 1, 1, 1)
+				if(impact_damage&&Player_GetHp()>1)
+					Player_Hurt(1)
             }
             if position_meeting((x + xx), (y + yy), battle_platform)
             {
@@ -175,7 +176,7 @@ if((Battle_GetState() == 3)&&moveable){
                     cx = (((- sprite_height) / 2) - 1)
                 else if (dir == 0)
                     cx = ((sprite_height / 2) + 1)
-                inst = instance_position((x + cx), (y + cy), battle_platform)
+                inst = instance_position((x + xx), (y + yy), battle_platform)
                 if instance_exists(inst)
                 {
                     if inst.sticky
@@ -266,3 +267,18 @@ if((Battle_GetState() == 3)&&moveable){
 else{
 	move = 0;
 }
+
+var xxx=0
+var yyy=0
+if(dir==DIR.DOWN){
+	yyy=sprite_height/2+1;
+}else if(dir==DIR.UP){
+	yyy=-sprite_height/2-1;
+}else if(dir==DIR.LEFT){
+	xxx=-sprite_height/2-1;
+}else if(dir==DIR.RIGHT){
+	xxx=sprite_height/2+1;
+}
+var inst=instance_place((x + xxx), (y + yyy), battle_platform)
+if(instance_exists(inst)&&move>0.5){
+move=0.5}

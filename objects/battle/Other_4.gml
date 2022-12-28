@@ -7,6 +7,8 @@ instance_create_depth(185,432,0,battle_button_act);
 instance_create_depth(345,432,0,battle_button_item);
 instance_create_depth(500,432,0,battle_button_mercy);
 Battle_SetSoul(battle_soul_red);
+battle_soul.x=-114514
+battle_soul.y=-1919810
 
 var ENCOUNTER=Flag_Get(FLAG_TYPE.TEMP,FLAG_TEMP.ENCOUNTER);
 var BGM=Encounter_GetBGM(ENCOUNTER);

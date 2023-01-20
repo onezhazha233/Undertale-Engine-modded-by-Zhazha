@@ -1,12 +1,34 @@
-// Inherit the parent event
-event_inherited();
+draw_self()
 
-draw_text(0,0,"moving:"+string(moving))
-draw_text(0,20,"move:"+string(move))
-draw_text(0,40,"bbb:"+string(bbb))
-draw_text(0,60,"gj:"+string(_gravity_jump))
-
-draw_text(0,80,"i1:"+string(isInside1))
-draw_text(0,100,"i2:"+string(isInside2))
-draw_text(0,120,"i3:"+string(isInside3))
-draw_text(0,140,"i4:"+string(isInside4))
+var isInside1 = false;
+var isInside2 = false;
+var isInside3 = false;
+var isInside4 = false;
+for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
+	bb = ds_list_find_value(global.borders_list,i);
+	if(bb.contains(battle_soul.x - sprite_width/2-1, battle_soul.y)) {
+		isInside1 = true;
+		break;
+	}
+}
+for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
+	bb = ds_list_find_value(global.borders_list,i);
+	if(bb.contains(battle_soul.x + sprite_width/2, battle_soul.y)) {
+		isInside2 = true;
+		break;
+	}
+}
+for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
+	bb = ds_list_find_value(global.borders_list,i);
+	if(bb.contains(battle_soul.x, battle_soul.y - sprite_height/2-1)) {
+		isInside3 = true;
+		break;
+	}
+}
+for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
+	bb = ds_list_find_value(global.borders_list,i);
+	if(bb.contains(battle_soul.x, battle_soul.y + sprite_height/2+1)) {
+		isInside4 = true;
+		break;
+	}
+}

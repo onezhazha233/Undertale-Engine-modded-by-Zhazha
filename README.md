@@ -1,10 +1,10 @@
 # UTE渣渣整合版
-#
+
 ## 这啥玩意啊？
 ### 此为由我修改过的由糖萌芦开发的Undertale Engine，添加了一些原版ute没有的东西。
 ## 添加了什么？
 ### 添加了加框和减框，使得你可以制作异形框，但使用方法略复杂且视觉效果有些不足。
-### 添加了由糖萌芦编写，我修改过数据的蓝魂。
+### 添加了由我编写的蓝魂和板子。
 ## 咋用啊？
 ### 我在脚本里面写了一丁点注释，或许你能看懂吧，再要么上QQ问我。（我并不常用discord）
 ### 我QQ号是1561536469.
@@ -14,7 +14,6 @@
 ## 目前已知的问题
 ### 减框速度太快会把灵魂卡到奇奇怪怪的地方，这个问题来源于ute原生的灵魂限制代码，要修复这个问题可能要重写部分代码所以我放着不管了
 ### 灵魂或者加框速度太快会穿过边角，我同样也修不了
-### 加框及其控制的obj（如圆角矩形）在销毁时随缘报错，我都不知道这是怎么出现的，不能完全修复
 ## 对了，还有感谢名单：
 ###### 绘制在减框上面的背景效果的代码来自于[Siki]
 ###### 减框原理+初步实现的代码来自于[穹c啋f汾]，他的b站uid是1438530442
@@ -34,6 +33,7 @@
 ##### v1.5 创建矩形加框的脚本可以设置更多参数了（从只能设置宽窄改成了可以设置上下左右的大小），修复了同时销毁多个加框会报错的问题
 ##### v1.6 减框从可以设置宽窄改成了可以设置上下左右，也就是和原版ute的主框一样
 ##### v1.7 用列表替换了存放框的数组，可能完全修复了销毁报错问题
+##### v1.8 重写了蓝魂和板子从而修复甩灵魂无效的问题
 
 
 # Undertale Engine modded by Zhazha
@@ -42,7 +42,7 @@
 ### It's Undertale Engine by TML which is modded by me,added something that not included in original Undertale Engine.
 ## Added wat?
 ### Added Extra-Board and Cover-Board,so you can make various shapes of board.
-### Added bluesoul that was write by TML,and modified data by me.
+### Added bluesoul and platform written  by me.
 ## How to use it properly?
 ### I wrote some descriptions in the scripts,or you can ask me on QQ.(I don't use discord often)
 ### My QQ number is 1561536469.
@@ -52,7 +52,6 @@
 ## Known problems
 ### If speed of Cover-Board is too fast,soul will be wrong position,the problem came from original codes of Undertale Engine,maybe rewrite codes if fix this problem so I left it alone.
 ### If speed of soul or Extra-Board is too fast,the soul will cross over the edges,I can't fix it too.
-### when the Extra-Board and the obj that controls it(such as roundrect)destroy, it will error randomly, I even don't know why, so it's impossible to fix it completely.
 
 ## And the credits:
 ###### Codes to draw background effect are from [Siki].
@@ -73,3 +72,4 @@
 ##### v1.5 You can set more arguments when you use "Battle_CreateBoardExtraRect"(from you can only set width and height to you can set length of up,down,left,right),and fixed a error problem when you destroy several Extra-Boards.
 ##### v1.6 Extended arguments of Cover-Board,from [xscale] and [yscale] to [up],[down],[left] and [right],codes are from original ute, in fact.
 ##### v1.7 Replaced array with list which was made to save the boards,maybe fixed the error when you destroy boards completely.
+##### v1.8 Rewrited bluesoul and platform so that fixed bug of unavailing slam soul.

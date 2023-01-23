@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "battle_soul",
+    "path": "objects/battle_soul/battle_soul.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

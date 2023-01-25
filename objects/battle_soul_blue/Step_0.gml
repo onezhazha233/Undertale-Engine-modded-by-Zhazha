@@ -1,5 +1,5 @@
 event_inherited();
-
+mask_index=sprite_index
 switch(dir){
 	case 0:
 		image_angle = 90;
@@ -135,7 +135,8 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 			move = 0;
 			if(impact = 1){
 				audio_play_sound(snd_dong,0,0);
-				Camera_Shake(8,8,1,1,1,1);
+				if(impact_shake){Camera_Shake(8,8,1,1,1,1);}
+				if(impact_damage&&Player_GetHp()>1){Player_Hurt(1)}else if(Player_GetHp()=1&&Player_GetKR()>0){Player_SetKR(Player_GetKR()-1)}
 				impact = 0;
 			}
 		}
@@ -145,7 +146,8 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 			move = 1;
 			if(impact = 1){
 				audio_play_sound(snd_dong,0,0);
-				Camera_Shake(8,8,1,1,1,1);
+				if(impact_shake){Camera_Shake(8,8,1,1,1,1);}
+				if(impact_damage&&Player_GetHp()>1){Player_Hurt(1)}else if(Player_GetHp()=1&&Player_GetKR()>0){Player_SetKR(Player_GetKR()-1)}
 				impact = 0;
 			}
 		}
@@ -156,7 +158,8 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 			move = 0;
 			if(impact = 1){
 				audio_play_sound(snd_dong,0,0);
-				Camera_Shake(8,8,1,1,1,1);
+				if(impact_shake){Camera_Shake(8,8,1,1,1,1);}
+				if(impact_damage&&Player_GetHp()>1){Player_Hurt(1)}else if(Player_GetHp()=1&&Player_GetKR()>0){Player_SetKR(Player_GetKR()-1)}
 				impact = 0;
 			}
 			
@@ -224,7 +227,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 			case 270:
 				repeat(10){
 					if!(position_meeting(x-sprite_width/2,y,block)){
-						x -= Player_GetSpdTotal()/10;
+						x -= (Input_IsHeld(INPUT.CANCEL) ? Player_GetSpdTotal()/2 : Player_GetSpdTotal())/10;
 					}
 					else{
 						x = xprevious;	
@@ -249,7 +252,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 			case 270:
 				repeat(10){
 					if!(position_meeting(x+sprite_width/2,y,block)){
-					  x += Player_GetSpdTotal()/10;
+					  x += (Input_IsHeld(INPUT.CANCEL) ? Player_GetSpdTotal()/2 : Player_GetSpdTotal())/10;
 					}
 					else{
 						x = xprevious;	
@@ -274,7 +277,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 			case 180:
 				repeat(10){
 					if!(position_meeting(x,y-sprite_height/2,block)){
-					  y -= Player_GetSpdTotal()/10;
+					  y -= (Input_IsHeld(INPUT.CANCEL) ? Player_GetSpdTotal()/2 : Player_GetSpdTotal())/10;
 					}
 					else{
 						y = yprevious;	
@@ -299,7 +302,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 			case 180:
 				repeat(10){
 					if!(position_meeting(x,y+sprite_height/2,block)){
-					  y += Player_GetSpdTotal()/10;
+					  y += (Input_IsHeld(INPUT.CANCEL) ? Player_GetSpdTotal()/2 : Player_GetSpdTotal())/10;
 					}
 					else{
 						y = yprevious;	
@@ -310,3 +313,4 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 	}
 	//移动和开始跳跃
 }
+mask_index=spr_battle_soul_mask

@@ -2,7 +2,9 @@ event_inherited()
 moveable = 1
 dir = 270
 move = 0
-impact = 0
+impact = 1
+impact_shake = true
+impact_damage = false
 on_block = 0
 on_platform = 0
 on_board = 0

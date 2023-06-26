@@ -452,6 +452,7 @@
     {"id":{"name":"font_mars_needs_cunnilingus","path":"fonts/font_mars_needs_cunnilingus/font_mars_needs_cunnilingus.yy",},"order":3,},
     {"id":{"name":"world","path":"objects/world/world.yy",},"order":1,},
     {"id":{"name":"camera","path":"objects/camera/camera.yy",},"order":3,},
+    {"id":{"name":"battle_misc","path":"objects/battle_misc/battle_misc.yy",},"order":17,},
     {"id":{"name":"fader","path":"objects/fader/fader.yy",},"order":5,},
     {"id":{"name":"border","path":"objects/border/border.yy",},"order":7,},
     {"id":{"name":"closed_captions","path":"objects/closed_captions/closed_captions.yy",},"order":9,},

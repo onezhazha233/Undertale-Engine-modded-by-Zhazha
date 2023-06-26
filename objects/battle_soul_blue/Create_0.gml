@@ -15,8 +15,6 @@ gravity_fall = 0.15
 jump_speed = 4.8
 max_speed = 20
 
-moving = 0
-
 /*
 这是一个向左甩灵魂的代码示例，最后四行不能漏掉
 

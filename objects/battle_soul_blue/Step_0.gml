@@ -210,7 +210,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 			break;
 	}
 
-	moving = 0;
+	global.is_moving = 0;
 	if(Input_IsHeld(INPUT.LEFT)){
 		switch(dir){
 			case 0:

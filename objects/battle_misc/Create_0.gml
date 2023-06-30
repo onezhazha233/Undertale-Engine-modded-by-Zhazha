@@ -1,2 +1,2 @@
-/// @description Insert description here
-// You can write your code in this editor
+global.is_moving = 0
+global._inv = 0

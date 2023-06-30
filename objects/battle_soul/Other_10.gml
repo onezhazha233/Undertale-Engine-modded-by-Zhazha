@@ -1,4 +1,4 @@
 ///@desc Bullet Collision
-if(_inv<=0){
+if(global._inv<=0){
 	Battle_CallBulletEventSoulCollision();
 }

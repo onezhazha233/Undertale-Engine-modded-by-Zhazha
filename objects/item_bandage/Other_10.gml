@@ -1,8 +1,8 @@
 ///@desc Use
+Player_Heal(10);
+
 Dialog_Add(Lang_GetString("item.bandage.use.0")+Item_GetTextHeal(10));
 Dialog_Start();
-
-Player_Heal(10);
 
 Item_Remove(_item_slot);
 

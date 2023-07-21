@@ -22,7 +22,7 @@
 ###### 由[Sanesss]等人帮助测试
 ###### ute由[糖萌芦]编写
 
-#### 你可以直接检测灵魂的[moving]变量来判断灵魂是否在移动（蓝魂滞空时一直都是移动状态）
+#### 你可以直接检测[global.moving]变量来判断灵魂是否在移动（蓝魂滞空时一直都是移动状态）
 
 ## 以下是版本更新概要
 ##### v1.0 最初版本的整合版ute
@@ -61,7 +61,7 @@
 ###### Tested with the help of [saness] et al.
 ###### Undertale Engine by [TML].
 
-### You can emaxine [moving] variable directly to judge it's moving or not.(When the bluesoul is in the air,it's always moving)
+### You can detect variable [global.moving] directly to judge it's moving or not.(When the bluesoul is in the air,it's always moving)
 
 ## Update details
 ##### v1.0 The frist version of ute modded by zhazha

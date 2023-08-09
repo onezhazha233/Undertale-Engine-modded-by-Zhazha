@@ -3,24 +3,31 @@
 ## 这啥玩意啊？
 ### 此为由我修改过的由糖萌芦开发的Undertale Engine，添加了一些原版ute没有的东西。
 ## 添加了什么？
-### 添加了加框和减框，使得你可以制作异形框，但使用方法略复杂且视觉效果有些不足。
+### 添加了加框和减框，使得你可以使用异形框。
 ### 添加了由我编写的蓝魂和板子。
+
+### 添加了一些更便利的东西，如绕点旋转函数、获取框中心坐标函数、杂项管理器等。
+
+### 修复了原版ute的部分bug。
+
 ## 咋用啊？
 ### 我在脚本里面写了一丁点注释，或许你能看懂吧，再要么上QQ问我。（我并不常用discord）
-### 我QQ号是1561536469.
+### 我QQ号是1561536469。
 ### 哦，要是你够幸运，说不定你可以在discord的ute群聊里面看到我活跃，但别指望我会帮你解决一堆屁事。
 ## 我找到了bug怎么办？
 ### 直接在QQ上找我吧，或者在github界面提交问题，我迟早会看的，尽管我并不一定会解决，毕竟我仅仅是整合了代码，而不是我写的。
 ## 目前已知的问题
-### 减框速度太快会把灵魂卡到奇奇怪怪的地方，这个问题来源于ute原生的灵魂限制代码，要修复这个问题可能要重写部分代码所以我放着不管了
-### 灵魂或者加框速度太快会穿过边角，我同样也修不了
+### 减框速度太快会把灵魂卡到奇奇怪怪的地方，这个问题来源于ute原生的灵魂限制代码，要修复这个问题可能要重写部分代码所以我放着不管了。
+### 灵魂或者加框速度太快会穿过边角，我同样也修不了。
 ## 对了，还有感谢名单：
 ###### 绘制在减框上面的背景效果的代码来自于[Siki]
 ###### 减框原理+初步实现的代码来自于[穹c啋f汾]，他的b站uid是1438530442
-###### 加框原理+完全实现代码由[奇迹丶零]移植入ute，原代码来自Gitee的jkjkil4，[奇迹丶零]的b站uid是375539491
+###### 加框原理+完全实现代码由[奇迹丶零]移植入ute，原代码来自Gitee的[jkjkil4]，[奇迹丶零]的b站uid是375539491
 ###### 由[1个渣渣]整合了这些代码，我的b站uid是25245703
 ###### 由[Sanesss]等人帮助测试
 ###### ute由[糖萌芦]编写
+
+###### 剩下部分由[1个渣渣]编写
 
 #### 你可以直接检测[global.is_moving]变量来判断灵魂是否在移动（蓝魂滞空时一直都是移动状态）
 
@@ -42,7 +49,12 @@
 ### It's Undertale Engine by TML which is modded by me,added something that not included in original Undertale Engine.
 ## Added wat?
 ### Added Extra-Board and Cover-Board,so you can make various shapes of board.
-### Added bluesoul and platform written  by me.
+### Added bluesoul and platform written by me.
+
+### Added something to make you code your game more convenient, such as rotate function, get center positionof board, misc manager.
+
+### Fixed some bugs of original ute.
+
 ## How to use it properly?
 ### I wrote some descriptions in the scripts,or you can ask me on QQ.(I don't use discord often)
 ### My QQ number is 1561536469.
@@ -61,6 +73,8 @@
 ###### Tested with the help of [saness] et al.
 ###### Undertale Engine by [TML].
 
+###### Other by [1个渣渣].
+
 ### You can detect variable [global.is_moving] directly to judge it's moving or not.(When the bluesoul is in the air,it's always moving)
 
 ## Update details
@@ -71,5 +85,5 @@
 ##### v1.4 Added roundrect Extra-Board,it's a combination of 2 rects and 4 circles.
 ##### v1.5 You can set more arguments when you use "Battle_CreateBoardExtraRect"(from you can only set width and height to you can set length of up,down,left,right),and fixed a error problem when you destroy several Extra-Boards.
 ##### v1.6 Extended arguments of Cover-Board,from [xscale] and [yscale] to [up],[down],[left] and [right],codes are from original ute, in fact.
-##### v1.7 Replaced array with list which was made to save the boards,maybe fixed the error when you destroy boards completely.
+##### v1.7 Replaced array with list which was made to save the boards,maybe completely fixed the error when you destroy boards.
 ##### v1.8 Rewrited bluesoul and platform so that fixed bug of unavailing slam soul.

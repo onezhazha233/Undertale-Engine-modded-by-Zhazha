@@ -17,6 +17,8 @@ right=BATTLE_BOARD.RIGHT;
 angle=0;
 color_bg=c_black;
 color_frame=c_white;
+alpha_frame=1
+alpha_bg=1
 
 
 _point_x=0;

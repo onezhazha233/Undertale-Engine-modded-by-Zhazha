@@ -266,7 +266,7 @@ function drawBorder() {
 		var bx = b[0] * vcos - b[1] * vsin;
 		var by = b[0] * vsin + b[1] * vcos;
 		
-		draw_sprite_ext(spr_pixel,0,x + ax - 5*cos(degtorad(floor(point_direction(ax,ay,bx,by)))),y + ay + 5*sin(degtorad(floor(point_direction(ax,ay,bx,by)))),5,point_distance(ax,ay,bx,by)+5+5*cos(degtorad((point_direction(ax,ay,bx,by)%45))),point_direction(ax,ay,bx,by)+90,battle_board.color_frame,1);
+		draw_sprite_ext(spr_pixel,0,x + ax - 5*cos(degtorad(floor(point_direction(ax,ay,bx,by)))),y + ay + 5*sin(degtorad(floor(point_direction(ax,ay,bx,by)))),5,point_distance(ax,ay,bx,by)+5+5*cos(degtorad((point_direction(ax,ay,bx,by)%45))),point_direction(ax,ay,bx,by)+90,battle_board.color_frame,battle_board.alpha_frame);
 	}
 }
 // 辅助函数，用于当_index超出边界时循环

@@ -42,6 +42,8 @@
 ##### v1.7 用列表替换了存放框的数组，可能完全修复了销毁报错问题
 ##### v1.8 重写了蓝魂和板子从而修复甩灵魂无效的问题
 
+##### v1.9 可改变框的背景和框架透明度，但减框透明度改变规律出于未知原因是非线性的，设置需谨慎
+
 
 # Undertale Engine modded by Zhazha
 #
@@ -87,3 +89,5 @@
 ##### v1.6 Extended arguments of Cover-Board,from [xscale] and [yscale] to [up],[down],[left] and [right],codes are from original ute, in fact.
 ##### v1.7 Replaced array with list which was made to save the boards,maybe completely fixed the error when you destroy boards.
 ##### v1.8 Rewrited bluesoul and platform so that fixed bug of unavailing slam soul.
+
+##### v1.9 You can change the alpha of background and frame of board, but the change of alpha of Cover-Board is nonlinear, be careful when you change it.

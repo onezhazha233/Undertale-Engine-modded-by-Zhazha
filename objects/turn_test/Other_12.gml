@@ -21,3 +21,5 @@ Battle_SetSoul(battle_soul_blue)
 //battle_soul.dir = 180
 
 instance_create_depth(0,0,0,battle_bullet_test)
+
+//Battle_CreateBoardCover(320,320,20,20,20,20,45)

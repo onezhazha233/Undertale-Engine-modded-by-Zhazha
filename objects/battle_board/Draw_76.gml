@@ -24,3 +24,7 @@ if(!surface_exists(_surface)){
 surface_set_target(_surface);{
 	draw_clear_alpha(color_bg,0);
 }surface_reset_target();
+
+surface_set_target(_surface4);{
+	draw_clear_alpha(color_bg,0);
+}surface_reset_target();

@@ -6,5 +6,5 @@ function Lang_Init() {
 	global._gmu_lang_sprite=ds_map_create();
 	global._gmu_lang_font=ds_map_create();
 
-
+	font_add_enable_aa(false);
 }

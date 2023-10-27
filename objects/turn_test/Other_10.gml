@@ -1,0 +1,1 @@
+Battle_SetSoul(battle_soul_blue)

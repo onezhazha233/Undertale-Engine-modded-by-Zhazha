@@ -11,6 +11,11 @@ res_move_sprite[DIR.DOWN]=spr_char_frisk_down;
 res_move_sprite[DIR.LEFT]=spr_char_frisk_right;
 res_move_sprite[DIR.RIGHT]=spr_char_frisk_right;
 
+move_speed[DIR.UP]=1.5;
+move_speed[DIR.DOWN]=1.5;
+move_speed[DIR.LEFT]=1.5;
+move_speed[DIR.RIGHT]=1.5;
+
 moveable=true;
 _moveable_dialog=true;
 _moveable_menu=true;

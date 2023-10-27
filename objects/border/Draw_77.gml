@@ -1,3 +1,4 @@
+gpu_set_blendenable(false)
 if(_enabled){
 	var SW=(window_get_fullscreen() ? display_get_width() : window_get_width());
 	var SH=(window_get_fullscreen() ? display_get_height() : window_get_height());
@@ -25,3 +26,4 @@ if(_enabled){
 	display_set_gui_maximize(SF,SF,(SW-640*SF)/2,(SH-480*SF)/2);
 	draw_surface_ext(application_surface,(SW-640*SF)/2,(SH-480*SF)/2,SF,SF,0,c_white,1);
 }
+gpu_set_blendenable(true)

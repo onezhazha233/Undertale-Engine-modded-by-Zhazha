@@ -541,6 +541,7 @@
     {"name":"operagx","path":"options/operagx/options_operagx.yy",},
     {"name":"Android","path":"options/android/options_android.yy",},
     {"name":"iOS","path":"options/ios/options_ios.yy",},
+    {"name":"HTML5","path":"options/html5/options_html5.yy",},
   ],
   "isDnDProject": false,
   "isEcma": false,

@@ -10,6 +10,4 @@ function Item_GetName() {
 	}else{
 		return "";
 	}
-
-
 }

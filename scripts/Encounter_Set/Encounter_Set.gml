@@ -18,7 +18,7 @@ function Encounter_Set() {
 	var BGM=-1;
 	var MENU_MERCY_FLEE_ENABLED=true;
 	var PAUSE_BGM=true;
-	var QUICK=false;
+	var QUICK=0;
 	var SOUL_X=48;
 	var SOUL_Y=454;
 	if(argument_count>=6){

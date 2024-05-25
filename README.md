@@ -54,8 +54,8 @@
 ##### v1.6 减框从可以设置宽窄改成了可以设置上下左右，也就是和原版ute的主框一样
 ##### v1.7 用列表替换了存放框的数组，可能完全修复了销毁报错问题
 ##### v1.8 重写了蓝魂和板子从而修复甩灵魂无效的问题
-
 ##### v1.9 可改变框的背景和框架透明度，但减框透明度改变规律出于未知原因是非线性的，设置需谨慎
+##### v1.10 增加了菜单文本候选功能，可添加候选文本，游戏会在玩家回合开始时随机选择一个进行显示；增加了获取敌人位置功能，可根据敌人位置来判断对话框创建位置。这两个功能适用于多敌人战斗
 
 
 # Undertale Engine modded by Zhazha
@@ -115,3 +115,4 @@
 ##### v1.7 Replaced array with list which was made to save the boards,maybe completely fixed the error when you destroy boards.
 ##### v1.8 Rewrited bluesoul and platform so that fixed bug of unavailing slam soul.
 ##### v1.9 You can change the alpha of background and frame of board, but the change of alpha of Cover-Board is nonlinear, be careful when you change it.
+##### v1.10 Added menu dialog candidate system, you can add multiple dialogs and when an enemy's turn ends(your turn start), random one of dialogs will be displayed; Added some functions to get enemy's position, make you decide where to create battle_dialog_enemy easier. These two systems are suitable to multiple enemies battle.

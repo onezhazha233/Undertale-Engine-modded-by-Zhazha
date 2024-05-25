@@ -7,6 +7,16 @@ function Battle_SetState() {
 	//菜单
 	if(STATE==BATTLE_STATE.MENU){
 		Battle_SetNextState(BATTLE_STATE.DIALOG);
+		
+		if(Battle_IsMenuDialogCandidateEnabled()&&Battle_GetMenuDialogCandidateNumber()>0){
+			Battle_SetMenuDialog(Battle_GetMenuDialogFromCandidates());
+			//tt = "";
+			//for(i=0;i<Battle_GetMenuDialogCandidateNumber();i+=1)tt += battle._menu_dialog_candidates[|i]+"\n";
+			//show_message(tt);
+			if(Battle_IsMenuDialogCandidatesAutoClearEnabled()){
+				Battle_ClearMenuDialogCandidates();
+			}
+		}
 	
 		Battle_SetMenuChoiceEnemy(0,false);
 		Battle_SetMenuChoiceAction(0,false);

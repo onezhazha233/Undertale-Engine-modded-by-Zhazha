@@ -19,6 +19,19 @@
 ## 目前已知的问题
 ### 减框速度太快会把灵魂卡到奇奇怪怪的地方，这个问题来源于ute原生的灵魂限制代码，要修复这个问题可能要重写部分代码所以我放着不管了。
 ### 灵魂或者加框速度太快会穿过边角，我同样也修不了。
+### 减框透明度改变规律出于未知原因是非线性的。
+### 在框内绘制图像时设置的透明度变化规律是非线性的，你可以通过将world中
+
+	application_surface_draw_enable(false)
+
+### 设置为true来解决，但修改后边框无法正常工作。或是将battle_board预绘制中
+
+	surface_set_target(_surface);{
+		draw_clear_alpha(color_bg,0);
+	}surface_reset_target();
+
+### 的0改为1，但修改后无法修改背景透明度。
+
 ## 对了，还有感谢名单：
 ###### 绘制在减框上面的背景效果的代码来自于[Siki]
 ###### 减框原理+初步实现的代码来自于[穹c啋f汾]，他的b站uid是1438530442
@@ -66,6 +79,18 @@
 ## Known problems
 ### If speed of Cover-Board is too fast,soul will be wrong position,the problem came from original codes of Undertale Engine,maybe rewrite codes if fix this problem so I left it alone.
 ### If speed of soul or Extra-Board is too fast,the soul will cross over the edges,I can't fix it too.
+### The change of alpha of Cover-Board is nonlinear
+### The change of alpha of image which be drawn in board is nonlinear, you can modifiy the code of world object
+
+	application_surface_draw_enable(false)
+
+### set it to true to fix, but the border won't work correctly. or modifiy the code of battle_board in pre draw
+
+	surface_set_target(_surface);{
+		draw_clear_alpha(color_bg,0);
+	}surface_reset_target();
+
+### set 0 to 1, but you can't change alpha_bg.
 
 ## And the credits:
 ###### Codes to draw background effect are from [Siki].
@@ -89,5 +114,4 @@
 ##### v1.6 Extended arguments of Cover-Board,from [xscale] and [yscale] to [up],[down],[left] and [right],codes are from original ute, in fact.
 ##### v1.7 Replaced array with list which was made to save the boards,maybe completely fixed the error when you destroy boards.
 ##### v1.8 Rewrited bluesoul and platform so that fixed bug of unavailing slam soul.
-
 ##### v1.9 You can change the alpha of background and frame of board, but the change of alpha of Cover-Board is nonlinear, be careful when you change it.

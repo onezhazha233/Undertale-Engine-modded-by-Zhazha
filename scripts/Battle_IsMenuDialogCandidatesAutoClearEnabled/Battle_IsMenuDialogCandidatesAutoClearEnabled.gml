@@ -1,3 +1,3 @@
 function Battle_IsMenuDialogCandidatesAutoClearEnabled(){
-	return _menu_dialog_candidates_auto_clear_enabled;
+	return battle._menu_dialog_candidates_auto_clear_enabled;
 }

@@ -22,7 +22,7 @@ surface_set_target(_surface)
 surface_reset_target();
 
 surface_set_target(_surface)
-draw_surface_ext(application_surface,0,0,1,1,0,c_white,1-alpha_bg);
+draw_surface_ext(application_surface,camera._shake_pos_x,camera._shake_pos_y,1,1,0,c_white,1-alpha_bg);
 draw_surface(_surface4,0,0);
 surface_reset_target();
 

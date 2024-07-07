@@ -136,5 +136,6 @@ if(_menu==2){
 if(_menu==3){
 	fader.color=c_white;
 	Fader_Fade(-1,1,240);
-	alarm[0]=240;
+	audio_play_sound(snd_cymbal,0,0);
+	alarm[0]=250;
 }

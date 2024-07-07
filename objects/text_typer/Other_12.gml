@@ -57,6 +57,17 @@ switch(cmd[|0]){
 					_color_shadow[2]=make_color_rgb(0,0,0);
 					_color_shadow[3]=make_color_rgb(0,0,0);
 					break;
+					
+				case c_blue:
+					_color_text[0]=make_color_rgb(154,143,254);
+					_color_text[1]=make_color_rgb(154,143,254);
+					_color_text[2]=make_color_rgb(102,85,253);
+					_color_text[3]=make_color_rgb(102,85,253);
+					_color_shadow[0]=make_color_rgb(0,0,0);
+					_color_shadow[1]=make_color_rgb(0,0,0);
+					_color_shadow[2]=make_color_rgb(0,0,0);
+					_color_shadow[3]=make_color_rgb(0,0,0);
+					break;
 			}
 		}
 		break;
@@ -299,7 +310,7 @@ switch(cmd[|0]){
 		
 	case "choice":
 		if(is_real(cmd[|1])){
-			if(cmd[|1]>=0&&cmd[|1]<=1){
+			if(cmd[|1]>=0){
 				draw_set_font(_group_font[_font,0]);
 				_choice_x[cmd[|1]]=_char_x-string_width(" ")*_group_font_scale_x[_font,0]*_scale_x;
 				_choice_y[cmd[|1]]=_char_y+string_height(" ")/2*_group_font_scale_y[_font,0]*_scale_y;
@@ -570,5 +581,65 @@ switch(cmd[|0]){
 		if(is_bool(cmd[|1])){
 			_skip_space=cmd[|1];
 		}
+		break;
+		
+	case "char_skip":
+		if(is_real(cmd[|1])){
+			if(cmd[|1]>=0){
+				_char_per_frame=cmd[|1];
+			}
+		}
+		break;
+		
+	case "angle":
+		if(is_real(cmd[|1])){
+			_angle=cmd[|1];
+		}
+		break;
+		
+	case "angle_follow":
+		if(is_bool(cmd[|1])){
+			_angle_follow=cmd[|1];
+		}
+		break;
+		
+	case "position_follow":
+		if(is_bool(cmd[|1])){
+			_position_follow=cmd[|1];
+		}
+		//warning:disable this will break the typing function so you should disable this after the typer ended typing
+		break;
+		
+	case "align":
+		if(is_real(cmd[|1])){
+			_halign=cmd[|1];
+		}
+		if(is_real(cmd[|2])){
+			_valign=cmd[|2];
+		}
+		break
+		
+	case "type_dir":
+		if(is_real(cmd[|1])){
+			_type_dir=cmd[|1];
+		}
+		//maybe cause strange result when halign is 2
+		break;
+		
+	case "audio_clear":
+		if(is_bool(cmd[|1])){
+			_audio_clear=cmd[|1];
+		}
+		//if the text sound is too long(such as Altertale Torile's voice), disable this may be helpful
+		break;
+		
+	case "autoend":
+		alarm[0] = cmd[|1];
+		//if you are making a minors battle, add {autoend [duration]} after their dialogs may be helpful
+		break;
+		
+	case "choice_switch_direction":
+		_choice_switch_direction = cmd[|1];
+		//0 for left and right, 1 for up and down
 		break;
 }

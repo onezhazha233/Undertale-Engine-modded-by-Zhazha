@@ -58,8 +58,10 @@ if(!instance_exists(target)){
 }else{
 	camera_set_view_target(_camera,target);
 	camera_set_view_border(_camera,width/scale_x/2,height/scale_y/2);
-	x=camera_get_view_x(_camera);
-	y=camera_get_view_y(_camera);
+	//x=camera_get_view_x(_camera);
+	//y=camera_get_view_y(_camera);
+	x=floor(camera_get_view_x(_camera));
+	y=floor(camera_get_view_y(_camera));
 }
 camera_set_view_size(_camera,width/scale_x,height/scale_y);
 camera_set_view_angle(_camera,angle);

@@ -11,8 +11,18 @@ if(_skippable&&!_paused&&Input_IsPressed(INPUT.CANCEL)){
 	_char_frame_remain=0;
 }
 if(_choice!=-1){
-	if((_choice==0&&Input_IsPressed(INPUT.RIGHT))||(_choice==1&&Input_IsPressed(INPUT.LEFT))){
-		_choice=!_choice;
+	if(_choice_switch_direction = 0){
+		_choice_switch_key = [INPUT.LEFT,INPUT.RIGHT];
+	}
+	if(_choice_switch_direction = 1){
+		_choice_switch_key = [INPUT.UP,INPUT.DOWN];
+	}
+	if(Input_IsPressed(_choice_switch_key[0])){
+		_choice=(_choice=0 ? array_length(_choice_x)-1 : _choice-1);
+		audio_play_sound(snd_menu_switch,0,false);
+	}
+	if(Input_IsPressed(_choice_switch_key[1])){
+		_choice=(_choice=array_length(_choice_x)-1 ? 0 : _choice+1);
 		audio_play_sound(snd_menu_switch,0,false);
 	}
 	if(Input_IsPressed(INPUT.CONFIRM)){
@@ -166,4 +176,9 @@ if(override_alpha_enabled||override_color_text_enabled){
 		}
 		proc+=1;
 	}
+}
+
+ttime += 9
+for(i=0;i<10;i+=1){
+	torder[i] = ttime + i*36;
 }

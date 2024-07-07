@@ -635,7 +635,7 @@ switch(cmd[|0]){
 		
 	case "autoend":
 		alarm[0] = cmd[|1];
-		//if you are making a minors battle, add {autoend [duration]} after their dialogs may be helpful
+		//if you are making a minions battle, add {autoend [duration]} after their dialogs may be helpful
 		break;
 		
 	case "choice_switch_direction":

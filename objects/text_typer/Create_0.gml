@@ -199,3 +199,25 @@ function ChangeText(){
 	
 	_order=0;
 }
+
+function GetMainText(){
+    var len = string_length(text);
+    var result = "";
+    var inside_braces = false;
+
+    for (var i = 0; i <= len; i++) {
+        var charr = string_char_at(text, i);
+
+        if(charr = "{") {
+            inside_braces = true;
+        }
+		else if(charr = "}") {
+            inside_braces = false;
+        }
+		if!(inside_braces) {
+            result += charr;
+        }
+    }
+
+    return string_replace_all(result,"}","");
+}//返回不带命令的文本，返回的结果中不会含有大括号，如果要使用该函数，请保证大括号成对出现

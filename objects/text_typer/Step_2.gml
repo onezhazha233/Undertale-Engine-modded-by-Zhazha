@@ -5,11 +5,6 @@ event_user(4);
 if(_paused&&Input_IsPressed(INPUT.CONFIRM)){
 	_paused=false;
 }
-if(_skippable&&!_paused&&Input_IsPressed(INPUT.CANCEL)){
-	_skipping=true;
-	_sleep=0;
-	_char_frame_remain=0;
-}
 if(_choice!=-1){
 	if(_choice_switch_direction = 0){
 		_choice_switch_key = [INPUT.LEFT,INPUT.RIGHT];
@@ -120,6 +115,11 @@ if(_char_proc<string_length(text)+1){
 			}
 		}
 	}
+}
+if(_skippable&&!_paused&&Input_IsPressed(INPUT.CANCEL)){
+	_skipping=true;
+	_sleep=0;
+	_char_frame_remain=0;
 }
 
 if(instance_exists(_face)){

@@ -6,6 +6,7 @@ _voice=0;
 _voice_single=-1;
 _sleep=0;
 _skippable=true;
+_skip_enabled=false;
 _skipping=false;
 _paused=false;
 _instant=false;
@@ -91,6 +92,8 @@ _order=0;
 
 auto_destroy=false;
 
+alarm[1] = 1
+
 function CharUpdate(character){
 	with(character){
 		if(other._position_follow = 1){
@@ -119,6 +122,7 @@ function ChangeText(){
 	_voice_single=-1;
 	_sleep=0;
 	_skippable=true;
+	_skip_enabled=false;
 	_skipping=false;
 	_paused=false;
 	_instant=false;
@@ -198,6 +202,8 @@ function ChangeText(){
 	text=TEXT;
 	
 	_order=0;
+	
+	alarm[1] = 1;
 }
 
 function GetMainText(){

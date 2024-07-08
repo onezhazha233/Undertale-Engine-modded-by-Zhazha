@@ -116,7 +116,7 @@ if(_char_proc<string_length(text)+1){
 		}
 	}
 }
-if(_skippable&&!_paused&&Input_IsPressed(INPUT.CANCEL)){
+if(_skippable&&!_paused&&Input_IsPressed(INPUT.CANCEL)&&_skip_enabled){
 	_skipping=true;
 	_sleep=0;
 	_char_frame_remain=0;

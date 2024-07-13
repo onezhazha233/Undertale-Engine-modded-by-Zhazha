@@ -1,4 +1,4 @@
-var can_move=(moveable&&_moveable_dialog&&_moveable_menu&&_moveable_save&&_moveable_warp&&_moveable_encounter&&_moveable_box);
+var can_move=(moveable&&_moveable_dialog&&_moveable_menu&&_moveable_save&&_moveable_warp&&_moveable_encounter&&_moveable_box&&_moveable_shop);
 if(can_move){
 	var UP=instance_place(x,y-0.05,block);
 	var DOWN=instance_place(x,y+0.05,block);

@@ -64,6 +64,7 @@
     {"id":{"name":"spr_gamepad_ps4_large_triangle","path":"sprites/spr_gamepad_ps4_large_triangle/spr_gamepad_ps4_large_triangle.yy",},"order":5,},
     {"id":{"name":"spr_gamepad_ps4_large_circle","path":"sprites/spr_gamepad_ps4_large_circle/spr_gamepad_ps4_large_circle.yy",},"order":7,},
     {"id":{"name":"spr_gamepad_ps4_large_cross","path":"sprites/spr_gamepad_ps4_large_cross/spr_gamepad_ps4_large_cross.yy",},"order":9,},
+    {"id":{"name":"trigger_shop","path":"objects/trigger_shop/trigger_shop.yy",},"order":4,},
     {"id":{"name":"spr_gamepad_ps4_large_l1","path":"sprites/spr_gamepad_ps4_large_l1/spr_gamepad_ps4_large_l1.yy",},"order":11,},
     {"id":{"name":"spr_gamepad_ps4_large_l2","path":"sprites/spr_gamepad_ps4_large_l2/spr_gamepad_ps4_large_l2.yy",},"order":13,},
     {"id":{"name":"spr_gamepad_ps4_large_l3","path":"sprites/spr_gamepad_ps4_large_l3/spr_gamepad_ps4_large_l3.yy",},"order":15,},

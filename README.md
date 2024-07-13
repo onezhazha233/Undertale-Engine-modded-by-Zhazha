@@ -39,6 +39,7 @@
 ###### 由[1个渣渣]整合了这些代码，我的b站uid是25245703
 ###### 由[Sanesss]等人帮助测试
 ###### ute由[糖萌芦]编写
+###### 新的打字机由[Zean]改造
 
 ###### 剩下部分由[1个渣渣]编写
 
@@ -56,6 +57,7 @@
 ##### v1.8 重写了蓝魂和板子从而修复甩灵魂无效的问题
 ##### v1.9 可改变框的背景和框架透明度，但减框透明度改变规律出于未知原因是非线性的，设置需谨慎
 ##### v1.10 增加了菜单文本候选功能，可添加候选文本，游戏会在玩家回合开始时随机选择一个进行显示；增加了获取敌人位置功能，可根据敌人位置来判断对话框创建位置。这两个功能适用于多敌人战斗
+##### v1.11 更换了新的打字机，新的打字机支持文字旋转、设置对齐等功能；增加了商店系统
 
 
 # Undertale Engine modded by Zhazha
@@ -94,13 +96,14 @@
 
 ## And the credits:
 ###### Codes to draw background effect are from [Siki].
-###### Theory and codes of preliminary implementation of Cover-Board are from [穹c啋f汾],his Bilibili UID is 1438530442.
-###### Theory and codes of completely implementation of Extra-Board are grafted from [奇迹丶零],the original codes are from [jkjkil4] from Gitee,[奇迹丶零]'s Bilibili UID is 375539491.
-###### [1个渣渣] integrated these codes,my Bilibili UID is 25245703.
+###### Theory and codes of preliminary implementation of Cover-Board are from [Qcf],his Bilibili UID is 1438530442.
+###### Theory and codes of completely implementation of Extra-Board are grafted from [Miracle],the original codes are from [jkjkil4] from Gitee,[Miracle]'s Bilibili UID is 375539491.
+###### [Onezhazha] integrated these codes,my Bilibili UID is 25245703.
 ###### Tested with the help of [saness] et al.
 ###### Undertale Engine by [TML].
+###### New typer adapted from [Zean].
 
-###### Other by [1个渣渣].
+###### Other by [Onezhazha].
 
 ### You can detect variable [global.is_moving] directly to judge it's moving or not.(When the bluesoul is in the air,it's always moving)
 
@@ -116,3 +119,4 @@
 ##### v1.8 Rewrited bluesoul and platform so that fixed bug of unavailing slam soul.
 ##### v1.9 You can change the alpha of background and frame of board, but the change of alpha of Cover-Board is nonlinear, be careful when you change it.
 ##### v1.10 Added menu dialog candidate system, you can add multiple dialogs and when an enemy's turn ends(your turn start), random one of dialogs will be displayed; Added some functions to get enemy's position, make you decide where to create battle_dialog_enemy easier. These two systems are suitable to multiple enemies battle.
+##### v1.11 Added advanced typer with functions of change the angle and align of text and so on; Added shop system 

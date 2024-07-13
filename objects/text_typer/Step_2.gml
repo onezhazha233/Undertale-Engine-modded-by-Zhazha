@@ -14,11 +14,11 @@ if(_choice!=-1){
 	}
 	if(Input_IsPressed(_choice_switch_key[0])){
 		_choice=(_choice=0 ? array_length(_choice_x)-1 : _choice-1);
-		audio_play_sound(snd_menu_switch,0,false);
+		if(_choice_switch_sound = 1)audio_play_sound(snd_menu_switch,0,false);
 	}
 	if(Input_IsPressed(_choice_switch_key[1])){
 		_choice=(_choice=array_length(_choice_x)-1 ? 0 : _choice+1);
-		audio_play_sound(snd_menu_switch,0,false);
+		if(_choice_switch_sound = 1)audio_play_sound(snd_menu_switch,0,false);
 	}
 	if(Input_IsPressed(INPUT.CONFIRM)){
 		if(is_string(_choice_macro)){
@@ -27,7 +27,7 @@ if(_choice!=-1){
 		}
 		Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE,_choice);
 		_choice=-1;
-		audio_play_sound(snd_menu_confirm,0,false);
+		if(_choice_switch_sound = 1)audio_play_sound(snd_menu_confirm,0,false);
 	}
 }
 

@@ -642,4 +642,10 @@ switch(cmd[|0]){
 		_choice_switch_direction = cmd[|1];
 		//0 for left and right, 1 for up and down
 		break;
+		
+		
+	case "choice_switch_sound":
+		_choice_switch_sound = cmd[|1];
+		//enable or disable switch sound, not much to say
+		break;
 }

@@ -42,6 +42,7 @@ _choice_y[0]=0;
 _choice_macro="";
 _choice_switch_direction=0;//0为左右 1为上下
 _choice_switch_key=[INPUT.LEFT,INPUT.RIGHT];
+_choice_switch_sound=true;
 
 //text_single args
 _font=0;
@@ -156,6 +157,9 @@ function ChangeText(){
 	_choice_x[1]=0;
 	_choice_y[0]=0;
 	_choice_macro="";
+	_choice_switch_direction=0;//0为左右 1为上下
+	_choice_switch_key=[INPUT.LEFT,INPUT.RIGHT];
+	_choice_switch_sound=true;
 
 	//text_single args
 	_font=0;
@@ -205,25 +209,3 @@ function ChangeText(){
 	
 	alarm[1] = 1;
 }
-
-function GetMainText(){
-    var len = string_length(text);
-    var result = "";
-    var inside_braces = false;
-
-    for (var i = 0; i <= len; i++) {
-        var charr = string_char_at(text, i);
-
-        if(charr = "{") {
-            inside_braces = true;
-        }
-		else if(charr = "}") {
-            inside_braces = false;
-        }
-		if!(inside_braces) {
-            result += charr;
-        }
-    }
-
-    return string_replace_all(result,"}","");
-}//返回不带命令的文本，返回的结果中不会含有大括号，如果要使用该函数，请保证大括号成对出现

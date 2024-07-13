@@ -1,0 +1,2 @@
+ds_list_destroy(_host_buy)
+ds_list_destroy(_host_talk)

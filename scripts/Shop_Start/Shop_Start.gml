@@ -2,7 +2,7 @@
 function Shop_Start(){
 	var SHOP=argument[0];
 
-	char_player._moveable_shop = true;
+	if(instance_exists(char_player))char_player._moveable_shop = true;
 	if(Shop_IsExists(SHOP)){
 		Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.SHOP,SHOP);
 		

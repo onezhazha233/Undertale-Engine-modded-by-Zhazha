@@ -3,3 +3,4 @@
 ./string/item.json
 ./string/menu.json
 ./string/font.json
+./string/shop.json

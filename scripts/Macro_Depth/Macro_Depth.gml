@@ -19,5 +19,11 @@ function Macro_Depth() {
 		BULLET_OUTSIDE_HIGH=-1000
 	};
 
-
+	enum DEPTH_SHOP{
+		HOST = -100,
+		UI_ITEMDESC = -200,
+		ITEMDESC = -300,
+		UI = -400,
+		DIALOG = -500
+	};
 }

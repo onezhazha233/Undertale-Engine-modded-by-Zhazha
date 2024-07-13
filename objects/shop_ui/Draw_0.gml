@@ -18,17 +18,17 @@ if!(Shop_GetState() = SHOP_STATE.DIALOG||Shop_GetMenu() = SHOP_MENU.EXIT){
 	}
 	draw_set_font(Lang_GetFont(Lang_GetString("font.menu.0")));
 	if(gc = c_white){
-		draw_text_transformed_color(460,416,string(Player_GetGold())+"G",2,2,0,gc,gc,gc,gc,1);
+		draw_text_transformed_color(460,420,string(Player_GetGold())+"G",2,2,0,gc,gc,gc,gc,1);
 	}
 	else{
-		draw_text_transformed_color(397,416,"("+string(Player_GetGold())+"G)",2,2,0,gc,gc,gc,gc,1);
+		draw_text_transformed_color(397,420,"("+string(Player_GetGold())+"G)",2,2,0,gc,gc,gc,gc,1);
 	}
 }
 
 //背包空间显示
 if!(Shop_GetState() = SHOP_STATE.DIALOG||Shop_GetMenu() = SHOP_MENU.SELL||Shop_GetMenuSell() = SHOP_SELL.CONFIRM||Shop_GetMenu() = SHOP_MENU.EXIT){
 	draw_set_font(Lang_GetFont(Lang_GetString("font.menu.0")));
-	draw_text_transformed_color(560,416,string(Item_GetNumber())+"/8",2,2,0,-1,-1,-1,-1,1);
+	draw_text_transformed_color(560,420,string(Item_GetNumber())+"/8",2,2,0,-1,-1,-1,-1,1);
 }
 
 //主菜单选择

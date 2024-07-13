@@ -57,7 +57,9 @@ function Macro_Flag() {
 		TRIGGER_WARP_LANDMARK,
 		TRIGGER_WARP_DIR,
 		TEXT_TYPER_CHOICE,
-		FRAME_SKIP
+		FRAME_SKIP,
+		SHOP,
+		SHOP_ROOM_RETURN
 	};
 #endregion
 

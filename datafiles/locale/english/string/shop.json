@@ -1,0 +1,12 @@
+{
+    "shop.menu.choice.0": "Buy",
+    "shop.menu.choice.1": "Sell",
+    "shop.menu.choice.2": "Talk",
+    "shop.menu.choice.3": "Exit",
+    "shop.menu.exit": "Exit",
+    "shop.menu.buy": "Wanna buy&anything?",
+    "shop.menu.buy.confirm": "Buy it for&{insert PRICE}G?&  {choice 0}  Yes&  {choice 1}  No{choice `CHOICE`}{pause}",
+    "shop.menu.sell.confirm": "&            Sell {insert ITEM} for {insert PRICE}G?&&                   {choice 0}  Yes                           {choice 1}  No{choice `CHOICE`}{pause}",
+    "shop.menu.talk": "Wanna talk&anything?",
+    "shop.menu.page": "PAGE {insert PAGE}"
+}

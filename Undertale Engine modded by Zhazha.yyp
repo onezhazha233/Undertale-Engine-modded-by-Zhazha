@@ -261,6 +261,7 @@
     {"id":{"name":"Phone_Remove","path":"scripts/Phone_Remove/Phone_Remove.yy",},"order":19,},
     {"id":{"name":"Anim_Init","path":"scripts/Anim_Init/Anim_Init.yy",},"order":1,},
     {"id":{"name":"Anim_Create","path":"scripts/Anim_Create/Anim_Create.yy",},"order":3,},
+    {"id":{"name":"GetPlainText","path":"scripts/GetPlainText/GetPlainText.yy",},"order":21,},
     {"id":{"name":"Anim_Destroy","path":"scripts/Anim_Destroy/Anim_Destroy.yy",},"order":5,},
     {"id":{"name":"Anim_IsExists","path":"scripts/Anim_IsExists/Anim_IsExists.yy",},"order":7,},
     {"id":{"name":"Anim_GetValue","path":"scripts/Anim_GetValue/Anim_GetValue.yy",},"order":9,},

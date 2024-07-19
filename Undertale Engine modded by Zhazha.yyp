@@ -429,6 +429,7 @@
     {"id":{"name":"Player_GetAtkTotal","path":"scripts/Player_GetAtkTotal/Player_GetAtkTotal.yy",},"order":53,},
     {"id":{"name":"Player_GetDefTotal","path":"scripts/Player_GetDefTotal/Player_GetDefTotal.yy",},"order":55,},
     {"id":{"name":"Player_GetSpdTotal","path":"scripts/Player_GetSpdTotal/Player_GetSpdTotal.yy",},"order":57,},
+    {"id":{"name":"trigger_shop","path":"objects/trigger_shop/trigger_shop.yy",},"order":4,},
     {"id":{"name":"Player_GetInvTotal","path":"scripts/Player_GetInvTotal/Player_GetInvTotal.yy",},"order":59,},
     {"id":{"name":"Player_GetGold","path":"scripts/Player_GetGold/Player_GetGold.yy",},"order":61,},
     {"id":{"name":"Player_SetGold","path":"scripts/Player_SetGold/Player_SetGold.yy",},"order":63,},

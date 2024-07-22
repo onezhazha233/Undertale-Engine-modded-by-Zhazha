@@ -5,6 +5,7 @@ function Macro_Flag() {
 		TEMP,
 		INFO,
 		SETTINGS,
+		PLOT,
 		DEMO
 	};
 

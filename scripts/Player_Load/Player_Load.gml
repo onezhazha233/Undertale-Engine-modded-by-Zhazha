@@ -7,6 +7,7 @@ function Player_Load() {
 	Flag_Load(FLAG_TYPE.STATIC);
 	Flag_Load(FLAG_TYPE.DYNAMIC);
 	Flag_Load(FLAG_TYPE.INFO);
+	Flag_Load(FLAG_TYPE.PLOT);
 
 	return true;
 

@@ -1,5 +1,5 @@
 function Macro_Plot() {
-	enum PLOT{
+	enum FLAG_PLOT{
 		START
 	};
 

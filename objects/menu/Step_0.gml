@@ -41,7 +41,7 @@ if(_menu==0){
 			}
 		}else if(Input_IsPressed(INPUT.CONFIRM)){
 			if(_choice==0){
-				Player_Load(0);
+				Player_Load(Flag_GetSaveSlot());
 				var target=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ROOM,-1);
 				if(room_exists(target)){
 					room_goto(target);

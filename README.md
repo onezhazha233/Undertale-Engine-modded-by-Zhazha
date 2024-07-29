@@ -5,9 +5,8 @@
 ## 添加了什么？
 ### 添加了加框和减框，使得你可以使用异形框。
 ### 添加了由我编写的蓝魂和板子。
-
 ### 添加了一些更便利的东西，如绕点旋转函数、获取框中心坐标函数、杂项管理器等。
-
+### 添加了我编写的商店系统
 ### 修复了原版ute的部分bug。
 
 ## 咋用啊？
@@ -67,9 +66,8 @@
 ## Added wat?
 ### Added Extra-Board and Cover-Board,so you can make various shapes of board.
 ### Added bluesoul and platform written by me.
-
 ### Added something to make you code your game more convenient, such as rotate function, get center positionof board, misc manager.
-
+### Added shop system made by me.
 ### Fixed some bugs of original ute.
 
 ## How to use it properly?

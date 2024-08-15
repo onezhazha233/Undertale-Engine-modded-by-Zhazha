@@ -1,4 +1,3 @@
-live;
 if(Shop_GetMenu() = SHOP_MENU.BUY||Shop_GetMenuBuy() = SHOP_BUY.CONFIRM){
 	if!(shop._buy_choice = 4){
 		_yoffset += (0-_yoffset)/3;

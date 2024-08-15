@@ -1,3 +1,4 @@
+live;
 if(Shop_GetMenu() = SHOP_MENU.BUY||Shop_GetMenuBuy() = SHOP_BUY.CONFIRM){
 	if!(shop._buy_choice = 4){
 		_yoffset += (0-_yoffset)/3;
@@ -24,8 +25,8 @@ if(Shop_GetMenu() = SHOP_MENU.BUY||Shop_GetMenuBuy() = SHOP_BUY.CONFIRM){
 		}
 	}
 	else{
-		_yoffset += (159-_yoffset)/3;
-		if(abs(_yoffset-159) < 1)_yoffset = 159;
+		_yoffset += (162-_yoffset)/3;
+		if(abs(_yoffset-162) < 1)_yoffset = 162;
 		
 		if(instance_exists(_inst_itemdesc)){
 			instance_destroy(_inst_itemdesc);
@@ -33,7 +34,7 @@ if(Shop_GetMenu() = SHOP_MENU.BUY||Shop_GetMenuBuy() = SHOP_BUY.CONFIRM){
 	}
 }
 else{
-	_yoffset += (159-_yoffset)/3;
+	_yoffset += (162-_yoffset)/3;
 	if(abs(_yoffset) < 1)_yoffset = 0;
 	
 	if(instance_exists(_inst_itemdesc)){

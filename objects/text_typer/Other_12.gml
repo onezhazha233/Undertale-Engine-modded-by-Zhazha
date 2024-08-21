@@ -516,6 +516,13 @@ switch(cmd[|0]){
 		break;
 	
 	case "char_unlink":
+		if(is_bool(cmd[|1])){
+			with(char){
+				if(char_id==other._char_linked){
+					talking=0;
+				}
+			}
+		}
 		_char_linked=-1;
 		break;
 		

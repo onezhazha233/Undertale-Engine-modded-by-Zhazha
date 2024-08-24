@@ -237,6 +237,7 @@
     {"id":{"name":"Battle_SetPlayerTempDef","path":"scripts/Battle_SetPlayerTempDef/Battle_SetPlayerTempDef.yy",},"order":3,},
     {"id":{"name":"Battle_SetPlayerTempSpd","path":"scripts/Battle_SetPlayerTempSpd/Battle_SetPlayerTempSpd.yy",},"order":5,},
     {"id":{"name":"Battle_SetPlayerTempInv","path":"scripts/Battle_SetPlayerTempInv/Battle_SetPlayerTempInv.yy",},"order":7,},
+    {"id":{"name":"ui_buy","path":"objects/ui_buy/ui_buy.yy",},"order":8,},
     {"id":{"name":"Battle_GetPlayerTempAtk","path":"scripts/Battle_GetPlayerTempAtk/Battle_GetPlayerTempAtk.yy",},"order":9,},
     {"id":{"name":"Battle_GetPlayerTempDef","path":"scripts/Battle_GetPlayerTempDef/Battle_GetPlayerTempDef.yy",},"order":11,},
     {"id":{"name":"Battle_GetPlayerTempSpd","path":"scripts/Battle_GetPlayerTempSpd/Battle_GetPlayerTempSpd.yy",},"order":13,},

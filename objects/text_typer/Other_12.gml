@@ -655,4 +655,8 @@ switch(cmd[|0]){
 		_choice_switch_sound = cmd[|1];
 		//enable or disable switch sound, not much to say
 		break;
+		
+	case "ui_buy":
+		instance_create_depth(0,0,0,ui_buy);
+		break;
 }

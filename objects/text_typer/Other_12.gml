@@ -659,4 +659,8 @@ switch(cmd[|0]){
 	case "ui_buy":
 		instance_create_depth(0,0,0,ui_buy);
 		break;
+		
+	case "ui_buy_destroy":
+		instance_destroy(ui_buy);
+		break;
 }

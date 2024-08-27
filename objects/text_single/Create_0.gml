@@ -53,5 +53,5 @@ function RenderCharFixed(paramXO,paramYO,paramColorSrc = color_text,paramAlpha =
 	draw_text_transformed_color(_tmpX + paramXO,_tmpY + paramYO,text,scale_x,scale_y ,angle,paramColorSrc[0],paramColorSrc[1],paramColorSrc[3],paramColorSrc[2],paramAlpha);
 }
 function RenderSprFixed(paramXO,paramYO){
-	draw_sprite_general(sprite,sprite_image,0,0,sprite_width,sprite_height,_tmpX + paramXO,_tmpY + paramYO,scale_x,scale_y,angle,color_text[0],color_text[1],color_text[3],color_text[2],_tmpA);
+	draw_sprite_general(sprite,sprite_image,0,0,sprite_get_width(sprite),sprite_get_height(sprite),_tmpX + paramXO,_tmpY + paramYO,scale_x,scale_y,angle,color_text[0],color_text[1],color_text[3],color_text[2],_tmpA);
 }

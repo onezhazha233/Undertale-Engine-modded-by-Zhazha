@@ -1,5 +1,5 @@
-# UTE渣渣整合版
-
+<details>
+<summary>UTE渣渣整合版</summary>
 ## 这啥玩意啊？
 ### 此为由我修改过的由糖萌芦开发的Undertale Engine，添加了一些原版ute没有的东西。
 ## 添加了什么？
@@ -57,10 +57,10 @@
 ##### v1.9 可改变框的背景和框架透明度，但减框透明度改变规律出于未知原因是非线性的，设置需谨慎
 ##### v1.10 增加了菜单文本候选功能，可添加候选文本，游戏会在玩家回合开始时随机选择一个进行显示；增加了获取敌人位置功能，可根据敌人位置来判断对话框创建位置。这两个功能适用于多敌人战斗
 ##### v1.11 更换了新的打字机，新的打字机支持文字旋转、设置对齐等功能；增加了商店系统
+</details>
 
-
-# Undertale Engine modded by Zhazha
-#
+<details>
+<summary>Undertale Engine modded by Zhazha</summary>
 ## Wat's this?
 ### It's Undertale Engine by TML which is modded by me,added something that not included in original Undertale Engine.
 ## Added wat?
@@ -118,3 +118,4 @@
 ##### v1.9 You can change the alpha of background and frame of board, but the change of alpha of Cover-Board is nonlinear, be careful when you change it.
 ##### v1.10 Added menu dialog candidate system, you can add multiple dialogs and when an enemy's turn ends(your turn start), random one of dialogs will be displayed; Added some functions to get enemy's position, make you decide where to create battle_dialog_enemy easier. These two systems are suitable to multiple enemies battle.
 ##### v1.11 Added advanced typer with functions of change the angle and align of text and so on; Added shop system 
+</details>

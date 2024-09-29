@@ -22,3 +22,9 @@ _shake_time_x=0;
 _shake_time_y=0;
 _shake_positive_x=true;
 _shake_positive_y=true;
+
+use_room_limit=true;
+limit_top=0;
+limit_bottom=0;
+limit_left=0;
+limit_right=0;

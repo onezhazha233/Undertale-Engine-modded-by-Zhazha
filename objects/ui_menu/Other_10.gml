@@ -47,7 +47,7 @@ if(_menu==3){
 		var hp_max=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.HP_MAX);
 		var atk=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ATK)-10;
 		var atk_item=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ATK_ITEM);
-		var def=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.DEF);
+		var def=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.DEF)-10;
 		var def_item=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.DEF_ITEM);
 		var weapon=Item_GetName(Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM_WEAPON));
 		var armor=Item_GetName(Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM_ARMOR));

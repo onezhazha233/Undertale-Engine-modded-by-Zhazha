@@ -22,10 +22,10 @@
     "font.battle.0": "dotumche",
     "font.battle.0.scale.x": "1",
     "font.battle.0.scale.y": "1",
-    "font.battle.0.space.x": "0",
+    "font.battle.0.space.x": "1",
     "font.battle.1": "dotumche",
     "font.battle.1.scale.x": "1",
     "font.battle.1.scale.y": "1",
     "font.battle.1.space.x": "0",
-    "font.battle.space.y": "0"
+    "font.battle.space.y": "5"
 }

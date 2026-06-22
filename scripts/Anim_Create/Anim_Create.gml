@@ -6,6 +6,7 @@
 ///@arg change
 ///@arg duration
 ///@arg delay*
+///@arg callback*
 ///@arg arg_0*
 ///@arg arg_1*
 function Anim_Create() {
@@ -17,6 +18,7 @@ function Anim_Create() {
 	var CHANGE=argument[5];
 	var DURATION=argument[6];
 	var DELAY=0;
+	var CALLBACK=-1;
 	var ARG_0=0;
 	var ARG_1=0;
 
@@ -24,10 +26,13 @@ function Anim_Create() {
 		DELAY=argument[7];
 	}
 	if(argument_count>=9){
-		ARG_0=argument[8];
+		CALLBACK=argument[8];
 	}
 	if(argument_count>=10){
-		ARG_1=argument[9];
+		ARG_0=argument[9];
+	}
+	if(argument_count>=11){
+		ARG_1=argument[10];
 	}
 
 	var inst_result=-1;
@@ -56,11 +61,12 @@ function Anim_Create() {
 						map[?ANIM_DATA.CHANGE]=CHANGE;
 						map[?ANIM_DATA.DURATION]=DURATION;
 						map[?ANIM_DATA.DELAY]=DELAY;
-						map[?ANIM_DATA.ARG_0]=ARG_0;
-						map[?ANIM_DATA.ARG_1]=ARG_1;
-						map[?ANIM_DATA.TIME]=0;
-					
-						proc_result+=1;
+			map[?ANIM_DATA.CALLBACK]=CALLBACK;
+			map[?ANIM_DATA.ARG_0]=ARG_0;
+			map[?ANIM_DATA.ARG_1]=ARG_1;
+			map[?ANIM_DATA.TIME]=0;
+		
+			proc_result+=1;
 					}
 				}
 				proc+=1;
@@ -81,12 +87,13 @@ function Anim_Create() {
 				map[?ANIM_DATA.CHANGE]=CHANGE;
 				map[?ANIM_DATA.DURATION]=DURATION;
 				map[?ANIM_DATA.DELAY]=DELAY;
-				map[?ANIM_DATA.ARG_0]=ARG_0;
-				map[?ANIM_DATA.ARG_1]=ARG_1;
-				map[?ANIM_DATA.TIME]=0;
-			
-				proc_result+=1;
-			}
+					map[?ANIM_DATA.CALLBACK]=CALLBACK;
+					map[?ANIM_DATA.ARG_0]=ARG_0;
+					map[?ANIM_DATA.ARG_1]=ARG_1;
+					map[?ANIM_DATA.TIME]=0;
+				
+
+				}
 		}
 	}
 	return inst_result;

@@ -34,6 +34,7 @@ function Anim_Init() {
 		CHANGE,
 		DURATION,
 		DELAY,
+		CALLBACK,
 		ARG_0,
 		ARG_1,
 		TIME

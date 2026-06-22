@@ -86,7 +86,8 @@ if(_char != " " && _char != "　"){
 		}
 		if(audio_exists(sound)){
 			if(_audio_clear=1)audio_stop_sound(sound);
-			audio_play_sound(sound, 0, false);
+			snd = audio_play_sound(sound, 0, false);
+			if!(_audio_pitch = 1)audio_sound_pitch(snd,_audio_pitch);
 			_voice_played = true;
 		}
 	}

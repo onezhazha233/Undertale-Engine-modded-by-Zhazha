@@ -14,17 +14,25 @@ function Anim_Step() {
 						variable_global_set(map[?ANIM_DATA.VAR_NAME],value);
 					}
 				}else{
-					var value=map[?ANIM_DATA.START]+map[?ANIM_DATA.CHANGE];
-					if(map[?ANIM_DATA.TARGET]!=global){
-						variable_instance_set(map[?ANIM_DATA.TARGET],map[?ANIM_DATA.VAR_NAME],value);
-					}else{
-						variable_global_set(map[?ANIM_DATA.VAR_NAME],value);
-					}
-					ds_map_destroy(map);
-					ds_map_delete(global._gmu_anim_data,key);
-					ds_list_delete(global._gmu_anim_list,proc);
-					proc-=1;
+				var value=map[?ANIM_DATA.START]+map[?ANIM_DATA.CHANGE];
+				if(map[?ANIM_DATA.TARGET]!=global){
+					variable_instance_set(map[?ANIM_DATA.TARGET],map[?ANIM_DATA.VAR_NAME],value);
+				}else{
+					variable_global_set(map[?ANIM_DATA.VAR_NAME],value);
 				}
+				var _cb=map[?ANIM_DATA.CALLBACK];
+				if(!is_undefined(_cb)&&_cb!=-1){
+					if(is_numeric(_cb)){
+						script_execute(_cb);
+					}else{
+						_cb();
+					}
+				}
+				ds_map_destroy(map);
+				ds_map_delete(global._gmu_anim_data,key);
+				ds_list_delete(global._gmu_anim_list,proc);
+				proc-=1;
+			}
 			}else{
 				map[?ANIM_DATA.DELAY]-=1;
 			}

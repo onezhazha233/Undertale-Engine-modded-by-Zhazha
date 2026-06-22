@@ -640,6 +640,10 @@ switch(cmd[|0]){
 		//if the text sound is too long(such as Altertale Torile's voice), disable this may be helpful
 		break;
 		
+	case "pitch":
+		_audio_pitch = cmd[|1];
+		break;
+		
 	case "autoend":
 		alarm[0] = cmd[|1];
 		//if you are making a minions battle, add {autoend [duration]} after their dialogs may be helpful

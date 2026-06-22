@@ -1,6 +1,7 @@
 draw_sprite_ext(spr_pixel,0,0,240,640,240,0,-1,1)
 draw_sprite_ext(spr_pixel,0,8,240+8,640-16,240-16,0,0,1)
 
+
 //大框
 if!(Shop_GetState() = SHOP_STATE.DIALOG||Shop_GetMenu() = SHOP_MENU.SELL||Shop_GetMenuSell() = SHOP_SELL.CONFIRM||Shop_GetMenu() = SHOP_MENU.EXIT){
 	draw_sprite_ext(spr_pixel,0,420,248,8,240-16,0,-1,1);

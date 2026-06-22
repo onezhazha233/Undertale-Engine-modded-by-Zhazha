@@ -391,3 +391,15 @@ else if(shop_state = SHOP_STATE.DIALOG){
 		}
 	}
 }
+
+if(Shop_GetState() = SHOP_STATE.DIALOG){
+	if(!instance_exists(_inst_dialog[0])){
+		if(!Dialog_IsEmpty()){
+			Shop_CallHostEvent(SHOP_HOST_EVENT.DIALOG_START);
+			Shop_SetDialog(Dialog_Get()+"{pause}{end}");
+		}
+		else if(Shop_IsDialogAutoEnd()){
+			Shop_EndDialog();
+		}
+	}
+}

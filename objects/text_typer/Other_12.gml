@@ -46,28 +46,6 @@ switch(cmd[|0]){
 					_color_shadow[2]=make_color_rgb(76,0,0);
 					_color_shadow[3]=make_color_rgb(76,0,0);
 					break;
-					
-				case c_black:
-					_color_text[0]=make_color_rgb(0,0,0);
-					_color_text[1]=make_color_rgb(0,0,0);
-					_color_text[2]=make_color_rgb(0,0,0);
-					_color_text[3]=make_color_rgb(0,0,0);
-					_color_shadow[0]=make_color_rgb(0,0,0);
-					_color_shadow[1]=make_color_rgb(0,0,0);
-					_color_shadow[2]=make_color_rgb(0,0,0);
-					_color_shadow[3]=make_color_rgb(0,0,0);
-					break;
-					
-				case c_blue:
-					_color_text[0]=make_color_rgb(154,143,254);
-					_color_text[1]=make_color_rgb(154,143,254);
-					_color_text[2]=make_color_rgb(102,85,253);
-					_color_text[3]=make_color_rgb(102,85,253);
-					_color_shadow[0]=make_color_rgb(0,0,0);
-					_color_shadow[1]=make_color_rgb(0,0,0);
-					_color_shadow[2]=make_color_rgb(0,0,0);
-					_color_shadow[3]=make_color_rgb(0,0,0);
-					break;
 			}
 		}
 		break;
@@ -220,31 +198,68 @@ switch(cmd[|0]){
 		}
 		break;
 		
-	case "skippable":
+	case "skip":
 		if(is_bool(cmd[|1])){
-			_skippable=bool(cmd[|1]);
+			_skip=bool(cmd[|1]);
+		}
+		break;
+		
+	case "super_skip":
+		if(is_bool(cmd[|1])){
+			_super_skip=bool(cmd[|1]);
+		}
+		break;
+		
+	case "super_skip_mode":
+		if(is_real(cmd[|1])){
+			_super_skip_mode=clamp(cmd[|1],0,1);
 		}
 		break;
 		
 	case "voice":
 		if(is_real(cmd[|1])){
-			if(cmd[|1]==-1 || (cmd[|1]>=0 && cmd[|1]<array_height_2d(_group_voice))){
-				_voice=cmd[|1];
+			_voice=cmd[|1];
+			if(_voice>=0){
+				var key=string(_voice);
+				if(variable_struct_exists(_voice_pack_config,key)){
+					var cfg=_voice_pack_config[$ key];
+					if(variable_struct_exists(cfg,"mode")){
+						_voice_mode=cfg.mode;
+					}
+					if(variable_struct_exists(cfg,"interval")){
+						_voice_mode_interval=cfg.interval;
+					}
+					if(variable_struct_exists(cfg,"pitch")){
+						_audio_pitch=cfg.pitch;
+					}
+				}
 			}
 		}
 		break;
 		
 	case "voice_single":
 		if(is_real(cmd[|1])){
-			if(cmd[|1]==-1 || cmd[|1]>=0 && cmd[|1]<array_length_2d(_group_voice,_voice)){
+			if(cmd[|1]==-1 || cmd[|1]>=0 && cmd[|1]<array_length(_group_voice[_voice])){
 				_voice_single=cmd[|1];
 			}
 		}
 		break;
 		
+	case "voice_mode":
+		if(is_real(cmd[|1])){
+			_voice_mode=clamp(cmd[|1],0,1);
+		}
+		break;
+		
+	case "voice_mode_interval":
+		if(is_real(cmd[|1])&&cmd[|1]>0){
+			_voice_mode_interval=cmd[|1];
+		}
+		break;
+		
 	case "font":
 		if(is_real(cmd[|1])){
-			if(cmd[|1]>=0&&cmd[|1]<array_height_2d(_group_font)){
+			if(cmd[|1]>=0&&cmd[|1]<array_length(_group_font)){
 				_font=cmd[|1];
 			}
 		}
@@ -252,6 +267,75 @@ switch(cmd[|0]){
 		
 	case "clear":
 		event_user(3);
+		if(_voice_loop_snd!=-1){
+			audio_stop_sound(_voice_loop_snd);
+			_voice_loop_snd=-1;
+		}
+		var remaining=string_copy(text,_char_proc+1,string_length(text)-_char_proc);
+		var m=Measure(remaining,_font,_scale_x,_scale_y,_space_x,_space_y);
+		_measure_w=m[0];
+		_measure_h=m[1];
+		AlignApply();
+		if(_mini_auto_layout){
+			_mini_positions=ScanMinis(remaining);
+			_mini_pos_index=0;
+		}
+		break;
+	
+	case "halign":
+		if(is_real(cmd[|1])){
+			if(cmd[|1]>=0&&cmd[|1]<=2){
+				_align_h=cmd[|1];
+				AlignApply();
+			}
+		}
+		break;
+	
+	case "valign":
+		if(is_real(cmd[|1])){
+			if(cmd[|1]>=0&&cmd[|1]<=2){
+				_align_v=cmd[|1];
+				AlignApply();
+			}
+		}
+		break;
+	
+	case "angle":
+		if(is_real(cmd[|1])){
+			_angle=cmd[|1];
+		}
+		break;
+	
+	case "per_line_align":
+		if(is_bool(cmd[|1])){
+			_per_line_align=bool(cmd[|1]);
+			AlignApply();
+		}
+		break;
+	
+	case "position_follow":
+		if(is_bool(cmd[|1])){
+			_position_follow=bool(cmd[|1]);
+		}
+		break;
+	
+	case "angle_follow":
+		if(is_bool(cmd[|1])){
+			_angle_follow=bool(cmd[|1]);
+		}
+		break;
+		
+	case "pitch":
+		if(is_real(cmd[|1])){
+			_audio_pitch=cmd[|1];
+		}
+		break;
+	
+	case "auto_destroy":
+		if(is_real(cmd[|1])){
+			_auto_destroy_delay=cmd[|1];
+			_auto_destroy=true;
+		}
 		break;
 		
 	case "end":
@@ -291,14 +375,14 @@ switch(cmd[|0]){
 	
 	case "define":
 		if(is_string(cmd[|1])&&(is_real(cmd[|2])||is_string(cmd[|2]))){
-			ds_map_delete(_map_macro,cmd[|1]);
-			ds_map_add(_map_macro,cmd[|1],cmd[|2]);
+			variable_struct_remove(_map_macro,cmd[|1]);
+			_map_macro[$ cmd[|1]]=cmd[|2];
 		}
 		break;
 		
 	case "undefine":
 		if(is_string(cmd[|1])){
-			ds_map_delete(_map_macro,cmd[|1]);
+			variable_struct_remove(_map_macro,cmd[|1]);
 		}
 		break;
 		
@@ -308,17 +392,39 @@ switch(cmd[|0]){
 		}
 		break;
 		
+	case "choice_switch_snd":
+		if(is_bool(cmd[|1])){
+			_choice_switch_snd=bool(cmd[|1]);
+		}
+		break;
+		
+	case "choice_confirm_snd":
+		if(is_bool(cmd[|1])){
+			_choice_confirm_snd=bool(cmd[|1]);
+		}
+		break;
+		
+	case "choice_dir":
+		if(is_real(cmd[|1])){
+			if(cmd[|1]==0||cmd[|1]==1){
+				_choice_dir=cmd[|1];
+			}
+		}
+		break;
+		
 	case "choice":
 		if(is_real(cmd[|1])){
 			if(cmd[|1]>=0){
 				draw_set_font(_group_font[_font,0]);
 				_choice_x[cmd[|1]]=_char_x-string_width(" ")*_group_font_scale_x[_font,0]*_scale_x;
 				_choice_y[cmd[|1]]=_char_y+string_height(" ")/2*_group_font_scale_y[_font,0]*_scale_y;
+				_choice_count=max(_choice_count,cmd[|1]+1);
 			}
-		}else if(is_string(cmd[|1])||is_undefined(cmd[|1])){
-			_choice_macro=cmd[|1];
-			_choice=0;
 		}
+		break;
+		
+	case "choice_end":
+		_choice=0;
 		break;
 	
 	case "if":
@@ -370,7 +476,7 @@ switch(cmd[|0]){
 					x-=58*_scale_x;
 					event_user(4);
 				}
-			}else if(fface>=0 && fface<array_length_1d(_group_face)){
+			}else if(fface>=0 && fface<array_length(_group_face)){
 				if(instance_exists(_face)){
 					instance_destroy(_face);
 				}else{
@@ -516,13 +622,6 @@ switch(cmd[|0]){
 		break;
 	
 	case "char_unlink":
-		if(is_bool(cmd[|1])){
-			with(char){
-				if(char_id==other._char_linked){
-					talking=0;
-				}
-			}
-		}
 		_char_linked=-1;
 		break;
 		
@@ -570,16 +669,34 @@ switch(cmd[|0]){
 		}
 		if(is_real(spr)){
 			if(sprite_exists(spr)){
-				var img=0;
+				var spd=1;
 				if(is_real(cmd[|2])){
-					img=cmd[|2];
+					spd=cmd[|2];
+				}
+				var img=0;
+				if(is_real(cmd[|3])){
+					img=cmd[|3];
+				}
+				var offx=0;
+				if(is_real(cmd[|4])){
+					offx=cmd[|4];
+				}
+				var offy=0;
+				if(is_real(cmd[|5])){
+					offy=cmd[|5];
 				}
 				_char_sprite=spr;
 				_char_sprite_image=img;
+				_char_sprite_speed=spd;
+				_char_sprite_offset_x=offx;
+				_char_sprite_offset_y=offy;
 				_char="";
 				event_user(0);
 				_char_sprite=-1;
 				_char_sprite_image=0;
+				_char_sprite_speed=1;
+				_char_sprite_offset_x=0;
+				_char_sprite_offset_y=0;
 			}
 		}
 		break;
@@ -590,81 +707,115 @@ switch(cmd[|0]){
 		}
 		break;
 		
-	case "char_skip":
+	case "char_per_frame":
 		if(is_real(cmd[|1])){
-			if(cmd[|1]>=0){
-				_char_per_frame=cmd[|1];
+			_char_per_frame=cmd[|1];
+		}
+		break;
+		
+	case "mini_auto_layout":
+		if(is_bool(cmd[|1])){
+			_mini_auto_layout=cmd[|1];
+			if(!_mini_auto_layout){
+				_mini_positions=[];
+				_mini_pos_index=0;
 			}
 		}
 		break;
 		
-	case "angle":
+	case "mini_align":
 		if(is_real(cmd[|1])){
-			_angle=cmd[|1];
+			_mini_align=cmd[|1];
 		}
 		break;
 		
-	case "angle_follow":
-		if(is_bool(cmd[|1])){
-			_angle_follow=cmd[|1];
-		}
-		break;
-		
-	case "position_follow":
-		if(is_bool(cmd[|1])){
-			_position_follow=cmd[|1];
-		}
-		//warning:disable this will break the typing function so you should disable this after the typer ended typing
-		break;
-		
-	case "align":
+	case "dialog_right":
 		if(is_real(cmd[|1])){
-			_halign=cmd[|1];
+			_dialog_right=cmd[|1];
 		}
-		if(is_real(cmd[|2])){
-			_valign=cmd[|2];
+		break;
+		
+	case "mini":
+		if(variable_instance_exists(id,"_is_mini")&&_is_mini)break;
+		if(ds_list_size(cmd)<2)break;
+		var mtxt=cmd[|1];
+		if(!is_string(mtxt))mtxt=string(mtxt);
+		var mface=-1;
+		var memo=0;
+		var mfont=0;
+		var mox=0;
+		var moy=0;
+		if(ds_list_size(cmd)>2&&is_real(cmd[|2]))mface=cmd[|2];
+		if(ds_list_size(cmd)>3&&is_real(cmd[|3]))memo=cmd[|3];
+		if(ds_list_size(cmd)>4&&is_real(cmd[|4]))mfont=cmd[|4];
+		if(ds_list_size(cmd)>5&&is_real(cmd[|5]))mox=cmd[|5];
+		if(ds_list_size(cmd)>6&&is_real(cmd[|6]))moy=cmd[|6];
+		if(mfont<0||mfont>=array_length(_group_font))mfont=0;
+
+		var mw=0;
+		var mscale=_scale_x*0.5;
+		if(mtxt!=""){
+			var mm=Measure(mtxt,mfont,mscale,mscale,0,0);
+			mw=mm[0];
 		}
-		break
-		
-	case "type_dir":
-		if(is_real(cmd[|1])){
-			_type_dir=cmd[|1];
+		var has_face=mface>=0&&mface<array_length(_group_face);
+		var left_edge=x+_dialog_left+mox;
+		var right_edge=x+_dialog_right+mox;
+		var my=y+40*_scale_y+moy;
+
+		var use_prescan=_mini_auto_layout && _mini_pos_index<array_length(_mini_positions);
+
+		var mx;
+		if(use_prescan){
+			mx=_mini_positions[_mini_pos_index];
+			_mini_pos_index+=1;
+		}else{
+			if(_mini_align==0){
+				mx=left_edge;
+			}else{
+				mx=right_edge-mw;
+			}
 		}
-		//maybe cause strange result when halign is 2
-		break;
-		
-	case "audio_clear":
-		if(is_bool(cmd[|1])){
-			_audio_clear=cmd[|1];
+		var slide=24;
+
+		var gui_str=_gui ? "true" : "false";
+		var prefix="{instant true}{skippable false}{voice -1}{shadow false}";
+		prefix+="{gui "+gui_str+"}";
+		prefix+="{depth "+string(depth-1)+"}";
+		prefix+="{font "+string(mfont)+"}";
+		prefix+="{scale "+string(mscale)+"}";
+
+		var mini=instance_create_depth(mx+slide,my,depth-1,text_typer);
+		mini._is_mini=true;
+		mini.override_alpha_enabled=true;
+		mini.override_alpha=0;
+		mini.text=prefix+mtxt;
+
+		if(has_face){
+			var fx=mx+slide-35*mscale;
+			var fy=my+8*mscale;
+			mini._face=instance_create_depth(fx,fy,depth-1,_group_face[mface]);
+			mini._face.gui=_gui;
+			mini._face.image_xscale=mscale;
+			mini._face.image_yscale=mscale;
+			mini._face.image_alpha=0;
+			mini._face.emotion=memo;
+			mini._face.talking=false;
+			with(mini._face){
+				if(emotion>=0&&emotion<array_length(idle_sprite)&&sprite_exists(idle_sprite[emotion])){
+					sprite_index=idle_sprite[emotion];
+					image_index=(emotion<array_length(idle_image)) ? idle_image[emotion] : 0;
+					image_speed=(emotion<array_length(idle_speed)) ? idle_speed[emotion] : 0;
+				}
+				_emotion_previous=emotion;
+				_talking_previous=talking;
+			}
 		}
-		//if the text sound is too long(such as Altertale Torile's voice), disable this may be helpful
-		break;
-		
-	case "pitch":
-		_audio_pitch = cmd[|1];
-		break;
-		
-	case "autoend":
-		alarm[0] = cmd[|1];
-		//if you are making a minions battle, add {autoend [duration]} after their dialogs may be helpful
-		break;
-		
-	case "choice_switch_direction":
-		_choice_switch_direction = cmd[|1];
-		//0 for left and right, 1 for up and down
-		break;
-		
-		
-	case "choice_switch_sound":
-		_choice_switch_sound = cmd[|1];
-		//enable or disable switch sound, not much to say
-		break;
-		
-	case "ui_buy":
-		instance_create_depth(0,0,0,ui_buy);
-		break;
-		
-	case "ui_buy_destroy":
-		instance_destroy(ui_buy);
+
+		Anim_Destroy(mini,"x");
+		Anim_Destroy(mini,"override_alpha");
+		Anim_Create(mini,"x",ANIM_TWEEN.CUBIC,ANIM_EASE.OUT,mx+slide,-slide,12);
+		Anim_Create(mini,"override_alpha",0,0,0,1,12);
+		ds_list_add(_list_mini,mini);
 		break;
 }

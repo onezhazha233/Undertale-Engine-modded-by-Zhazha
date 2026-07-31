@@ -1,4 +1,4 @@
-function Battle_EndDialog() {
+function Battle_EndDialog(){
 	if(Battle_GetState()==BATTLE_STATE.DIALOG){
 		Dialog_Clear();
 		Battle_CallEnemyEvent(BATTLE_ENEMY_EVENT.DIALOG_END);
@@ -7,6 +7,4 @@ function Battle_EndDialog() {
 	}else{
 		return false;
 	}
-
-
 }

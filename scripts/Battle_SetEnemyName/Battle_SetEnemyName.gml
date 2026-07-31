@@ -1,8 +1,5 @@
 ///@arg enemy_slot
-///@arg name
-function Battle_SetEnemyName() {
-	var ENEMY=argument[0];
-	var NAME=argument[1];
+function Battle_SetEnemyName(ENEMY, NAME){
 
 	if(instance_exists(Battle_GetEnemy(ENEMY))){
 		battle._enemy_name[ENEMY]=NAME;
@@ -10,6 +7,4 @@ function Battle_SetEnemyName() {
 	}else{
 		return false;
 	}
-
-
 }

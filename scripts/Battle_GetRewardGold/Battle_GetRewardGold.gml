@@ -1,5 +1,3 @@
-function Battle_GetRewardGold() {
+function Battle_GetRewardGold(){
 	return battle._reward_gold;
-
-
 }

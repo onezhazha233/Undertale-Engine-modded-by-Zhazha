@@ -1,7 +1,6 @@
 ///@arg key
-function Console_IsMacroDefined() {
+function Console_IsMacroDefined(KEY){
 	if(GMU_CONSOLE_ENABLED){
-		var KEY=argument[0];
 	
 		if(is_string(KEY)){
 			var map=global._gmu_console_map_macro;
@@ -11,6 +10,4 @@ function Console_IsMacroDefined() {
 			return false;
 		}
 	}
-
-
 }

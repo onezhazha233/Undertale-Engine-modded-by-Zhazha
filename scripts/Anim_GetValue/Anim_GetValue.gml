@@ -1,21 +1,4 @@
-///@arg tween
-///@arg ease
-///@arg time
-///@arg arg_0*
-///@arg arg_1*
-function Anim_GetValue() {
-	var TWEEN=argument[0];
-	var EASE=argument[1];
-	var TIME=argument[2];
-	var ARG_0=0;
-	var ARG_1=0;
-	if(argument_count>=4){
-		ARG_0=argument[3];
-	}
-	if(argument_count>=5){
-		ARG_1=argument[4];
-	}
-
+function Anim_GetValue(TWEEN, EASE, TIME, ARG_0=0, ARG_1=0){
 	var r=0;
 	var t=TIME;
 	var b=0;
@@ -145,14 +128,14 @@ function Anim_GetValue() {
 					}
 					break;
 				case ANIM_EASE.IN_OUT:
-					if (t==0){
+					if(t==0){
 						r=b;
 					}
 					if(t==d){
 						r=b+c;
 					}
 					t/=d/2;
-					if (t<1){
+					if(t<1){
 						r=c/2*power(2,10*(t-1))+b;
 					}else{
 						r=c/2*(-power(2,-10*--t)+2)+b;
@@ -292,12 +275,12 @@ function Anim_GetValue() {
 				case ANIM_EASE.IN:
 					t=d-t;
 					t/=d;
-					if (t<1/2.75){
+					if(t<1/2.75){
 						r=c*(7.5625*t*t);
 					}else if(t<2/2.75){
 						t-=1.5/2.75;
 						r=c*(7.5625*t*t+0.75);
-					}else if(t<2.5/2.75) {
+					}else if(t<2.5/2.75){
 						t-=2.25/2.75;
 						r=c*(7.5625*t*t+0.9375);
 					}else{
@@ -308,12 +291,12 @@ function Anim_GetValue() {
 					break;
 				case ANIM_EASE.OUT:
 					t/=d;
-					if (t<1/2.75){
+					if(t<1/2.75){
 						r=c*(7.5625*t*t)+b;
 					}else if(t<2/2.75){
 						t-=1.5/2.75;
 						r=c*(7.5625*t*t+0.75)+b;
-					}else if(t<2.5/2.75) {
+					}else if(t<2.5/2.75){
 						t-=2.25/2.75;
 						r=c*(7.5625*t*t+0.9375)+b;
 					}else{
@@ -333,12 +316,12 @@ function Anim_GetValue() {
 					}
 				
 					t/=d;
-					if (t<1/2.75){
+					if(t<1/2.75){
 						r=c*(7.5625*t*t);
 					}else if(t<2/2.75){
 						t-=1.5/2.75;
 						r=c*(7.5625*t*t+0.75);
-					}else if(t<2.5/2.75) {
+					}else if(t<2.5/2.75){
 						t-=2.25/2.75;
 						r=c*(7.5625*t*t+0.9375);
 					}else{
@@ -357,6 +340,4 @@ function Anim_GetValue() {
 	}
 
 	return r;
-
-
 }

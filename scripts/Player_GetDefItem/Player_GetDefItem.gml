@@ -1,5 +1,3 @@
-function Player_GetDefItem() {
-	return Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.DEF_ITEM);
-
-
+function Player_GetDefItem(){
+	return Flag_Get(FLAG_STATIC,"def_item");
 }

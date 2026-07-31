@@ -1,18 +1,7 @@
-///@arg x
-///@arg y
-///@arg *rot
-function Battle_CreateBoardExtra(){
-	var X = argument[0];
-	var Y = argument[1];
-	var ROT = 0
-	if(argument_count >= 3){
-		ROT = argument[2];
-	}
-	
+function Battle_CreateBoardExtra(X, Y, ROT=0){
 	extra = instance_create_depth(X,Y,0,battle_board_extra);
 	extra.rotSpeed = ROT;
 	ds_list_add(global.borders_list,extra);
-	
 	return extra;
 }
 

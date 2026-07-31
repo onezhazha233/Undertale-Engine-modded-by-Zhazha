@@ -1,6 +1,5 @@
 ///@arg text
-function GetPlainText(){
-	var TEXT = argument[0];
+function GetPlainText(TEXT){
 	
 	var len = string_length(TEXT);
     var result = "";

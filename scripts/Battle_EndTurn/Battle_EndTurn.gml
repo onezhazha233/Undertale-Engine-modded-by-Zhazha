@@ -1,4 +1,4 @@
-function Battle_EndTurn() {
+function Battle_EndTurn(){
 	if(Battle_GetState()==BATTLE_STATE.IN_TURN){
 		Battle_SetTurnNumber(Battle_GetTurnNumber()+1);
 	
@@ -29,6 +29,4 @@ function Battle_EndTurn() {
 	}else{
 		return false;
 	}
-
-
 }

@@ -1,4 +1,4 @@
-var ENCOUNTER=Flag_Get(FLAG_TYPE.TEMP,FLAG_TEMP.ENCOUNTER);
+var ENCOUNTER=Flag_Get(FLAG_TEMP,"encounter");
 _enemy_object[0]=Encounter_GetEnemy(ENCOUNTER,0);
 _enemy_object[1]=Encounter_GetEnemy(ENCOUNTER,1);
 _enemy_object[2]=Encounter_GetEnemy(ENCOUNTER,2);

@@ -1,4 +1,4 @@
-function Console_UndefineAllMacro() {
+function Console_UndefineAllMacro(){
 	if(GMU_CONSOLE_ENABLED){
 		var map=global._gmu_console_map_macro;
 		ds_map_clear(map);
@@ -6,6 +6,4 @@ function Console_UndefineAllMacro() {
 	}else{
 		return false;
 	}
-
-
 }

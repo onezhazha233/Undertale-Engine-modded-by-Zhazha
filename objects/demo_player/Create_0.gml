@@ -1,4 +1,4 @@
-_buffer=buffer_base64_decode(Flag_Get(FLAG_TYPE.DEMO,FLAG_DEMO.DATA,""));
+_buffer=buffer_base64_decode(Flag_Get(FLAG_DEMO,"data",""));
 _seed=0;
 _input_number=0;
 _input_list=ds_list_create();

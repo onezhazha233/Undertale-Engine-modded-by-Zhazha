@@ -12,18 +12,34 @@ draw_set_alpha(1)
 gpu_set_blendenable(true)
 gpu_set_colorwriteenable(1, 1, 1, 1)
 surface_reset_target()
+with(battle_board_cover){
+	if(instance_exists(id)){
+		surface_set_target(battle_board._surface3)
+		gpu_set_colorwriteenable(0,0,0,1)
+		gpu_set_blendenable(false)
+		draw_set_alpha(1)
+		draw_sprite_ext(spr_pixel,0,_bg_x,_bg_y,_bg_width,_bg_height,_angle,c_white,1)
+		gpu_set_blendenable(true)
+		gpu_set_colorwriteenable(1,1,1,1)
+		surface_reset_target()
+	}
+}
 
 surface_set_target(_surface4)
+gpu_set_blendmode_ext(bm_one,bm_inv_src_alpha);
 draw_surface(_surface,0,0);
+gpu_set_blendmode(bm_normal);
 surface_reset_target();
 
 surface_set_target(_surface)
-	draw_clear_alpha(color_bg,0);
+draw_clear_alpha(color_bg,0);
 surface_reset_target();
 
 surface_set_target(_surface)
 draw_surface_ext(application_surface,camera.x+camera._shake_pos_x,camera.y+camera._shake_pos_y,1/camera.scale_x,1/camera.scale_y,0,c_white,1-alpha_bg);
+gpu_set_blendmode_ext(bm_one,bm_inv_src_alpha);
 draw_surface(_surface4,0,0);
+gpu_set_blendmode(bm_normal);
 surface_reset_target();
 
 

@@ -1,1 +1,1 @@
-ds_list_destroy(_collision_list);
+if(variable_instance_exists(id,"_collision_list"))ds_list_destroy(_collision_list);

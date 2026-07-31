@@ -1,13 +1,8 @@
-///@arg board
 ///@arg vertex_x
 ///@arg vertex_y
-function Battle_AddBoardExtraVertex(){
-	var BOARD = argument[0];
-	var X = argument[1];
-	var Y = argument[2];
+function Battle_AddBoardExtraVertex(BOARD, X, Y){
 	var VERTEXLIST = BOARD.listVertex;
-	
-	ds_list_add(VERTEXLIST,[X,Y])
+	ds_list_add(VERTEXLIST,[X,Y]);
 	BOARD.updateDivide();
 }
 

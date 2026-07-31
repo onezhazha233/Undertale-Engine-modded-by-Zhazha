@@ -1,4 +1,4 @@
-function Anim_Init() {
+function Anim_Init(){
 	//GMU_Anim v3.0.0
 
 	global._gmu_anim_list=ds_list_create();
@@ -39,6 +39,4 @@ function Anim_Init() {
 		ARG_1,
 		TIME
 	};
-
-
 }

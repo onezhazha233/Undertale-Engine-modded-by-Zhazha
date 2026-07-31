@@ -1,9 +1,9 @@
-function Macro_Shop(){
+function Macro_Shop() {
 	enum SHOP_STATE{
 		MENU,
 		DIALOG
 	};
-	
+
 	enum SHOP_MENU{
 		MENU,
 		BUY,
@@ -11,44 +11,49 @@ function Macro_Shop(){
 		TALK,
 		EXIT
 	};
-	
+
+	/// Main-menu slot actions. TAKE = BUY + free; STEAL/READ = DIALOG (effects via typer cmds).
+	enum SHOP_MAIN_ACTION{
+		BUY,
+		SELL,
+		TALK,
+		EXIT,
+		DIALOG
+	};
+
 	enum SHOP_BUY{
 		MENU,
 		CONFIRM
 	};
-	
+
 	enum SHOP_BUY_RESULT{
 		NULL,
 		YES,
 		NO,
 		NO_MONEY,
 		NO_ROOM,
-		UNABLE
+		UNABLE,
+		SOLD_OUT
 	};
-	
+
 	enum SHOP_BUYABLE{
-		BUYABLE=0,
-		UNBUYABLE=1,
-		SELLOUT=2
+		BUYABLE=0,   // can buy / take (free)
+		UNBUYABLE=1, // locked or display; host may later SetBuyBuyable → BUYABLE
+		SELLOUT=2    // stock empty; still listed
 	};
-	
+
 	enum SHOP_SELL{
 		MENU,
 		CONFIRM
 	};
-	
+
 	enum SHOP_SELL_RESULT{
 		NULL,
 		YES,
 		NO,
 		UNABLE
 	};
-	
-	enum SHOP_SELLABLE{
-		SELLABLE=0,
-		UNSELLABLE=1
-	};
-	
+
 	enum SHOP_HOST_EVENT{
 		SHOP_INIT,
 		MAIN_MENU_START,

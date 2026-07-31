@@ -2,32 +2,71 @@ _voice_played=false;
 
 event_user(4);
 
+if(!_text_measured&&text!=""){
+	var m=Measure(text);
+	_measure_w=m[0];
+	_measure_h=m[1];
+	_text_measured=true;
+	AlignApply();
+	if(_mini_auto_layout){
+        _mini_positions=ScanMinis(text);
+        _mini_pos_index=0;
+    }
+}
+
 if(_paused&&Input_IsPressed(INPUT.CONFIRM)){
 	_paused=false;
 }
+if(_skip&&_skip_enabled&&!_paused&&Input_IsPressed(INPUT.CANCEL)){
+	_skipping=true;
+	_sleep=0;
+	_char_frame_remain=0;
+}
+
+if(_skip&&_super_skip&&Input_IsHeld(INPUT.MENU)&&_choice==-1&&_char_proc<=string_length(text)){
+	if(_super_skip_mode==0){
+		_paused=false;
+		_skipping=true;
+		_sleep=0;
+		_char_frame_remain=0;
+	}else{
+		_paused=false;
+		_sleep=0;
+		_char_frame_remain=0;
+	}
+}
 if(_choice!=-1){
-	if(_choice_switch_direction = 0){
-		_choice_switch_key = [INPUT.LEFT,INPUT.RIGHT];
-	}
-	if(_choice_switch_direction = 1){
-		_choice_switch_key = [INPUT.UP,INPUT.DOWN];
-	}
-	if(Input_IsPressed(_choice_switch_key[0])){
-		_choice=(_choice=0 ? array_length(_choice_x)-1 : _choice-1);
-		if(_choice_switch_sound = 1)audio_play_sound(snd_menu_switch,0,false);
-	}
-	if(Input_IsPressed(_choice_switch_key[1])){
-		_choice=(_choice=array_length(_choice_x)-1 ? 0 : _choice+1);
-		if(_choice_switch_sound = 1)audio_play_sound(snd_menu_switch,0,false);
+	if(_choice_dir==0){
+		if(Input_IsPressed(INPUT.RIGHT)){
+			_choice=(_choice+1)%_choice_count;
+			if(_choice_switch_snd){
+				audio_play_sound(snd_menu_switch,0,false);
+			}
+		}else if(Input_IsPressed(INPUT.LEFT)){
+			_choice=(_choice-1+_choice_count)%_choice_count;
+			if(_choice_switch_snd){
+				audio_play_sound(snd_menu_switch,0,false);
+			}
+		}
+	}else{
+		if(Input_IsPressed(INPUT.DOWN)){
+			_choice=(_choice+1)%_choice_count;
+			if(_choice_switch_snd){
+				audio_play_sound(snd_menu_switch,0,false);
+			}
+		}else if(Input_IsPressed(INPUT.UP)){
+			_choice=(_choice-1+_choice_count)%_choice_count;
+			if(_choice_switch_snd){
+				audio_play_sound(snd_menu_switch,0,false);
+			}
+		}
 	}
 	if(Input_IsPressed(INPUT.CONFIRM)){
-		if(is_string(_choice_macro)){
-			ds_map_delete(_map_macro,_choice_macro);
-			ds_map_add(_map_macro,_choice_macro,_choice);
-		}
-		Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE,_choice);
+		Flag_Set(FLAG_TEMP,"text_typer_choice",_choice);
 		_choice=-1;
-		if(_choice_switch_sound = 1)audio_play_sound(snd_menu_confirm,0,false);
+		if(_choice_confirm_snd){
+			audio_play_sound(snd_menu_confirm,0,false);
+		}
 	}
 }
 
@@ -54,8 +93,8 @@ if(_char_proc<string_length(text)+1){
 									if((cmd_char==" "||cmd_char=="}")&&!str_input){
 										if(!str_mode){
 											if(!ds_list_empty(_list_cmd)){
-												if(ds_map_exists(_map_macro,cmd)){
-													cmd=ds_map_find_value(_map_macro,cmd);
+												if(variable_struct_exists(_map_macro,cmd)){
+													cmd=_map_macro[$ cmd];
 												}else{
 													cmd=real(cmd);
 												}
@@ -84,7 +123,7 @@ if(_char_proc<string_length(text)+1){
 									_char_proc+=1;
 								}
 								if(loop){
-									Console_OutputLine("WARNING! Text typer command is not valid in \""+text+"\"!");
+									show_debug_message("WARNING! Text typer command is not valid in \""+text+"\"!");
 								}
 							}
 							
@@ -116,16 +155,34 @@ if(_char_proc<string_length(text)+1){
 		}
 	}
 }
-if(_skippable&&!_paused&&Input_IsPressed(INPUT.CANCEL)&&_skip_enabled){
-	_skipping=true;
-	_sleep=0;
-	_char_frame_remain=0;
+
+if(_auto_destroy&&_char_proc>string_length(text)){
+	if(_auto_destroy_timer==-1){
+		_auto_destroy_timer=_auto_destroy_delay;
+	}
+	if(_auto_destroy_timer>0){
+		_auto_destroy_timer-=1;
+	}else{
+		instance_destroy();
+	}
+}
+
+if(_char_proc>string_length(text)&&!_end_callback_fired){
+	_end_callback_fired=true;
+	TriggerCallback(1);
 }
 
 if(instance_exists(_face)){
 	_face.gui=_gui;
 	_face.depth=depth;
-	_face.talking=(!_sleep&&!_paused&&_char_proc<=string_length(text));
+	if(variable_instance_exists(id,"_is_mini")&&_is_mini){
+		_face.talking=false;
+	}else{
+		_face.talking=(!_sleep&&!_paused&&_char_proc<=string_length(text));
+	}
+	if(override_alpha_enabled){
+		_face.image_alpha=override_alpha;
+	}
 }
 
 if(_face_linked!=-1){
@@ -153,6 +210,7 @@ if(_char_linked!=-1){
 }
 
 if(override_alpha_enabled||override_color_text_enabled){
+	if(!ds_exists(_list_inst,ds_type_list)) exit;
 	var proc=0;
 	repeat(ds_list_size(_list_inst)){
 		var INST=ds_list_find_value(_list_inst,proc);
@@ -178,7 +236,64 @@ if(override_alpha_enabled||override_color_text_enabled){
 	}
 }
 
-ttime += 9
-for(i=0;i<10;i+=1){
-	torder[i] = ttime + i*36;
+if(_position_follow||_angle_follow){
+	if(!ds_exists(_list_inst,ds_type_list)) exit;
+	var proc=0;
+	repeat(ds_list_size(_list_inst)){
+		var INST=ds_list_find_value(_list_inst,proc);
+		if(instance_exists(INST)){
+			var rot=RotateXY(x+INST._deltaX, y+INST._deltaY, x, y, _angle);
+			INST.x=rot[0];
+			INST.y=rot[1];
+			if(_angle_follow){
+				INST.angle=_angle;
+			}
+		}
+		proc+=1;
+	}
+}
+
+_time+=1;
+
+for(_i=0;_i<10;_i+=1){
+	torder[_i]=_time*9+_i*36;
+}
+
+if(_voice_mode==1&&_voice>=0){
+	var typing=_char_proc<=string_length(text)&&!_paused&&_sleep==0&&!_skipping&&!_instant;
+	if(typing){
+		_voice_mode_timer-=1;
+		if(_voice_mode_timer<=0){
+			_voice_mode_timer=_voice_mode_interval;
+			var sound_index=-1;
+			if(_voice_single>=0&&_voice_single<array_length(_group_voice[_voice])){
+				sound_index=_voice_single;
+			}else{
+				sound_index=irandom(array_length(_group_voice[_voice])-1);
+			}
+			var sound=_group_voice[_voice,sound_index];
+			if(audio_exists(sound)){
+				if(_group_voice_stop[_voice,sound_index]){
+					audio_stop_sound(sound);
+				}
+				_voice_loop_snd=audio_play_sound(sound,0,false);
+				var _pitch=_audio_pitch;
+				if(is_method(_pitch)){
+					_pitch=_pitch();
+				}
+				if(_super_skip&&_super_skip_mode==1&&Input_IsHeld(INPUT.MENU)){
+					_pitch+=0.3;
+				}
+				if(_pitch!=1){
+					audio_sound_pitch(_voice_loop_snd,_pitch);
+				}
+			}
+		}
+	}else{
+		_voice_mode_timer=0;
+		if(_voice_loop_snd!=-1){
+			audio_stop_sound(_voice_loop_snd);
+			_voice_loop_snd=-1;
+		}
+	}
 }

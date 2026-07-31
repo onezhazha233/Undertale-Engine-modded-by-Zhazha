@@ -1,6 +1,5 @@
 ///@arg enemy_slot
-function Battle_IsEnemyCenter(){
-	var ENEMY=argument[0];
+function Battle_IsEnemyCenter(ENEMY){
 
 	if(Battle_GetEnemyNumber() = 3){
 		if(Battle_IsEnemyValid(Battle_GetEnemy(ENEMY))){

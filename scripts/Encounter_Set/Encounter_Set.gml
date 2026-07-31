@@ -1,44 +1,4 @@
-///@arg id
-///@arg enemy_0
-///@arg enemy_1
-///@arg enemy_2
-///@arg menu_dialog
-///@arg bgm*
-///@arg menu_mercy_flee_enabled*
-///@arg pause_bgm*
-///@arg quick*
-///@arg soul_x*
-///@arg soul_y*
-function Encounter_Set() {
-	var ID=argument[0];
-	var ENEMY_0=argument[1];
-	var ENEMY_1=argument[2];
-	var ENEMY_2=argument[3];
-	var MENU_DIALOG=argument[4];
-	var BGM=-1;
-	var MENU_MERCY_FLEE_ENABLED=true;
-	var PAUSE_BGM=true;
-	var QUICK=0;
-	var SOUL_X=48;
-	var SOUL_Y=454;
-	if(argument_count>=6){
-		BGM=argument[5];
-	}
-	if(argument_count>=7){
-		MENU_MERCY_FLEE_ENABLED=argument[6];
-	}
-	if(argument_count>=8){
-		PAUSE_BGM=argument[7];
-	}
-	if(argument_count>=9){
-		QUICK=argument[8];
-	}
-	if(argument_count>=10){
-		SOUL_X=argument[9];
-	}
-	if(argument_count>=11){
-		SOUL_Y=argument[10];
-	}
+function Encounter_Set(ID, ENEMY_0, ENEMY_1, ENEMY_2, MENU_DIALOG, BGM=-1, MENU_MERCY_FLEE_ENABLED=true, PAUSE_BGM=true, QUICK=0, SOUL_X=48, SOUL_Y=454){
 
 
 	if(ID>=0){
@@ -65,6 +25,4 @@ function Encounter_Set() {
 	}else{
 		return false;
 	}
-
-
 }

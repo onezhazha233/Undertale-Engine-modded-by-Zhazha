@@ -1,0 +1,11 @@
+surface_set_target(battle_board._surface1)
+gpu_set_alphatestenable(0)
+gpu_set_blendmode(bm_normal)
+gpu_set_blendenable(false)
+gpu_set_colorwriteenable(0,0,0,1)
+draw_set_alpha(1)
+draw_sprite_ext(spr_pixel,0,_bg_x,_bg_y,_bg_width,_bg_height,_angle,c_white,1);
+draw_set_alpha(1)
+gpu_set_blendenable(true)
+gpu_set_colorwriteenable(1,1,1,1)
+surface_reset_target()

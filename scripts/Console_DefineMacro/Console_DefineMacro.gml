@@ -1,9 +1,5 @@
-///@arg key
-///@arg value
-function Console_DefineMacro() {
+function Console_DefineMacro(KEY, VALUE){
 	if(GMU_CONSOLE_ENABLED){
-		var KEY=argument[0];
-		var VALUE=argument[1];
 
 		if(is_string(KEY)&&(is_real(VALUE)||is_string(VALUE))){
 			if(!Console_IsRealString(KEY)){
@@ -23,6 +19,4 @@ function Console_DefineMacro() {
 	}else{
 		return false;
 	}
-
-
 }

@@ -1,8 +1,5 @@
 ///@arg turn_number
-function Battle_SetTurnNumber() {
-
-	battle._turn_number=argument[0];
+function Battle_SetTurnNumber(NUMBER){
+	battle._turn_number=NUMBER;
 	return true;
-
-
 }

@@ -1,13 +1,8 @@
 ///@arg base_damage
 ///@arg damage_min*
 ///@arg damage_max*
-function Player_CalculateDamage() {
-
-	var DAMAGE=argument[0];
-	var MIN=1;
-	var MAX=undefined;
-
-	var HP=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.HP);
+function Player_CalculateDamage(DAMAGE, MIN=1, MAX=undefined){
+	var HP=Flag_Get(FLAG_STATIC,"hp");
 	var DEF=Player_GetDefTotal();
 	DAMAGE+=(HP>=20 ? ceil((HP-20)/10) : 0);
 	DAMAGE-=DEF/5;
@@ -25,6 +20,4 @@ function Player_CalculateDamage() {
 	}
 
 	return DAMAGE;
-
-
 }

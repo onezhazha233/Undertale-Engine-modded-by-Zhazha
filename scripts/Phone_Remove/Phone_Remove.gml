@@ -1,6 +1,5 @@
 ///@arg phone_slot
-function Phone_Remove() {
-	var SLOT=argument[0];
+function Phone_Remove(SLOT){
 
 	if(Phone_IsSlotValid(SLOT)){
 		if(Phone_IsValid(Phone_Get(SLOT))){
@@ -12,6 +11,4 @@ function Phone_Remove() {
 	}else{
 		return false;
 	}
-
-
 }

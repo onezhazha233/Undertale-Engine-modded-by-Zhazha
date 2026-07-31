@@ -1,5 +1,5 @@
 {
-  "option_windows_display_name": "UNDERTALE Engine",
+  "option_windows_display_name": "UNDERTALE Engine Modded By Zhazha",
   "option_windows_executable_name": "${project_name}",
   "option_windows_version": "0.0.0.0",
   "option_windows_company_info": "TML",

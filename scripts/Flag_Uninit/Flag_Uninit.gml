@@ -1,4 +1,7 @@
-function Flag_Uninit() {
+function Flag_Uninit(){
+	global.flag ={};
+	return true;
+	/*
 	var map=global._flag;
 	while(!ds_map_empty(map)){
 		var key=ds_map_find_first(map);
@@ -6,8 +9,5 @@ function Flag_Uninit() {
 		ds_map_destroy(map_f);
 		ds_map_delete(map,key);
 	}
-	ds_map_destroy(map);
-	return true;
-
-
+	ds_map_destroy(map);*/
 }

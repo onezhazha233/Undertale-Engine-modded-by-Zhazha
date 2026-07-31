@@ -1,10 +1,4 @@
-///@arg plot
-///@arg value
-function Player_SetPlot() {
-	var PLOT=argument[0];
-	var VALUE=argument[1];
-
-	Flag_Set(FLAG_TYPE.PLOT,PLOT,VALUE);
-
+function Player_SetPlot(PLOT, VALUE){
+	Flag_Set(FLAG_PLOT, PLOT, VALUE);
 	return true;
 }

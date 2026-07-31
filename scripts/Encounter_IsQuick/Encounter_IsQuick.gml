@@ -1,6 +1,5 @@
 ///@arg encounter_id
-function Encounter_IsQuick() {
-	var ID=argument[0];
+function Encounter_IsQuick(ID){
 
 	var map=global._encounter;
 	if(ds_map_exists(map,ID)){
@@ -10,6 +9,4 @@ function Encounter_IsQuick() {
 	}else{
 		return true;
 	}
-
-
 }

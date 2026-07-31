@@ -1,0 +1,31 @@
+{
+    "menu.instruction": "{color_text `ltgray`} --- 游戏教学 ---{space_y -1}&&{space_y 2}[Z 或 ENTER] - 确认&[X 或 SHIFT] - 取消&[C 或 CTRL] - 菜单 (游戏内)&[F4] - 全屏化&[长按 Esc] - 退出&当HP为0时，你就输了。",
+    "menu.begin": "开始游戏",
+    "menu.settings": "游戏设置",
+    "menu.continue": "继续",
+    "menu.reset": "重置",
+    "menu.reset.true": "真正的重置",
+
+    "menu.naming.title": "为坠落的人类命名。",
+    "menu.naming.quit": "退出",
+    "menu.naming.backspace": "退格",
+    "menu.naming.done": "完成",
+
+    "menu.yes": "是",
+    "menu.no": "否",
+
+    "menu.confirm.title": "是这个名字没错了吗？",
+    "menu.confirm.title.reset": "已经选择一个名字了。",
+    "menu.confirm.title.aaaaaa": "不是很有创造性...？",
+    "menu.confirm.title.alphys": "别-别这样。",
+    "menu.confirm.title.alphy": "呃....行？",
+    "menu.confirm.title.asgore": "你不能。",
+    "menu.confirm.title.toriel": "我觉得你应该&想一个属于自己&的名字，我的孩子。",
+    "menu.confirm.title.asriel": "...",
+    "menu.confirm.title.flowey": "我已经选了&那个名字。",
+    "menu.confirm.title.sans": "没门。",
+    "menu.confirm.title.papyru": "我准了！！！！",
+    "menu.confirm.title.undyne": "找自己的名字去！",
+    "menu.confirm.title.mtt": "噢噢噢！！！&你在推广我的品牌吗？",
+    "menu.confirm.title.chara": "真正的名字。"
+}

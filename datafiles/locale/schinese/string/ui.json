@@ -1,0 +1,22 @@
+{
+    "ui.menu.item": "物品",
+    "ui.menu.item.use": "使用",
+    "ui.menu.item.info": "说明",
+    "ui.menu.item.drop": "丢弃",
+
+    "ui.menu.stat": "状态",
+    "ui.menu.stat.0": "\"{insert NAME}\"{space_y -1}&&{space_y 0}LV  {insert LV}&HP  {insert HP}/{insert HP_MAX}&&攻击 {insert ATK} ({insert ATK_ITEM})&防御 {insert DEF} ({insert DEF_ITEM}){space_y -1}&&{space_y 0}武器: {insert WEAPON}&防具: {insert ARMOR}{space_y 4}&{space_y 0}金钱: {insert GOLD}",
+    "ui.menu.stat.1": "EXP: {insert EXP}&还需: {insert EXP_NEXT}",
+    "ui.menu.stat.2": "{space_y -1}&&{space_y 0}&{space_y 4}&{space_y 0}击杀: {insert KILLS}",
+
+    "ui.menu.phone": "电话",
+
+    "ui.save.name.empty": "空",
+    "ui.save.save": "保存",
+    "ui.save.return": "取消",
+    "ui.save.saved": "档案已保存。",
+
+    "ui.box.inventory": "物品栏",
+    "ui.box.box": "箱子",
+    "ui.box.finish": "按下[X]键结束"
+}

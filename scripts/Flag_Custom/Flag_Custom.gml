@@ -1,32 +1,43 @@
-function Flag_Custom() {
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.NAME,"PLAYER");
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.LV,1);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.HP_MAX,20);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.HP,20);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM,-1);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM+1,-1);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM+2,-1);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM+3,-1);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM+4,-1);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM+5,-1);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM+6,-1);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM+7,-1);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM_WEAPON,-1);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM_ARMOR,-1);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.ATK,10);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.DEF,10);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.SPD,2);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.INV,40);
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.BATTLE_MENU_FIGHT_OBJ,battle_menu_fight_knife);
-
-	Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.BATTLE_ROOM_RETURN,-1);
-	Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TRIGGER_WARP_LANDMARK,noone);
-	Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TRIGGER_WARP_DIR,-1);
-	Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE,-1);
-
-	Item_SetWeapon(item_stick);
-	Item_SetArmor(item_bandage);
-	Item_Add(item_tml);
-
-
+function Flag_Custom(){
+	#macro FLAG_STATIC "static"
+	var flag_static = new Flag_Storage();
+	Flag_RegisterType(FLAG_STATIC,flag_static);
+	Flag_CustomStatic();
+	
+	/* FLAG_SETTINGS 已移至 Flag_Init，避免被重置
+	#macro FLAG_SETTINGS "settings"
+	var flag_settings = new Flag_Storage();
+	Flag_RegisterType(FLAG_SETTINGS,flag_settings);
+	Flag_CustomSettings();
+	*/
+	
+	#macro FLAG_DYNAMIC "dynamic"
+	var flag_dynamic = new Flag_Storage();
+	Flag_RegisterType(FLAG_DYNAMIC,flag_dynamic);
+	Flag_CustomDynamic();
+	
+	#macro FLAG_TEMP "temp"
+	var flag_temp = new Flag_Storage();
+	Flag_RegisterType(FLAG_TEMP,flag_temp);
+	Flag_CustomTemp();
+	
+	#macro FLAG_INFO "info"
+	var flag_info = new Flag_Storage();
+	Flag_RegisterType(FLAG_INFO,flag_info);
+	Flag_CustomInfo();
+	
+	#macro FLAG_BINDINGS "bindings"
+	var flag_bindings = new Flag_Storage();
+	Flag_RegisterType(FLAG_BINDINGS,flag_bindings);
+	Flag_CustomBindings();
+	
+	#macro FLAG_PLOT "plot"
+	var flag_plot = new Flag_Storage();
+	Flag_RegisterType(FLAG_PLOT,flag_plot);
+	Flag_CustomPlot();
+	
+	#macro FLAG_DEMO "demo"
+	var flag_demo = new Flag_Storage();
+	Flag_RegisterType(FLAG_DEMO,flag_demo);
+	Flag_CustomDemo();
 }

@@ -1,42 +1,33 @@
-if(Shop_GetMenu() = SHOP_MENU.BUY||Shop_GetMenuBuy() = SHOP_BUY.CONFIRM){
-	if!(shop._buy_choice = 4){
-		_yoffset += (0-_yoffset)/3;
-		if(abs(_yoffset) < 1)_yoffset = 0;
-		
-		if(instance_exists(_inst_itemdesc)){
-			_inst_itemdesc.x = 448;
-			_inst_itemdesc.y = 95+_yoffset;
-			if!(shop._itemdesc_dialog = _prefix + Shop_GetBuyDesc(Shop_GetBuyChoice())){
-				if(instance_exists(_inst_itemdesc)){
-					instance_destroy(_inst_itemdesc);
-				}
-				shop._itemdesc_dialog =  _prefix + Shop_GetBuyDesc(Shop_GetBuyChoice());
-				shop._inst_itemdesc = instance_create_depth(448,95,0,text_typer);
-				shop._inst_itemdesc.text = shop._itemdesc_dialog;
-				_inst_itemdesc = shop._inst_itemdesc;
-			}
+if(!instance_exists(shop))exit;
+
+if((Shop_GetMenu()==SHOP_MENU.BUY||Shop_GetMenuBuy()==SHOP_BUY.CONFIRM)&&Shop_GetState()!=SHOP_STATE.DIALOG){
+	if(shop._buy_choice!=4){
+		_yoffset+=((0-_yoffset)*0.1835);
+		if(abs(_yoffset)<1)_yoffset=0;
+		var want=_prefix+Shop_GetBuyDesc(Shop_GetBuyChoice());
+		var dx=448+Lang_GetLayout("shop.itemdesc.x",0);
+		var dy=95+Lang_GetLayout("shop.itemdesc.y",0)+_yoffset;
+		if(!instance_exists(_inst_itemdesc)||shop._itemdesc_dialog!=want){
+			if(instance_exists(_inst_itemdesc))instance_destroy(_inst_itemdesc);
+			shop._itemdesc_dialog=want;
+			_inst_itemdesc=instance_create_depth(dx,dy,DEPTH_SHOP.DIALOG,text_typer);
+			_inst_itemdesc.text=want;
+			shop._inst_itemdesc=_inst_itemdesc;
+		}else{
+			_inst_itemdesc.x=dx;
+			_inst_itemdesc.y=dy;
 		}
-		else{
-			shop._itemdesc_dialog = _prefix + Shop_GetBuyDesc(Shop_GetBuyChoice());
-			shop._inst_itemdesc = instance_create_depth(448,98+159,0,text_typer);
-			shop._inst_itemdesc.text = shop._itemdesc_dialog;
-			_inst_itemdesc = shop._inst_itemdesc;
-		}
-	}
-	else{
-		_yoffset += (162-_yoffset)/3;
-		if(abs(_yoffset-162) < 1)_yoffset = 162;
-		
+	}else{
+		_yoffset+=((162-_yoffset)*0.1835);
 		if(instance_exists(_inst_itemdesc)){
 			instance_destroy(_inst_itemdesc);
+			_inst_itemdesc=noone;
 		}
 	}
-}
-else{
-	_yoffset += (162-_yoffset)/3;
-	if(abs(_yoffset) < 1)_yoffset = 0;
-	
+}else{
+	_yoffset+=((162-_yoffset)*0.1835);
 	if(instance_exists(_inst_itemdesc)){
 		instance_destroy(_inst_itemdesc);
+		_inst_itemdesc=noone;
 	}
 }

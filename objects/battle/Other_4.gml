@@ -9,7 +9,7 @@ instance_create_depth(500,432,0,battle_button_mercy);
 instance_create_depth(0,0,0,battle_misc)
 Battle_SetSoul(battle_soul_red);
 
-var ENCOUNTER=Flag_Get(FLAG_TYPE.TEMP,FLAG_TEMP.ENCOUNTER);
+var ENCOUNTER=Flag_Get(FLAG_TEMP,"encounter");
 var BGM=Encounter_GetBGM(ENCOUNTER);
 if(audio_exists(BGM)){
 	BGM_Play(5,BGM);

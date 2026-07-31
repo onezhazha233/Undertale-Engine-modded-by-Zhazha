@@ -1,7 +1,6 @@
 ///@arg key
-function Console_UndefineMacro() {
+function Console_UndefineMacro(KEY){
 	if(GMU_CONSOLE_ENABLED){
-		var KEY=argument[0];
 	
 		var map=global._gmu_console_map_macro;
 		if(ds_map_exists(map,KEY)){
@@ -13,6 +12,4 @@ function Console_UndefineMacro() {
 	}else{
 		return false;
 	}
-
-
 }

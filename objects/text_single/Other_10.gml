@@ -1,46 +1,11 @@
 ///@desc Draw
-RenderCharEval();
-
-var HALIGN_ORI = draw_get_halign();
-draw_set_halign(halign);
-draw_set_valign(valign);
-
-if(font_exists(font)||FORCE_TYPE=1){
-	draw_set_font(font);
-	if(shadow){
-		RenderCharFixed(shadow_x * scale_x, shadow_y * scale_y, color_shadow, _tmpAS);
-	}
-	if(outline){	
-		var XO_OH = lengthdir_x(1,angle);
-		var YO_OH = lengthdir_y(1,angle);
-		var XO_OV = lengthdir_x(1,angle-90);
-		var YO_OV = lengthdir_y(1,angle-90);
-		for(PROC=1;PROC<= scale_x;PROC+=1){
-			RenderCharFixed(XO_OH*PROC,YO_OH*PROC,color_outline,_tmpAO);
-			RenderCharFixed(-XO_OH*PROC,-YO_OH*PROC,color_outline,_tmpAO);
-		}
-		for(PROC=1;PROC<= scale_y;PROC+=1){
-			RenderCharFixed(XO_OV*PROC,YO_OV*PROC,color_outline,_tmpAO);
-			RenderCharFixed(-XO_OV*PROC,-YO_OV*PROC,color_outline,_tmpAO);
-		}
-	}
-	RenderCharFixed(0,0);
+var surf=-1;
+if(instance_exists(_parent)){
+	surf=_parent._surface;
 }
-
-if(sprite_exists(sprite)){
-	RenderSprFixed(0,0);
+if(surface_exists(surf)){
+	surface_set_target(surf);
 }
-
-/*
-draw_set_halign(1);
-draw_set_valign(1);
-draw_text(x, y, _line)
-*/
-
-draw_set_halign(HALIGN_ORI);
-/*live;
-///@desc Draw
-draw_set_halign(align=0 ? fa_left : (align=1 ? fa_center : fa_right))
 if(font_exists(font)){
 	draw_set_font(font);
 	if(shadow){
@@ -63,6 +28,8 @@ if(font_exists(font)){
 	draw_text_transformed_color(x+_offset_x,y+_offset_y,text,scale_x,scale_y,angle,color_text[0],color_text[1],color_text[3],color_text[2],alpha_text*alpha);
 }
 if(sprite_exists(sprite)){
-	draw_sprite_ext(sprite,sprite_image,x+_offset_x,y+_offset_y,scale_x,scale_y,angle,color_text[0],alpha_text*alpha);
+	draw_sprite_ext(sprite,image_index,x+_offset_x,y+_offset_y,scale_x,scale_y,angle,color_text[0],alpha_text*alpha);
 }
-draw_set_halign(fa_left)
+if(surface_exists(surf)){
+	surface_reset_target();
+}

@@ -1,5 +1,3 @@
-function Demo_IsPlaying() {
+function Demo_IsPlaying(){
 	return instance_exists(demo_player);
-
-
 }

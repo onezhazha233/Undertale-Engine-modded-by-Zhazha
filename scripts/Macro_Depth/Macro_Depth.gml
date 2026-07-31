@@ -3,7 +3,17 @@ function Macro_Depth() {
 		PANEL=-100,
 		TEXT=-200,
 		ENCOUNTER_ANIM=-300,
-		FADER=-400
+		FADER=-3500,
+		GUI=-3600,
+		WORLD=-3800,
+		DEBUG=-3900
+	};
+
+	enum DEPTH_SHOP{
+		BG=-100,
+		HOST=-200,
+		UI=-300,
+		DIALOG=-400
 	};
 
 	enum DEPTH_BATTLE{
@@ -19,11 +29,5 @@ function Macro_Depth() {
 		BULLET_OUTSIDE_HIGH=-1000
 	};
 
-	enum DEPTH_SHOP{
-		HOST = -100,
-		UI_ITEMDESC = -200,
-		ITEMDESC = -300,
-		UI = -400,
-		DIALOG = -500
-	};
+
 }

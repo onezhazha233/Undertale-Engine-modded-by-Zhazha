@@ -28,7 +28,7 @@ if(_state==-1){
 				event_user(1);
 			}
 		}else{
-			var target=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.BOX+10*box_slot+_choice_item);
+			var target = Flag_Get(FLAG_STATIC,"box"+string(box_slot)).Get(_choice_item);
 			if(Item_IsValid(target) && Item_GetNumber()<8){
 				Box_Remove(box_slot,_choice_item);
 				Item_Add(target);

@@ -6,3 +6,4 @@ Lang_Uninit();
 Input_Uninit();
 Console_Uninit();
 Demo_Uninit();
+Event_Init();

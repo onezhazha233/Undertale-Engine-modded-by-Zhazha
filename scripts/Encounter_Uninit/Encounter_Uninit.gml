@@ -1,4 +1,4 @@
-function Encounter_Uninit() {
+function Encounter_Uninit(){
 	var map=global._encounter;
 	while(!ds_map_empty(map)){
 		var key=ds_map_find_first(map);
@@ -8,6 +8,4 @@ function Encounter_Uninit() {
 	}
 	ds_map_destroy(map);
 	return true;
-
-
 }

@@ -1,6 +1,0 @@
-./string/battle.json
-./string/ui.json
-./string/item.json
-./string/menu.json
-./string/font.json
-./string/shop.json

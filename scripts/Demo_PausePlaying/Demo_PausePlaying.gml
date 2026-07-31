@@ -1,4 +1,4 @@
-function Demo_PausePlaying() {
+function Demo_PausePlaying(){
 	if(Demo_IsPlaying()){
 		if(!Demo_IsPlayingPaused()){
 			demo_player._paused=true;
@@ -9,6 +9,4 @@ function Demo_PausePlaying() {
 	}else{
 		return false;
 	}
-
-
 }

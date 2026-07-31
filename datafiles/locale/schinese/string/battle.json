@@ -1,0 +1,11 @@
+{
+    "battle.menu.mercy.spare": "* 饶恕",
+    "battle.menu.mercy.flee": "* 逃跑",
+    "battle.result.won": "* 你胜利了！&* 你获得了 {insert EXP} EXP和 {insert GOLD} 金钱。",
+    "battle.result.fled.0": "* 逃跑了...",
+    "battle.result.fled.1": "* 先走一步。",
+    "battle.result.fled.2": "* 我还有别的事情要做。",
+    "battle.result.fled.3": "* 别拖我后腿。",
+    "battle.result.fled.reward": "* 你逃跑了，得到 {insert EXP} EXP&  和 {insert GOLD} 金钱。",
+    "battle.result.lv_up": "* 你的LOVE增加了。"
+}

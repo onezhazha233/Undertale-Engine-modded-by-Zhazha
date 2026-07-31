@@ -1,8 +1,9 @@
 Anim_Step();
 BGM_Step();
+Event_Step();
 
 if(_time>=60){
-	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.TIME,Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.TIME)+1);
+	Flag_Set(FLAG_STATIC,"time", Flag_Get(FLAG_STATIC,"time")+1);
 	_time=0;
 }else{
 	_time+=1;

@@ -1,5 +1,3 @@
-function Macro_Engine() {
-#macro ENGINE_VERSION "v0.7.0"
-
-
+function Macro_Engine(){
+	#macro ENGINE_VERSION "v2.0"
 }

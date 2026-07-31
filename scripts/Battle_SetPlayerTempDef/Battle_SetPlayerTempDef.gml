@@ -1,7 +1,4 @@
-///@arg def
-function Battle_SetPlayerTempDef() {
-	battle._player_temp_def=argument[0];
+function Battle_SetPlayerTempDef(DEF){
+	battle._player_temp_def=DEF;
 	return true;
-
-
 }

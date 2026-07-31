@@ -23,36 +23,36 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 	var isInside2 = false;
 	var isInside3 = false;
 	var isInside4 = false;
-	for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
+	for(var i = 0; i < global.borderCount; i++){	//遍历所有框，判断是否出框
 		bb = ds_list_find_value(global.borders_list,i);
-		if(bb.contains(battle_soul.x - sprite_width/2-1, battle_soul.y)) {
+		if(bb.contains(battle_soul.x - sprite_width/2-1, battle_soul.y)){
 			isInside1 = true;
 			break;
 		}
 	}
-	for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
+	for(var i = 0; i < global.borderCount; i++){	//遍历所有框，判断是否出框
 		bb = ds_list_find_value(global.borders_list,i);
-		if(bb.contains(battle_soul.x + sprite_width/2, battle_soul.y)) {
+		if(bb.contains(battle_soul.x + sprite_width/2, battle_soul.y)){
 			isInside2 = true;
 			break;
 		}
 	}
-	for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
+	for(var i = 0; i < global.borderCount; i++){	//遍历所有框，判断是否出框
 		bb = ds_list_find_value(global.borders_list,i);
-		if(bb.contains(battle_soul.x, battle_soul.y - sprite_height/2-1)) {
+		if(bb.contains(battle_soul.x, battle_soul.y - sprite_height/2-1)){
 			isInside3 = true;
 			break;
 		}
 	}
-	for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
+	for(var i = 0; i < global.borderCount; i++){	//遍历所有框，判断是否出框
 		bb = ds_list_find_value(global.borders_list,i);
-		if(bb.contains(battle_soul.x, battle_soul.y + sprite_height/2+1)) {
+		if(bb.contains(battle_soul.x, battle_soul.y + sprite_height/2+1)){
 			isInside4 = true;
 			break;
 		}
 	}
 	
-	var SPD=Player_GetSpdTotal()
+	var SPD=Player_GetSpdTotal()*5/4;
 	var SPD=(Input_IsHeld(INPUT.CANCEL) ? SPD/2 : SPD);
 
 	xx = 0;
@@ -169,13 +169,13 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 
 	fx = 0
     fy = 0
-    if (dir == 270)
+    if(dir == 270)
         fy = 1//(sprite_height / 2)
-    else if (dir == 90)
+    else if(dir == 90)
         fy = -1//((- sprite_height) / 2)
-    else if (dir == 180)
+    else if(dir == 180)
         fx = -1//((- sprite_height) / 2)
-    else if (dir == 0)
+    else if(dir == 0)
         fx = 1//(sprite_height / 2)
 	if(instance_exists(inst_plat)&&!(abs(abs(inst_plat.angle)-abs(dir))=0||abs(abs(inst_plat.angle)-abs(dir))=180)){
 		while(place_meeting(x+fx,y+fy,inst_plat)&&place_meeting(x,y,inst_plat)){

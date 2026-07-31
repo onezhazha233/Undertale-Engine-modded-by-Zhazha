@@ -1,7 +1,6 @@
 ///@arg cmd
-function Console_ExecuteCmd() {
+function Console_ExecuteCmd(CMD){
 	if(GMU_CONSOLE_ENABLED){
-		var CMD=argument[0];
 	
 		var list=ds_list_create();
 		var result=0;
@@ -20,6 +19,4 @@ function Console_ExecuteCmd() {
 	}else{
 		return false;
 	}
-
-
 }

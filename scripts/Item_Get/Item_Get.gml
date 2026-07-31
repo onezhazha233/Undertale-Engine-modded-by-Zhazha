@@ -1,8 +1,6 @@
-///@arg item_slot
-function Item_Get() {
-	var SLOT=argument[0];
-
-	return (Item_IsSlotValid(SLOT)) ? Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ITEM+SLOT) : -1;
-
-
+function Item_Get(SLOT){
+	if(Item_IsSlotValid(SLOT)){
+		return Flag_Get(FLAG_STATIC,"item").Get(SLOT);
+	}
+	return noone;
 }

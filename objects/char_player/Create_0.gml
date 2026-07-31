@@ -1,6 +1,7 @@
 event_inherited();
 
 char_id=0;
+dir=DIR.DOWN;
 
 res_idle_sprite[DIR.UP]=spr_char_frisk_up;
 res_idle_sprite[DIR.DOWN]=spr_char_frisk_down;
@@ -16,6 +17,7 @@ move_speed[DIR.DOWN]=1.5;
 move_speed[DIR.LEFT]=1.5;
 move_speed[DIR.RIGHT]=1.5;
 
+dir_locked=false;
 moveable=true;
 _moveable_dialog=true;
 _moveable_menu=true;
@@ -23,4 +25,5 @@ _moveable_save=true;
 _moveable_warp=true;
 _moveable_encounter=true;
 _moveable_box=true;
+_moveable_shop=true;
 _moveable_shop=true;

@@ -1,7 +1,3 @@
-///@arg next_state
-function Battle_SetNextState() {
-
-	battle._state_next=argument[0];
-
-
+function Battle_SetNextState(NEXT_STATE){
+	battle._state_next=NEXT_STATE;
 }

@@ -1,4 +1,4 @@
-function BGM_Step() {
+function BGM_Step(){
 	var proc=0;
 	repeat(6){
 		var audio=BGM_GetID(proc);
@@ -15,6 +15,4 @@ function BGM_Step() {
 		proc+=1;
 	}
 	return true;
-
-
 }

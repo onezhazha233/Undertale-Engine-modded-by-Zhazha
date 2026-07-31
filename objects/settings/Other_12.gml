@@ -1,0 +1,22 @@
+///@desc Update Text Color
+_change_inst=_inst_exit;
+_change_color=(_choice==0 ? c_yellow : c_white);
+event_user(1);
+_change_inst=_inst_language_title;
+_change_color=(_choice==1 ? c_yellow : c_white);
+event_user(1);
+_change_inst=_inst_language;
+_change_color=(_choice==1 ? c_yellow : c_white);
+event_user(1);
+_change_inst=_inst_border_title;
+_change_color=(_choice==2 ? c_yellow : c_white);
+event_user(1);
+_change_inst=_inst_border;
+_change_color=(_choice==2 ? c_yellow : c_white);
+event_user(1);
+_change_inst=_inst_window_scale_title;
+_change_color=(_choice==3 ? c_yellow : c_white);
+event_user(1);
+_change_inst=_inst_window_scale;
+_change_color=(_choice==3 ? c_yellow : c_white);
+event_user(1);

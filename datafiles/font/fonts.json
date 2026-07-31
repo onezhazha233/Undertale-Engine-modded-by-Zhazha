@@ -1,0 +1,62 @@
+{
+  "dotumche": {
+    "source": "dotumche.ttf",
+    "is_sprite": false,
+    "size": 12,
+    "bold": true,
+    "italic": false,
+    "first": 32,
+    "last": 128,
+    "string_map": "",
+    "is_proportional": false,
+    "separation": 0
+  },
+  "determination_mono": {
+    "source": "determination_mono.ttf",
+    "is_sprite": false,
+    "size": 10,
+    "bold": true,
+    "italic": false,
+    "first": 32,
+    "last": 128,
+    "string_map": "",
+    "is_proportional": false,
+    "separation": 0
+  },
+  "determination_sans": {
+    "source": "determination_sans.ttf",
+    "is_sprite": false,
+    "size": 10,
+    "bold": true,
+    "italic": false,
+    "first": 32,
+    "last": 128,
+    "string_map": "",
+    "is_proportional": false,
+    "separation": 0
+  },
+  "fzpixel_main": {
+    "source": "fzpixel_main.ttf",
+    "is_sprite": false,
+    "size": 9,
+    "bold": true,
+    "italic": false,
+    "first": 32,
+    "last": 128,
+    "string_map": "",
+    "is_proportional": false,
+    "separation": 0
+  },
+  "fzpixel_battle": {
+    "source": "fzpixel_battle.ttf",
+    "is_sprite": false,
+    "size": 10.5,
+    "bold": true,
+    "italic": false,
+    "first": 32,
+    "last": 128,
+    "string_map": "",
+    "is_proportional": false,
+    "separation": 0
+  }
+}

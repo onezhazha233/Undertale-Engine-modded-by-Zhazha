@@ -1,4 +1,4 @@
-function Anim_Uninit() {
+function Anim_Uninit(){
 	ds_list_destroy(global._gmu_anim_list);
 	var key=ds_map_find_first(global._gmu_anim_data);
 	while(!is_undefined(key)){
@@ -8,6 +8,4 @@ function Anim_Uninit() {
 	}
 	ds_map_destroy(global._gmu_anim_data);
 	return true;
-
-
 }

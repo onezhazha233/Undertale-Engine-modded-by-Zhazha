@@ -2,16 +2,7 @@
 ///@arg down
 ///@arg left
 ///@arg right
-///@arg time*
-function Battle_SetBoardSize() {
-	var U=argument[0];
-	var D=argument[1];
-	var L=argument[2];
-	var R=argument[3];
-	var TIME=25;
-	if(argument_count>=5){
-		TIME=argument[4];
-	}
+function Battle_SetBoardSize(U, D, L, R, TIME=25){
 
 	if(is_real(U)){
 		if(TIME==0){

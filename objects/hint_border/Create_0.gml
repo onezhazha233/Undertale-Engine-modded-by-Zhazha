@@ -1,3 +1,3 @@
-sprite=-1;
+sprite = -1
 
 alarm[0]=1;

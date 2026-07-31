@@ -1,9 +1,5 @@
-///@arg cmd
-///@arg list
-function Console_ParseCmd() {
+function Console_ParseCmd(CMD, LIST){
 	if(GMU_CONSOLE_ENABLED){
-		var CMD=argument[0];
-		var LIST=argument[1];
 	
 		var input=CMD;
 		var list_cmd=LIST;
@@ -85,6 +81,4 @@ function Console_ParseCmd() {
 	}else{
 		return false;
 	}
-
-
 }

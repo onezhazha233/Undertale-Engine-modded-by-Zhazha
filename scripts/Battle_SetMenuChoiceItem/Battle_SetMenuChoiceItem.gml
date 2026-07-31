@@ -1,11 +1,6 @@
 ///@arg item_choice
 ///@arg call_event*
-function Battle_SetMenuChoiceItem() {
-	var SLOT=argument[0];
-	var CALL=true;
-	if(argument_count>=2){
-		CALL=argument[1];
-	}
+function Battle_SetMenuChoiceItem(SLOT, CALL=true){
 
 	if(SLOT<Item_GetNumber()){
 		battle._menu_choice_item=SLOT;
@@ -16,7 +11,6 @@ function Battle_SetMenuChoiceItem() {
 			battle._menu_choice_item_first-=1;
 		}
 	
-		//更新文字
 		var text="";
 		var proc=battle._menu_choice_item_first;
 		repeat(3){
@@ -35,6 +29,4 @@ function Battle_SetMenuChoiceItem() {
 	}else{
 		return false;
 	}
-
-
 }

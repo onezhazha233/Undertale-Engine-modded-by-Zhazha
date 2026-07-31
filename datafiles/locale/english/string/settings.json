@@ -1,0 +1,13 @@
+{
+    "settings.title": "{scale 4}SETTINGS",
+    "settings.exit": "EXIT",
+    "settings.language": "LANGUAGE",
+    "settings.languages": "ENGLISH",
+    "settings.border": "BORDER",
+    "settings.border.none": "NONE",
+    "settings.border.simple": "Simple",
+    "settings.border.dynamic": "Dynamic",
+    "settings.border.ruins": "Ruins",
+    "settings.border.snowdin": "Snowdin",
+    "settings.window_scale": "WINDOW SCALE"
+}

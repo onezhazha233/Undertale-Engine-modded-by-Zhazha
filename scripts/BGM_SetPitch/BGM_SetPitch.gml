@@ -1,8 +1,5 @@
 ///@arg bgm_slot
-///@arg pitch
-function BGM_SetPitch() {
-	var SLOT=argument[0];
-	var PITCH=argument[1];
+function BGM_SetPitch(SLOT, PITCH){
 
 	if(BGM_IsSlotValid(SLOT)){
 		if(BGM_IsPlaying(SLOT)){
@@ -14,6 +11,4 @@ function BGM_SetPitch() {
 	}else{
 		return false;
 	}
-
-
 }

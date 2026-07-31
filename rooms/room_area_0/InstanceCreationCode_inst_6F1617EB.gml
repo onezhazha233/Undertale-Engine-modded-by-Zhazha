@@ -1,1 +1,1 @@
-text="* DETERMINATION."
+text="* dt"

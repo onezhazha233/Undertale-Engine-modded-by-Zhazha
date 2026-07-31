@@ -1,8 +1,4 @@
-///@arg enabled
-function Battle_SetDialogAutoEnd() {
-
-	battle._dialog_auto_end=argument[0];
+function Battle_SetDialogAutoEnd(ENABLED){
+	battle._dialog_auto_end=ENABLED;
 	return true;
-
-
 }

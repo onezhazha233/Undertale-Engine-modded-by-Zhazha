@@ -1,0 +1,1 @@
+if(instance_exists(_inst_itemdesc))instance_destroy(_inst_itemdesc);

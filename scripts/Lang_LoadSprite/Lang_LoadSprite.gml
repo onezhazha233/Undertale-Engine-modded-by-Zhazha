@@ -1,6 +1,5 @@
 ///@arg lang_id/name
-function Lang_LoadSprite() {
-	var LANG=argument[0];
+function Lang_LoadSprite(LANG){
 
 	if(!Lang_IsExists(LANG)){
 		return false;
@@ -10,6 +9,32 @@ function Lang_LoadSprite() {
 		LANG=Lang_GetName(LANG);
 	}
 
+	// 从 manifest 的 sprites 数组加载
+	if(variable_struct_exists(global._gmu_lang_manifest,"sprites")){
+		var sprite_list=variable_struct_get(global._gmu_lang_manifest,"sprites");
+		if(is_array(sprite_list)){
+			for(var i=0;i<array_length(sprite_list);i+=1){
+				var def=sprite_list[i];
+				var key=variable_struct_get(def,"key");
+				var src=variable_struct_get(def,"source");
+				var img_num=variable_struct_get(def,"image_number");
+				var src_path=GMU_LANG_PATH_BASE+LANG+"/"+src;
+				if(file_exists(src_path) && key!=""){
+					var SPR=sprite_add(src_path,img_num,false,false,0,0);
+					if(sprite_exists(SPR)){
+						var old=ds_map_find_value(global._gmu_lang_sprite,key);
+						if(is_real(old)&&sprite_exists(old)){
+							sprite_delete(old);
+						}
+						ds_map_add(global._gmu_lang_sprite,key,SPR);
+					}
+				}
+			}
+			return true;
+		}
+	}
+
+	// 旧版兼容：从 sprite.txt + INI 加载
 	if(!file_exists(GMU_LANG_PATH_BASE+LANG+"/"+GMU_LANG_PATH_SPRITE)){
 		return false;
 	}
@@ -51,6 +76,4 @@ function Lang_LoadSprite() {
 	}
 	file_text_close(FILE);
 	return true;
-
-
 }

@@ -1,8 +1,6 @@
 ///@arg box_slot
 ///@arg item_slot
-function Box_Remove() {
-	var SLOT_BOX=argument[0];
-	var SLOT=argument[1];
+function Box_Remove(SLOT_BOX, SLOT){
 
 	if(Box_IsBoxSlotValid(SLOT_BOX)&&Box_IsSlotValid(SLOT)){
 		if(Item_IsValid(Box_Get(SLOT_BOX,SLOT))){
@@ -14,6 +12,4 @@ function Box_Remove() {
 	}else{
 		return false;
 	}
-
-
 }

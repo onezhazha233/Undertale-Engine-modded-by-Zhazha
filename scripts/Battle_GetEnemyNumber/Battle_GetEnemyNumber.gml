@@ -1,4 +1,4 @@
-function Battle_GetEnemyNumber() {
+function Battle_GetEnemyNumber(){
 	var num=0;
 	var proc=0;
 
@@ -10,6 +10,4 @@ function Battle_GetEnemyNumber() {
 	}
 
 	return num;
-
-
 }

@@ -1,4 +1,4 @@
-Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TRIGGER_WARP_LANDMARK,target_landmark);
+Flag_Set(FLAG_TEMP,"trigger_warp_landmark", target_landmark);
 if(instance_exists(char_player)){
 	var pdir=DIR.DOWN;
 	if(player_dir==-1){
@@ -6,7 +6,7 @@ if(instance_exists(char_player)){
 	}else{
 		pdir=player_dir;
 	}
-	Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TRIGGER_WARP_DIR,pdir);
+	Flag_Set(FLAG_TEMP,"trigger_warp_dir", pdir);
 }
 if(bgm_fade){
 	BGM_Stop(0);

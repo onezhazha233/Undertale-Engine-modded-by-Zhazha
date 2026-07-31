@@ -1,6 +1,5 @@
 ///@arg box_slot
-function Box_GetNumber() {
-	var SLOT=argument[0];
+function Box_GetNumber(SLOT){
 
 	if(Box_IsBoxSlotValid(SLOT)){
 		var proc=0;
@@ -15,6 +14,4 @@ function Box_GetNumber() {
 	}else{
 		return 0;
 	}
-
-
 }

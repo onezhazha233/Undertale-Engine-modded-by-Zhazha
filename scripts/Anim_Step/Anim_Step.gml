@@ -1,4 +1,4 @@
-function Anim_Step() {
+function Anim_Step(){
 	var proc=0;
 	repeat(ds_list_size(global._gmu_anim_list)){
 		var key=global._gmu_anim_list[|proc];
@@ -46,6 +46,4 @@ function Anim_Step() {
 	}
 
 	return true;
-
-
 }

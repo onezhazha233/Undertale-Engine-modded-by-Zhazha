@@ -1,30 +1,30 @@
 ///@desc Menu Switch
 if(_menu==0){
-	_mode=file_exists(Flag_GetSavePath(FLAG_TYPE.INFO));
+	_mode=file_exists(Flag_GetPath(FLAG_INFO));
 	if(_mode==0){
-		_inst_instruction=instance_create_depth(170,40,0,text_typer);
-		_inst_instruction.text=_prefix+"{color_text `ltgray`} --- Instruction ---{space_y -1}&&{space_y 2}[Z or ENTER] - Confirm&[X or SHIFT] - Cancel&[C or CTRL] - Menu (In-game)&[F4] - Fullscreen&[Hold ESC] - Quit&When HP is 0, you lose.";
-		_inst_begin=instance_create_depth(170,344,0,text_typer);
-		_inst_begin.text=_prefix+"Begin Game";
-		_inst_settings=instance_create_depth(170,384,0,text_typer);
-		_inst_settings.text=_prefix+"Settings";
+		_inst_instruction=instance_create_depth(170+Lang_GetLayout("menu.info_text_x.0"),40,0,text_typer);
+		_inst_instruction.text=_prefix+Lang_GetString("menu.instruction");
+		_inst_begin=instance_create_depth(170+Lang_GetLayout("menu.continue_x"),344,0,text_typer);
+		_inst_begin.text=_prefix+Lang_GetString("menu.begin");
+		_inst_settings=instance_create_depth(170+Lang_GetLayout("menu.settings_x"),384,0,text_typer);
+		_inst_settings.text=_prefix+Lang_GetString("menu.settings");
 		with(text_typer){
 			event_user(15);
 		}
 		event_user(2);
 	}else{
-		Flag_Load(FLAG_TYPE.INFO);
-		_inst_name=instance_create_depth(140,124,0,text_typer);
-		_inst_name.text=_prefix+Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.NAME,Lang_GetString("ui.save.name.empty"));
-		_inst_lv=instance_create_depth(308,124,0,text_typer);
-		_inst_lv.text=_prefix+"LV "+string(Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.LV));
-		_inst_time=instance_create_depth(452,124,0,text_typer);
-		var time=Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.TIME);
+		Flag_Load(FLAG_INFO);
+		_inst_name=instance_create_depth(140+Lang_GetLayout("menu.info_text_x.0"),124,0,text_typer);
+		_inst_name.text=_prefix+Flag_Get(FLAG_INFO,"name", Lang_GetString("ui.save.name.empty"));
+		_inst_lv=instance_create_depth(308+Lang_GetLayout("menu.info_text_x.1"),124,0,text_typer);
+		_inst_lv.text=_prefix+"LV "+string(Flag_Get(FLAG_INFO,"lv"));
+		_inst_time=instance_create_depth(452+Lang_GetLayout("menu.info_text_x.2"),124,0,text_typer);
+		var time=Flag_Get(FLAG_INFO,"time");
 		var minute=time div 60;
 		var second=time mod 60;
 		_inst_time.text=_prefix+string(minute)+":"+(second<10 ? "0" : "")+string(second);
 		_inst_room=instance_create_depth(140,160,0,text_typer);
-		_inst_room.text=_prefix+Player_GetRoomName(Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.ROOM));
+		_inst_room.text=_prefix+Player_GetRoomName(Flag_Get(FLAG_INFO,"room"));
 		_inst_continue=instance_create_depth(170,210,0,text_typer);
 		_inst_continue.text=_prefix+Lang_GetString("menu.continue");
 		_inst_continue.override_color_text_enabled=true;
@@ -69,15 +69,15 @@ if(_menu==0){
 
 if(_menu==1){
 	_inst_naming_title=instance_create_depth(180,60,0,text_typer);
-	_inst_naming_title.text=_prefix+"Name the fallen human.";
+	_inst_naming_title.text=_prefix+Lang_GetString("menu.naming.title");
 	_inst_naming_letters=instance_create_depth(120,152,0,text_typer);
 	_inst_naming_letters.text=_prefix+"{font 0}{effect 0}{space_x 24}{space_y -2}ABCDEFG&HIJKLMN&OPQRSTU&VWXYZ{space_y -7}&&{space_y -2}abcdefg&hijklmn&opqrstu&vwxyz";
 	_inst_naming_quit=instance_create_depth(120,400,0,text_typer);
-	_inst_naming_quit.text=_prefix+"Quit";
+	_inst_naming_quit.text=_prefix+Lang_GetString("menu.naming.quit");
 	_inst_naming_backspace=instance_create_depth(240,400,0,text_typer);
-	_inst_naming_backspace.text=_prefix+"Backspace";
+	_inst_naming_backspace.text=_prefix+Lang_GetString("menu.naming.backspace");
 	_inst_naming_done=instance_create_depth(440,400,0,text_typer);
-	_inst_naming_done.text=_prefix+"Done";
+	_inst_naming_done.text=_prefix+Lang_GetString("menu.naming.done");
 	with(text_typer){
 		event_user(15);
 	}
@@ -104,9 +104,9 @@ if(_menu==2){
 	_inst_confirm_title=instance_create_depth(180,60,0,text_typer);
 	_inst_confirm_title.text=_prefix+_confirm_title;
 	_inst_confirm_no=instance_create_depth(146,400,0,text_typer);
-	_inst_confirm_no.text=_prefix+"No";
+	_inst_confirm_no.text=_prefix+Lang_GetString("menu.no");
 	_inst_confirm_yes=instance_create_depth(460,400,0,text_typer);
-	_inst_confirm_yes.text=_prefix+"Yes";
+	_inst_confirm_yes.text=_prefix+Lang_GetString("menu.yes");
 	_confirm_name_x=280;
 	_confirm_name_y=110;
 	_confirm_name_scale=2;

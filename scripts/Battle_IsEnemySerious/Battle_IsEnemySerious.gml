@@ -1,6 +1,5 @@
 ///@arg enemy_slot
-function Battle_IsEnemySerious(){
-	var ENEMY=argument[0];
+function Battle_IsEnemySerious(ENEMY){
 	
 	if(Battle_IsEnemyValid(Battle_GetEnemy(ENEMY))){
 		return Battle_GetEnemy(ENEMY).serious;
@@ -8,5 +7,4 @@ function Battle_IsEnemySerious(){
 	else{
 		return false;
 	}
-	
 }

@@ -1,5 +1,3 @@
-function Battle_GetTurnTime() {
+function Battle_GetTurnTime(){
 	return battle._turn_time;
-
-
 }

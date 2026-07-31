@@ -1,7 +1,5 @@
-///@arg list
-function Console_ProcessCmd() {
+function Console_ProcessCmd(LIST){
 	if(GMU_CONSOLE_ENABLED){
-		var LIST=argument[0];
 	
 		var cmd=LIST;
 		var silent=false;
@@ -244,6 +242,5 @@ function Console_ProcessCmd() {
 	}else{
 		return false;
 	}
-
 
 }

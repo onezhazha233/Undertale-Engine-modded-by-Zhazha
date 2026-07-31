@@ -1,0 +1,102 @@
+Locale 简易说明
+
+【目录】
+
+  locale/
+    english.json / schinese.json     语言清单（含 layout、typer、fonts 列表）
+    english/ 或 schinese/
+      string/*.json                  文本译文
+      sprite/*.png                   图片
+      audio/*.ogg                    音频
+
+  font/fonts.json + *.ttf            字体资源（全局，各语言共用）
+
+
+【加新语言】
+
+  1. 复制 english/ 文件夹，改名为新语言 id（如 japanese）
+  2. 复制 english.json，改 info 中 name、ascii_name、order
+  3. 翻译 string/，换 sprite/、audio/
+  4. layout、typer 只写需要微调的部分即可
+
+
+【manifest 要点】
+
+  ascii_name 必须和文件夹名一样。
+  layout:  打字速度、文字位置
+  sprites: key + source 路径
+  audio:   key + source 路径
+  fonts:   本语言要加载的字体 id（对应 font/fonts.json）
+  typer:   typer 字体组怎么显示（dialog / menu / battle）
+
+
+【layout】
+
+  调打字速度、文字位置偏移。填0/不加 表示不改（在英文默认位置上加减）。
+  layout 管速度和坐标；typer 管字体显示；其它 string 管译文。
+  speed：dialog_overworld / dialog_battle / dialog_battle_enemy
+  位置：dialog、menu、save、battle.dialog（详见 english.json 对照）
+
+
+【typer 字体组】
+
+  写在各语言的 english.json / schinese.json 里，不再使用 string/font.json。
+  dialog / menu / battle 是字体组（对应 FONT.DIALOG 等，{font 0/1/2}）。
+  每个组有两面：
+    ascii  → ord(字符) < 128（拉丁等）
+    other  → ord(字符) >= 128（中文等）
+  space_y 是整组行距，不分 ascii/other。
+
+  示例：
+
+  "typer": {
+    "dialog": {
+      "ascii": {
+        "font": "determination_mono",
+        "scale": 1,
+        "space_x": 0,
+        "characters": {
+          "offsets_x_default": [0, 0, 0],
+          "offsets_x": ["I", -6, 2, 0, "AZ", 1, 0, 0],
+          "widths": ["i", -1]
+        }
+      },
+      "other": { "font": "simsun_main", "scale": 1, "space_x": 3 },
+      "space_y": 0
+    }
+  }
+
+  字段说明：
+    font      指向 fonts 列表 / fonts.json 里的资源名
+    scale     绘制缩放（也可用 scale_x / scale_y）
+    space_x   字距
+    space_y   组级行距
+    characters（可选）逐字微调：
+      offsets_x          [字, 后偏移, 前偏移, 同字后再]，可用 "AZ" 表示范围
+      offsets_x_default  全字默认三元组 [后, 前, 同字后再]
+      widths             [字, 额外宽度, ...]
+
+  贴图字体仍在 font/fonts.json 用 is_sprite 定义；typer 只写 font 名即可。
+
+
+【string 文本】
+
+  键名用点分，如 menu.begin、item.stick.name
+  值必须是字符串（数字也写 "123"）
+  行首 // 可当注释
+  代码：Lang_GetString("menu.begin", "默认文字")
+
+
+【图片 / 音频 / 字体】
+
+  Lang_GetSprite("battle.button.fight", spr_default)
+  Lang_GetAudio("snd.wonderfulidea", -1)
+  Lang_GetFont("determination_mono")
+  Lang_GetTyperFont("menu", "ascii")
+  Lang_GetTyper("dialog.ascii.scale")
+
+
+【切换语言】
+
+  设置里改 language → 自动 Lang_LoadAgain（加新语言会自动识别）
+  默认语言：english

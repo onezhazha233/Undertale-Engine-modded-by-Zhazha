@@ -1,15 +1,8 @@
-///@arg slot
-function Player_Load() {
-	var SLOT=argument[0];
-
-	Flag_SetSaveSlot(SLOT);
-
-	Flag_Load(FLAG_TYPE.STATIC);
-	Flag_Load(FLAG_TYPE.DYNAMIC);
-	Flag_Load(FLAG_TYPE.INFO);
-	Flag_Load(FLAG_TYPE.PLOT);
-
+function Player_Load(SLOT){
+	Flag_SetSlot(SLOT);
+	Flag_Load(FLAG_STATIC);
+	Flag_Load(FLAG_DYNAMIC);
+	Flag_Load(FLAG_INFO);
+	Flag_Load(FLAG_PLOT);
 	return true;
-
-
 }

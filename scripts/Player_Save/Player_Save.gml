@@ -1,18 +1,11 @@
-///@arg slot
-function Player_Save() {
-	var SLOT=argument[0];
-
-	Flag_SetSaveSlot(SLOT);
-
-	Flag_Save(FLAG_TYPE.PLOT);
-	Flag_Save(FLAG_TYPE.STATIC);
-	Flag_Set(FLAG_TYPE.INFO,FLAG_INFO.LV,Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.LV));
-	Flag_Set(FLAG_TYPE.INFO,FLAG_INFO.TIME,Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.TIME));
-	Flag_Set(FLAG_TYPE.INFO,FLAG_INFO.ROOM,Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ROOM));
-	Flag_Set(FLAG_TYPE.INFO,FLAG_INFO.NAME,Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.NAME));
-	Flag_Save(FLAG_TYPE.INFO);
-
+function Player_Save(SLOT){
+	Flag_SetSlot(SLOT);
+	Flag_Save(FLAG_PLOT);
+	Flag_Save(FLAG_STATIC);
+	Flag_Set(FLAG_INFO,"lv", Flag_Get(FLAG_STATIC,"lv"));
+	Flag_Set(FLAG_INFO,"time", Flag_Get(FLAG_STATIC,"time"));
+	Flag_Set(FLAG_INFO,"room", Flag_Get(FLAG_STATIC,"room"));
+	Flag_Set(FLAG_INFO,"name", Flag_Get(FLAG_STATIC,"name"));
+	Flag_Save(FLAG_INFO);
 	return true;
-
-
 }

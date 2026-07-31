@@ -1,4 +1,4 @@
-function Demo_PauseRecording() {
+function Demo_PauseRecording(){
 	if(Demo_IsRecording()){
 		if(!Demo_IsRecordingPaused()){
 			demo_recorder._paused=true;
@@ -9,6 +9,4 @@ function Demo_PauseRecording() {
 	}else{
 		return false;
 	}
-
-
 }

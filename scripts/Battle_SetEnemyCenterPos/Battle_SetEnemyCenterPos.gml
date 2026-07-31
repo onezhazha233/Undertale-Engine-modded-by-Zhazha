@@ -1,10 +1,5 @@
 ///@arg enemy_slot
-///@arg x
-///@arg y
-function Battle_SetEnemyCenterPos() {
-	var ENEMY=argument[0];
-	var X=argument[1];
-	var Y=argument[2];
+function Battle_SetEnemyCenterPos(ENEMY, X, Y){
 
 	if(instance_exists(Battle_GetEnemy(ENEMY))){
 		battle._enemy_center_pos_x[ENEMY]=X;
@@ -13,6 +8,4 @@ function Battle_SetEnemyCenterPos() {
 	}else{
 		return false;
 	}
-
-
 }

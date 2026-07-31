@@ -1,0 +1,146 @@
+{
+  "info": {
+    "name": "简体中文",
+    "ascii_name": "schinese",
+    "order": 1
+  },
+  "layout": {
+    "dialog": {
+      "x": 0,
+      "y_top": 0,
+      "y_bottom": 0
+    },
+    "menu": {
+      "info_text_x": [0, 0, 0],
+      "continue_x": 0,
+      "reset_x": 0,
+      "settings_x": 0,
+      "bottom_y": 0
+    },
+    "settings": {
+      "title_x": 0,
+      "value_x": 100
+    },
+    "save": {
+      "info_text_x": [0, 0, 0],
+      "save_x": 0,
+      "return_x": 0
+    },
+    "battle": {
+      "dialog": {
+        "base_x": 0,
+        "base_y": 0
+      }
+    },
+    "shop": {
+      "dialog": {
+        "base_x": 0,
+        "base_y": 0,
+        "choice_x": 0,
+        "line2_x": 0
+      },
+      "sell": {
+        "confirm": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "right_dialog": {
+        "x": 0,
+        "y": 0
+      },
+      "menu_choice": {
+        "x": 0,
+        "y": 0
+      },
+      "itemdesc": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "speed": {
+      "dialog_overworld": 3,
+      "dialog_battle": 3,
+      "dialog_battle_enemy": 3,
+      "dialog_shop": 3
+    }
+  },
+  "fonts": [
+    "determination_mono",
+    "determination_sans",
+    "dotumche",
+    "fzpixel_main",
+    "fzpixel_battle"
+  ],
+  "typer": {
+    "dialog": {
+      "ascii": { "font": "determination_mono", "scale": 1, "space_x": 0,
+        "characters": {
+          "offsets_x": ["(", 2, 0, 0]
+        }},
+      "other": { "font": "fzpixel_main", "scale": 1, "space_x": 3 },
+      "space_y": 0
+    },
+    "menu": {
+      "ascii": { "font": "determination_sans", "scale": 1, "space_x": 0,
+        "characters": {
+          "offsets_x": ["(", 1, 0, 0]
+        }},
+      "other": { "font": "fzpixel_main", "scale": 1, "space_x": 3 },
+      "space_y": 0
+    },
+    "battle": {
+      "ascii": { "font": "dotumche", "scale": 1, "space_x": 0 },
+      "other": { "font": "fzpixel_battle", "scale": 1, "space_x": 3 },
+      "space_y": 0
+    }
+  },
+  "sprites": [
+    {
+      "key": "battle.button.fight",
+      "source": "sprite/battle_button_fight.png",
+      "image_number": 2,
+      "remove_background": false,
+      "is_smooth": false,
+      "origin_x": 0,
+      "origin_y": 0
+    },
+    {
+      "key": "battle.button.act",
+      "source": "sprite/battle_button_act.png",
+      "image_number": 2,
+      "remove_background": false,
+      "is_smooth": false,
+      "origin_x": 0,
+      "origin_y": 0
+    },
+    {
+      "key": "battle.button.item",
+      "source": "sprite/battle_button_item.png",
+      "image_number": 2,
+      "remove_background": false,
+      "is_smooth": false,
+      "origin_x": 0,
+      "origin_y": 0
+    },
+    {
+      "key": "battle.button.item.empty",
+      "source": "sprite/battle_button_item_empty.png",
+      "image_number": 2,
+      "remove_background": false,
+      "is_smooth": false,
+      "origin_x": 0,
+      "origin_y": 0
+    },
+    {
+      "key": "battle.button.mercy",
+      "source": "sprite/battle_button_mercy.png",
+      "image_number": 2,
+      "remove_background": false,
+      "is_smooth": false,
+      "origin_x": 0,
+      "origin_y": 0
+    }
+  ],
+  "audio": []
+}

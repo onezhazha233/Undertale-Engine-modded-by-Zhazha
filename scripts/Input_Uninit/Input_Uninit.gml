@@ -1,4 +1,4 @@
-function Input_Uninit() {
+function Input_Uninit(){
 	var map=global._gmu_input;
 	repeat(ds_map_size(map)){
 		var key=ds_map_find_first(map);
@@ -7,6 +7,4 @@ function Input_Uninit() {
 	ds_map_destroy(map);
 	ds_map_destroy(global._gmu_input_state_override);
 	return true;
-
-
 }

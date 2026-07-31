@@ -1,8 +1,5 @@
 ///@arg enemy_slot
-///@arg spareable
-function Battle_SetEnemySpareable() {
-	var ENEMY=argument[0];
-	var SPAREABLE=argument[1];
+function Battle_SetEnemySpareable(ENEMY, SPAREABLE){
 
 	if(instance_exists(Battle_GetEnemy(ENEMY))){
 		battle._enemy_spareable[ENEMY]=SPAREABLE;
@@ -10,6 +7,4 @@ function Battle_SetEnemySpareable() {
 	}else{
 		return false;
 	}
-
-
 }

@@ -1,5 +1,3 @@
-function Battle_GetMenu() {
+function Battle_GetMenu(){
 	return battle._menu;
-
-
 }

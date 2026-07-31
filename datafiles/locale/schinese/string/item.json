@@ -1,0 +1,29 @@
+{
+    "item.eat": "* 你吃掉了 {insert ITEM}。",
+    "item.equip": "* 你装备了 {insert ITEM}。",
+    "item.heal.part": "* 你回复了 {insert HP}HP！",
+    "item.heal.all": "* 你的HP已满。",
+    "item.none.name": "<无>",
+
+    "item.drop.0": "* {insert ITEM} 被你扔掉了。",
+    "item.drop.1": "* 你以平静的口吻&  送别了 {insert ITEM}。",
+    "item.drop.2": "* 你把 {insert ITEM}&  放在地上，{sleep 20}轻轻拍了拍它。",
+    "item.drop.3": "* 你把 {insert ITEM}&  放在地上，{sleep 20}这正是它这样&  的垃圾应有的待遇。",
+    "item.drop.4": "* 你丢弃了 {insert ITEM}。",
+
+    "item.stick.name": "树枝",
+    "item.stick.info": "* “树枝”- 武器 AT 0&* 小树叉吐不出橡芽。",
+    "item.stick.use": "* 你扔出了树枝。{sleep 20}&* 然后自己把它捡了回来。",
+
+    "item.bandage.name": "绷带",
+    "item.bandage.info": "* “绷带”- 治愈 10 HP&* 看起来已经被用过很多次了。",
+    "item.bandage.use.0": "* 你重新敷上了绷带。",
+    "item.bandage.use.1": "* 还是有点粘粘的。",
+
+    "item.toy_knife.name": "玩具刀",
+    "item.toy_knife.info": "* “玩具刀”- 武器 AT 3&* 塑料制品。&* 如今很罕见了。",
+
+    "item.faded_ribbon.name": "褪色缎带",
+    "item.faded_ribbon.name.short": "褪色缎带",
+    "item.faded_ribbon.info": "* “褪色缎带”- 装备 DF 3&* 你越可爱，{sleep 20}怪物们越不忍心下手。"
+}

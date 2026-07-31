@@ -1,6 +1,5 @@
 ///@arg input
-function Input_GetState() {
-	var INPUT=argument[0];
+function Input_GetState(INPUT){
 
 	var map=global._gmu_input;
 	var override=global._gmu_input_state_override;
@@ -57,6 +56,4 @@ function Input_GetState() {
 	}else{
 		return INPUT_STATE.NULL;
 	}
-
-
 }

@@ -1,4 +1,4 @@
-function Battle_EndMenu() {
+function Battle_EndMenu(){
 	if(Battle_GetState()==BATTLE_STATE.MENU){
 		Battle_SetMenu(-1,false);
 	
@@ -74,6 +74,4 @@ function Battle_EndMenu() {
 	}else{
 		return false;
 	}
-
-
 }

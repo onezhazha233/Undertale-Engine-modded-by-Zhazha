@@ -1,6 +1,4 @@
-///@arg lv
-function Player_LvUp() {
-	var LV=argument[0];
+function Player_LvUp(LV){
 
 	Player_SetLv(LV);
 	Player_SetHpMax(Player_GetLvHpMax(LV));
@@ -8,6 +6,4 @@ function Player_LvUp() {
 	Player_SetDef(Player_GetLvDef(LV));
 
 	return true;
-
-
 }

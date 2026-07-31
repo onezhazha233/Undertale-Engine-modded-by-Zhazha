@@ -1,5 +1,3 @@
-function Battle_GotoNextState() {
+function Battle_GotoNextState(){
 	Battle_SetState(Battle_GetNextState());
-
-
 }

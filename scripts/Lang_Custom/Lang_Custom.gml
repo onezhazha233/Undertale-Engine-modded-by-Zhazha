@@ -1,8 +1,5 @@
 function Lang_Custom() {
-	#macro GMU_LANG_PATH_BASE working_directory+"/locale/"
-	#macro GMU_LANG_PATH_LIST "list.txt"
-	#macro GMU_LANG_PATH_STRING	"string.txt"
-	#macro GMU_LANG_PATH_SPRITE "sprite.txt"
-	#macro GMU_LANG_PATH_FONT "font.txt"
-	#macro GMU_LANG_PATH_INFO "info.ini"
+	#macro GMU_LANG_PATH_BASE global._gmu_lang_path
+	#macro GMU_LANG_PATH_FONT "./font/"
+	#macro GMU_LANG_FONT_REGISTRY "fonts.json"
 }

@@ -1,40 +1,4 @@
-///@arg target
-///@arg var_name
-///@arg tween
-///@arg ease
-///@arg start
-///@arg change
-///@arg duration
-///@arg delay*
-///@arg callback*
-///@arg arg_0*
-///@arg arg_1*
-function Anim_Create() {
-	var TARGET=argument[0];
-	var VAR_NAME=argument[1];
-	var TWEEN=argument[2];
-	var EASE=argument[3];
-	var START=argument[4];
-	var CHANGE=argument[5];
-	var DURATION=argument[6];
-	var DELAY=0;
-	var CALLBACK=-1;
-	var ARG_0=0;
-	var ARG_1=0;
-
-	if(argument_count>=8){
-		DELAY=argument[7];
-	}
-	if(argument_count>=9){
-		CALLBACK=argument[8];
-	}
-	if(argument_count>=10){
-		ARG_0=argument[9];
-	}
-	if(argument_count>=11){
-		ARG_1=argument[10];
-	}
-
+function Anim_Create(TARGET, VAR_NAME, TWEEN, EASE, START, CHANGE, DURATION, DELAY=0, CALLBACK=-1, ARG_0=0, ARG_1=0){
 	var inst_result=-1;
 
 	if(DURATION>=0){
@@ -97,6 +61,4 @@ function Anim_Create() {
 		}
 	}
 	return inst_result;
-
-
 }

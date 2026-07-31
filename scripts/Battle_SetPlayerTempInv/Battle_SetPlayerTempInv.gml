@@ -1,7 +1,4 @@
-///@arg inv
-function Battle_SetPlayerTempInv() {
-	battle._player_temp_inv=argument[0];
+function Battle_SetPlayerTempInv(INV){
+	battle._player_temp_inv=INV;
 	return true;
-
-
 }

@@ -1,7 +1,5 @@
 ///@arg phone_id
-function Phone_GetName() {
-	var PHONE=argument[0];
-
+function Phone_GetName(PHONE){
 	if(Phone_IsValid(PHONE)){
 		var INST=instance_create_depth(0,0,0,PHONE);
 		var NAME=INST._name;
@@ -10,6 +8,4 @@ function Phone_GetName() {
 	}else{
 		return "";
 	}
-
-
 }

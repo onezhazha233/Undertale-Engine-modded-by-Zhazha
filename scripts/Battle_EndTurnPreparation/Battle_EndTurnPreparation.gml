@@ -1,4 +1,4 @@
-function Battle_EndTurnPreparation() {
+function Battle_EndTurnPreparation(){
 	if(Battle_GetState()==BATTLE_STATE.TURN_PREPARATION){
 		Battle_CallEnemyEvent(BATTLE_ENEMY_EVENT.TURN_PREPARATION_END);
 		if(instance_exists(battle_turn)){
@@ -11,6 +11,4 @@ function Battle_EndTurnPreparation() {
 	}else{
 		return false;
 	}
-
-
 }

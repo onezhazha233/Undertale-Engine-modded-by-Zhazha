@@ -1,14 +1,18 @@
 {
+    "menu.instruction": "{color_text `ltgray`} --- Instruction ---{space_y -1}&&{space_y 2}[Z or ENTER] - Confirm&[X or SHIFT] - Cancel&[C or CTRL] - Menu (In-game)&[F4] - Fullscreen&[Hold ESC] - Quit&When HP is 0, you lose.",
     "menu.begin": "Begin Game",
     "menu.settings": "Settings",
     "menu.continue": "Continue",
     "menu.reset": "Reset",
     "menu.reset.true": "True Reset",
-    
+
     "menu.naming.title": "Name the fallen human.",
     "menu.naming.quit": "Quit",
     "menu.naming.backspace": "Backspace",
     "menu.naming.done": "Done",
+
+    "menu.yes": "Yes",
+    "menu.no": "No",
 
     "menu.confirm.title": "Is this name correct?",
     "menu.confirm.title.reset": "A name has already&been chosen.",

@@ -1,6 +1,5 @@
 ///@arg lang_id/name
-function Lang_LoadString() {
-	var LANG=argument[0];
+function Lang_LoadString(LANG){
 
 	if(!Lang_IsExists(LANG)){
 		return false;
@@ -40,6 +39,4 @@ function Lang_LoadString() {
 	}
 	file_text_close(FILE);
 	return true;
-
-
 }

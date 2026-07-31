@@ -1,5 +1,3 @@
-function Player_IsInBattle() {
+function Player_IsInBattle(){
 	return instance_exists(battle);
-
-
 }

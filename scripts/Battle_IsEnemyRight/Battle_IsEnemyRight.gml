@@ -1,6 +1,5 @@
 ///@arg enemy_slot
-function Battle_IsEnemyRight(){
-	var ENEMY=argument[0];
+function Battle_IsEnemyRight(ENEMY){
 
 	if(Battle_GetEnemyNumber() > 1){
 		if(Battle_IsEnemyValid(Battle_GetEnemy(ENEMY))){

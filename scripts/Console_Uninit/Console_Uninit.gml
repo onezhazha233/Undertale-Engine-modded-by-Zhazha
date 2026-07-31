@@ -1,4 +1,4 @@
-function Console_Uninit() {
+function Console_Uninit(){
 	if(GMU_CONSOLE_ENABLED){
 		ds_map_destroy(global._gmu_console_map_macro);
 	
@@ -10,6 +10,4 @@ function Console_Uninit() {
 	}else{
 		return false;
 	}
-
-
 }

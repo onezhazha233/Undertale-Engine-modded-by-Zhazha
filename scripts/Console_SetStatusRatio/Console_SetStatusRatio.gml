@@ -1,11 +1,7 @@
-///@arg split
-///@arg ratio
-function Console_SetStatusRatio() {
+function Console_SetStatusRatio(SPLIT, RATIO){
 	if(GMU_CONSOLE_ENABLED){
-		return external_call(global._gmu_console_function_set_status_ratio,argument[0],argument[1]);
+		return external_call(global._gmu_console_function_set_status_ratio,SPLIT, RATIO);
 	}else{
 		return false;
 	}
-
-
 }

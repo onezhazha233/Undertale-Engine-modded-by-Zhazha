@@ -1,7 +1,5 @@
 ///@arg enemy_slot
-function Battle_GetEnemyPosition(){
-	var ENEMY = argument[0];
-	
+function Battle_GetEnemyPosition(ENEMY){
 	if(Battle_IsEnemyLeft(ENEMY)){
 		return 0;
 	}

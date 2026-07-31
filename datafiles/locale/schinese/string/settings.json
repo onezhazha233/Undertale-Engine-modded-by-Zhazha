@@ -1,0 +1,13 @@
+{
+    "settings.title": "{scale 4}游戏设置",
+    "settings.exit": "退出",
+    "settings.language": "语言",
+    "settings.languages": "中文",
+    "settings.border": "边框",
+    "settings.border.none": "无",
+    "settings.border.simple": "细线框",
+    "settings.border.dynamic": "动态",
+    "settings.border.ruins": "遗迹",
+    "settings.border.snowdin": "雪镇",
+    "settings.window_scale": "窗口缩放"
+}

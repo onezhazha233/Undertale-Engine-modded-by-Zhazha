@@ -1,4 +1,4 @@
-function Macro_Battle() {
+function Macro_Battle(){
 	enum BATTLE_STATE{
 		MENU,
 		DIALOG,

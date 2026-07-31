@@ -1,2 +1,6 @@
-ds_list_destroy(_host_buy)
-ds_list_destroy(_host_talk)
+Shop_ClearUITypers();
+if(instance_exists(_host_inst)){
+	instance_destroy(_host_inst);
+}
+_buy_list=[];
+_talk_list=[];

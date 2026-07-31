@@ -1,6 +1,5 @@
 ///@arg enemy_slot
-function Battle_GetEnemy() {
-	var ENEMY=argument[0];
+function Battle_GetEnemy(ENEMY){
 
 	if(Battle_IsEnemySlotValid(ENEMY)){
 		var INST=battle._enemy[ENEMY];
@@ -12,6 +11,4 @@ function Battle_GetEnemy() {
 	}else{
 		return noone;
 	}
-
-
 }

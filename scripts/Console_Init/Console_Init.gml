@@ -1,4 +1,4 @@
-function Console_Init() {
+function Console_Init(){
 	if(GMU_CONSOLE_ENABLED){
 		global._gmu_console_map_macro=ds_map_create();
 		global._gmu_console_cmd_split="";
@@ -27,6 +27,4 @@ function Console_Init() {
 	}else{
 		return false;
 	}
-
-
 }

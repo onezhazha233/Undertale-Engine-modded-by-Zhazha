@@ -1,3 +1,8 @@
+instance_create_depth(0,0,0,camera);
+instance_create_depth(0,0,0,fader);
+instance_create_depth(0,0,0,border);
+instance_create_depth(0,0,0,closed_captions);
+
 Anim_Init();
 
 Console_Init();
@@ -18,13 +23,28 @@ Input_Bind(INPUT.DOWN,INPUT_TYPE.KEYBOARD,0,vk_down);
 Input_Bind(INPUT.LEFT,INPUT_TYPE.KEYBOARD,0,vk_left);
 Input_Bind(INPUT.RIGHT,INPUT_TYPE.KEYBOARD,0,vk_right);
 
+Flag_Init();
+
 Lang_Init();
 Lang_LoadList();
-Lang_LoadString(0);
-Lang_LoadSprite(0);
-Lang_LoadFont(0);
+Flag_Load(FLAG_SETTINGS)
+Lang_LoadAgain();
 
-Flag_Init();
+Border_Custom();
+var _border=Flag_Get(FLAG_SETTINGS,"border");
+if(_border>=Border_GetCount()){
+	_border=0;
+	Flag_Set(FLAG_SETTINGS,"border",_border);
+	Flag_Save(FLAG_SETTINGS);
+}
+Border_SetEnabled(_border>0);
+
+var _ws=Flag_Get(FLAG_SETTINGS,"window_scale",1);
+var _bw=border._enabled ? 960 : 640;
+var _bh=border._enabled ? 540 : 480;
+window_set_size(floor(_bw*_ws),floor(_bh*_ws));
+
+Shop_Init();
 
 Encounter_Init();
 
@@ -34,12 +54,7 @@ Dialog_Init();
 
 Demo_Init();
 
-Shop_Init();
-
-instance_create_depth(0,0,0,camera);
-instance_create_depth(0,0,0,fader);
-instance_create_depth(0,0,0,border);
-instance_create_depth(0,0,0,closed_captions);
+Event_Init();
 
 application_surface_draw_enable(false);
 

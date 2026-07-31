@@ -1,5 +1,3 @@
-function Battle_GetState() {
+function Battle_GetState(){
 	return battle._state;
-
-
 }

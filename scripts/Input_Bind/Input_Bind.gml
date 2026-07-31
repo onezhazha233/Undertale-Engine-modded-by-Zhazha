@@ -1,13 +1,4 @@
-///@arg input
-///@arg type
-///@arg device
-///@arg button
-function Input_Bind() {
-
-	var INPUT=argument[0];
-	var TYPE=argument[1];
-	var DEVICE=argument[2];
-	var BUTTON=argument[3];
+function Input_Bind(INPUT, TYPE, DEVICE, BUTTON){
 
 	if(TYPE>=INPUT_TYPE.KEYBOARD&&TYPE<=INPUT_TYPE.MOUSE){
 		var map=global._gmu_input;
@@ -30,6 +21,4 @@ function Input_Bind() {
 	}else{
 		return false;
 	}
-
-
 }

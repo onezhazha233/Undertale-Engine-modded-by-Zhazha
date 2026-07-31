@@ -1,4 +1,4 @@
-function Console_Step() {
+function Console_Step(){
 	if(GMU_CONSOLE_ENABLED){
 		repeat(Console_GetInputNumber()){
 			var input=Console_GetInput();
@@ -10,6 +10,4 @@ function Console_Step() {
 	}else{
 		return false;
 	}
-
-
 }

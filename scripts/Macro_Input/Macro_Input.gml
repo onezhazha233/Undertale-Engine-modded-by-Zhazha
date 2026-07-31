@@ -1,4 +1,4 @@
-function Macro_Input() {
+function Macro_Input(){
 	enum INPUT{
 		UP,
 		DOWN,
@@ -8,6 +8,4 @@ function Macro_Input() {
 		CANCEL,
 		MENU
 	};
-
-
 }

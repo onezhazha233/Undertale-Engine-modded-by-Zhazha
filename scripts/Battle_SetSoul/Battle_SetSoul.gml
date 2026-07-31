@@ -1,6 +1,5 @@
 ///@arg soul_obj
-function Battle_SetSoul() {
-	var SOUL=argument[0];
+function Battle_SetSoul(SOUL){
 
 	if(Battle_IsSoulValid(SOUL)&&object_exists(SOUL)){
 		var X=0;
@@ -15,6 +14,4 @@ function Battle_SetSoul() {
 	}else{
 		return false;
 	}
-
-
 }

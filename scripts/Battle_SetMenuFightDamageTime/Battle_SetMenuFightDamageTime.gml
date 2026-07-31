@@ -1,6 +1,4 @@
-///@arg time
-function Battle_SetMenuFightDamageTime() {
-	var TIME=argument[0];
+function Battle_SetMenuFightDamageTime(TIME){
 
 	var MENU=Battle_GetMenu();
 
@@ -10,6 +8,4 @@ function Battle_SetMenuFightDamageTime() {
 	}else{
 		return false;
 	}
-
-
 }

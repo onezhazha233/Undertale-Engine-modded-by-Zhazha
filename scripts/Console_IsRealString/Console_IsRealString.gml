@@ -1,6 +1,5 @@
 ///@arg string
-function Console_IsRealString() {
-	var CHECK=argument[0];
+function Console_IsRealString(CHECK){
 
 	CHECK=string_replace_all(CHECK,"0","");
 	CHECK=string_replace_all(CHECK,"1","");
@@ -16,6 +15,4 @@ function Console_IsRealString() {
 	CHECK=string_replace_all(CHECK,"-","");
 
 	return (CHECK=="");
-
-
 }

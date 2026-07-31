@@ -41,8 +41,8 @@ if(_menu==0){
 			}
 		}else if(Input_IsPressed(INPUT.CONFIRM)){
 			if(_choice==0){
-				Player_Load(Flag_GetSaveSlot());
-				var target=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ROOM,-1);
+				Player_Load(Flag_GetSlot());
+				var target=Flag_Get(FLAG_STATIC,"room", -1);
 				if(room_exists(target)){
 					room_goto(target);
 				}else{
@@ -50,7 +50,7 @@ if(_menu==0){
 				}
 			}else if(_choice==1){
 				_menu=2;
-				_naming_name=Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.NAME,Lang_GetString("ui.save.name.empty"));
+				_naming_name=Flag_Get(FLAG_INFO,"name", Lang_GetString("ui.save.name.empty"));
 				_confirm_title=Lang_GetString("menu.confirm.title.reset");
 				event_user(0);
 			}else if(_choice==2){

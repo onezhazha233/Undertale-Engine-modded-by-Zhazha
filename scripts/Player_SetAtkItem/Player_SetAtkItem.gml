@@ -1,10 +1,5 @@
 ///@arg atk_item
-function Player_SetAtkItem() {
-	var ATK=argument[0];
-
-	var result=Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.ATK_ITEM,ATK);
-
-	return result;
-
-
+function Player_SetAtkItem(ATK){
+	Flag_Set(FLAG_STATIC,"atk_item", ATK);
+	return ATK;
 }

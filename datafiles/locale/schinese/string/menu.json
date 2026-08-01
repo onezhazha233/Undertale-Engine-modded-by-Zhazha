@@ -14,7 +14,7 @@
     "menu.yes": "是",
     "menu.no": "否",
 
-    "menu.confirm.title": "是这个名字没错了吗？",
+    "menu.confirm.title": "是这个名字没错吗？",
     "menu.confirm.title.reset": "已经选择一个名字了。",
     "menu.confirm.title.aaaaaa": "不是很有创造性...？",
     "menu.confirm.title.alphys": "别-别这样。",
@@ -27,5 +27,17 @@
     "menu.confirm.title.papyru": "我准了！！！！",
     "menu.confirm.title.undyne": "找自己的名字去！",
     "menu.confirm.title.mtt": "噢噢噢！！！&你在推广我的品牌吗？",
-    "menu.confirm.title.chara": "真正的名字。"
+    "menu.confirm.title.chara": "真正的名字。",
+    "menu.confirm.title.murder": "还挺准确的，&不是么...？",
+    "menu.confirm.title.catty": "布莱蒂！布莱蒂！&那可是我的名字！",
+    "menu.confirm.title.bratty": "那啥，可以吧我估计。",
+    "menu.confirm.title.gerson": "哇哈哈！为什么不呢？",
+    "menu.confirm.title.shyren": "...？",
+    "menu.confirm.title.aaron": "是这个名字没错吗？ ; )",
+    "menu.confirm.title.jerry": "杰瑞。",
+    "menu.confirm.title.temmie": "你吼！",
+    "menu.confirm.title.bpants": "你还真会挑&别人剩下的。",
+    "menu.confirm.title.woshua": "干净的名字。",
+    "menu.confirm.title.napsta": "...........&(它无力阻止你。)",
+    "menu.confirm.title.frisk": "警告：这个名字不会&使你如堕地狱。&无论如何还要继续吗？"
 }

@@ -1,56 +1,44 @@
 ///@desc Name Check
-var text="";
-var valid=true;
-switch(string_lower(_naming_name)){
-	default:
-		text=Lang_GetString("menu.confirm.title");
+var _data = [
+	["aaaaaa", true],
+	["alphys", false],
+	["alphy", true],
+	["asgore", false],
+	["toriel", false],
+	["asriel", false],
+	["flowey", false],
+	["sans", false],
+	["papyru", true],
+	["undyne", false],
+	["mtt", true, "metta", "mett"],
+	["chara", true],
+	["murder", true, "mercy"],
+	["catty", true],
+	["bratty", true],
+	["gerson", true],
+	["shyren", true],
+	["aaron", true],
+	["jerry", true],
+	["temmie", true],
+	["bpants", true],
+	["woshua", true],
+	["napsta", true, "blooky"],
+	["frisk", true],
+];
+var _text = Lang_GetString("menu.confirm.title");
+var _valid = true;
+var _name = string_lower(_naming_name);
+for (var i = 0; i < array_length(_data); i++) {
+	var _hit = (_name == _data[i][0]);
+	for (var j = 2; j < array_length(_data[i]) && !_hit; j++) {
+		_hit = (_name == _data[i][j]);
+	}
+	if (_hit) {
+		_text = Lang_GetString("menu.confirm.title." + _data[i][0]);
+		_valid = _data[i][1];
 		break;
-	case "aaaaaa":
-		text=Lang_GetString("menu.confirm.title.aaaaaa");
-		break;
-	case "alphys":
-		text=Lang_GetString("menu.confirm.title.alphys");
-		valid=false;
-		break;
-	case "alphy":
-		text=Lang_GetString("menu.confirm.title.alphy");
-		break;
-	case "asgore":
-		text=Lang_GetString("menu.confirm.title.asgore");
-		valid=false;
-		break;
-	case "toriel":
-		text=Lang_GetString("menu.confirm.title.toriel");
-		valid=false;
-		break;
-	case "asriel":
-		text=Lang_GetString("menu.confirm.title.asriel");
-		valid=false;
-		break;
-	case "flowey":
-		text=Lang_GetString("menu.confirm.title.flowey");
-		valid=false;
-		break;
-	case "sans":
-		text=Lang_GetString("menu.confirm.title.sans");
-		valid=false;
-		break;
-	case "papyru":
-		text=Lang_GetString("menu.confirm.title.papyru");
-		break;
-	case "undyne":
-		text=Lang_GetString("menu.confirm.title.undyne");
-		valid=false;
-		break;
-	case "mtt":
-	case "metta":
-	case "mett":
-		text=Lang_GetString("menu.confirm.title.mtt");
-		break;
-	case "chara":
-		text=Lang_GetString("menu.confirm.title.chara");
-		break;
+	}
 }
 
-_confirm_title=text;
-_confirm_valid=valid;
+_confirm_title = _text;
+_confirm_valid = _valid;

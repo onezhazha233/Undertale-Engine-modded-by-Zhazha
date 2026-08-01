@@ -3,7 +3,6 @@ start = 1
 
 instance_create_depth(0,0,0,battle_bullet_test)
 if!(instance_exists(battle_bg))instance_create_depth(0,500,0,battle_bg)
-Battle_CreateBoardCover(320,250,30,30,30,30,10)
 
 /*aa = Battle_CreateBoardExtra(320,320)
 Battle_AddBoardExtraVertex(aa,lengthdir_x(100,90),lengthdir_y(100,90))

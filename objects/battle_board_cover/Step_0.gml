@@ -3,7 +3,9 @@ angle += rotate;
 //背景
 _point_x=x-left;
 _point_y=y-up;
-event_user(0);
+var _rot=RotateXY(_point_x,_point_y,x,y,_angle);
+_point_x=_rot[0];
+_point_y=_rot[1];
 _bg_x=_point_x;
 _bg_y=_point_y;
 _bg_width=left+right;
@@ -12,7 +14,9 @@ _bg_height=up+down;
 //上
 _point_x=x-left-5;
 _point_y=y-up-5;
-event_user(0);
+var _rot=RotateXY(_point_x,_point_y,x,y,_angle);
+_point_x=_rot[0];
+_point_y=_rot[1];
 _frame_up_x=_point_x;
 _frame_up_y=_point_y;
 _frame_up_width=left+right+5*2;
@@ -20,7 +24,9 @@ _frame_up_height=5;
 //左
 _point_x=x-left-5;
 _point_y=y-up-5;
-event_user(0);
+var _rot=RotateXY(_point_x,_point_y,x,y,_angle);
+_point_x=_rot[0];
+_point_y=_rot[1];
 _frame_left_x=_point_x;
 _frame_left_y=_point_y;
 _frame_left_width=5;
@@ -28,7 +34,9 @@ _frame_left_height=up+down+5*2;
 //下
 _point_x=x-left-5;
 _point_y=y+down;
-event_user(0);
+var _rot=RotateXY(_point_x,_point_y,x,y,_angle);
+_point_x=_rot[0];
+_point_y=_rot[1];
 _frame_down_x=_point_x;
 _frame_down_y=_point_y;
 _frame_down_width=left+right+5*2;
@@ -36,7 +44,9 @@ _frame_down_height=5;
 //右
 _point_x=x+right;
 _point_y=y-up-5;
-event_user(0);
+var _rot=RotateXY(_point_x,_point_y,x,y,_angle);
+_point_x=_rot[0];
+_point_y=_rot[1];
 _frame_right_x=_point_x;
 _frame_right_y=_point_y;
 _frame_right_width=5;
@@ -70,7 +80,9 @@ _inst_frame_right.image_yscale=_frame_right_height;
 //上
 _point_x=x-left-5;
 _point_y=y-up-5;
-event_user(0);
+var _rot=RotateXY(_point_x,_point_y,x,y,_angle);
+_point_x=_rot[0];
+_point_y=_rot[1];
 _frame_up_x=_point_x;
 _frame_up_y=_point_y;
 _frame_up_width=left+right+5*2;
@@ -78,7 +90,9 @@ _frame_up_height=5;
 //左
 _point_x=x-left-5;
 _point_y=y-up-5;
-event_user(0);
+var _rot=RotateXY(_point_x,_point_y,x,y,_angle);
+_point_x=_rot[0];
+_point_y=_rot[1];
 _frame_left_x=_point_x;
 _frame_left_y=_point_y;
 _frame_left_width=5;
@@ -86,7 +100,9 @@ _frame_left_height=up+down+5*2;
 //下
 _point_x=x-left-5;
 _point_y=y+down;
-event_user(0);
+var _rot=RotateXY(_point_x,_point_y,x,y,_angle);
+_point_x=_rot[0];
+_point_y=_rot[1];
 _frame_down_x=_point_x;
 _frame_down_y=_point_y;
 _frame_down_width=left+right+5*2;
@@ -94,7 +110,9 @@ _frame_down_height=5;
 //右
 _point_x=x+right;
 _point_y=y-up-5;
-event_user(0);
+var _rot=RotateXY(_point_x,_point_y,x,y,_angle);
+_point_x=_rot[0];
+_point_y=_rot[1];
 _frame_right_x=_point_x;
 _frame_right_y=_point_y;
 _frame_right_width=5;

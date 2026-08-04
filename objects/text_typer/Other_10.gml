@@ -58,6 +58,7 @@ if(_char!=" "&&_char!="　"){
 	INST._line=_line;
 	INST._deltaX=_char_x;
 	INST._deltaY=_char_y+OFFSET;
+	INST._parent=id;
 	_line_char_count+=1;
 	if(sprite_exists(_char_sprite)){
 		INST.sprite=_char_sprite;

@@ -13,7 +13,7 @@ switch(effect){
 		break;
 	
 	case 1:
-		_offset_x = floor(lengthdir_x(1.5,typer.torder[_line_order mod 10]));
-		_offset_y = floor(lengthdir_y(1.5,typer.torder[_line_order mod 10]));
+		_offset_x = floor(lengthdir_x(1.5,_parent.torder[_line_order mod 10]));
+		_offset_y = floor(lengthdir_y(1.5,_parent.torder[_line_order mod 10]));
 		break;
 }

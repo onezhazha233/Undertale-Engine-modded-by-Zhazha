@@ -16,6 +16,7 @@ var spacing=CharSpacing(chars,_char,next_ch);
 var off_before=spacing[0]*scale_x;
 var off_after=spacing[1]*scale_x;
 var wid_cur=(wid_char+_group_font_space_x[_font,font]+_space_x+spacing[2])*scale_x;
+var off_y=CharOffsetY(chars,_char)*_group_font_scale_y[_font,font]*_scale_y;
 _char_x+=off_before;
 
 if(_char!=" "&&_char!="　"){
@@ -23,7 +24,7 @@ if(_char!=" "&&_char!="　"){
 	var H1=string_height(" ");
 	draw_set_font(_group_font[_font,font]);
 	var H2=string_height(" ");
-	var OFFSET=(H1-H2)/2*_scale_y;
+	var OFFSET=(H1-H2)/2*_scale_y+off_y;
 	
 	var rot=RotateXY(x+_char_x,y+_char_y+OFFSET,x,y,_angle);
 	var INST=instance_create_depth(rot[0],rot[1],depth,text_single);

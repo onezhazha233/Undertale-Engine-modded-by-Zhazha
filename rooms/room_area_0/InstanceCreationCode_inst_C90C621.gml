@@ -1,1 +1,1 @@
-text = "* Go to the Creation Code&  of me to change the text."
+text = Lang_GetString("ow.text.test")

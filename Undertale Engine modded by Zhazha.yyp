@@ -800,6 +800,8 @@
     {"CopyToMask":-1,"filePath":"datafiles/locale/schinese/string","resourceVersion":"1.0","name":"ui.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/font","resourceVersion":"1.0","name":"fzpixel_main.ttf","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/font","resourceVersion":"1.0","name":"fzpixel_battle.ttf","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/locale/schinese/string","resourceVersion":"1.0","name":"example.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/locale/english/string","resourceVersion":"1.0","name":"example.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.7.606",

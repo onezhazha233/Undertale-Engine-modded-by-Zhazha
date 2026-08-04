@@ -601,3 +601,43 @@ function CharSpacing(CHARS,CH,NEXT="") {
 
 	return [BEFORE,AFTER,WIDTH_ADD];
 }
+
+// 返回字符的纵向偏移量（正数=向下，负数=向上）
+// offsets_y 数组格式: [字, 下偏移, 上偏移]
+//   下偏移    - 向下偏移量（正=向下）
+//   上偏移    - 向上偏移量（正=向上），与“下偏移”叠加后取净偏移
+// 说明：同一字符无论是否连续出现，偏移量均一致（= 下偏移 - 上偏移）
+function CharOffsetY(CHARS,CH) {
+	var DOWN=0;
+	var UP=0;
+
+	if(!is_struct(CHARS)){
+		return 0;
+	}
+
+	if(is_array(CHARS.offsets_y_default)&&array_length(CHARS.offsets_y_default)>=2){
+		DOWN=CHARS.offsets_y_default[0];
+		UP=CHARS.offsets_y_default[1];
+	}
+
+	if(variable_struct_exists(CHARS,"offsets_y")){
+		var OFF=CHARS.offsets_y;
+		var O=undefined;
+		if(variable_struct_exists(OFF,CH)){
+			O=OFF[$ CH];
+		}else{
+			var ORD_KEY="#"+string(ord(CH));
+			if(variable_struct_exists(OFF,ORD_KEY)){
+				O=OFF[$ ORD_KEY];
+			}
+		}
+		if(is_array(O)&&array_length(O)>=2){
+			DOWN=O[0];
+			UP=O[1];
+		}
+	}
+
+	// 纵向偏移只取决于字符自身（下偏移-上偏移），不随相邻字符改变，
+	// 因此同一字符连续出现时偏移量始终一致。
+	return DOWN-UP;
+}

@@ -58,6 +58,7 @@ Locale 简易说明
         "characters": {
           "offsets_x_default": [0, 0, 0],
           "offsets_x": ["I", -6, 2, 0, "AZ", 1, 0, 0],
+          "offsets_y": ["09", 2, 0],
           "widths": ["i", -1]
         }
       },
@@ -74,6 +75,8 @@ Locale 简易说明
     characters（可选）逐字微调：
       offsets_x          [字, 后偏移, 前偏移, 同字后再]，可用 "AZ" 表示范围
       offsets_x_default  全字默认三元组 [后, 前, 同字后再]
+      offsets_y          [字, 下偏移, 上偏移]，可用 "AZ" 表示范围
+      offsets_y_default  全字默认二元组 [下, 上]
       widths             [字, 额外宽度, ...]
 
   贴图字体仍在 font/fonts.json 用 is_sprite 定义；typer 只写 font 名即可。

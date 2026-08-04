@@ -50,7 +50,7 @@
   "fzpixel_battle": {
     "source": "fzpixel_battle.ttf",
     "is_sprite": false,
-    "size": 10.5,
+    "size": 10.8,
     "bold": true,
     "italic": false,
     "first": 32,

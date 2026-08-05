@@ -332,8 +332,9 @@ function Measure(text, _font_start=0, _scale_x_start=1, _scale_y_start=1, _space
                 var font_index=(ord(ch)<128) ? 0 : 1;
                 draw_set_font(_group_font[_font,font_index]);
                 var char_w=string_width(ch);
-                _char_x+=(char_w+_group_font_space_x[_font,font_index]+_space_x)*_group_font_scale_x[_font,font_index]*_scale_x;
+                _char_x+=char_w*_group_font_scale_x[_font,font_index]*_scale_x;
                 max_width=max(max_width,_char_x);
+                _char_x+=(_group_font_space_x[_font,font_index]+_space_x)*_group_font_scale_x[_font,font_index]*_scale_x;
                 var line_height=(string_height(" ")+_group_font_space_y[_font]+_space_y)*_group_font_scale_y[_font,0]*_scale_y;
                 _line_height=max(_line_height,line_height);
                 _char_proc+=1;
@@ -342,8 +343,9 @@ function Measure(text, _font_start=0, _scale_x_start=1, _scale_y_start=1, _space
             var font_index=(ord(ch)<128) ? 0 : 1;
             draw_set_font(_group_font[_font,font_index]);
             var char_w=string_width(ch);
-            _char_x+=(char_w+_group_font_space_x[_font,font_index]+_space_x)*_group_font_scale_x[_font,font_index]*_scale_x;
+            _char_x+=char_w*_group_font_scale_x[_font,font_index]*_scale_x;
             max_width=max(max_width,_char_x);
+            _char_x+=(_group_font_space_x[_font,font_index]+_space_x)*_group_font_scale_x[_font,font_index]*_scale_x;
             var line_height=(string_height(" ")+_group_font_space_y[_font]+_space_y)*_group_font_scale_y[_font,0]*_scale_y;
             _line_height=max(_line_height,line_height);
             _char_proc+=1;

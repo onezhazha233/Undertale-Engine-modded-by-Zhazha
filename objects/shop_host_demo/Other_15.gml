@@ -11,7 +11,7 @@ if(Shop_GetMenu()==SHOP_MENU.SELL){
 				shop._sell_thanks-=1;
 				audio_stop_sound(snd_shop_item);
 			}
-			break;
+			break;//host refuses to buy stick
 	}
 	Shop_SetSellResult(SHOP_SELL_RESULT.NULL);
 }

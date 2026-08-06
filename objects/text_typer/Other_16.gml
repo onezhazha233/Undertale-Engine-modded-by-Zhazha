@@ -259,6 +259,77 @@ function Measure(text, _font_start=0, _scale_x_start=1, _scale_y_start=1, _space
                         _space_y=real(cmd_args);
                     }
                     break;
+                case "define":
+                    var def_tokens=[];
+                    var def_cur="";
+                    var def_bt=false;
+                    var def_dlen=string_length(cmd_args);
+                    for(var di=1;di<=def_dlen;di+=1){
+                        var dc=string_char_at(cmd_args,di);
+                        if(dc=="`"){
+                            def_bt=!def_bt;
+                        }else if(dc==" "&&!def_bt){
+                            if(def_cur!=""){
+                                array_push(def_tokens,def_cur);
+                                def_cur="";
+                            }
+                        }else{
+                            def_cur+=dc;
+                        }
+                    }
+                    if(def_cur!=""){
+                        array_push(def_tokens,def_cur);
+                    }
+                    if(array_length(def_tokens)>=2){
+                        variable_struct_remove(_map_macro,def_tokens[0]);
+                        _map_macro[$ def_tokens[0]]=def_tokens[1];
+                    }
+                    break;
+                case "undefine":
+                    var undef_cur="";
+                    var undef_bt=false;
+                    var undef_dlen=string_length(cmd_args);
+                    for(var ui=1;ui<=undef_dlen;ui+=1){
+                        var uc=string_char_at(cmd_args,ui);
+                        if(uc=="`"){
+                            undef_bt=!undef_bt;
+                        }else if(uc==" "&&!undef_bt){
+                            break;
+                        }else{
+                            undef_cur+=uc;
+                        }
+                    }
+                    if(variable_struct_exists(_map_macro,undef_cur)){
+                        variable_struct_remove(_map_macro,undef_cur);
+                    }
+                    break;
+                case "insert":
+                    var ins_name="";
+                    var ins_i=1;
+                    var ins_arg_len=string_length(cmd_args);
+                    while(ins_i<=ins_arg_len && string_char_at(cmd_args,ins_i)==" "){
+                        ins_i+=1;
+                    }
+                    while(ins_i<=ins_arg_len && string_char_at(cmd_args,ins_i)!=" "){
+                        ins_name+=string_char_at(cmd_args,ins_i);
+                        ins_i+=1;
+                    }
+                    if(variable_struct_exists(_map_macro,ins_name)){
+                        var ins_text=string(_map_macro[$ ins_name]);
+                        var ins_text_len=string_length(ins_text);
+                        for(var ins_j=1;ins_j<=ins_text_len;ins_j+=1){
+                            var ich=string_char_at(ins_text,ins_j);
+                            var ifont=(ord(ich)<128) ? 0 : 1;
+                            draw_set_font(_group_font[_font,ifont]);
+                            var ichar_w=string_width(ich);
+                            _char_x+=ichar_w*_group_font_scale_x[_font,ifont]*_scale_x;
+                            max_width=max(max_width,_char_x);
+                            _char_x+=(_group_font_space_x[_font,ifont]+_space_x)*_group_font_scale_x[_font,ifont]*_scale_x;
+                            var iline_height=(string_height(" ")+_group_font_space_y[_font]+_space_y)*_group_font_scale_y[_font,0]*_scale_y;
+                            _line_height=max(_line_height,iline_height);
+                        }
+                    }
+                    break;
                 case "sprite":
                     var spr_name="";
                     var arg_len=string_length(cmd_args);
@@ -315,8 +386,7 @@ function Measure(text, _font_start=0, _scale_x_start=1, _scale_y_start=1, _space
                     break;
                 case "clear":
                     draw_set_font(_group_font[_font,0]);
-                    var line_height=(string_height(" ")+_group_font_space_y[_font]+_space_y)*_group_font_scale_y[_font,0]*_scale_y;
-                    return [max_width,_char_y+max(line_height,_line_height)];
+                    return [max_width,_char_y+string_height(" ")*_group_font_scale_y[_font,0]*_scale_y];
             }
         }else if(ch=="&"){
             draw_set_font(_group_font[_font,0]);
@@ -353,8 +423,7 @@ function Measure(text, _font_start=0, _scale_x_start=1, _scale_y_start=1, _space
     }
     
     draw_set_font(_group_font[_font,0]);
-    var line_height=(string_height(" ")+_group_font_space_y[_font]+_space_y)*_group_font_scale_y[_font,0]*_scale_y;
-    return [max_width,_char_y+max(line_height,_line_height)];
+    return [max_width,_char_y+string_height(" ")*_group_font_scale_y[_font,0]*_scale_y];
 }
 
 function TriggerCallback(type){

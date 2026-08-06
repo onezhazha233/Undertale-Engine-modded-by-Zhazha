@@ -317,6 +317,7 @@ function Shop_TryBuy(index){
 	if(Item_GetNumber() >= 8)return SHOP_BUY_RESULT.NO_ROOM;
 	if(price>0)Player_SetGold(Player_GetGold()-price);
 	Item_Add(e.item_id);
+	shop._buy_item=e.item_id;
 	var stock=Shop_GetBuyStock(index);
 	if(stock>=0){
 		stock-=1;
@@ -336,9 +337,10 @@ function Shop_TrySell(slot){
 	var item_id=Item_Get(slot);
 	var price=Item_GetPriceSell(item_id);
 	if(price<=0)return SHOP_SELL_RESULT.UNABLE;
-	Player_SetGold(Player_GetGold()+price);
+	shop._sell_item=Item_Get(slot);
+	Player_AddGold(price);
 	Item_Remove(slot);
-	if(instance_exists(shop))shop._sell_thanks+=1;
+	shop._sell_thanks+=1;
 	audio_play_sound(snd_shop_item,0,false);
 	return SHOP_SELL_RESULT.YES;
 }

@@ -239,3 +239,11 @@ function Shop_SetSellResult(r){
 	shop._sell_result=r;
 	return true;
 }
+
+function Shop_GetLastBuyItem(){
+	return shop._buy_item;
+}
+
+function Shop_GetLastSellItem(){
+	return shop._sell_item;
+}

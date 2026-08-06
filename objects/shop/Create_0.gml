@@ -26,6 +26,9 @@ _talk_choice=0;
 _page_buy=0;
 _page_talk=0;
 
+_sell_item=noone;
+_buy_item=noone;
+
 _dialog_auto_end=true;
 _dialog_pending=false;
 

@@ -65,8 +65,12 @@ function Flag_Inventory(size, type, defaultvalue=-4) constructor{
 		}
 		return false;
 	}
-	function Insert(index,value){
-		array_insert(content,index,value);
+	function Insert(index,value,filter=true){
+		if(GetNumber(filter) < array_length(content)){
+			array_insert(content,index,value);
+			return true;
+		}
+		return false;
 	}
 	function Del(index,filter=true){
 		if(index < array_length(content)){

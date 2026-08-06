@@ -223,6 +223,7 @@
     {"id":{"name":"Battle_EndTurnPreparation","path":"scripts/Battle_EndTurnPreparation/Battle_EndTurnPreparation.yy",},"order":21,},
     {"id":{"name":"Battle_SetDialog","path":"scripts/Battle_SetDialog/Battle_SetDialog.yy",},"order":1,},
     {"id":{"name":"Battle_SetDialogAutoEnd","path":"scripts/Battle_SetDialogAutoEnd/Battle_SetDialogAutoEnd.yy",},"order":3,},
+    {"id":{"name":"Item_Insert","path":"scripts/Item_Insert/Item_Insert.yy",},"order":37,},
     {"id":{"name":"battle_board_extra_roundrect","path":"objects/battle_board_extra_roundrect/battle_board_extra_roundrect.yy",},"order":10,},
     {"id":{"name":"Border_GetName","path":"scripts/Border_GetName/Border_GetName.yy",},"order":10,},
     {"id":{"name":"Item_GetPriceSell","path":"scripts/Item_GetPriceSell/Item_GetPriceSell.yy",},"order":35,},

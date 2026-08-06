@@ -1,3 +1,3 @@
 event_inherited();
 
-_geno=1//false;
+_geno=false;

@@ -19,39 +19,10 @@ Lang_BindTyperGroup(0,"dialog");
 Lang_BindTyperGroup(1,"menu");
 Lang_BindTyperGroup(2,"battle");
 
-/*_group_font[0,0]=Lang_GetFont(Lang_GetString("font.dialog.0"));
-_group_font_scale_x[0,0]=real(Lang_GetString("font.dialog.0.scale.x"));
-_group_font_scale_y[0,0]=real(Lang_GetString("font.dialog.0.scale.y"));
-_group_font_space_x[0,0]=real(Lang_GetString("font.dialog.0.space.x"));
-_group_font[0,1]=Lang_GetFont(Lang_GetString("font.dialog.1"));
-_group_font_scale_x[0,1]=real(Lang_GetString("font.dialog.1.scale.x"));
-_group_font_scale_y[0,1]=real(Lang_GetString("font.dialog.1.scale.y"));
-_group_font_space_x[0,1]=real(Lang_GetString("font.dialog.1.space.x"));
-_group_font_space_y[0]=real(Lang_GetString("font.dialog.space.y"));
-
-_group_font[1,0]=Lang_GetFont(Lang_GetString("font.menu.0"));
-_group_font_scale_x[1,0]=real(Lang_GetString("font.menu.0.scale.x"));
-_group_font_scale_y[1,0]=real(Lang_GetString("font.menu.0.scale.y"));
-_group_font_space_x[1,0]=real(Lang_GetString("font.menu.0.space.x"));
-_group_font[1,1]=Lang_GetFont(Lang_GetString("font.menu.1"));
-_group_font_scale_x[1,1]=real(Lang_GetString("font.menu.1.scale.x"));
-_group_font_scale_y[1,1]=real(Lang_GetString("font.menu.1.scale.y"));
-_group_font_space_x[1,1]=real(Lang_GetString("font.menu.1.space.x"));
-_group_font_space_y[1]=real(Lang_GetString("font.menu.space.y"));
-
-_group_font[2,0]=Lang_GetFont(Lang_GetString("font.battle.0"));
-_group_font_scale_x[2,0]=real(Lang_GetString("font.battle.0.scale.x"));
-_group_font_scale_y[2,0]=real(Lang_GetString("font.battle.0.scale.y"));
-_group_font_space_x[2,0]=real(Lang_GetString("font.battle.0.space.x"));
-_group_font[2,1]=Lang_GetFont(Lang_GetString("font.battle.1"));
-_group_font_scale_x[2,1]=real(Lang_GetString("font.battle.1.scale.x"));
-_group_font_scale_y[2,1]=real(Lang_GetString("font.battle.1.scale.y"));
-_group_font_space_x[2,1]=real(Lang_GetString("font.battle.1.space.x"));
-_group_font_space_y[2]=real(Lang_GetString("font.battle.space.y"));*/
-
 VoicePack(0,{sounds: [snd_text_voice_default]});
 VoicePack(1,{sounds: [snd_text_voice_typer]});
 VoicePack(2,{sounds: [snd_text_voice_toriel]});
+VoicePack(3,{sounds: [snd_text_voice_asgore]});
 
 /*var arr=[];
 for(i=0;i<9;i+=1){

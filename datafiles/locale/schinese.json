@@ -30,6 +30,11 @@
       "dialog": {
         "base_x": 0,
         "base_y": 0
+      },
+      "gameover": {
+        "base_x": 0,
+        "base_y": 0,
+        "space_x": 4
       }
     },
     "shop": {
@@ -62,7 +67,8 @@
       "dialog_overworld": 3,
       "dialog_battle": 3,
       "dialog_battle_enemy": 3,
-      "dialog_shop": 3
+      "dialog_shop": 3,
+      "gameover": 6
     }
   },
   "fonts": [

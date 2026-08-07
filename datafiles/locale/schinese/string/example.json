@@ -1,4 +1,5 @@
 {
     "bd.test": "战斗中对话。&测试，123 abcABC...&换行1223&换行AAbc",
-    "ow.text.test": "* 在文件里找到example.json&  来修改这些文本。"
+    "ow.text.test": "* 在文件里找到example.json&  来修改这些文本。",
+    "save.text.test": "* 想到这个模板无限的开发潜能，{sleep 20}&  这使你充满了决心。"
 }

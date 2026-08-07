@@ -227,17 +227,19 @@ if(can_move){
 
 	if(Input_IsPressed(INPUT.CONFIRM)){
 		var inst_list=ds_list_create();
+		var bW = bbox_right - bbox_left;
+		var bH = bbox_bottom - bbox_top;
 		if(dir==DIR.UP){
-			inst=collision_rectangle_list(x-sprite_width/2+4,y-5,x+sprite_width/2-4,y-sprite_height+5,char,false,true,inst_list,true);
+			inst=collision_rectangle_list(x-bW/3,y-bH*2,x+bW/3,y,char,true,true,inst_list,true);
 		}
 		if(dir==DIR.DOWN){
-			inst=collision_rectangle_list(x-sprite_width/2+4,y-sprite_height+21,x+sprite_width/2-4,y+15,char,false,true,inst_list,true);
+			inst=collision_rectangle_list(x-bW/3,y,x+bW/3,y+bH*1.5,char,true,true,inst_list,true);
 		}
 		if(dir==DIR.LEFT){
-			inst=collision_rectangle_list(x,y-sprite_height+23,x-sprite_width/2-15,y-2,char,false,true,inst_list,true);
+			inst=collision_rectangle_list(x-bW,y-bH/3*2,x,y+bH/3,char,true,true,inst_list,true);
 		}
 		if(dir==DIR.RIGHT){
-			inst=collision_rectangle_list(x,y-sprite_height+23,x+sprite_width/2+15,y-2,char,false,true,inst_list,true);
+			inst=collision_rectangle_list(x,y-bH/3*2,x+bW,y+bH/3,char,true,true,inst_list,true);
 		}
 		if(ds_list_size(inst_list)>0&&instance_exists(inst_list[|0])){
 			with(inst_list[|0]){

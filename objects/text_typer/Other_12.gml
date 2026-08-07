@@ -198,7 +198,8 @@ switch(cmd[|0]){
 		}
 		break;
 		
-	case "skip":
+	case "skippable":
+	case "skip_enabled":
 		if(is_bool(cmd[|1])){
 			_skip=bool(cmd[|1]);
 		}

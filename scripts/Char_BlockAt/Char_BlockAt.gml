@@ -1,5 +1,3 @@
-///@arg step_x
-///@arg step_y
 function Char_BlockAt(step_x,step_y){
 	if(!collision){
 		return false;

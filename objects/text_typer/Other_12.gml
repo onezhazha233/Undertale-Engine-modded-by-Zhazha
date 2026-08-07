@@ -284,6 +284,7 @@ switch(cmd[|0]){
 		break;
 	
 	case "halign":
+	case "align_h":
 		if(is_real(cmd[|1])){
 			if(cmd[|1]>=0&&cmd[|1]<=2){
 				_align_h=cmd[|1];
@@ -293,9 +294,25 @@ switch(cmd[|0]){
 		break;
 	
 	case "valign":
+	case "align_v":
 		if(is_real(cmd[|1])){
 			if(cmd[|1]>=0&&cmd[|1]<=2){
 				_align_v=cmd[|1];
+				AlignApply();
+			}
+		}
+		break;
+		
+	case "align":
+		if(is_real(cmd[|1])){
+			if(cmd[|1]>=0&&cmd[|1]<=2){
+				_align_h=cmd[|1];
+				AlignApply();
+			}
+		}
+		if(is_real(cmd[|2])){
+			if(cmd[|2]>=0&&cmd[|2]<=2){
+				_align_v=cmd[|2];
 				AlignApply();
 			}
 		}

@@ -18,5 +18,11 @@
 
     "ui.box.inventory": "物品栏",
     "ui.box.box": "箱子",
-    "ui.box.finish": "按下[X]键结束"
+    "ui.box.finish": "按下[X]键结束",
+
+    "ui.buy.space": "空间",
+
+    "ui.prompt.confirm": "[Z]: 确认",
+    "ui.prompt.cancel": "[X]: 取消",
+    "ui.prompt.cancel.hold": "长按 [X]: 取消"
 }

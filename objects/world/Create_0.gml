@@ -18,3 +18,6 @@ for(var _s = 1; _s <= _max_scale; _s += 0.5){
 
 global.debug = true
 global.debug_show_blocks = true
+global.prompt_list=[];
+global.prompt_surface=-1;
+global.prompt_surface_clear=true;

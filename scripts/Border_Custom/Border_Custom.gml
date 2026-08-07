@@ -1,4 +1,4 @@
-function Border_Custom() {
+function Border_Custom(){
 	global._border_types=[
 		{sprite: -1, name: "settings.border.none"},
 		{sprite: spr_border_simple, name: "settings.border.simple"},

@@ -18,5 +18,11 @@
     
     "ui.box.inventory": "INVENTORY",
     "ui.box.box": "BOX",
-    "ui.box.finish": "Press [X] to finish"
+    "ui.box.finish": "Press [X] to finish",
+
+    "ui.buy.space": "SPACE",
+
+    "ui.prompt.confirm": "[Z]: Confirm",
+    "ui.prompt.cancel": "[X]: Cancel",
+    "ui.prompt.cancel.hold": "Hold [X]: Cancel"
 }

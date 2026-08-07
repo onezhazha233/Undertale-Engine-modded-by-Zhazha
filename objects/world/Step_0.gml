@@ -31,7 +31,7 @@ Console_SetStatusText(2,"InstC: "+string(instance_count));
 
 Console_Step();
 
-if(keyboard_check_pressed(vk_f4)&&!keyboard_check(vk_alt)&&!keyboard_check(vk_control)&&!keyboard_check(vk_shift)){
+if(keyboard_check_pressed(vk_f4)&&!keyboard_check(vk_alt)&&!keyboard_check(vk_control)&&!keyboard_check(vk_shift)&&!keyboard_check(vk_tab)){
 	window_set_fullscreen(!window_get_fullscreen());
 	//display_set_gui_maximize();
 }

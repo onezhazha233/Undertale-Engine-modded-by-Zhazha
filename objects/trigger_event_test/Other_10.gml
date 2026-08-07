@@ -50,6 +50,4 @@ Event_AddFunction(e,
 	}
 );
 
-Event_AddAutoDestroy(e);
-Event_Push(e);
-Event_Start(e);
+Event_Launch(e)

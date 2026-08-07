@@ -5,7 +5,7 @@ function Event_Choice(EVENT,TEXT,RESULT){
 		TEXT: TEXT
 	},
 	function(){
-		Dialog_Add(TEXT+"{choice `CHOICE`}");
+		Dialog_Add(TEXT+"{choice_end}");
 		Dialog_Start();
 	}),
 	method(

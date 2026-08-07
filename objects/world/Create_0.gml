@@ -15,3 +15,6 @@ global.window_scales = [];
 for(var _s = 1; _s <= _max_scale; _s += 0.5){
 	array_push(global.window_scales, _s);
 }
+
+global.debug = true
+global.debug_show_blocks = true

@@ -1,5 +1,8 @@
 ///@arg input
 function Input_GetState(INPUT){
+	if(variable_global_exists("debug_busy")&&global.debug_busy){
+		return INPUT_STATE.NULL;
+	}
 
 	var map=global._gmu_input;
 	var override=global._gmu_input_state_override;

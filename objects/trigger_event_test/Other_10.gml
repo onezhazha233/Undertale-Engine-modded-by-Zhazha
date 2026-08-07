@@ -19,7 +19,7 @@ Event_Dialog(e, [
 ]);
 
 // ====== 3. 选择 ======
-Event_Choice(e, "你要走哪条路？&{choice 0}左&{choice 1}右&{choice_end}", function(choice){
+Event_Choice(e, "你要走哪条路？&{choice 0}左     {choice 1}右", function(choice){
 	if(choice == 0){
 		StartDialog("好！那我们往左走！");
 	}else{

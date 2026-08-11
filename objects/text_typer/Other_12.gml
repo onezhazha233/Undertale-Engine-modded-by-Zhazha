@@ -421,28 +421,48 @@ switch(cmd[|0]){
 			_choice_confirm_snd=bool(cmd[|1]);
 		}
 		break;
+
+	case "choice_none":
+		_choice_none=ChoiceParseBool(cmd[|1]);
+		break;
+
+	case "choice_reject_snd":
+		_choice_reject_snd=ChoiceParseBool(cmd[|1]);
+		break;
+
+	case "choice_anim":
+		_choice_anim=ChoiceParseBool(cmd[|1]);
+		break;
+
+	case "choice_center":
+		if(is_real(cmd[|1])&&is_real(cmd[|2])){
+			_choice_cx=cmd[|1];
+			_choice_cy=cmd[|2];
+			_choice_center_manual=true;
+		}else{
+			ChoiceSetCenterFromCursor();
+		}
+		break;
 		
 	case "choice_dir":
 		if(is_real(cmd[|1])){
-			if(cmd[|1]==0||cmd[|1]==1){
-				_choice_dir=cmd[|1];
-			}
+			_choice_dir=cmd[|1];
 		}
 		break;
 		
 	case "choice":
 		if(is_real(cmd[|1])){
 			if(cmd[|1]>=0){
-				draw_set_font(_group_font[_font,0]);
-				_choice_x[cmd[|1]]=_char_x-string_width(" ")*_group_font_scale_x[_font,0]*_scale_x;
-				_choice_y[cmd[|1]]=_char_y+string_height(" ")/2*_group_font_scale_y[_font,0]*_scale_y;
-				_choice_count=max(_choice_count,cmd[|1]+1);
+				ChoiceRegister(cmd[|1]);
 			}
+		}else if(is_string(cmd[|1])||is_undefined(cmd[|1])){
+			_choice_macro=cmd[|1];
+			ChoiceActivate();
 		}
 		break;
 		
 	case "choice_end":
-		_choice=0;
+		ChoiceActivate();
 		break;
 	
 	case "if":

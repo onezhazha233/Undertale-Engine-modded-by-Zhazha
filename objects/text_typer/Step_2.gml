@@ -14,7 +14,7 @@ if(!_text_measured&&text!=""){
     }
 }
 
-if(_paused&&Input_IsPressed(INPUT.CONFIRM)){
+if(_paused&&Input_IsPressed(INPUT.CONFIRM)&&!_choice_active){
 	_paused=false;
 }
 if(_skip&&_skip_enabled&&!_paused&&Input_IsPressed(INPUT.CANCEL)){
@@ -23,7 +23,7 @@ if(_skip&&_skip_enabled&&!_paused&&Input_IsPressed(INPUT.CANCEL)){
 	_char_frame_remain=0;
 }
 
-if(_skip&&_super_skip&&Input_IsHeld(INPUT.MENU)&&_choice==-1&&_char_proc<=string_length(text)){
+if(_skip&&_super_skip&&Input_IsHeld(INPUT.MENU)&&!_choice_active&&_char_proc<=string_length(text)){
 	if(_super_skip_mode==0){
 		_paused=false;
 		_skipping=true;
@@ -35,40 +35,7 @@ if(_skip&&_super_skip&&Input_IsHeld(INPUT.MENU)&&_choice==-1&&_char_proc<=string
 		_char_frame_remain=0;
 	}
 }
-if(_choice!=-1){
-	if(_choice_dir==0){
-		if(Input_IsPressed(INPUT.RIGHT)){
-			_choice=(_choice+1)%_choice_count;
-			if(_choice_switch_snd){
-				audio_play_sound(snd_menu_switch,0,false);
-			}
-		}else if(Input_IsPressed(INPUT.LEFT)){
-			_choice=(_choice-1+_choice_count)%_choice_count;
-			if(_choice_switch_snd){
-				audio_play_sound(snd_menu_switch,0,false);
-			}
-		}
-	}else{
-		if(Input_IsPressed(INPUT.DOWN)){
-			_choice=(_choice+1)%_choice_count;
-			if(_choice_switch_snd){
-				audio_play_sound(snd_menu_switch,0,false);
-			}
-		}else if(Input_IsPressed(INPUT.UP)){
-			_choice=(_choice-1+_choice_count)%_choice_count;
-			if(_choice_switch_snd){
-				audio_play_sound(snd_menu_switch,0,false);
-			}
-		}
-	}
-	if(Input_IsPressed(INPUT.CONFIRM)){
-		Flag_Set(FLAG_TEMP,"text_typer_choice",_choice);
-		_choice=-1;
-		if(_choice_confirm_snd){
-			audio_play_sound(snd_menu_confirm,0,false);
-		}
-	}
-}
+ChoiceStep();
 
 if(_char_proc<string_length(text)+1){
 	if(!_paused){

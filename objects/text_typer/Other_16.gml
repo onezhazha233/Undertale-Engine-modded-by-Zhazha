@@ -47,12 +47,29 @@ function Init(){
     _surface=-1;
 
     _choice=-1;
+    _choice_count=0;
     _choice_x[0]=0;
     _choice_y[0]=0;
+    _choice_x[1]=0;
+    _choice_y[1]=0;
+    _choice_x[2]=0;
+    _choice_y[2]=0;
+    _choice_x[3]=0;
+    _choice_y[3]=0;
+    _choice_reg=[];
+    _choice_active=false;
+    _choice_none=false;
+    _choice_cx=0;
+    _choice_cy=0;
+    _choice_center_manual=false;
+    _choice_anim=false;
+    _choice_vx=0;
+    _choice_vy=0;
+    _choice_macro="";
     _choice_switch_snd=true;
     _choice_confirm_snd=true;
+    _choice_reject_snd=false;
     _choice_dir=0;
-    _choice_count=0;
 
     _align_h=0;
     _align_v=0;
@@ -711,4 +728,188 @@ function CharOffsetY(CHARS,CH) {
 	// 纵向偏移只取决于字符自身（下偏移-上偏移），不随相邻字符改变，
 	// 因此同一字符连续出现时偏移量始终一致。
 	return DOWN-UP;
+}
+
+function ChoiceParseBool(_val){
+	if(is_bool(_val))return _val;
+	if(is_string(_val))return string_lower(_val)=="true";
+	if(is_real(_val))return _val!=0;
+	return false;
+}
+
+function ChoiceHasSlot(_idx){
+	if(_idx<0||_idx>=array_length(_choice_reg))return false;
+	return _choice_reg[_idx];
+}
+
+function ChoiceSoulAtCursor(){
+	draw_set_font(_group_font[_font,0]);
+	return [
+		_char_x-string_width(" ")*_group_font_scale_x[_font,0]*_scale_x,
+		_char_y+string_height(" ")/2*_group_font_scale_y[_font,0]*_scale_y
+	];
+}
+
+function ChoiceRegister(_idx){
+	var _pos=ChoiceSoulAtCursor();
+	while(array_length(_choice_reg)<=_idx)array_push(_choice_reg,false);
+	_choice_x[_idx]=_pos[0];
+	_choice_y[_idx]=_pos[1];
+	_choice_reg[_idx]=true;
+	_choice_count=max(_choice_count,_idx+1);
+}
+
+function ChoiceSetCenterFromCursor(){
+	var _pos=ChoiceSoulAtCursor();
+	_choice_cx=_pos[0];
+	_choice_cy=_pos[1];
+	_choice_center_manual=true;
+}
+
+function ChoiceCalcCenter(){
+	if(_choice_center_manual)return;
+	var _minx,_miny,_maxx,_maxy,_has=false;
+	for(var _i=0;_i<_choice_count;_i++){
+		if(!ChoiceHasSlot(_i))continue;
+		var _cx=_choice_x[_i];
+		var _cy=_choice_y[_i];
+		if(!_has){
+			_minx=_cx;
+			_miny=_cy;
+			_maxx=_cx;
+			_maxy=_cy;
+			_has=true;
+		}else{
+			_minx=min(_minx,_cx);
+			_miny=min(_miny,_cy);
+			_maxx=max(_maxx,_cx);
+			_maxy=max(_maxy,_cy);
+		}
+	}
+	if(!_has){
+		_choice_cx=0;
+		_choice_cy=0;
+		return;
+	}
+	_choice_cx=(_minx+_maxx)*0.5;
+	_choice_cy=(_miny+_maxy)*0.5;
+}
+
+function ChoiceTargetPos(){
+	if(_choice_active&&_choice_none&&_choice<0)return [_choice_cx,_choice_cy];
+	if(_choice>=0)return [_choice_x[_choice],_choice_y[_choice]];
+	return [0,0];
+}
+
+function ChoiceSnapVisual(){
+	var _t=ChoiceTargetPos();
+	_choice_vx=_t[0];
+	_choice_vy=_t[1];
+}
+
+function ChoiceActivate(){
+	ChoiceCalcCenter();
+	_choice_active=true;
+	_choice=(_choice_none)?-1:0;
+	ChoiceSnapVisual();
+}
+
+function ChoiceTrySelect(_slot){
+	if(!ChoiceHasSlot(_slot))return false;
+	if(_choice!=_slot){
+		_choice=_slot;
+		if(_choice_switch_snd)audio_play_sound(snd_menu_switch,0,false);
+	}
+	return true;
+}
+
+function ChoicePickFirst(_slots){
+	for(var _i=0;_i<array_length(_slots);_i++){
+		if(ChoiceTrySelect(_slots[_i]))return true;
+	}
+	return false;
+}
+
+function ChoiceStepGrid(){
+	if(_choice_none){
+		if(Input_IsPressed(INPUT.UP)){
+			if(_choice==-1)ChoicePickFirst([0,1]);
+			else if(_choice>=2)ChoiceTrySelect(_choice-2);
+		}
+		if(Input_IsPressed(INPUT.DOWN)){
+			if(_choice==-1)ChoicePickFirst([2,3]);
+			else if(_choice<2)ChoiceTrySelect(_choice+2);
+		}
+		if(Input_IsPressed(INPUT.LEFT)){
+			if(_choice==-1)ChoicePickFirst([0,2]);
+			else if(_choice mod 2==1)ChoiceTrySelect(_choice-1);
+		}
+		if(Input_IsPressed(INPUT.RIGHT)){
+			if(_choice==-1)ChoicePickFirst([1,3]);
+			else if(_choice mod 2==0)ChoiceTrySelect(_choice+1);
+		}
+		return;
+	}
+	if(Input_IsPressed(INPUT.DOWN)||Input_IsPressed(INPUT.UP)){
+		if(_choice>=0&&_choice<2)ChoiceTrySelect(_choice+2);
+		else if(_choice>=2)ChoiceTrySelect(_choice-2);
+	}
+	if(Input_IsPressed(INPUT.LEFT)||Input_IsPressed(INPUT.RIGHT)){
+		if(_choice>=0&&_choice mod 2==0)ChoiceTrySelect(_choice+1);
+		else if(_choice>=0)ChoiceTrySelect(_choice-1);
+	}
+}
+
+function ChoiceStepLinear(){
+	var _len=max(_choice_count,2);
+	var _fwd=(_choice_dir==0)?INPUT.RIGHT:INPUT.DOWN;
+	var _back=(_choice_dir==0)?INPUT.LEFT:INPUT.UP;
+	if(Input_IsPressed(_fwd)){
+		if(_choice_none&&_choice==-1)ChoiceTrySelect(0);
+		else ChoiceTrySelect((_choice+1) mod _len);
+	}
+	if(Input_IsPressed(_back)){
+		if(_choice_none&&_choice==-1)ChoiceTrySelect(_len-1);
+		else ChoiceTrySelect((_choice-1+_len) mod _len);
+	}
+}
+
+function ChoiceStep(){
+	if(!_choice_active)return;
+	if(_choice_dir==3){
+		if(Input_IsPressed(INPUT.UP))ChoiceTrySelect(0);
+		if(Input_IsPressed(INPUT.LEFT))ChoiceTrySelect(1);
+		if(Input_IsPressed(INPUT.RIGHT))ChoiceTrySelect(2);
+		if(Input_IsPressed(INPUT.DOWN))ChoiceTrySelect(3);
+	}else if(_choice_dir==2){
+		ChoiceStepGrid();
+	}else if(_choice_dir==0||_choice_dir==1){
+		ChoiceStepLinear();
+	}
+	if(Input_IsPressed(INPUT.CONFIRM)&&_choice>=0){
+		if(is_string(_choice_macro)&&_choice_macro!=""){
+			variable_struct_remove(_map_macro,_choice_macro);
+			_map_macro[$ _choice_macro]=_choice;
+		}
+		Flag_Set(FLAG_TEMP,"text_typer_choice",_choice);
+		_choice_active=false;
+		_choice=-1;
+		_paused=false;
+		if(_choice_confirm_snd)audio_play_sound(snd_menu_confirm,0,false);
+	}
+	if(_choice_anim){
+		var _t=ChoiceTargetPos();
+		_choice_vx=lerp(_choice_vx,_t[0],0.6);
+		_choice_vy=lerp(_choice_vy,_t[1],0.6);
+	}
+}
+
+function ChoiceDraw(){
+	if(!_choice_active)return;
+	var _pos=_choice_anim?[_choice_vx,_choice_vy]:ChoiceTargetPos();
+	if(_angle!=0){
+		draw_sprite_ext(spr_battle_soul_red,0,x+_pos[0],y+_pos[1],1,1,_angle,c_white,1);
+	}else{
+		draw_sprite(spr_battle_soul_red,0,x+_pos[0],y+_pos[1]);
+	}
 }

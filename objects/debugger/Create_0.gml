@@ -61,9 +61,7 @@ commands[$ "r"]={
 	name:"Room List",
 	hold:0.5,
 	run:function(){
-		if(!instance_exists(debugger_list)){
-			instance_create_depth(0,0,DEPTH_UI.DEBUG,debugger_roomlist);
-		}
+		Debugger_ListOpenRoom();
 	}
 };
 
@@ -71,9 +69,7 @@ commands[$ "e"]={
 	name:"Encounter List",
 	hold:0.5,
 	run:function(){
-		if(!instance_exists(debugger_list)){
-			instance_create_depth(0,0,DEPTH_UI.DEBUG,debugger_encounterlist);
-		}
+		Debugger_ListOpenEncounter();
 	}
 };
 
@@ -117,6 +113,8 @@ commands[$ "h"]={
 		}
 		var line="=== Debugger Help (hold Tab+key) ===";
 		show_debug_message(line);
+		show_debug_message("Lists: Up/Down select, Left/Right jump category, Z/Enter confirm");
+		show_debug_message("Search: Up on first item or type; Down/Enter exit search");
 		var keys=variable_struct_get_names(dbg.commands);
 		array_sort(keys,true);
 		for(var i=0;i<array_length(keys);i++){

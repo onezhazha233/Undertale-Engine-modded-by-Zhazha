@@ -126,6 +126,7 @@ commands[$ "h"]={
 			}
 			line="TAB+"+string_upper(k)+"  "+cmd.name+"  ("+string(hold)+"s)";
 			show_debug_message(line);
+			Console_OutputLine(line);
 		}
 	}
 };

@@ -28,6 +28,7 @@ on_select=function(_value){};
 
 layout_dirty=true;
 layout_panel_w=0;
+layout_min_w=130;
 _layout_gui_h=-1;
 layout_list_top=0;
 layout_line_full=0;

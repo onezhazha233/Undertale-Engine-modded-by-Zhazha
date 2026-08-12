@@ -9,8 +9,8 @@ function Debugger_ListCategoryColors(){
 		Test: c_yellow,
 		Other: c_white,
 		Single: c_lime,
-		"Party!": c_fuchsia,
-		Boss: c_red,
+		Party: c_fuchsia,
+		Boss: c_red
 	};
 }
 
@@ -56,13 +56,13 @@ function Debugger_ListClassifyRoom(_room){
 function Debugger_ListEncounterCategoryDefs(){
 	return [
 		["Single",1,9],
-		["Party!",10,19],
+		["Party",10,19],
 		["Boss",20,999999],
 	];
 }
 
 function Debugger_ListEncounterCategoryOrder(){
-	return ["Single","Party!","Boss","Other"];
+	return ["Single","Party","Boss","Other"];
 }
 
 function Debugger_ListClassifyEncounter(_eid){
@@ -371,7 +371,8 @@ function Debugger_ListUpdateLayout(_inst){
 	var list_top=header_h;
 	var panel_bottom=gui_h;
 	var list_h=max(1,panel_bottom-list_top);
-	_inst.layout_panel_w=min(gui_w,ceil(max_tw*scale)+pad_l+pad_r);
+	// 面板宽度取“最宽内容”与“最小宽度”中的较大者，再限制不超过屏幕宽度
+	_inst.layout_panel_w=min(gui_w,max(_inst.layout_min_w,ceil(max_tw*scale)+pad_l+pad_r));
 	_inst.layout_list_top=list_top;
 	_inst.layout_line_full=line_full;
 	_inst.layout_line_h=line_h;
@@ -490,7 +491,7 @@ function Debugger_ListStepSearch(_inst){
 	}
 
 	if(_inst.search_mode){
-		if(keyboard_check_pressed(vk_escape)||keyboard_check_pressed(ord("X"))){
+		if(keyboard_check_pressed(vk_escape)){
 			instance_destroy(_inst);
 		}
 		return true;
@@ -502,7 +503,7 @@ function Debugger_ListStepSearch(_inst){
 function Debugger_ListStepNav(_inst){
 	var count=array_length(_inst.rows);
 	if(count<=0){
-		if(keyboard_check_pressed(vk_escape)||keyboard_check_pressed(ord("X"))){
+		if(keyboard_check_pressed(vk_escape)){
 			instance_destroy(_inst);
 		}
 		exit;
@@ -618,7 +619,7 @@ function Debugger_ListStepNav(_inst){
 		exit;
 	}
 
-	if(keyboard_check_pressed(vk_escape)||keyboard_check_pressed(ord("X"))){
+	if(keyboard_check_pressed(vk_escape)){
 		instance_destroy(_inst);
 	}
 }
@@ -629,11 +630,16 @@ function Debugger_ListOpen(_config){
 		return noone;
 	}
 	var inst=instance_create_depth(0,0,DEPTH_UI.DEBUG,debugger_list);
+	// 清除残留的键盘缓冲区，避免 Tab+R/E 的命令字符（"r"/"e"）泄漏进搜索框
+	keyboard_string="";
 	if(variable_struct_exists(_config,"search_enabled")){
 		inst.search_enabled=_config.search_enabled;
 	}
 	if(variable_struct_exists(_config,"title_text")){
 		inst.title_text=_config.title_text;
+	}
+	if(variable_struct_exists(_config,"min_w")){
+		inst.layout_min_w=_config.min_w;
 	}
 	if(variable_struct_exists(_config,"on_select")){
 		inst.on_select=_config.on_select;

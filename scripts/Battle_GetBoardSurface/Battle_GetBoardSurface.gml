@@ -1,3 +1,3 @@
 function Battle_GetBoardSurface(){
-	return battle_board._surface;
+	return battle_board.surf_content;
 }

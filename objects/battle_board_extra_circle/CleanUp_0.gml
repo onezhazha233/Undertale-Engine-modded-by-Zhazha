@@ -1,1 +1,0 @@
-ds_list_delete(global.borders_list,ds_list_find_index(global.borders_list,id))

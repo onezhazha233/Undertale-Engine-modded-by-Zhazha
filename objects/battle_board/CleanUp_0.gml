@@ -1,5 +1,5 @@
-surface_free(_surface);
-surface_free(_surface1);
-surface_free(_surface2);
-surface_free(_surface3);
-surface_free(_surface4);
+surface_free(surf_outset_a)
+surface_free(surf_outset_b)
+surface_free(surf_helper)
+surface_free(surf_pending_blacks)
+surface_free(surf_content)

@@ -59,6 +59,8 @@ Event_Init();
 
 application_surface_draw_enable(false);
 
+Xpoly_Init();
+
 //Border_SetEnabled(true);
 
 Console_OutputLine("UNDERTALE by Toby Fox");

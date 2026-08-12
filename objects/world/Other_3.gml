@@ -7,3 +7,4 @@ Input_Uninit();
 Console_Uninit();
 Demo_Uninit();
 Event_Init();
+Xpoly_UnInit();

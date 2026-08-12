@@ -1,119 +1,66 @@
 event_inherited();
 
-switch(dir){
-	case 0:
-		image_angle = 90;
-		break;
-		
-	case 90:
-		image_angle = 180;
-		break;
-		
-	case 180:
-		image_angle = -90;
-		break;
-		
-	case 270:
-		image_angle = 0;
-		break;
-}
+image_angle = (dir + 90) mod 360
 
 if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
-	var isInside1 = false;
-	var isInside2 = false;
-	var isInside3 = false;
-	var isInside4 = false;
-	for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
-		bb = ds_list_find_value(global.borders_list,i);
-		if(bb.contains(battle_soul.x - sprite_width/2-1, battle_soul.y)) {
-			isInside1 = true;
-			break;
-		}
-	}
-	for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
-		bb = ds_list_find_value(global.borders_list,i);
-		if(bb.contains(battle_soul.x + sprite_width/2, battle_soul.y)) {
-			isInside2 = true;
-			break;
-		}
-	}
-	for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
-		bb = ds_list_find_value(global.borders_list,i);
-		if(bb.contains(battle_soul.x, battle_soul.y - sprite_height/2-1)) {
-			isInside3 = true;
-			break;
-		}
-	}
-	for(var i = 0; i < global.borderCount; i++) {	//遍历所有框，判断是否出框
-		bb = ds_list_find_value(global.borders_list,i);
-		if(bb.contains(battle_soul.x, battle_soul.y + sprite_height/2+1)) {
-			isInside4 = true;
-			break;
-		}
-	}
-	
-	var SPD=Player_GetSpdTotal()
+	var SPD=Player_GetSpdTotal()*1.25;
 	var SPD=(Input_IsHeld(INPUT.CANCEL) ? SPD/2 : SPD);
 
-	xx = 0;
-	yy = 0;
-	ii = 0;
+	//重力方向单位向量（供 block 碰撞与移动用）
+	xx = lengthdir_x(dir, 1);
+	yy = lengthdir_y(dir, 1);
+
 	jump_input = 0;
-	opposite_dir = 0;
-	if(dir = 0){
-		xx = 1;
-		ii = isInside2;
-		jump_input = INPUT.LEFT;
-		opposite_dir = isInside1;
-	}
-	if(dir = 90){
-		yy = -1;
-		ii = isInside3;
-		jump_input = INPUT.DOWN;
-		opposite_dir = isInside4;
-	}
-	if(dir = 180){
-		xx = -1;
-		ii = isInside1;
-		jump_input = INPUT.RIGHT;
-		opposite_dir = isInside2;
-	}
-	if(dir = 270){
-		yy = 1;
-		ii = isInside4;
-		jump_input = INPUT.UP;
-		opposite_dir = isInside3;
+	
+	//统一重力角：父类 Step_2 的钳制也用同一角度
+	soul_gravity_angle = dir + 90;
+	soul_touching_ceiling = false;
+	XPoly_Booleanation(battle_board.objs);
+	var result = Xpoly_Collision_Check(x, y, sprite_width/2, soul_gravity_angle);
+	if(is_array(result)){
+		on_board             = result[3];
+		soul_touching_ceiling = result[2];
+		//只在真正出框时才钳回，避免在角落/边界被钉到错误位置
+		if(result[0] == 0){
+			x = result[4];
+			y = result[5];
+		}
 	}
 
-	if!(instance_position(x+xx*(sprite_width/2+1),y+yy*(sprite_height/2+1),block)){
+	//跳跃键 = 重力反方向
+	switch(dir){
+		case 0:   jump_input = INPUT.LEFT;  break;
+		case 90:  jump_input = INPUT.DOWN;  break;
+		case 180: jump_input = INPUT.RIGHT; break;
+		case 270: jump_input = INPUT.UP;    break;
+	}
+
+	if(!instance_position(x+xx*(sprite_width/2+1),y+yy*(sprite_height/2+1),block)){
 		on_block = 0;
 	}
-	if!(ii = 0){
-		on_board = 0;
-	}
-	if!(place_meeting(x+xx,y+yy,battle_platform)){
+	if(!place_meeting(x+xx,y+yy,battle_platform)){
 		on_platform = 0;
 		inst_plat = noone;
 	}
 	//底部无支撑时
 
-	if(on_block = 0&&on_board = 0&&on_platform = 0&&jump_state = 0){
+	if(on_block == 0 && on_board == 0 && on_platform == 0 && jump_state == 0){
 		jump_state = 2;
 		move = 0;
 	}
 	//底部无支撑时自然下落
 
-	if(jump_state != 0&&opposite_dir = 0){
+	if(jump_state != 0 && soul_touching_ceiling){
 		jump_state = 2;
-		if(impact = 0)move = 0;
+		if(impact == 0)move = 0;
 	}
-	if(jump_state != 0&&instance_position(x-xx*(sprite_width/2+1),y-yy*(sprite_height/2+1),block)){
+	if(jump_state != 0 && instance_position(x-xx*(sprite_width/2+1),y-yy*(sprite_height/2+1),block)){
 		jump_state = 2;
-		if(impact = 0)move = 0;
+		if(impact == 0)move = 0;
 	}
 	//碰到顶时强制下落
 	
-	if(jump_state = 1){
+	if(jump_state == 1){
 		if(Input_IsReleased(jump_input)){
 			jump_state = 2;
 			move = -1;
@@ -123,7 +70,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 		}
 	}
 	//松开跳跃键时改变状态
-	if(jump_state = 2){
+	if(jump_state == 2){
 		if(move <= max_speed){
 			move += gravity_fall;
 		}
@@ -136,28 +83,27 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 			on_block = 1;
 			jump_state = 0;
 			move = 0;
-			if(impact = 1){
+			if(impact == 1){
 				audio_play_sound(snd_dong,0,0);
 				Camera_Shake(8,8,1,1,1,1);
 				impact = 0;
 			}
 		}
-		if(ii = 0){
-			on_board = 1;
+		if(on_board = 1){
 			jump_state = 0;
 			move = 1;
-			if(impact = 1){
+			if(impact == 1){
 				audio_play_sound(snd_dong,0,0);
 				Camera_Shake(8,8,1,1,1,1);
 				impact = 0;
 			}
 		}
 		inst_plat = instance_place(x+xx,y+yy,battle_platform);
-		if(instance_exists(inst_plat)&&move > 0&&!(abs(inst_plat.angle)-abs(dir)=0&&abs(inst_plat.angle)-abs(dir)=180)){
+		if(instance_exists(inst_plat) && move > 0 && !(abs(inst_plat.angle)-abs(dir)==0 && abs(inst_plat.angle)-abs(dir)==180)){
 			on_platform = 1;
 			jump_state = 0;
 			move = 0;
-			if(impact = 1){
+			if(impact == 1){
 				audio_play_sound(snd_dong,0,0);
 				Camera_Shake(8,8,1,1,1,1);
 				impact = 0;
@@ -177,16 +123,16 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
         fx = -1//((- sprite_height) / 2)
     else if (dir == 0)
         fx = 1//(sprite_height / 2)
-	if(instance_exists(inst_plat)&&!(abs(abs(inst_plat.angle)-abs(dir))=0||abs(abs(inst_plat.angle)-abs(dir))=180)){
+	if(instance_exists(inst_plat) && !(abs(abs(inst_plat.angle)-abs(dir))==0 || abs(abs(inst_plat.angle)-abs(dir))==180)){
 		while(place_meeting(x+fx,y+fy,inst_plat)&&place_meeting(x,y,inst_plat)){
 			move = 0;
 			jump_state = 0;
 	        mx = 0;
 	        my = 0;
-	        if(dir = 270)my = -1;
-			if(dir = 90)my = 1;
-	        if(dir = 180)mx = 1;
-	        if(dir = 0)mx = -1;
+	        if(dir == 270)my = -1;
+			if(dir == 90)my = 1;
+	        if(dir == 180)mx = 1;
+	        if(dir == 0)mx = -1;
 	        x += mx;
 	        y += my;
 		}
@@ -217,7 +163,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 				if(move < 0){
 					move += gravity_jump;
 				}
-				if(jump_state = 0){
+				if(jump_state == 0){
 					move = -jump_speed;
 					jump_state = 1;
 				}
@@ -242,7 +188,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 				if(move < 0){
 					move += gravity_jump;
 				}
-				if(jump_state = 0){
+				if(jump_state == 0){
 					move = -jump_speed;
 					jump_state = 1;
 				}
@@ -267,7 +213,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 				if(move < 0){
 					move += gravity_jump;
 				}
-				if(jump_state = 0){
+				if(jump_state == 0){
 					move = -jump_speed;
 					jump_state = 1;
 				}
@@ -292,7 +238,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 				if(move < 0){
 					move += gravity_jump;
 				}
-				if(jump_state = 0){
+				if(jump_state == 0){
 					move = -jump_speed;
 					jump_state = 1;
 				}
@@ -312,4 +258,14 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 		}
 	}
 	//移动和开始跳跃
+
+	//框内钳制：移动结束后，只在真正出框时拉回（防止在角落/边界掉出）
+	if(instance_exists(battle_board) && Xpoly_Is_Initialized()){
+		XPoly_Booleanation(battle_board.objs);
+		var result = Xpoly_Collision_Check(x, y, sprite_width/2, soul_gravity_angle);
+		if(is_array(result) && result[0] == 0){
+			x = result[4];
+			y = result[5];
+		}
+	}
 }

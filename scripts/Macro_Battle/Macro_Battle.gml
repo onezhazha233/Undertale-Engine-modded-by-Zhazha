@@ -81,6 +81,12 @@ function Macro_Battle(){
 		RIGHT=283
 	};
 
+	enum BATTLE_BOARD_TYPE{
+		ADD=0,
+		SUBTRACT=1,
+		INTERSECT=2
+	};
+
 	enum BATTLE_TURN{
 		TIME,
 		BOARD_X,

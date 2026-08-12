@@ -1,12 +1,14 @@
 event_inherited()
 moveable = 1
-dir = 270
+dir = 270-270
 move = 0
 impact = 0
 on_block = 0
 on_platform = 0
 on_board = 0
 inst_plat = noone
+
+soul_touching_ceiling = 0
 
 jump_state = 0
 //0为在地上不动 1为向上跳 2为自由下落

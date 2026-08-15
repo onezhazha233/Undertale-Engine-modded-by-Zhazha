@@ -1,6 +1,6 @@
 //这个函数将对输入的多边形进行布尔序列运算，计算出完整的合法边界，并储存在buf_out里
 //随后便可调用Xpoly_Collision_Check来对决心进行碰撞检测
-function XPoly_Booleanation(objs){
+function Xpoly_Booleanation(objs){
 	if(!Xpoly_Is_Initialized()) return;
 	buffer_seek(global.buf_in,buffer_seek_start,0);
 	buffer_write(global.buf_in,buffer_u32, global.buf_cap)  //[buffer capacity]

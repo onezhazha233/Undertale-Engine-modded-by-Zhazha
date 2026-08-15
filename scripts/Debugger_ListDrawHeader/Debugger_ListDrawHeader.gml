@@ -21,7 +21,7 @@ function Debugger_ListDrawHeader(){
 		base=Debugger_ListCategoryColor(LABEL);
 	}
 
-	var col=merge_colour(base,c_white,0.5);
+	var col=base;
 	var shd=1*SCALE;
 	draw_set_color(c_black);
 	draw_text_transformed(X+shd,Y+shd,text,SCALE,SCALE,0);

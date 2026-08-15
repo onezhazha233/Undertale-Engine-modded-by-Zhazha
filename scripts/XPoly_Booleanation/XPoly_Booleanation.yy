@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Xpoly.yy",
   },
   "resourceVersion": "1.0",
-  "name": "XPoly_Booleanation",
+  "name": "Xpoly_Booleanation",
   "tags": [],
   "resourceType": "GMScript",
 }

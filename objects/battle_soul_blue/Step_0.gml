@@ -15,7 +15,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 	//统一重力角：父类 Step_2 的钳制也用同一角度
 	soul_gravity_angle = dir + 90;
 	soul_touching_ceiling = false;
-	XPoly_Booleanation(battle_board.objs);
+	Xpoly_Booleanation(battle_board.objs);
 	var result = Xpoly_Collision_Check(x, y, sprite_width/2, soul_gravity_angle);
 	if(is_array(result)){
 		on_board             = result[3];
@@ -261,7 +261,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 
 	//框内钳制：移动结束后，只在真正出框时拉回（防止在角落/边界掉出）
 	if(instance_exists(battle_board) && Xpoly_Is_Initialized()){
-		XPoly_Booleanation(battle_board.objs);
+		Xpoly_Booleanation(battle_board.objs);
 		var result = Xpoly_Collision_Check(x, y, sprite_width/2, soul_gravity_angle);
 		if(is_array(result) && result[0] == 0){
 			x = result[4];

@@ -1,11 +1,12 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "Debugger_ListDrawHeader",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Debugger",
+    "path": "folders/Scripts/Debugger.yy",
   },
+  "resourceVersion": "1.0",
+  "name": "Debugger_ListDrawHeader",
+  "tags": [],
+  "resourceType": "GMScript",
 }

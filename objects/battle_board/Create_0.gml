@@ -25,6 +25,8 @@ color_bg = c_black;
 alpha_frame = 1;
 alpha_bg = 1;
 
+angle = 0;
+
 event_user(0)
 
 function draw_frames(){

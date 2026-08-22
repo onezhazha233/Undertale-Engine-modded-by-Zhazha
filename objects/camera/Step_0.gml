@@ -75,6 +75,14 @@ if(instance_exists(target)){
 	x-=sizeX/2;
 	y-=sizeY/2;
 }
-camera_set_view_pos(_camera,x+_shake_pos_x,y+_shake_pos_y);
+
+cx = x+_shake_pos_x
+cy = y+_shake_pos_y
+
+if(instance_exists(target)){
+	cx = floor(cx);
+	cy = floor(cy);
+}
+camera_set_view_pos(_camera,cx,cy);
 camera_set_view_size(_camera,sizeX,sizeY);
 camera_set_view_angle(_camera,angle);

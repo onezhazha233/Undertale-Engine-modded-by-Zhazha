@@ -29,6 +29,23 @@ function Init(){
     _char_proc=1;
     _voice_played=false;
     _voice_pack_config={};
+    if(variable_instance_exists(id,"_list_inst")&&ds_exists(_list_inst,ds_type_list)){
+        ds_list_destroy(_list_inst);
+    }
+    if(variable_instance_exists(id,"_list_cmd")&&ds_exists(_list_cmd,ds_type_list)){
+        ds_list_destroy(_list_cmd);
+    }
+    if(variable_instance_exists(id,"_list_mini")&&ds_exists(_list_mini,ds_type_list)){
+        var mi=0;
+        repeat(ds_list_size(_list_mini)){
+            var MINST=ds_list_find_value(_list_mini,mi);
+            if(instance_exists(MINST)){
+                instance_destroy(MINST);
+            }
+            mi+=1;
+        }
+        ds_list_destroy(_list_mini);
+    }
     _list_inst=ds_list_create();
     _list_cmd=ds_list_create();
 	_list_mini=ds_list_create();

@@ -1,10 +1,10 @@
 depth=DEPTH_UI.PANEL;
 
-_surface_ui=noone; // aliases global.prompt_surface each Pre-Draw
-
+_surface_ui=surface_create(640,480);
 
 _text="";
-_prefix="{shadow false}{scale 2}{font 1}{instant true}{gui true}{outline true}{color_outline `black`}{depth "+string(DEPTH_UI.TEXT)+"}";
+
+_prefix="{shadow false}{scale 2}{font 1}{instant true}{gui false}{outline true}{color_outline `black`}{depth "+string(DEPTH_UI.TEXT)+"}";
 _inst=noone;
 _pos=PROMPT_POS.BOT_LEFT;
 _anchor_y=0;

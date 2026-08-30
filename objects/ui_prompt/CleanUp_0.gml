@@ -5,10 +5,7 @@ if(surface_exists(_hold_ring_surface)){
 	surface_free(_hold_ring_surface);
 	_hold_ring_surface=-1;
 }
-_surface_ui=noone;
-if(instance_number(ui_prompt)<=1){
-	if(variable_global_exists("prompt_surface")&&surface_exists(global.prompt_surface)){
-		surface_free(global.prompt_surface);
-		global.prompt_surface=-1;
-	}
+if(surface_exists(_surface_ui)){
+	surface_free(_surface_ui);
+	_surface_ui=-1;
 }

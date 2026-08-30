@@ -1,8 +1,9 @@
-if(!variable_global_exists("prompt_surface")||!surface_exists(global.prompt_surface)){
-	global.prompt_surface=surface_create(640,480);
+if(!surface_exists(_surface_ui)){
+	_surface_ui = surface_create(640,480);
+	_inst.SetSurface(_surface_ui);
 }
-_surface_ui=global.prompt_surface;
-if(instance_exists(_inst)&&!surface_exists(_inst._surface)){
-	_inst._surface_enabled=true;
-	_inst._surface=_surface_ui;
+if(surface_exists(_surface_ui)){
+	surface_set_target(_surface_ui);
+	draw_clear_alpha(0,0);
+	surface_reset_target();
 }

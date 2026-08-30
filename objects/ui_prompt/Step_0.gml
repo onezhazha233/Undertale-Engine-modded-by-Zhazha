@@ -21,6 +21,7 @@ if(!instance_exists(_inst)){
 	_inst=instance_create_depth(_start_x,_y,0,text_typer);
 	_inst.text=_align+_prefix+_text;
 	_inst.override_alpha_enabled=true;
+	_inst.SetSurface(_surface_ui);
 	
 	if(fade_in_time>0){
 		_inst.override_alpha=0;
@@ -30,8 +31,6 @@ if(!instance_exists(_inst)){
 		_inst.override_alpha=1;
 	}
 }
-
-global.prompt_surface_clear=true;
 
 if(!hold_enabled||!instance_exists(_inst)){
 	if(instance_exists(_inst)){

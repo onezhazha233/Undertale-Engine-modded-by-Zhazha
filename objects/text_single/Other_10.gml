@@ -1,6 +1,6 @@
 ///@desc Draw
 var surf=-1;
-if(instance_exists(_parent)){
+if(instance_exists(_parent)&&_parent._surface_enabled = true){
 	surf=_parent._surface;
 }
 if(surface_exists(surf)){

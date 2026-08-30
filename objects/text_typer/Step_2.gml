@@ -203,23 +203,6 @@ if(override_alpha_enabled||override_color_text_enabled){
 	}
 }
 
-if(_position_follow||_angle_follow){
-	if(!ds_exists(_list_inst,ds_type_list)) exit;
-	var proc=0;
-	repeat(ds_list_size(_list_inst)){
-		var INST=ds_list_find_value(_list_inst,proc);
-		if(instance_exists(INST)){
-			var rot=RotateXY(x+INST._deltaX, y+INST._deltaY, x, y, _angle);
-			INST.x=rot[0];
-			INST.y=rot[1];
-			if(_angle_follow){
-				INST.angle=_angle;
-			}
-		}
-		proc+=1;
-	}
-}
-
 _time+=1;
 
 for(_i=0;_i<10;_i+=1){

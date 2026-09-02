@@ -53,7 +53,7 @@ function Init(){
     _face=noone;
     _face_linked=-1;
     _char_linked=-1;
-    _skip_space=true;
+    _skip_space=Lang_GetLayout("skip_space",false);
     _mini_auto_layout=true;
     _mini_align=1;
     _mini_positions=[];
@@ -364,7 +364,7 @@ function Measure(text, _font_start=0, _scale_x_start=1, _scale_y_start=1, _space
                         }
                     }
                     break;
-                case "sprite":
+                case "sprite"://name spd=1 img=0 xoff=0 yoff=0
                     var spr_name="";
                     var arg_len=string_length(cmd_args);
                     var i=1;

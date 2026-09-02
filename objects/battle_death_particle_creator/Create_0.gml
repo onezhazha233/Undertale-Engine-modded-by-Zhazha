@@ -1,0 +1,22 @@
+depth = DEPTH_BATTLE.ENEMY
+sprite=-1;
+image=0;
+scale_x=2
+scale_y=2
+spd = 0.5
+slow = false
+
+buff = -1
+w = 0
+h = 0
+xoff = 0
+yoff = 0
+height = 0
+sheight = 0
+surf = -1
+rowspd = 8
+i = 0
+particles = []
+active_count = 0
+all_rows_done = false
+alarm[0] = 1

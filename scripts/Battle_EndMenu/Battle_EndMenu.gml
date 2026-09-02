@@ -24,6 +24,7 @@ function Battle_EndMenu(){
 			if(Battle_IsMenuMercyFleeEnabled()){
 				var value=irandom(100)+10*Battle_GetTurnNumber();
 				Battle_SetFleeable(round(value/100));
+				if!(Battle_IsFleeableOverride() = -1)Battle_SetFleeable(Battle_IsFleeableOverride());
 			}else{
 				Battle_SetFleeable(false);
 			}

@@ -10,4 +10,4 @@ event_inherited();
 	draw_rectangle(x-bW,y-bH/3*2,x,y+bH/3,true);
 	draw_rectangle(x-bW/3,y,x+bW/3,y+bH*1.5,true);
 	draw_set_color(-1);
-}
+}*/

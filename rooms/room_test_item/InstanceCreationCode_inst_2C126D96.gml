@@ -1,0 +1,1 @@
+contain_item = item_faded_ribbon

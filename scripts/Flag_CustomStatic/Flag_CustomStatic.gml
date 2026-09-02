@@ -10,7 +10,7 @@ function Flag_CustomStatic(){
 		Set("def_item",0);
 		Set("spd",2);
 		Set("spd_item",0);
-		Set("inv",40);
+		Set("inv",60);
 		Set("inv_item",0);
 		Set("exp",0);
 		Set("gold",0);
@@ -34,6 +34,4 @@ function Flag_CustomStatic(){
 	Item_Add(item_bandage);
 	
 	Phone_Add(phone_toriel)
-	
-	Player_SetKills(1)
 }

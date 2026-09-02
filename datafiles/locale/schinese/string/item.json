@@ -1,8 +1,10 @@
 {
-    "item.eat": "* 你吃掉了 {insert ITEM}。",
-    "item.equip": "* 你装备了 {insert ITEM}。",
-    "item.heal.part": "* 你回复了 {insert HP}HP！",
+    "item.eat": "* 你吃掉了{insert ITEM}。",
+    "item.drink": "* 你喝掉了{insert ITEM}。",
+    "item.equip": "* 你装备了{insert ITEM}。",
+    "item.heal.part": "* 你回复了{insert HP} HP！",
     "item.heal.all": "* 你的HP已满。",
+    "item.get": "{char_unlink}* 你获得了{insert ITEM}。",
     "item.none.name": "<无>",
 
     "item.drop.0": "* {insert ITEM} 被你扔掉了。",
@@ -11,8 +13,10 @@
     "item.drop.3": "* 你把 {insert ITEM}&  放在地上，{sleep 20}这正是它这样&  的垃圾应有的待遇。",
     "item.drop.4": "* 你丢弃了 {insert ITEM}。",
 
+    "item.toomuch": "* (你带的东西太多了。)",
+
     "item.stick.name": "树枝",
-    "item.stick.info": "* “树枝”- 武器 AT 0&* 小树叉吐不出橡芽。",
+    "item.stick.info": "* “树枝”- 武器 攻击 0&* 小树叉吐不出橡芽。",
     "item.stick.use": "* 你扔出了树枝。{sleep 20}&* 然后自己把它捡了回来。",
 
     "item.bandage.name": "绷带",
@@ -21,9 +25,22 @@
     "item.bandage.use.1": "* 还是有点粘粘的。",
 
     "item.toy_knife.name": "玩具刀",
-    "item.toy_knife.info": "* “玩具刀”- 武器 AT 3&* 塑料制品。&* 如今很罕见了。",
+    "item.toy_knife.info": "* “玩具刀”- 武器 攻击 3&* 塑料制品。&* 如今很罕见了。",
 
     "item.faded_ribbon.name": "褪色缎带",
     "item.faded_ribbon.name.short": "褪色缎带",
-    "item.faded_ribbon.info": "* “褪色缎带”- 装备 DF 3&* 你越可爱，{sleep 20}怪物们越不忍心下手。"
+    "item.faded_ribbon.info": "* “褪色缎带”- 防具 防御 3&* 你越可爱，{sleep 20}怪物们越不忍心下手。",
+
+    "item.tml.name": "糖萌芦",
+    "item.tml.use": "* 你摸了摸糖萌芦，&  什么也没发生。",
+    "item.tml.info": "* 糖萌芦&* 一只蓝色的，毛茸茸的伊布。{sleep 20}&* 是这个引擎的作者。{pause}{clear}* 没什么用，放生掉就好。",
+    "item.tml.drop": "* 你放生了糖萌芦。",
+
+    "item.tough_glove.name": "牢固手套",
+    "item.tough_glove.name.short": "牢固手套",
+    "item.tough_glove.info": "* “牢固手套”- 武器 攻击5&* 一只磨损的粉色皮质手套。{sleep 20}&* 给五指的家伙们的。",
+
+    "item.sea_tea.name": "海茶",
+    "item.sea_tea.info": "* “海茶”- 治愈 10 HP&* 由发光的蘑菇水制成。&* 战斗时食用提升速度。",
+    "item.sea_tea.use": "* 你的速度暴涨！"
 }

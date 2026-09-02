@@ -11,7 +11,10 @@ _inst_time=noone;
 _inst_room=noone;
 _inst_save=noone;
 _inst_return=noone;
+_inst_menu=noone;
 
 if(instance_exists(char_player)){
 	char_player._moveable_save=false;
 }
+
+menu_enabled=true;//是否启用返回菜单选项

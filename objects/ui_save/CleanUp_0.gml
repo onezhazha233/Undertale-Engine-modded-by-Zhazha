@@ -16,6 +16,9 @@ if(instance_exists(_inst_save)){
 if(instance_exists(_inst_return)){
 	instance_destroy(_inst_return);
 }
+if(instance_exists(_inst_menu)){
+	instance_destroy(_inst_menu);
+}
 
 if(instance_exists(char_player)){
 	char_player._moveable_save=true;

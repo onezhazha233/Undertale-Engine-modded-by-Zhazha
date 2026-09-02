@@ -1,5 +1,56 @@
 {
+    "room.test_main.name": "Test Room - Main",
+
     "bd.test": "Battle Dialog&Test, 123 abc...&Test&Test",
     "ow.text.test": "* Find example.json in the files&  to modify these texts.",
-    "save.text.test": "* This template's infinite&  potential fills you with&  determination."
+    "save.text.test": "* This template's infinite&  potential fills you with&  determination.",
+
+    "phone.toriel.name": "Toriel's Phone",
+    "phone.toriel.call": "* Calling...{pause}{clear}* ...{pause}{clear}* Nobody picks up.",
+
+    "sign.introduction": "* Hello! Welcome to UTE&  modded by Zhazha!{pause}{clear}* This template is based on&  the original UTE, but&  with many new features.{pause}{clear}* Or, if you are just looking&  around, please check out the&  other rooms!{pause}{clear}* Choose the room using the&  CONSOLE (Hold Tab+R) or just&  by foot.{pause}{clear}* The content of this sign&  is a poor imitation of tlDR.{pause}{clear}* Of course, throughout&  the entire testing zone.",
+    "sign.color": "* \"I'm the sign of color&  and other effects.\"{pause}{clear}* \"White, {color `yellow`}Yellow{color `white`}, {color `red`}Red{color `white`},&  {effect 0}Shake{effect -1}, {effect 1}Wave{effect -1}!{mini `\"That's all?\"`}\"{pause}{clear}{effect 1}* \"I like the wave effect,&  what do you think?\"",
+    "sign.choice.0": "* \"I'm the sign of choice and&  cutscene, normal choice first.\"&{voice -1}         {choice 0}Yes?        {choice 1}OK",
+    "sign.choice.1.0": "* \"Seems like you chose&  the left one.\"",
+    "sign.choice.1.1": "* \"Seems like you chose&  the right one.\"",
+    "sign.choice.2": "* \"Then, DR choice, choose the&  moving direction of that box.\"{pause}{clear}{voice -1}{instant true}{choice_dir 3}{choice_none true}               {choice 0}UP& {choice 1}LEFT            {choice_center}           {choice 2}RIGHT&              {choice 3}DOWN",
+    "sign.choice.3.0": "* \"Up to you.\"",
+    "sign.choice.3.1": "* \"{color `yellow`}Up{color `white`} to you.\"",
+    "sign.choice.4": "* \"That's pretty much all of it,&  what do you think?\"&{voice -1}        {choice 0}Cool        {choice 1}Lame",
+    "sign.choice.5.0": "* \"Glad to hear it.&  Thanks for your feedback.&  I'm wating for the next test.\"",
+    "sign.choice.5.1": "* \"Not so good?{sleep 20} That's alright,&  this template is honored&  to be running!\"{pause}{clear}* \"Anyway, thanks for&  testing.\"",
+
+    "prompt_test.pause": "PAUSE",
+    "sign.prompt": "* \"Who would use AI to make&  a mini-game just for a&  prompt system example?\"{pause}{clear}* \"Even if it doesn't even have&  a scoring feature?\"{pause}{clear}* \"Don't make that face, using AI&  to code isn't rare, someone's&  gotta keep up with the times.\"",
+
+    "box_item": "* (You opened the box, inside&  was {color `yellow`}{insert ITEM}{color `white`}.)",
+
+    "battle.enemy.test.0.name": "* Test Enemy 0",
+    "battle.enemy.test.0.action.0": "* Check",
+    "battle.enemy.test.0.action.1": "* Talk",
+    "battle.enemy.test.0.action.2": "* Weaken",
+    "battle.enemy.test.0.action.3": "* Strengthen",
+    "battle.enemy.test.0.check.0": "* Test Enemy 0 - ATK 0 DEF 0&* Infinite HP, can be used to&  test attack damage.",
+    "battle.enemy.test.0.check.1": "* Test Enemy 0 - ATK 0 DEF 0&* Finite HP, can be used to&  test attack damage.",
+    "battle.enemy.test.0.talk": "* You talked to the dummy...{pause}{clear}* It doesn't seem much for&  conversation.{sleep 20}&* But it's {color `yellow`}spareable{color `white`} now.",
+    "battle.enemy.test.0.weaken": "* You weakened the dummy somehow,&  its HP is finite now.",
+    "battle.enemy.test.0.strengthen": "* You strengthened the dummy&  somehow, its HP is infinite&  now.",
+    "battle.enemy.test.0.menu.0": "* You encountered test enemies.",
+    "battle.enemy.test.0.menu.1": "* Enemy 0 is standing still.",
+    "battle.enemy.test.0.menu.2": "* Smell of punching bag.",
+    "battle.enemy.test.0.menu.3": "* Enemy 0 is thinking about&  player damage calculation.",
+
+    "battle.enemy.test.1.name": "* Test Enemy 1",
+    "battle.enemy.test.1.action.0": "* Check",
+    "battle.enemy.test.1.action.1": "* Talk",
+    "battle.enemy.test.1.action.2": "* Weaken",
+    "battle.enemy.test.1.action.3": "* Strengthen",
+    "battle.enemy.test.1.check": "* Test Enemy 1 - ATK {insert ATK} DEF 0&* A bit aggressive, can be&  used to test player defense.",
+    "battle.enemy.test.1.talk": "* You talked to the dummy...{pause}{clear}* It doesn't seem much for&  conversation.{sleep 20}&* But it's {color `yellow`}spareable{color `white`} now.",
+    "battle.enemy.test.1.weaken": "* You weakened the dummy somehow,&  its ATK is reduced.",
+    "battle.enemy.test.1.strengthen": "* You strengthened the dummy&  somehow, its ATK is increased.",
+    "battle.enemy.test.1.menu.0": "* Enemy 1 is standing still.",
+    "battle.enemy.test.1.menu.1": "* Smell of test bullet.",
+    "battle.enemy.test.1.menu.2": "* Enemy 1 is thinking about&  what DMG means.",
+    "battle.enemy.test.1.menu.3": "* Enemy 1 is thinking about&  the conflict of battle board&  when creating two turns."
 }

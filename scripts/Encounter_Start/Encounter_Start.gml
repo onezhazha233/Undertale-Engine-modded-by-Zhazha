@@ -1,7 +1,4 @@
-///@arg encounter_id
-///@arg exclamation*
-function Encounter_Start(ENCOUNTER, ANIM=true, EXCLAM=true){
-
+function Encounter_Start(ENCOUNTER,ANIM=true,EXCLAM=true){
 	if(Encounter_IsExists(ENCOUNTER)){
 		if(!instance_exists(char_player)){
 			ANIM=false;

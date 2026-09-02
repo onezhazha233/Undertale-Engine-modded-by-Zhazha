@@ -69,6 +69,9 @@
       "dialog_battle_enemy": 2,
       "dialog_shop": 2,
       "gameover": 4
+    },
+    "replace": {
+      "sleep": [",",",{sleep 20}"]
     }
   },
   "fonts": [
@@ -138,6 +141,15 @@
       "is_smooth": false,
       "origin_x": 0,
       "origin_y": 0
+    },
+    {
+      "key": "battle.menu.fight.fist.press",
+      "source": "sprite/battle_menu_fight_fist_press.png",
+      "image_number": 1,
+      "remove_background": false,
+      "is_smooth": false,
+      "origin_x": 18,
+      "origin_y": 19
     }
   ],
   "audio": []

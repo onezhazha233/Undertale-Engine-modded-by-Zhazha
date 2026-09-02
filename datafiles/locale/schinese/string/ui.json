@@ -14,6 +14,7 @@
     "ui.save.name.empty": "空",
     "ui.save.save": "保存",
     "ui.save.return": "取消",
+    "ui.save.menu": "菜单",
     "ui.save.saved": "档案已保存。",
 
     "ui.box.inventory": "物品栏",
@@ -24,5 +25,6 @@
 
     "ui.prompt.confirm": "[Z]: 确认",
     "ui.prompt.cancel": "[X]: 取消",
-    "ui.prompt.cancel.hold": "长按 [X]: 取消"
+    "ui.prompt.cancel.hold": "长按 [X]: 取消",
+    "ui.prompt.move": "[{sprite `spr_gamepad_arrow` 0 3 0 2}/{sprite `spr_gamepad_arrow` 0 1 0 2}/{sprite `spr_gamepad_arrow` 0 2 0 2}/{sprite `spr_gamepad_arrow` 0 0 0 2}]: 移动"
 }

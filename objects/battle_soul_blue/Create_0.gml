@@ -1,6 +1,6 @@
 event_inherited()
 moveable = 1
-dir = 270-270
+dir = DIR.DOWN
 move = 0
 impact = 0
 on_block = 0

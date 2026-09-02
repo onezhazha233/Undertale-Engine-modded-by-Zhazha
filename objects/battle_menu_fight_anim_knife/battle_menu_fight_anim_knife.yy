@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Fight",
-    "path": "folders/Objects/Battle/Menu/Fight.yy",
+    "name": "Knife",
+    "path": "folders/Objects/Battle/Menu/Fight/Knife.yy",
   },
   "resourceVersion": "1.0",
   "name": "battle_menu_fight_anim_knife",

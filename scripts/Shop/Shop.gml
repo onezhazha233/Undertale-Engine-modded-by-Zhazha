@@ -54,7 +54,7 @@ function Shop_Start(shop_id){
 }
 
 function Shop_End(){
-	var room_return=Flag_Get(FLAG_TEMP,"shop_room_return",room_area_0);
+	var room_return=Flag_Get(FLAG_TEMP,"shop_room_return",room_test_main);
 	if(room_exists(room_return)){
 		fader.color=c_black;
 		Fader_Fade(0,1,20);

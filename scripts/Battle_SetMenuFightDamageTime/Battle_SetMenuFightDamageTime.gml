@@ -1,5 +1,4 @@
 function Battle_SetMenuFightDamageTime(TIME){
-
 	var MENU=Battle_GetMenu();
 
 	if((MENU==BATTLE_MENU.FIGHT_AIM||MENU==BATTLE_MENU.FIGHT_ANIM||MENU==BATTLE_MENU.FIGHT_DAMAGE) && TIME>=-1){

@@ -14,6 +14,7 @@
     "ui.save.name.empty": "EMPTY",
     "ui.save.save": "Save",
     "ui.save.return": "Return",
+    "ui.save.menu": "Menu",
     "ui.save.saved": "File Saved.",
     
     "ui.box.inventory": "INVENTORY",
@@ -24,5 +25,6 @@
 
     "ui.prompt.confirm": "[Z]: Confirm",
     "ui.prompt.cancel": "[X]: Cancel",
-    "ui.prompt.cancel.hold": "Hold [X]: Cancel"
+    "ui.prompt.cancel.hold": "Hold [X]: Cancel",
+    "ui.prompt.move": "[{sprite `spr_gamepad_arrow` 0 3 0 2}/{sprite `spr_gamepad_arrow` 0 1 0 2}/{sprite `spr_gamepad_arrow` 0 2 0 2}/{sprite `spr_gamepad_arrow` 0 0 0 2}]: Move"
 }

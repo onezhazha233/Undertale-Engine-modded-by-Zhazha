@@ -1,5 +1,5 @@
 event_inherited();
 
-_name="TML";
+_name=Lang_GetString("item.tml.name");
 
 _price_sell=1

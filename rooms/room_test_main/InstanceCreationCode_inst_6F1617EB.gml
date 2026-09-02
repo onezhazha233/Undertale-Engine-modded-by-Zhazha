@@ -1,0 +1,1 @@
+text=Lang_GetString("save.text.test")

@@ -4,9 +4,18 @@ if(_state==0||_state==1){
 }
 
 if(_state==0){
-	if(_choice==0){
-		draw_sprite(spr_battle_soul_red,0,108+6+37,118+6+131);
-	}else{
-		draw_sprite(spr_battle_soul_red,0,108+6+217,118+6+131);
+	var soul_x=108+6+37;
+	switch(_choice){
+		case 0:
+			soul_x=108+6+37;
+			break;
+		case 1:
+			soul_x=108+6+217;
+			if(menu_enabled)soul_x-=60;
+			break;
+		case 2:
+			soul_x=108+6+287;
+			break;
 	}
+	draw_sprite(spr_battle_soul_red,0,soul_x,118+6+131);
 }

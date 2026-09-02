@@ -1,0 +1,9 @@
+depth = DEPTH_BATTLE.ENEMY - 100
+scale = random(0.5) + 1
+rightside = 0
+topside = 0
+depth = -10000
+image_xscale = scale
+image_yscale = scale
+image_speed = 0.25
+alarm[0] = 1

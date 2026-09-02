@@ -7,8 +7,8 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 	var SPD=(Input_IsHeld(INPUT.CANCEL) ? SPD/2 : SPD);
 
 	//重力方向单位向量（供 block 碰撞与移动用）
-	xx = lengthdir_x(dir, 1);
-	yy = lengthdir_y(dir, 1);
+	xx = lengthdir_x(1,dir);
+	yy = lengthdir_y(1,dir);
 
 	jump_input = 0;
 	
@@ -46,17 +46,23 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 
 	if(on_block == 0 && on_board == 0 && on_platform == 0 && jump_state == 0){
 		jump_state = 2;
-		move = 0;
+		move = 0;CC_Add("1")
 	}
 	//底部无支撑时自然下落
 
 	if(jump_state != 0 && soul_touching_ceiling){
 		jump_state = 2;
-		if(impact == 0)move = 0;
+		if(impact == 0){
+			move = 0;
+			CC_Add("2")
+		}
 	}
 	if(jump_state != 0 && instance_position(x-xx*(sprite_width/2+1),y-yy*(sprite_height/2+1),block)){
 		jump_state = 2;
-		if(impact == 0)move = 0;
+		if(impact == 0){
+			move = 0;
+			CC_Add("3")
+		}
 	}
 	//碰到顶时强制下落
 	

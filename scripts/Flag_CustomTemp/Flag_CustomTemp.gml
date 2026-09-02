@@ -4,7 +4,7 @@ function Flag_CustomTemp(){
 		Set("encounter",0);
 		Set("battle_room_return",-1);
 		Set("gameover_soul_position",[320,320]);
-		Set("trigger_warp_landmark",0);
+		Set("trigger_warp_landmark",-1);
 		Set("trigger_warp_dir",-1);
 		Set("text_typer_choice",-1);
 		Set("frame_skip",0);

@@ -1,1 +1,0 @@
-text="{speed 2}"+"* Welcome, {sleep 10}everyone. Thank you&  for coming again today, {sleep 10}on this&  glorious day of days...."//Lang_GetString("save.text.test")

@@ -65,6 +65,7 @@ _menu_choice_mercy_override_name[0]="";
 _menu_choice_mercy_override_name[1]="";
 _menu_choice_mercy_override_name[2]="";
 _menu_fleeable=false;
+_menu_fleeable_override=-1;
 _menu_mercy_flee_enabled=Encounter_IsMenuMercyFleeEnabled(ENCOUNTER);
 _menu_dialog=Encounter_GetMenuDialog(ENCOUNTER);
 _menu_dialog_candidates=ds_list_create();

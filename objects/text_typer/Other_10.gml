@@ -63,11 +63,12 @@ if(_char!=" "&&_char!="　"){
 	_line_char_count+=1;
 	if(sprite_exists(_char_sprite)){
 		INST.sprite=_char_sprite;
+		INST.image_speed=_char_sprite_speed;
 		INST.image_index=_char_sprite_image;
-		INST.x+=sprite_get_xoffset(_char_sprite)*_scale_x;
-		INST.y+=sprite_get_yoffset(_char_sprite)*_scale_y;
-		INST._deltaX+=sprite_get_xoffset(_char_sprite)*_scale_x;
-		INST._deltaY+=sprite_get_yoffset(_char_sprite)*_scale_y;
+		INST.x+=(_char_sprite_offset_x)*_scale_x;
+		INST.y+=(_char_sprite_offset_y)*_scale_y;
+		INST._deltaX+=(_char_sprite_offset_x)*_scale_x;
+		INST._deltaY+=(_char_sprite_offset_y)*_scale_y;
 	}
 	ds_list_add(_list_inst,INST);
 

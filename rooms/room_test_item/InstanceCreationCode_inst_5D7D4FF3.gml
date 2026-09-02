@@ -1,0 +1,1 @@
+contain_item = item_toy_knife

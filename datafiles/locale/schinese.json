@@ -24,7 +24,8 @@
     "save": {
       "info_text_x": [0, 0, 0],
       "save_x": 0,
-      "return_x": 0
+      "return_x": 0,
+      "menu_x": 0
     },
     "battle": {
       "dialog": {
@@ -68,8 +69,12 @@
       "dialog_battle": 3,
       "dialog_battle_enemy": 3,
       "dialog_shop": 3,
-      "gameover": 6
-    }
+      "gameover": 7
+    },
+    "replace": {
+      "sleep": ["，","，{sleep 20}"]
+    },
+    "skip_space": true
   },
   "fonts": [
     "determination_mono",
@@ -149,6 +154,15 @@
       "is_smooth": false,
       "origin_x": 0,
       "origin_y": 0
+    },
+    {
+      "key": "battle.menu.fight.fist.press",
+      "source": "sprite/battle_menu_fight_fist_press.png",
+      "image_number": 1,
+      "remove_background": false,
+      "is_smooth": false,
+      "origin_x": 18,
+      "origin_y": 19
     }
   ],
   "audio": []

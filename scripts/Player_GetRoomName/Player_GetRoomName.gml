@@ -6,8 +6,8 @@ function Player_GetRoomName(ROOM){
 			name="--";
 			break;
 			
-		case room_area_0:
-			name="Area 0";
+		case room_test_main:
+			name=Lang_GetString("room.test_main.name");
 			break;
 	}
 	return name;

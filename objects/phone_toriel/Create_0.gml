@@ -1,3 +1,3 @@
 event_inherited();
 
-_name="Toriel's Phone";
+_name=Lang_GetString("phone.toriel.name");

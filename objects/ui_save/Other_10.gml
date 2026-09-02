@@ -8,14 +8,14 @@ if(_state==0){
 	_inst_name=instance_create_depth(_bx+26+Lang_GetLayout("save.info_text_x.0"),_by+16+Lang_GetLayout("save.info_text_y"),0,text_typer);
 	_inst_name.text=_prefix+Flag_Get(FLAG_INFO,"name", Lang_GetString("ui.save.name.empty"));
 	
-	_inst_lv=instance_create_depth(_bx+180+Lang_GetLayout("save.info_text_x.1"),_by+16,0,text_typer);
-	_inst_lv.text=_prefix+"LV "+string(Flag_Get(FLAG_INFO,"lv"));
+	_inst_lv=instance_create_depth(320+Lang_GetLayout("save.info_text_x.1"),_by+16,0,text_typer);
+	_inst_lv.text=_prefix+"{halign 1}LV "+string(Flag_Get(FLAG_INFO,"lv"));
 	
-	_inst_time=instance_create_depth(_bx+338+Lang_GetLayout("save.info_text_x.2"),_by+16,0,text_typer);
+	_inst_time=instance_create_depth(_bx+338+50+Lang_GetLayout("save.info_text_x.2"),_by+16,0,text_typer);
 	var time=Flag_Get(FLAG_INFO,"time");
 	var minute=time div 60;
 	var second=time mod 60;
-	_inst_time.text=_prefix+string(minute)+":"+(second<10 ? "0" : "")+string(second);
+	_inst_time.text=_prefix+"{halign 2}"+string(minute)+":"+(second<10 ? "0" : "")+string(second);
 	
 	_inst_room=instance_create_depth(_bx+26,_by+56,0,text_typer);
 	_inst_room.text=_prefix+Player_GetRoomName(Flag_Get(FLAG_INFO,"room", -1));
@@ -25,6 +25,13 @@ if(_state==0){
 	
 	_inst_return=instance_create_depth(_bx+236+Lang_GetLayout("save.return_x"),_by+116,0,text_typer);
 	_inst_return.text=_prefix+Lang_GetString("ui.save.return");
+	
+	if(menu_enabled){
+		_inst_return.x-= 60;
+		var has_file=file_exists(Flag_GetPath(FLAG_INFO));
+		_inst_menu=instance_create_depth(_bx+306+Lang_GetLayout("save.menu_x"),_by+116,0,text_typer);
+		_inst_menu.text=_prefix+"{color_text `"+(has_file ? "white" : "gray")+"`}"+Lang_GetString("ui.save.menu");
+	}
 }
 if(_state==1){
 	Player_Save(Flag_GetSlot());
@@ -49,18 +56,21 @@ if(_state==1){
 	if(instance_exists(_inst_return)){
 		instance_destroy(_inst_return);
 	}
+	if(instance_exists(_inst_menu)){
+		instance_destroy(_inst_menu);
+	}
 	
 	_inst_name=instance_create_depth(108+6+26,118+6+16,0,text_typer);
 	_inst_name.text=_prefix+"{color `yellow`}"+Flag_Get(FLAG_INFO,"name", Lang_GetString("ui.save.name.empty"));
 	
-	_inst_lv=instance_create_depth(108+6+180,118+6+16,0,text_typer);
-	_inst_lv.text=_prefix+"{color `yellow`}"+"LV "+string(Flag_Get(FLAG_INFO,"lv"));
+	_inst_lv=instance_create_depth(320,118+6+16,0,text_typer);
+	_inst_lv.text=_prefix+"{color `yellow`}{halign 1}"+"LV "+string(Flag_Get(FLAG_INFO,"lv"));
 	
-	_inst_time=instance_create_depth(108+6+338,118+6+16,0,text_typer);
+	_inst_time=instance_create_depth(108+6+338+50,118+6+16,0,text_typer);
 	var time=Flag_Get(FLAG_INFO,"time");
 	var minute=time div 60;
 	var second=time mod 60;
-	_inst_time.text=_prefix+"{color `yellow`}"+string(minute)+":"+(second<10 ? "0" : "")+string(second);
+	_inst_time.text=_prefix+"{color `yellow`}{halign 2}"+string(minute)+":"+(second<10 ? "0" : "")+string(second);
 	
 	_inst_room=instance_create_depth(108+6+26,118+6+56,0,text_typer);
 	_inst_room.text=_prefix+"{color `yellow`}"+Player_GetRoomName(Flag_Get(FLAG_INFO,"room", -1));

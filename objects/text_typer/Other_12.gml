@@ -700,7 +700,7 @@ switch(cmd[|0]){
 		}
 		break;
 		
-	case "sprite":
+	case "sprite"://name spd=1 img=0 xoff=0 yoff=0
 		var spr=cmd[|1];
 		if(is_string(spr)){
 			spr=asset_get_index(spr);

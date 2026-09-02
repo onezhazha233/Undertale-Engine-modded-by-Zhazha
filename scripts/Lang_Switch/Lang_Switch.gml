@@ -11,13 +11,12 @@ function Lang_Switch(LANG_ID){
 	Lang_ClearString();
 	Lang_ClearSprite();
 	Lang_ClearFont();
-
+	Lang_ClearAudio();
+	
 	// 加载新语言
-	var LANG_NAME=ds_list_find_value(global._gmu_lang_list,LANG_ID);
-	Lang_LoadManifest(LANG_NAME);
-	Lang_LoadString(LANG_ID);
-	Lang_LoadSprite(LANG_ID);
-	Lang_LoadFont(LANG_ID);
+	Lang_LoadLanguage(Language());
+	
+	Encounter_Custom();
 
 	return true;
 }

@@ -1,0 +1,1 @@
+text = "{instant true}{halign 1}{font 2}{scale 0.5}"+Item_GetName(item_toy_knife)

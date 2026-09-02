@@ -42,5 +42,11 @@
 
     "item.sea_tea.name": "Sea Tea",
     "item.sea_tea.info": "* \"Sea Tea\" - Heals 10 HP&* Made from glowing marshwater.&* Increases SPEED for one battle.",
-    "item.sea_tea.use": "* Your SPEED boosts!"
+    "item.sea_tea.use": "* Your SPEED boosts!",
+
+    "item.legendary_hero.name": "Legendary Hero",
+    "item.legendary_hero.name.short": "Leg.Hero",
+    "item.legendary_hero.name.short.serious": "L. Hero",
+    "item.legendary_hero.info": "* \"Legendary Hero\" - Heals 40 HP&* Sandwich shaped like a sword.&* Increases ATTACK when eaten.",
+    "item.legendary_hero.use": "* ATTACK increased by 4!"
 }

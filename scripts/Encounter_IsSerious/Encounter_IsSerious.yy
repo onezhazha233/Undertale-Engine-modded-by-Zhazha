@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Enemy",
-    "path": "folders/Scripts/Battle/Enemy.yy",
+    "name": "Encounter",
+    "path": "folders/Scripts/Encounter.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Battle_IsEnemySerious",
+  "name": "Encounter_IsSerious",
   "tags": [],
   "resourceType": "GMScript",
 }

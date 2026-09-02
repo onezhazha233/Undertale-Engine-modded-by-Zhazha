@@ -42,5 +42,11 @@
 
     "item.sea_tea.name": "海茶",
     "item.sea_tea.info": "* “海茶”- 治愈 10 HP&* 由发光的蘑菇水制成。&* 战斗时食用提升速度。",
-    "item.sea_tea.use": "* 你的速度暴涨！"
+    "item.sea_tea.use": "* 你的速度暴涨！",
+
+    "item.legendary_hero.name": "传说英雄",
+    "item.legendary_hero.name.short": "传说英雄",
+    "item.legendary_hero.name.short.serious": "传说英雄",
+    "item.legendary_hero.info": "* “传说英雄”- 治愈 40 HP&* 做成剑形状的三明治。&* 食用后提升攻击。",
+    "item.legendary_hero.use": "* 攻击力提升了4 点！"
 }

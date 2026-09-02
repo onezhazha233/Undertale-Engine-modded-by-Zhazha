@@ -93,3 +93,5 @@ _player_temp_atk=0;
 _player_temp_def=0;
 _player_temp_spd=0;
 _player_temp_inv=0;
+
+_serious=Encounter_IsSerious(ENCOUNTER);

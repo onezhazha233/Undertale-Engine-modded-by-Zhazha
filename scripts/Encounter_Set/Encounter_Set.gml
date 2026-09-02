@@ -1,6 +1,4 @@
-function Encounter_Set(ID, ENEMY_0, ENEMY_1, ENEMY_2, MENU_DIALOG, BGM=-1, MENU_MERCY_FLEE_ENABLED=true, PAUSE_BGM=true, QUICK=0, SOUL_X=48, SOUL_Y=454){
-
-
+function Encounter_Set(ID,ENEMY_0,ENEMY_1,ENEMY_2,MENU_DIALOG,BGM=-1,MENU_MERCY_FLEE_ENABLED=true,PAUSE_BGM=true,QUICK=false,SOUL_X=48,SOUL_Y=454,SERIOUS=false){
 	if(ID>=0){
 		var map=global._encounter;
 		var map_e=-1;
@@ -21,6 +19,7 @@ function Encounter_Set(ID, ENEMY_0, ENEMY_1, ENEMY_2, MENU_DIALOG, BGM=-1, MENU_
 		ds_map_add(map_e,"quick",QUICK);
 		ds_map_add(map_e,"soul_x",SOUL_X);
 		ds_map_add(map_e,"soul_y",SOUL_Y);
+		ds_map_add(map_e,"serious",SERIOUS);
 		return true;
 	}else{
 		return false;

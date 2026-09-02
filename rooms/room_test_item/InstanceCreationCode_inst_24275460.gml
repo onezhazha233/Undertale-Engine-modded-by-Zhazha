@@ -1,0 +1,1 @@
+contain_item = item_legendary_hero

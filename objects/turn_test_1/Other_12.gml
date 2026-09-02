@@ -1,2 +1,2 @@
-Battle_SetTurnTime(300)
+Battle_SetTurnTime(600)
 start = 1

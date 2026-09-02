@@ -36,9 +36,9 @@
     "battle.enemy.test.0.weaken": "* 你用某种方式削弱了人偶，&  现在它的血量不是无限了。",
     "battle.enemy.test.0.strengthen": "* 你用某种方式强化了人偶，&  现在它的血量是无限了。",
     "battle.enemy.test.0.menu.0": "* 你遭遇了两个测试敌人。",
-    "battle.enemy.test.0.menu.1": "* 敌人0静静站着。",
+    "battle.enemy.test.0.menu.1": "* 敌人0 静静站着。",
     "battle.enemy.test.0.menu.2": "* 沙袋的气味。",
-    "battle.enemy.test.0.menu.3": "* 敌人0在想玩家伤害的计算公式。",
+    "battle.enemy.test.0.menu.3": "* 敌人0 在想玩家伤害的计算公式。",
 
     "battle.enemy.test.1.name": "* 测试敌人1",
     "battle.enemy.test.1.action.0": "* 查看",
@@ -49,8 +49,8 @@
     "battle.enemy.test.1.talk": "* 你跟人偶说话...{pause}{clear}* 它似乎听不进去什么话，&  不过它现在是{color `yellow`}可饶恕{color `white`}状态了。",
     "battle.enemy.test.1.weaken": "* 你用某种方式削弱了人偶，&  它的攻击降低了。",
     "battle.enemy.test.1.strengthen": "* 你用某种方式强化了人偶，&  它的攻击提高了。",
-    "battle.enemy.test.1.menu.0": "* 敌人1静静站着。",
+    "battle.enemy.test.1.menu.0": "* 敌人1 静静站着。",
     "battle.enemy.test.1.menu.1": "* 测试子弹的气味。",
-    "battle.enemy.test.1.menu.2": "* 敌人1在想“致伤”是什么意思。",
-    "battle.enemy.test.1.menu.3": "* 敌人1在想多个回合同时创建时，&  战斗框的尺寸变化会不会冲突。"
+    "battle.enemy.test.1.menu.2": "* 敌人1 在想“致伤”是什么意思。",
+    "battle.enemy.test.1.menu.3": "* 敌人1 在想多个回合同时创建时，&  战斗框的尺寸变化会不会冲突。"
 }

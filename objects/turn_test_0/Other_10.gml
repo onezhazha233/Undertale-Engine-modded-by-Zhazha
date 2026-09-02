@@ -6,3 +6,4 @@ Battle_CreateBoard(320,320,BATTLE_BOARD_TYPE.SUBTRACT,Shape_Create_Rect(40,20),1
 a = instance_create_depth(270,320,-2000,block)
 a.visible = true
 a.sprite_index = spr_block
+

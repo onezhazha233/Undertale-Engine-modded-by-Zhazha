@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_dong.ogg",
+  "soundFile": "snd_impact.ogg",
   "duration": 0.61678,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_dong",
+  "name": "snd_impact",
   "tags": [],
   "resourceType": "GMSound",
 }

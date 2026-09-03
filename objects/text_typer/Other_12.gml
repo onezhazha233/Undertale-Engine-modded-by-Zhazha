@@ -856,4 +856,12 @@ switch(cmd[|0]){
 		Anim_Create(mini,"override_alpha",0,0,0,1,12);
 		ds_list_add(_list_mini,mini);
 		break;
+		
+	case "ui_buy":
+		instance_create_depth(0,0,0,ui_buy);
+		break;
+		
+	case "ui_buy_destroy":
+		instance_destroy(ui_buy);
+		break;
 }

@@ -1,0 +1,1 @@
+draw_sprite_ext(spr_shop_bg_demo,0,0,0,2,2,0,-1,1)

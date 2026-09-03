@@ -13,12 +13,12 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 	jump_input=INPUT.UP;
 
 	soul_gravity_angle=dir+90;
-	soul_touching_ceiling=false;
+	touching_ceiling=false;
 	Xpoly_Booleanation(battle_board.objs);
 	var result=Xpoly_Collision_Check(x,y,sprite_width/2,soul_gravity_angle);
 	if(is_array(result)){
 		on_board=result[3];
-		soul_touching_ceiling=result[2];
+		touching_ceiling=result[2];
 		//只在真正出框时才钳回，避免在角落/边界被钉到错误位置
 		if(result[0]==0){
 			x=result[4];
@@ -48,7 +48,7 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 		move=0;
 	}
 
-	if(jump_state!=0 && soul_touching_ceiling){
+	if(jump_state!=0 && touching_ceiling){
 		jump_state=2;
 		if(impact==0){
 			move=0;
@@ -146,4 +146,13 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 			y=result[5];
 		}
 	}
+}
+else{
+	jump_state=0;
+	move=0;
+	impact=0;
+	on_block=0;
+	on_platform=0;
+	on_board=0;
+	touching_ceiling=false;
 }

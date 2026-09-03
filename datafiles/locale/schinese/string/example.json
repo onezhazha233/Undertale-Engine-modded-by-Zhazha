@@ -24,6 +24,8 @@
     "sign.prompt": "* “谁会为了写个提示系统的范例就&  专门鞭策AI写了个小游戏呢？{sleep 20}&  哪怕它连个计分功能都没有？”{pause}{clear}* “别露出那个表情，用AI写代码&  又不是什么稀罕事，总得有人&  与时俱进的。”",
 
     "box_item": "* (你打开了箱子，里面&  装的是{color `yellow`}{insert ITEM}{color `white`}。)",
+    "box_sell": "* 这个箱子里的东西不是免费的。{pause}{clear}{ui_buy}* 要花10G 买一个传说英雄吗？{sleep 20}&&{voice -1}         {choice 0}要        {sleep 30}{choice 1}不要",
+    "box_sell.nomoney": "* (你的钱不够。)",
 
     "battle.enemy.test.0.name": "* 测试敌人0",
     "battle.enemy.test.0.action.0": "* 查看",

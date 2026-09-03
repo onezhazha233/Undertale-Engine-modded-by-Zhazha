@@ -6,9 +6,8 @@ impact=0;
 on_block=0;
 on_platform=0;
 on_board=0;
+touching_ceiling=false;
 inst_plat=noone;
-
-soul_touching_ceiling=false;
 
 jump_state=0;
 //0为在地上不动 1为向上跳 2为自由下落

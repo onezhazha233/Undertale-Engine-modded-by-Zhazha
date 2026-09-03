@@ -1,4 +1,4 @@
-function Event_Create(PERSISTENT){
+function Event_Create(PERSISTENT=false){
 	return {
 	    functions: [],
 	    delays: [],

@@ -767,6 +767,12 @@ switch(cmd[|0]){
 		}
 		break;
 		
+	case "dialog_left":
+		if(is_real(cmd[|1])){
+			_dialog_left=cmd[|1];
+		}
+		break;
+		
 	case "dialog_right":
 		if(is_real(cmd[|1])){
 			_dialog_right=cmd[|1];

@@ -4,8 +4,8 @@ if(Shop_GetMenu()==SHOP_MENU.SELL){
 	switch(sell_result){
 		case SHOP_SELL_RESULT.YES:
 			li = Shop_GetLastSellItem();
-			if(li = item_stick){
-				Dialog_Add("* no");
+			if(li = item_tml){
+				Dialog_Add(Lang_GetString("shop.demo.sell.tml"));
 				Item_Insert(0,li);
 				Player_AddGold(-Item_GetPriceSell(li));
 				shop._sell_thanks-=1;

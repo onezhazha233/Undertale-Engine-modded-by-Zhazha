@@ -75,9 +75,11 @@
     }
   },
   "fonts": [
-    "dotumche",
     "determination_mono",
-    "determination_sans"
+    "determination_sans",
+    "dotumche",
+    "comic_sans",
+    "papyrus"
   ],
   "typer": {
     "dialog": {
@@ -94,6 +96,22 @@
       "ascii": { "font": "dotumche", "scale": 1, "space_x": 1 },
       "other": { "font": "dotumche", "scale": 1, "space_x": 0 },
       "space_y": 5
+    },
+    "sans": {
+      "ascii": { "font": "comic_sans", "scale": 1, "space_x": 1,
+         "characters": {
+           "offsets_y_default": [3, 0]
+      }},
+      "other": { "font": "comic_sans", "scale": 1, "space_x": 4 },
+      "space_y": -1
+    },
+    "papyrus": {
+      "ascii": { "font": "papyrus", "scale": 1, "space_x": 2,
+         "characters": {
+           "offsets_y_default": [0, 0]
+      }},
+      "other": { "font": "papyrus", "scale": 1, "space_x": 4 },
+      "space_y": 0
     }
   },
   "sprites": [

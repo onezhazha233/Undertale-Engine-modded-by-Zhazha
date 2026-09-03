@@ -1,7 +1,7 @@
 {
     "room.test_main.name": "Test Room - Main",
 
-    "bd.test": "Battle Dialog&Test, 123 abc...&Test&Test",
+    "bd.test": "Battle Dialog&Test, 123 abc...&Test&{effect 1}WaveTest",
     "ow.text.test": "* Find example.json in the files&  to modify these texts.",
     "save.text.test": "* This template's infinite&  potential fills you with&  determination.",
 
@@ -9,7 +9,7 @@
     "phone.toriel.call": "* Calling...{pause}{clear}* ...{pause}{clear}* Nobody picks up.",
 
     "sign.introduction": "* Hello! Welcome to UTE&  modded by Zhazha!{pause}{clear}* This template is based on&  the original UTE, but&  with many new features.{pause}{clear}* Or, if you are just looking&  around, please check out the&  other rooms!{pause}{clear}* Choose the room using the&  CONSOLE (Hold Tab+R) or just&  by foot.{pause}{clear}* The content of this sign&  is a poor imitation of tlDR.{pause}{clear}* Of course, throughout&  the entire testing zone.",
-    "sign.color": "* \"I'm the sign of color&  and other effects.\"{pause}{clear}* \"White, {color `yellow`}Yellow{color `white`}, {color `red`}Red{color `white`},&  {effect 0}Shake{effect -1}, {effect 1}Wave{effect -1}!{mini `\"That's all?\"`}\"{pause}{clear}{effect 1}* \"I like the wave effect,&  what do you think?\"",
+    "sign.color": "* \"I'm the sign of color&  and other effects.\"{pause}{clear}* \"White, {color `yellow`}Yellow{color `white`}, {color `red`}Red{color `white`},&  {effect 0}Shake{effect -1}, {effect 1}Wave{effect -1}!{sleep 20}&  {font 3}sans{font 0}, {font 4}PAPYRUS{font 0}.{mini `\"That's all?\"`}\"{pause}{clear}{effect 1}* \"I like the wave effect,&  what do you think?\"",
     "sign.choice.0": "* \"I'm the sign of choice and&  cutscene, normal choice first.\"&{voice -1}         {choice 0}Yes?        {choice 1}OK",
     "sign.choice.1.0": "* \"Seems like you chose&  the left one.\"",
     "sign.choice.1.1": "* \"Seems like you chose&  the right one.\"",

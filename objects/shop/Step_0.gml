@@ -258,7 +258,7 @@ if(shop_state==SHOP_STATE.MENU){
 		if(fader.alpha>=1){
 			Fader_Fade(1,0,20);
 			BGM_Stop(4);
-			var room_return=Flag_Get(FLAG_TEMP,"shop_room_return",-1);
+			var room_return=Flag_Get(FLAG_TEMP,"shop_room_return",room_test_main);
 			if(room_exists(room_return))room_goto(room_return);
 		}
 	}

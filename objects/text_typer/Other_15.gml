@@ -18,6 +18,8 @@ _map_macro[$ "VOICE.TYPER"]=1;
 Lang_BindTyperGroup(0,"dialog");
 Lang_BindTyperGroup(1,"menu");
 Lang_BindTyperGroup(2,"battle");
+Lang_BindTyperGroup(3,"sans");
+Lang_BindTyperGroup(4,"papyrus");
 
 VoicePack(0,{sounds: [snd_text_voice_default]});
 VoicePack(1,{sounds: [snd_text_voice_typer]});

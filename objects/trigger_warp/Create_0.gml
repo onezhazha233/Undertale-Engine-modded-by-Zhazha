@@ -12,3 +12,5 @@ bgm_fade=false;
 bgm_fade_time=20;
 warp_wait=0;
 player_dir=-1;
+
+custom_function=function(){};//用于切换房间时额外执行代码

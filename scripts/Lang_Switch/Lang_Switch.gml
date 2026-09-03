@@ -17,6 +17,7 @@ function Lang_Switch(LANG_ID){
 	Lang_LoadLanguage(Language());
 	
 	Encounter_Custom();
+	Shop_Custom();
 
 	return true;
 }

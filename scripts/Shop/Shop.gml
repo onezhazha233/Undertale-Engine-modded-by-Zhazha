@@ -85,7 +85,7 @@ function Shop_SetState(STATE,CALL_MAIN_START=false){
 	shop._state=STATE;
 	if(STATE==SHOP_STATE.MENU&&CALL_MAIN_START){
 		Shop_CallHostEvent(SHOP_HOST_EVENT.MENU_START);
-		Shop_SetMenu(SHOP_MENU.MENU,false);
+		Shop_SetMenu(SHOP_MENU.MENU);
 	}
 	return true;
 }

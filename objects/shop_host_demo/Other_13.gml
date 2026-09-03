@@ -30,12 +30,16 @@ if(Shop_GetNextMenu()==SHOP_MENU.MENU&&Shop_GetMenu()==SHOP_MENU.TALK){
 	Dialog_Add("* Come back anytime!");
 }*/
 
+if(Shop_GetNextMenu()==SHOP_MENU.MENU){
+	Shop_SetMenuDialog(Lang_GetString("shop.demo.menu.main."+string(irandom(2))));
+}
+
 // 离开商店
 if(Shop_GetNextMenu()==SHOP_MENU.EXIT){
 	if(_geno){
-		Dialog_Add("* Finally. Don't come back.");
+		Dialog_Add(Lang_GetString("shop.demo.exit.geno"));
 	}else{
-		Dialog_Add("* Thanks for stopping by!&* Stay safe out there.");
+		Dialog_Add(Lang_GetString("shop.demo.exit"));
 	}
 }
 
@@ -43,7 +47,7 @@ if(Shop_GetNextMenu()==SHOP_MENU.EXIT){
 if(Shop_GetNextMenu()==SHOP_MENU.SELL){
 	if(Item_GetNumber() <= 0){
 		Shop_SetNextMenu(SHOP_MENU.MENU);
-		Dialog_Add("* You don't have anything to sell.");
+		Dialog_Add(Lang_GetString("shop.demo.sell.empty"));
 	}
 }
 
@@ -55,7 +59,7 @@ if(_geno&&Shop_GetNextMenu()==SHOP_MENU.MENU&&shop._menu_choice==1){
 		steal_data.Set(steal_key,1);
 		Player_AddGold(50);
 		Dialog_Add("{define `GOLD` 50}"+Lang_GetString("shop.demo.steal"));
-		Shop_SetMainChoice(1,SHOP_MAIN_ACTION.DIALOG,Lang_GetString("shop.menu.choice.steal","Steal"),"* You already stole everything.");
+		Shop_SetMainChoice(1,SHOP_MAIN_ACTION.DIALOG,Lang_GetString("shop.menu.choice.steal","Steal"),Lang_GetString("shop.demo.steal.done"));
 	}
 }
 
@@ -63,8 +67,8 @@ if(_geno&&Shop_GetNextMenu()==SHOP_MENU.MENU&&shop._menu_choice==1){
 if(Shop_GetTalkProgress(0)>=2&&Shop_GetBuyNumber()>2){
 	if(Shop_GetBuyBuyable(2)==SHOP_BUYABLE.UNBUYABLE){
 		Shop_PatchBuy(2,{
-			buyable:SHOP_BUYABLE.BUYABLE,
-			desc:"* A faded pink ribbon.&* It smells like flowers."
+			buyable: SHOP_BUYABLE.BUYABLE,
+			desc: Lang_GetString("shop.demo.unlock.ribbon")
 		});
 	}
 }
@@ -72,7 +76,9 @@ if(Shop_GetTalkProgress(0)>=2&&Shop_GetBuyNumber()>2){
 // Talk 3 (A joke) first completion → append bonus talk
 var bonus_key=Shop_GetHostShortName()+"_bonus_talk";
 if(Shop_GetTalkProgress(3)>=2&&Flag_Get(FLAG_PLOT,bonus_key,0)==0){
-	Flag_Set(FLAG_PLOT,bonus_key,1);
-	Shop_AddTalk("Hidden Joke","* OK fine, one more.&*&* What do you call&  a skeleton who won't work?&* Lazy bones!");
-	Shop_SetTalkProgress(Shop_GetTalkNumber()-1,1);
+	//Flag_Set(FLAG_PLOT,bonus_key,1);
+	//Shop_AddTalk("Hidden Joke","* OK fine, one more.&*&* What do you call&  a skeleton who won't work?&* Lazy bones!");
+	//Shop_SetTalkProgress(Shop_GetTalkNumber()-1,1);
+	
+	//进行指定对话后添加一个新对话，添加的新对话不会被存档，需要的话你自己改吧
 }

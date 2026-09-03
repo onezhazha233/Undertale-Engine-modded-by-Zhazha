@@ -1,7 +1,7 @@
 {
     "room.test_main.name": "测试房间 - 起点",
 
-    "bd.test": "战斗中对话。&测试，123 abcABC...&换行1223&换行AAbc",
+    "bd.test": "战斗中对话。&测试，123 abcABC...&换行1223&{effect 1}波浪AAbc",
     "ow.text.test": "* 在文件里找到example.json&  来修改这些文本。",
     "save.text.test": "* 想到这个模板无限的开发潜能，&  这使你充满了决心。",
 
@@ -9,7 +9,7 @@
     "phone.toriel.call": "* 拨号中...{pause}{clear}* ...{pause}{clear}* 无人接听。",
 
     "sign.introduction": "* 欢迎来到UTE渣渣版。{pause}{clear}* 该模板的使用方式和原版UTE&  基本一致，但增加了很多新功能。{pause}{clear}* 或者你只是单纯想逛逛？{sleep 20}&  那就去看看其它房间吧！{pause}{clear}* 你可以按住TAB+R来切换房间，&  或者是徒步去往其它房间。{pause}{clear}* 这个牌子的内容是对tlDR的&  拙劣模仿，当然整个测试区域都是。",
-    "sign.color": "* “我是字体颜色等效果&  的测试牌子。”{pause}{clear}* “白色，{color `yellow`}黄色{color `white`}，{color `red`}红色{color `white`}，&  {effect 0}抖动{effect -1}，{effect 1}波浪{effect -1}！{mini `“应该没了吧？”`}”{pause}{clear}{effect 1}* “我挺喜欢波浪效果的，&  你觉得呢？”",
+    "sign.color": "* “我是字体颜色等效果&  的测试牌子。”{pause}{clear}* “白色，{color `yellow`}黄色{color `white`}，{color `red`}红色{color `white`}，&  {effect 0}抖动{effect -1}，{effect 1}波浪{effect -1}！{sleep 20}&  {font 3}杉斯{font 0}，{font 4}帕派瑞斯{font 0}。{mini `“应该没了吧？”`}”{pause}{clear}{effect 1}* “我挺喜欢波浪效果的，&  你觉得呢？”",
     "sign.choice.0": "* “我是选择和过场系统的测试牌子，&  首先测试的是普通的选择。”&{voice -1}{sleep 20}         {choice 0}好？        {sleep 30}{choice 1}已阅",
     "sign.choice.1.0": "* “看来你选了左边的选项。”",
     "sign.choice.1.1": "* “看来你选了右边的选项。”",

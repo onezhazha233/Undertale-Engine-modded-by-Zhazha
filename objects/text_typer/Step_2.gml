@@ -44,7 +44,8 @@ if(_char_proc<string_length(text)+1){
 		}else{
 			if(_char_frame_remain>0){
 				_char_frame_remain-=1;
-			}else{
+			}
+			if(_char_frame_remain<=0){
 				do{
 					repeat(_char_per_frame){
 						while((string_char_at(text,_char_proc)=="{"||string_char_at(text,_char_proc)=="&"||(_skip_space&&(string_char_at(text,_char_proc)==" "||string_char_at(text,_char_proc)=="　")))&&((_sleep==0||_skipping||_instant)&&!_paused&&_char_proc<=string_length(text))){

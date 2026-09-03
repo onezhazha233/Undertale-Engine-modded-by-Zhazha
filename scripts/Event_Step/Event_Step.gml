@@ -1,15 +1,12 @@
 function Event_Step(){
-	for(var i=0;i<array_length(global.events);i+=1){
+	var current_Room = room;
+	for(i=0;i<array_length(global.events);i+=1){
 	    var ee = global.events[i];
 	    if(ee.active && !ee.paused) {
-	        if(ee._room != room){
-	            ee.active = false;
-	            continue;
-	        }
 	        if(ee.currentIndex < array_length(ee.functions)){
 	            ee.timer -= 1;
 	            if(ee.timer <= 0) {
-	                var func = ee.functions[ee.currentIndex];
+	                func = ee.functions[ee.currentIndex];
 	                if(ee.currentIndex != ee.lastCustomIndex){
 	                    func.init();
 	                    ee.lastCustomIndex = ee.currentIndex;
@@ -21,7 +18,13 @@ function Event_Step(){
 	                    ee.currentIndex += 1;
 	                }
 	            }
-	        }
+				if(current_Room != ee._room){
+					if(ee.persistent_room == false){
+						ee.active = false;
+					}
+						
+				}
+	        }		
 			else{
 	            ee.active = false;
 	        }

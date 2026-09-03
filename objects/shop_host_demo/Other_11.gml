@@ -1,6 +1,6 @@
 /// MAIN_MENU_START
 if(_geno){
-	Shop_SetMenuDialog("* What do you want?&* Don't waste my time.");
+	Shop_SetMenuDialog(Lang_GetString("shop.demo.menu.main.geno.0"));
 }else{
-	Shop_SetMenuDialog("* Take your time looking around!&* Just let me know what you need.");
+	
 }

@@ -1,4 +1,4 @@
-function Event_Create(){
+function Event_Create(PERSISTENT){
 	return {
 	    functions: [],
 	    delays: [],
@@ -7,6 +7,7 @@ function Event_Create(){
 	    active: false,
 	    paused: false,
 	    lastCustomIndex: -1,
+		persistent_room : PERSISTENT,
 	    _room: room,
 	};
 }

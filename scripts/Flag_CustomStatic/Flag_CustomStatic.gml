@@ -4,6 +4,8 @@ function Flag_CustomStatic(){
 		Set("lv",1);
 		Set("hp",20);
 		Set("hp_max",20);
+		Set("kr",0);
+		Set("kr_enabled",0);
 		Set("atk",10);
 		Set("atk_item",0);
 		Set("def",10);

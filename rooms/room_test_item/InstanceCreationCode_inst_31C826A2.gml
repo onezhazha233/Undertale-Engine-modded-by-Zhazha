@@ -1,0 +1,1 @@
+text = "{instant true}{halign 1}{font 2}{scale 0.5}"+Lang_GetString("text_enemy_test.0")

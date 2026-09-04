@@ -20,11 +20,15 @@ Lang_BindTyperGroup(1,"menu");
 Lang_BindTyperGroup(2,"battle");
 Lang_BindTyperGroup(3,"sans");
 Lang_BindTyperGroup(4,"papyrus");
+Lang_BindTyperGroup(5,"sans_battle");
+Lang_BindTyperGroup(6,"papyrus_battle");
 
 VoicePack(0,{sounds: [snd_text_voice_default]});
 VoicePack(1,{sounds: [snd_text_voice_typer]});
 VoicePack(2,{sounds: [snd_text_voice_toriel]});
 VoicePack(3,{sounds: [snd_text_voice_asgore]});
+VoicePack(4,{sounds: [snd_text_voice_sans], stop: false});
+VoicePack(5,{sounds: [snd_text_voice_papyrus], stop: false});
 
 /*var arr=[];
 for(i=0;i<9;i+=1){
@@ -39,6 +43,8 @@ for(i=0;i<3;i+=1){
 VoicePack(4,{sounds: arr, pitch: function(){ return 0.9 + random(0.15); }});*/
 
 _group_face[0]=face;
+_group_face[1]=face_sans;
+_group_face[2]=face_papyrus;
 /*_group_face[1]=face_virel;
 _group_face[2]=face_flowey;
 _group_face[3]=face_pharaoh;*/

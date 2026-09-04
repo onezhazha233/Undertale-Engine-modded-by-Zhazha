@@ -107,26 +107,30 @@
     "battle": {
       "ascii": { "font": "dotumche", "scale": 1, "space_x": 1,
          "characters": {
-           "offsets_y": ["AZ", 3, 0, "az", 3, 0, "09", 3, 0, ".", 3, 0]
+           "offsets_y_default": [3, 0]
       }},
       "other": { "font": "fzpixel_battle", "scale": 1, "space_x": 4 },
       "space_y": 5
     },
     "sans": {
-      "ascii": { "font": "comic_sans", "scale": 1, "space_x": 1,
-         "characters": {
-           "offsets_y_default": [3, 0]
-      }},
+      "ascii": { "font": "comic_sans", "scale": 1, "space_x": 1},
       "other": { "font": "fzse", "scale": 1, "space_x": 4 },
       "space_y": -1
     },
     "papyrus": {
-      "ascii": { "font": "papyrus", "scale": 1, "space_x": 0,
-         "characters": {
-           "offsets_y_default": [2, 0]
-      }},
+      "ascii": { "font": "papyrus", "scale": 1, "space_x": 0 ,"characters": { "offsets_y_default": [0, 1] }},
       "other": { "font": "fzjkt", "scale": 1, "space_x": 4 },
-      "space_y": 0
+      "space_y": -2
+    },
+    "sans_battle": {
+      "ascii": { "font": "comic_sans", "scale": 1, "space_x": 3},
+      "other": { "font": "fzse", "scale": 1, "space_x": 6},
+      "space_y": 5
+    },
+    "papyrus_battle": {
+      "ascii": { "font": "papyrus", "scale": 1, "space_x": 0 ,"characters": { "offsets_y_default": [0, 1] }},
+      "other": { "font": "fzjkt", "scale": 1, "space_x": 4 ,"characters": { "offsets_y_default": [0, 1] }},
+      "space_y": 5
     }
   },
   "sprites": [

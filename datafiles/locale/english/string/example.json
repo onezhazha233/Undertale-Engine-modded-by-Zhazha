@@ -1,7 +1,8 @@
 {
     "room.test_main.name": "Test Room - Main",
 
-    "bd.test": "Battle Dialog&Test, 123 abc...&Test&{effect 1}WaveTest",
+    "bd.test0": "Battle Dialog&{font 3}Test, 123 abc...{font 2}&Test&{effect 1}WaveTest",
+    "bd.test": "{font 6}YOUR BARBS HIDE A&HIDDEN AFFECTION!&YOU EMOTIONAL&CACTUS!",
     "ow.text.test": "* Find example.json in the files&  to modify these texts.",
     "save.text.test": "* This template's infinite&  potential fills you with&  determination.",
 
@@ -20,10 +21,18 @@
     "sign.choice.5.0": "* \"Glad to hear it.&  Thanks for your feedback.&  I'm wating for the next test.\"",
     "sign.choice.5.1": "* \"Not so good?{sleep 20} That's alright,&  this template is honored&  to be running!\"{pause}{clear}* \"Anyway, thanks for&  testing.\"",
 
+    "sign.sans": "* \"I'm the sign of sans font.\"{pause}{clear}{font 3}{face 1}{voice 4}* yeah, go right through.{sleep 20}&* my bro made the bars&  too wide to stop anyone.",
+    "sign.papyrus": "* \"I'm the sign of papyrus font.\"{pause}{clear}{font 4}{face 2}{voice 5}YOU SEE, WHERE I&COME FROM, IT'S&A LOVING TRADITION.",
+
     "prompt_test.pause": "PAUSE",
     "sign.prompt": "* \"Who would use AI to make&  a mini-game just for a&  prompt system example?\"{pause}{clear}* \"Even if it doesn't even have&  a scoring feature?\"{pause}{clear}* \"Don't make that face, using AI&  to code isn't rare, someone's&  gotta keep up with the times.\"",
 
     "box_item": "* (You opened the box, inside&  was {color `yellow`}{insert ITEM}{color `white`}.)",
+    "box_sell": "* This item is not free.{pause}{clear}{ui_buy}* Buy a legendary hero for 10G?{sleep 20}&&{voice -1}         {choice 0}Yes        {sleep 30}{choice 1}No",
+    "box_sell.nomoney": "* (You don't have&enough gold.)",
+
+    "text_enemy_test.0": "Damage",
+    "text_enemy_test.1": "KR",
 
     "battle.enemy.test.0.name": "* Test Enemy 0",
     "battle.enemy.test.0.action.0": "* Check",
@@ -52,5 +61,17 @@
     "battle.enemy.test.1.menu.0": "* Enemy 1 is standing still.",
     "battle.enemy.test.1.menu.1": "* Smell of test bullet.",
     "battle.enemy.test.1.menu.2": "* Enemy 1 is thinking about&  what DMG means.",
-    "battle.enemy.test.1.menu.3": "* Enemy 1 is thinking about&  the conflict of battle board&  when creating two turns."
+    "battle.enemy.test.1.menu.3": "* Enemy 1 is thinking about&  the conflict of battle board&  when creating two turns.",
+    
+    "battle.enemy.krtest.name": "* KR Test Enemy",
+    "battle.enemy.krtest.action.0": "* Check",
+    "battle.enemy.krtest.action.1": "* Heal",
+    "battle.enemy.krtest.action.2": "* Pray",
+    "battle.enemy.krtest.check": "* KR Test Enemy - ATK 1 DEF 0&* The simplest enemy...?",
+    "battle.enemy.krtest.heal": "* Healed 30 HP.",
+    "battle.enemy.krtest.pray": "* You offered a prayer...{sleep 20}&* Your remaining KR has been restored to HP.",
+    "battle.enemy.krtest.menu.0": "* Welcome to the KR Test.",
+    "battle.enemy.krtest.menu.1": "* The enemy is wondering if&  this KR system faithfully&  reproduces the original game.",
+    "battle.enemy.krtest.menu.2": "* There's nothing on your back.",
+    "battle.enemy.krtest.menu.3": "* smells like bones."
 }

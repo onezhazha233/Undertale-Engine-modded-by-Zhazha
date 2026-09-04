@@ -21,8 +21,7 @@
 
     "item.bandage.name": "绷带",
     "item.bandage.info": "* “绷带”- 治愈 10 HP&* 看起来已经被用过很多次了。",
-    "item.bandage.use.0": "* 你重新敷上了绷带。",
-    "item.bandage.use.1": "* 还是有点粘粘的。",
+    "item.bandage.use": "* 你重新敷上了绷带。* 还是有点粘粘的。",
 
     "item.toy_knife.name": "玩具刀",
     "item.toy_knife.info": "* “玩具刀”- 武器 攻击 3&* 塑料制品。&* 如今很罕见了。",

@@ -98,20 +98,24 @@
       "space_y": 5
     },
     "sans": {
-      "ascii": { "font": "comic_sans", "scale": 1, "space_x": 1,
-         "characters": {
-           "offsets_y_default": [3, 0]
-      }},
-      "other": { "font": "comic_sans", "scale": 1, "space_x": 4 },
+      "ascii": { "font": "comic_sans", "scale": 1, "space_x": 1, "characters": { "offsets_y_default": [1, 0] }},
+      "other": { "font": "comic_sans", "scale": 1, "space_x": 1, "characters": { "offsets_y_default": [1, 0] }},
       "space_y": -1
     },
     "papyrus": {
-      "ascii": { "font": "papyrus", "scale": 1, "space_x": 2,
-         "characters": {
-           "offsets_y_default": [0, 0]
-      }},
-      "other": { "font": "papyrus", "scale": 1, "space_x": 4 },
-      "space_y": 0
+      "ascii": { "font": "papyrus", "scale": 1, "space_x": 0 ,"characters": { "offsets_y_default": [0, 1] }},
+      "other": { "font": "papyrus", "scale": 1, "space_x": 0 ,"characters": { "offsets_y_default": [0, 1] }},
+      "space_y": -2
+    },
+    "sans_battle": {
+      "ascii": { "font": "comic_sans", "scale": 1, "space_x": 3},
+      "other": { "font": "comic_sans", "scale": 1, "space_x": 3},
+      "space_y": 5
+    },
+    "papyrus_battle": {
+      "ascii": { "font": "papyrus", "scale": 1, "space_x": 0 ,"characters": { "offsets_y_default": [0, 1] }},
+      "other": { "font": "papyrus", "scale": 1, "space_x": 0 ,"characters": { "offsets_y_default": [0, 1] }},
+      "space_y": 5
     }
   },
   "sprites": [

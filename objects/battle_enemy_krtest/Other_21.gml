@@ -1,0 +1,1 @@
+Battle_AddMenuDialogCandidate(Lang_GetString("battle.enemy.krtest.menu."+string(irandom(2))))

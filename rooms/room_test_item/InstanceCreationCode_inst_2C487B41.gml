@@ -1,0 +1,1 @@
+text = "{font 4}* their screams got shorter,&  and i was home in time for&  dinner.{pause}{clear}* АаБбВвГгДдЕеЖжЗзИи&  ЙйК. кЛлМмНнОоПпРр&  С,сТтУуФфХх{pause}{clear}ЦцЧчШшЩ\"щЪъЫ'ы&ЬьЭэЮюЯя."

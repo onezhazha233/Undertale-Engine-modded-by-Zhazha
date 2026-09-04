@@ -21,8 +21,7 @@
 
     "item.bandage.name": "Bandage",
     "item.bandage.info": "* \"Bandage\" - Heals 10 HP&* It has already been used&  several times.",
-    "item.bandage.use.0": "* You re-applied the bandage.",
-    "item.bandage.use.1": "* Still kind of gooey.",
+    "item.bandage.use": "* You re-applied the bandage.* Still kind of gooey.",
 
     "item.toy_knife.name": "Toy Knife",
     "item.toy_knife.info": "* \"Toy Knife\" - Weapon AT 3&* Made of plastic.&* A rarity nowadays.",

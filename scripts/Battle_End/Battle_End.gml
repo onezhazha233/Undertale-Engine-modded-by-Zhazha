@@ -7,5 +7,7 @@ function Battle_End(){
 		BGM_Resume(0);
 		BGM_SetVolume(0,0);
 		BGM_SetVolume(0,1,50);
+		Player_SetKr(0);
+		Player_SetKrEnabled(false);
 	}
 }

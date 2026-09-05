@@ -2,7 +2,6 @@
 Dialog_Add(Item_GetTextEquip(_name));
 Dialog_Start();
 
-//Item_Remove(_item_slot);
 Item_Set(_item_slot,Item_GetArmor());
 Item_SetArmor(object_index);
 

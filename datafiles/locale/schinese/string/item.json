@@ -47,5 +47,21 @@
     "item.legendary_hero.name.short": "传说英雄",
     "item.legendary_hero.name.short.serious": "传说英雄",
     "item.legendary_hero.info": "* “传说英雄”- 治愈 40 HP&* 做成剑形状的三明治。&* 食用后提升攻击。",
-    "item.legendary_hero.use": "* 攻击力提升了4 点！"
+    "item.legendary_hero.use": "* 攻击力提升了4 点！",
+
+    "item.ballet_shoes.name": "芭蕾舞鞋",
+    "item.ballet_shoes.name.short": "芭蕾舞鞋",
+    "item.ballet_shoes.name.short.serious": "鞋",
+    "item.ballet_shoes.info": "* “芭蕾舞鞋”- 武器 攻击 7&* 这双旧鞋会令你&  看上去极其危险。",
+
+    "item.cloudy_glasses.name": "刮花的眼镜",
+    "item.cloudy_glasses.name.short": "刮花眼镜",
+    "item.cloudy_glasses.name.short.serious": "眼镜",
+    "item.cloudy_glasses.info": "* “刮花的眼镜”- 防具 防御 6&* 镜片有些损坏了。&* 无敌增长9。",
+
+    "item.temy_armor.name": "提米盔甲",
+    "item.temy_armor.name.short": "提米盔甲",
+    "item.temy_armor.name.short.serious": "提米甲",
+    "item.temy_armor.info": "* “提米盔甲”- 防具 防御 20&* 大学教育能做出的东西！{pause}{clear}* 装备后提升攻击。{sleep 20}&* 每两回合回复HP。{sleep 20}&* 无敌提升少许。",
+    "item.temy_armor.use": "* 你穿上了提米盔甲。"
 }

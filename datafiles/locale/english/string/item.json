@@ -47,5 +47,21 @@
     "item.legendary_hero.name.short": "Leg.Hero",
     "item.legendary_hero.name.short.serious": "L. Hero",
     "item.legendary_hero.info": "* \"Legendary Hero\" - Heals 40 HP&* Sandwich shaped like a sword.&* Increases ATTACK when eaten.",
-    "item.legendary_hero.use": "* ATTACK increased by 4!"
+    "item.legendary_hero.use": "* ATTACK increased by 4!",
+
+    "item.ballet_shoes.name": "Ballet Shoes",
+    "item.ballet_shoes.name.short": "BallShoes",
+    "item.ballet_shoes.name.short.serious": "Shoes",
+    "item.ballet_shoes.info": "* \"Ballet Shoes\" - Weapon AT 7&* These used shoes make you&  feel incredibly dangerous.",
+
+    "item.cloudy_glasses.name": "Cloudy Glasses",
+    "item.cloudy_glasses.name.short": "ClodGlass",
+    "item.cloudy_glasses.name.short.serious": "Glasses",
+    "item.cloudy_glasses.info": "* \"Cloudy Glasses\" - Armor DF 6&* Glasses marred with wear.&* Increases INV by 9.",
+
+    "item.temy_armor.name": "temy armor",
+    "item.temy_armor.name.short": "Temmie AR",
+    "item.temy_armor.name.short.serious": "Tem.Armor",
+    "item.temy_armor.info": "* \"temy armor\" - Armor DF 20&* The things you can do with&  a college education!{pause}{clear}* Raises ATTACK when worn.{sleep 20}&* Recovers HP every other turn.{sleep 20}&* INV up slightly.",
+    "item.temy_armor.use": "* You donned the Temmie Armor."
 }

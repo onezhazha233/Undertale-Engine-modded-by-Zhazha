@@ -3,7 +3,7 @@ if(start = 1){
 	if(time = 1){
 		bb = 0;
 	}
-	if(time mod 25 = -1){
+	if(time mod 25 = 1){
 		if(bb = 0){
 			blt = instance_create_depth(150,random_range(320-55,320+55),0,battle_bullet_test);
 			blt.hspeed = random_range(1.5,2.5);

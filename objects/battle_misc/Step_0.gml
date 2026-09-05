@@ -1,28 +1,33 @@
 kr_hit_this_frame = false;
 if(Player_IsInBattle()){
-	var km = Player_GetKr();
+	var kr = Player_GetKr();
 	var hp = Player_GetHp();
-	// 不变量(对齐 c2 命中后钳制)：KR≤40、KR<HP
-	if(km>40)   km = 40;
-	if(km>=hp)  km = hp-1;
-	if(km<0)    km = 0;
-	if(km != Player_GetKr()) Player_SetKr(km);
 
-	if(km>0 && hp>1){
+	if(kr>40)   kr = 40;
+	if(kr>=hp)  kr = hp-1;
+	if(kr<0)    kr = 0;
+	if(kr != Player_GetKr()) Player_SetKr(kr);
+
+	if(kr>0 && hp>1){
 		kr_time += 1;
-		var _need = 60;
-		if(km>=40)      _need = 2;
-		else if(km>=30) _need = 4;
-		else if(km>=20) _need = 10;
-		else if(km>=10) _need = 30;
-		// else 60 帧(KR<10)
-		if(kr_time>=_need){
+		var _need = 60 + kr_delay * 20;
+		if(kr>=40)      _need = 2 + kr_delay * 2;
+		else if(kr>=30) _need = 4 + kr_delay * 4;
+		else if(kr>=20) _need = 10 + kr_delay * 6;
+		else if(kr>=10) _need = 30 + kr_delay * 10;
+		if(kr_time>=_need && kr_prev_hp == hp){
 			kr_time = 0;
-			km -= 1;
-			hp -= 1;   // HP>1 才进入此分支，故最低到 1
-			Player_SetKr(km);
+			kr -= 1;
+			hp -= 1;
+			Player_SetKr(kr);
 			Player_SetHp(hp);
+			kr_delay = 0;
+			var _inv = Player_GetInvTotal();
+			if(_inv >= 90)  kr_delay = choose(0, 1);
+			if(_inv >= 120) kr_delay = choose(0, 1, 1);
+			if(_inv >= 150) kr_delay = 1;
 		}
+		kr_prev_hp = hp;
 	}else{
 		kr_time = 0;
 	}

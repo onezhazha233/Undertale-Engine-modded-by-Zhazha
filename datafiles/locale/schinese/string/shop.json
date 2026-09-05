@@ -50,7 +50,7 @@
   "shop.demo.talk.0.b": "* 对了，那条缎带？&  现在可以购买了。",
   "shop.demo.talk.1.name": "还有呢？",
   "shop.demo.talk.1": "* 按UTE 风格写的。&* 当然，要归功于伟大的AI。",
-  "shop.demo.talk.1.b": "* 只靠Host 事件。&* 击杀≥1时，&  这家店会变geno。",
+  "shop.demo.talk.1.b": "* 只靠Host 事件。&* 击杀≥1时，&  这家店会变geno。&* 如果没变，说明我忘了改判定了。",
   "shop.demo.talk.2.name": "关于UTE",
   "shop.demo.talk.2": "* UTE 的历史可以追溯到18 年。{sleep 20}&* 那时的糖萌芦为了给朋友制作&  一个叫Inheritale 的AU 的游戏，&  便开始了UTE 的开发。{pause}{clear}* 后来那个项目不知道为什么&  就凉了，在添加了主世界系统后，&  UTE 在19 年终见天日，&  后面的故事你应该也知道了。",
   "shop.demo.talk.3.name": "无关紧要的东西",

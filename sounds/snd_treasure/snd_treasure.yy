@@ -15,7 +15,7 @@
   "duration": 1.468753,
   "parent": {
     "name": "SFX",
-    "path": "folders/Sounds/SFX.yy",
+    "path": "folders/EXAMPLE/Sounds/SFX.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_treasure",

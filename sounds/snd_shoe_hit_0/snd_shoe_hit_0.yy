@@ -15,7 +15,7 @@
   "duration": 0.218571,
   "parent": {
     "name": "SFX",
-    "path": "folders/Sounds/SFX.yy",
+    "path": "folders/EXAMPLE/Sounds/SFX.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_shoe_hit_0",

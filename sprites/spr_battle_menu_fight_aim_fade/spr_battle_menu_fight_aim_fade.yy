@@ -78,7 +78,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Shoe",
-    "path": "folders/Sprites/Battle/Menu/Fight/Shoe.yy",
+    "path": "folders/EXAMPLE/Sprites/Battle/Menu/Fight/Shoe.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_battle_menu_fight_aim_fade",

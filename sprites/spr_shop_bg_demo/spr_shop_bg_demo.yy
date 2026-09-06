@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Shop",
-    "path": "folders/Sprites/Shop.yy",
+    "path": "folders/EXAMPLE/Sprites/Shop.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_shop_bg_demo",

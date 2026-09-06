@@ -17,4 +17,6 @@ if(instance_exists(char_player)){
 	char_player._moveable_save=false;
 }
 
+landmark_id=-1;
+
 menu_enabled=true;//是否启用返回菜单选项

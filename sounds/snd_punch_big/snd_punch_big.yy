@@ -15,7 +15,7 @@
   "duration": 0.994104,
   "parent": {
     "name": "SFX",
-    "path": "folders/Sounds/SFX.yy",
+    "path": "folders/EXAMPLE/Sounds/SFX.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_punch_big",

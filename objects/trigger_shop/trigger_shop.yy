@@ -31,7 +31,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Trigger",
-    "path": "folders/Objects/Trigger.yy",
+    "path": "folders/EXAMPLE/Objects/Trigger.yy",
   },
   "resourceVersion": "1.0",
   "name": "trigger_shop",

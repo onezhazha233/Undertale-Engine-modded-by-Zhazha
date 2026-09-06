@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "spr_trigger",
-    "path": "sprites/spr_trigger/spr_trigger.yy",
+    "name": "spr_char_papyrus_down",
+    "path": "sprites/spr_char_papyrus_down/spr_char_papyrus_down.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "trigger",
-    "path": "objects/trigger/trigger.yy",
+    "name": "char",
+    "path": "objects/char/char.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -25,16 +25,15 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":10,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Trigger",
-    "path": "folders/Objects/Trigger.yy",
+    "name": "Character",
+    "path": "folders/EXAMPLE/Objects/Character.yy",
   },
   "resourceVersion": "1.0",
-  "name": "trigger_event_test",
+  "name": "char_papyrus",
   "tags": [],
   "resourceType": "GMObject",
 }

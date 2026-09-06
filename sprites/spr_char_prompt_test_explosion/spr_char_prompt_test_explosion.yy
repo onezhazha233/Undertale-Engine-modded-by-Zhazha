@@ -74,7 +74,7 @@
   "nineSlice": null,
   "parent": {
     "name": "prompt_test",
-    "path": "folders/Sprites/Character/prompt_test.yy",
+    "path": "folders/EXAMPLE/Sprites/Character/prompt_test.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_char_prompt_test_explosion",

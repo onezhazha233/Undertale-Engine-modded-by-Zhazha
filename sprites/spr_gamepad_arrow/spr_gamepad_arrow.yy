@@ -82,7 +82,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Gamepad",
-    "path": "folders/Sprites/Gamepad.yy",
+    "path": "folders/EXAMPLE/Sprites/Gamepad.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_gamepad_arrow",

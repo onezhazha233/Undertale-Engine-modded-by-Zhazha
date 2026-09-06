@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Face",
-    "path": "folders/Sprites/Face.yy",
+    "path": "folders/EXAMPLE/Sprites/Face.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_face_sans",

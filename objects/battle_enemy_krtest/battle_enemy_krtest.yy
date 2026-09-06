@@ -36,7 +36,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Enemy",
-    "path": "folders/Objects/Battle/Enemy.yy",
+    "path": "folders/EXAMPLE/Objects/Battle/Enemy.yy",
   },
   "resourceVersion": "1.0",
   "name": "battle_enemy_krtest",

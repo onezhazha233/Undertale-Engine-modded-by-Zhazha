@@ -90,7 +90,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Fist",
-    "path": "folders/Sprites/Battle/Menu/Fight/Fist.yy",
+    "path": "folders/EXAMPLE/Sprites/Battle/Menu/Fight/Fist.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_battle_menu_fight_fist_punch_big",

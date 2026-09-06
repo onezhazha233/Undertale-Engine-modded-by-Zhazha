@@ -1,10 +1,9 @@
 {
     "room.test_main.name": "Test Room - Main",
 
-    "bd.test0": "Battle Dialog&{font 3}Test, 123 abc...{font 2}&Test&{effect 1}WaveTest",
-    "bd.test": "{font 6}YOUR BARBS HIDE A&HIDDEN AFFECTION!&YOU EMOTIONAL&CACTUS!",
+    "bd.test": "Battle Dialog&{font 3}Test, 123 abc...{font 2}&Test&{effect 1}WaveTest",
     "ow.text.test": "* Find example.json in the files&  to modify these texts.",
-    "save.text.test": "* This template's infinite&  potential fills you with&  determination.",
+    "save.text.test": "* (This template's infinite&  potential fills you with&  determination.)",
 
     "phone.toriel.name": "Toriel's Phone",
     "phone.toriel.call": "* Calling...{pause}{clear}* ...{pause}{clear}* Nobody picks up.",
@@ -28,7 +27,7 @@
     "sign.prompt": "* \"Who would use AI to make&  a mini-game just for a&  prompt system example?\"{pause}{clear}* \"Even if it doesn't even have&  a scoring feature?\"{pause}{clear}* \"Don't make that face, using AI&  to code isn't rare, someone's&  gotta keep up with the times.\"",
 
     "box_item": "* (You opened the box, inside&  was {color `yellow`}{insert ITEM}{color `white`}.)",
-    "box_sell": "* This item is not free.{pause}{clear}{ui_buy}* Buy a legendary hero for 10G?{sleep 20}&&{voice -1}         {choice 0}Yes        {sleep 30}{choice 1}No",
+    "box_sell": "* This item is not free.{pause}{clear}{ui_buy}* Buy a legendary hero for 10G?{sleep 20}&&{voice -1}         {choice 0}Yes        {choice 1}No",
     "box_sell.nomoney": "* (You don't have&enough gold.)",
 
     "text_enemy_test.0": "Damage",
@@ -73,5 +72,14 @@
     "battle.enemy.krtest.menu.0": "* Welcome to the KR Test.",
     "battle.enemy.krtest.menu.1": "* The enemy is wondering if&  this KR system faithfully&  reproduces the original game.",
     "battle.enemy.krtest.menu.2": "* There's nothing on your back.",
-    "battle.enemy.krtest.menu.3": "* smells like bones."
+    "battle.enemy.krtest.menu.3": "* smells like bones.",
+
+    "room.test_cutscene.name": "Test Room - Cutscene",
+    "save.text.test.cutscene.0": "* (The similar style grasses&  fill you with determination.)",
+    "save.text.test.cutscene.1": "* (Knowing Undyne isn't even&  in this project fills you&  with determination.)",
+
+    "cutscene.0": "{font 4}{voice 5}UNDYNE!{sleep 20}&WHERE ARE YOU, UNDYNE!?{pause}{clear}...{pause}{clear}{char_dir 1 DIR.LEFT}I REMEMBER HER&TELLING ME TO&MEET HERE...{pause}{clear}{char_move 1 DIR.RIGHT 30}THIS IS...{sleep 20}UH...{sleep 20}&TEST ROOM NUMBER...{sleep 20}&WHATEVER!",
+    "cutscene.1": "{font 4}{voice 5}{face 2}{char_link 1}A HUMAN!!{sleep 20}&IN THE TEST ZONE!!{pause}{clear}I DIDN'T KNOW THEY&ADDED A HUMAN TO&THIS PROJECT!!{pause}{clear}GREETINGS, FELLOW&TEST SUBJECT!{pause}{clear}HAVE YOU SEEN&UNDYNE?{pause}{clear}SHE'S THE CAPTAIN&OF THE ROYAL GUARD!{sleep 20}&COOL AND STRONG!{pause}{clear}{font 0}{face -1}{voice 0}{char_unlink}* (What do you say?){sleep 20}&&{voice -1}         {choice 0}Yes         {choice 1}No",
+    "cutscene.2.0": "{font 4}{voice 5}{face 2}{char_link 1}REALLY?{sleep 20} GREAT!{pause}{clear}IF YOU SEE HER&AGAIN, TELL HER TO&WAIT FOR ME HERE!{pause}{clear}WELL, I'M OFF TO&DO OTHER THINGS!{pause}{clear}SEE YOU, HUMAN!",
+    "cutscene.2.1": "{font 4}{voice 5}{face 2}{char_link 1}NO?{sleep 20} THAT'S OKAY!{pause}{clear}WAIT...{pause}{clear}IF THIS IS JUST A&TEST ROOM, THEN...{pause}{clear}{face_emotion 1}HER ASSETS WEREN'T&EVEN IMPORTED INTO&THIS PROJECT!?{pause}{clear}{face_emotion 0}WHATEVER, I'M OFF TO&DO OTHER THINGS!{pause}{clear}SEE YOU, HUMAN!"
 }

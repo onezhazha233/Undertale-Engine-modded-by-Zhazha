@@ -15,3 +15,5 @@ res_talk_speed[0]=spd;
 res_talk_speed[90]=spd;
 res_talk_speed[180]=spd;
 res_talk_speed[270]=spd;
+
+landmark_id=-1;

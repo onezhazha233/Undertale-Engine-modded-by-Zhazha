@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Enemy",
-    "path": "folders/Sprites/Battle/Enemy.yy",
+    "path": "folders/EXAMPLE/Sprites/Battle/Enemy.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_dummy",

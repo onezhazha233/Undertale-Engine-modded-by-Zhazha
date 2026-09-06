@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Turn",
-    "path": "folders/Objects/Battle/Turn.yy",
+    "path": "folders/EXAMPLE/Objects/Battle/Turn.yy",
   },
   "resourceVersion": "1.0",
   "name": "turn_test_1",

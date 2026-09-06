@@ -91,7 +91,7 @@
   },
   "parent": {
     "name": "Rooms",
-    "path": "folders/Rooms.yy",
+    "path": "folders/EXAMPLE/Rooms.yy",
   },
   "resourceVersion": "1.0",
   "name": "room_test_main",

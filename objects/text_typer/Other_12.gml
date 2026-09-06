@@ -664,7 +664,7 @@ switch(cmd[|0]){
 		break;
 		
 	case "char_dir":
-		if(is_real(cmd[|1])&&is_real(cmd[|2])){
+		if(is_real(cmd[|1])){
 			if(instance_exists(char)){
 				var cid=cmd[|1];
 				var cdir=cmd[|2];
@@ -678,7 +678,7 @@ switch(cmd[|0]){
 		break;
 		
 	case "char_move":
-		if(is_real(cmd[|1])&&is_real(cmd[|2])&&is_real(cmd[|3])){
+		if(is_real(cmd[|1])&&is_real(cmd[|3])){
 			if(instance_exists(char)){
 				var cid=cmd[|1];
 				var cdir=cmd[|2];

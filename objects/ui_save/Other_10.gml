@@ -34,6 +34,7 @@ if(_state==0){
 	}
 }
 if(_state==1){
+	Flag_Set(FLAG_INFO,"landmark",landmark_id);
 	Player_Save(Flag_GetSlot());
 	
 	audio_play_sound(snd_save,0,false);

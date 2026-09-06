@@ -11,5 +11,6 @@ function Flag_CustomTemp(){
 		Set("shop",0);
 		Set("shop_room_return",room_test_main);
 		Set("old_persistent_room",0);
+		Set("ui_dialog_top_override",-1);//不为-1时强制指定其位置
 	}
 }

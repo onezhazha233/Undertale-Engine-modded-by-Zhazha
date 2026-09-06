@@ -33,7 +33,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Bullet",
-    "path": "folders/Objects/Battle/Bullet.yy",
+    "path": "folders/EXAMPLE/Objects/Battle/Bullet.yy",
   },
   "resourceVersion": "1.0",
   "name": "battle_bullet_test",

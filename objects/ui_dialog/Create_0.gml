@@ -5,4 +5,8 @@ if(instance_exists(char_player)){
 }else{
 	_top=false;
 }
+if(Flag_Get(FLAG_TEMP,"ui_dialog_top_override")!=-1){
+	_top=Flag_Get(FLAG_TEMP,"ui_dialog_top_override");
+	Flag_Set(FLAG_TEMP,"ui_dialog_top_override",-1);
+}
 _inst=noone;

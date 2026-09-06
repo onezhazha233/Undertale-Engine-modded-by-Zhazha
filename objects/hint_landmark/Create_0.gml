@@ -1,1 +1,1 @@
-landmark_id=-1;
+landmark_id=-1;//小于-1时为读档后的玩家位置

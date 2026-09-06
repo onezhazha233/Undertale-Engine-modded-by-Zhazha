@@ -9,6 +9,10 @@ function Player_GetRoomName(ROOM){
 		case room_test_main:
 			name=Lang_GetString("room.test_main.name");
 			break;
+			
+		case room_test_cutscene:
+			name=Lang_GetString("room.test_cutscene.name");
+			break;
 	}
 	return name;
 }

@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Bullet",
-    "path": "folders/Sprites/Battle/Bullet.yy",
+    "path": "folders/EXAMPLE/Sprites/Battle/Bullet.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_battle_bullet_test",

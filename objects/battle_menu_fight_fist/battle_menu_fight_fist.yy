@@ -36,7 +36,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Fist",
-    "path": "folders/Objects/Battle/Menu/Fight/Fist.yy",
+    "path": "folders/EXAMPLE/Objects/Battle/Menu/Fight/Fist.yy",
   },
   "resourceVersion": "1.0",
   "name": "battle_menu_fight_fist",

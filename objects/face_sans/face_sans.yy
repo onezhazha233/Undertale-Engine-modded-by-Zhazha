@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Face",
-    "path": "folders/Objects/Face.yy",
+    "path": "folders/EXAMPLE/Objects/Face.yy",
   },
   "resourceVersion": "1.0",
   "name": "face_sans",

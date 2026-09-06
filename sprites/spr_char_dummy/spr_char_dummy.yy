@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Character",
-    "path": "folders/Sprites/Character.yy",
+    "path": "folders/EXAMPLE/Sprites/Character.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_char_dummy",

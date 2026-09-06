@@ -1,10 +1,9 @@
 {
     "room.test_main.name": "测试房间 - 起点",
 
-    "bd.test0": "战斗中对话。&测试，123 abcABC...&换行1223&{effect 1}波浪AAbc",
-    "bd.test": "{font 6}你浑身的刺儿里&暗含着浓浓爱意！&你这感情丰富&的仙人掌！",
+    "bd.test": "战斗中对话。&测试，123 abcABC...&换行1223&{effect 1}波浪AAbc",
     "ow.text.test": "* 在文件里找到example.json&  来修改这些文本。",
-    "save.text.test": "* 想到这个模板无限的开发潜能，&  这使你充满了决心。",
+    "save.text.test": "* (想到这个模板无限的开发潜能，&  这使你充满了决心。)",
 
     "phone.toriel.name": "托丽尔的电话",
     "phone.toriel.call": "* 拨号中...{pause}{clear}* ...{pause}{clear}* 无人接听。",
@@ -73,5 +72,14 @@
     "battle.enemy.krtest.menu.0": "* 欢迎来到KR 测试。",
     "battle.enemy.krtest.menu.1": "* 敌人在想这个KR 系统是否还原原版。",
     "battle.enemy.krtest.menu.2": "* 你的脊背上什么也没有。",
-    "battle.enemy.krtest.menu.3": "* 并没有骨头的气味。"
+    "battle.enemy.krtest.menu.3": "* 并没有骨头的气味。",
+
+    "room.test_cutscene.name": "测试房间 - 过场",
+    "save.text.test.cutscene.0": "* (看到前方画风相近的草丛，&  这使你充满了决心。)",
+    "save.text.test.cutscene.1": "* (想到这个项目真的没加入安黛因，&  这使你充满了决心。)",
+
+    "cutscene.0": "{font 4}{voice 5}安黛因！{sleep 20}&你在哪里，安黛因！？{pause}{clear}...{pause}{clear}{char_dir 1 DIR.LEFT}我记得她让我&来这里碰头的...{pause}{clear}{char_move 1 DIR.RIGHT 30}这里是...{sleep 20}呃...{sleep 20}&测试房间的...{sleep 20}多少号来着！",
+    "cutscene.1": "{font 4}{voice 5}{face 2}{char_link 1}一个人类！！{sleep 20}&在测试区域里！！{pause}{clear}我还不知道这里&还加了人类进来！！{pause}{clear}你好，同为测试对象&的人类！{pause}{clear}你见过安黛因吗？{sleep 20}&她是皇家守卫的队长！&{sleep 20}超酷的！{sleep 20}超强的！{pause}{clear}{font 0}{face -1}{voice 0}{char_unlink}* (你要怎么说？){sleep 20}&&{voice -1}         {choice 0}见过      {sleep 30}{choice 1}没有",
+    "cutscene.2.0": "{font 4}{voice 5}{face 2}{char_link 1}真的？{sleep 20}太好了！{pause}{clear}如果你再见到她，&记得帮我转告一下&在这里等我！{pause}{clear}好了，那我就去&干别的事了！{pause}{clear}回见，人类！",
+    "cutscene.2.1": "{font 4}{voice 5}{face 2}{char_link 1}没有？{sleep 20}没关系！{pause}{clear}等等...{pause}{clear}如果这只是一个&测试房间，那岂不是...{pause}{clear}{face_emotion 1}她的资源根本就&没有被放进&这个项目里！？{pause}{clear}{face_emotion 0}算了，那我就去&干别的事了！{pause}{clear}回见，人类！"
 }

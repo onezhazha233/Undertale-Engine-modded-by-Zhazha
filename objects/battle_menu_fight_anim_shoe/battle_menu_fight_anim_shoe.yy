@@ -29,7 +29,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Shoe",
-    "path": "folders/Objects/Battle/Menu/Fight/Shoe.yy",
+    "path": "folders/EXAMPLE/Objects/Battle/Menu/Fight/Shoe.yy",
   },
   "resourceVersion": "1.0",
   "name": "battle_menu_fight_anim_shoe",

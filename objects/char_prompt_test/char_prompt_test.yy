@@ -34,7 +34,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Character",
-    "path": "folders/Objects/Character.yy",
+    "path": "folders/EXAMPLE/Objects/Character.yy",
   },
   "resourceVersion": "1.0",
   "name": "char_prompt_test",

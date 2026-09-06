@@ -29,7 +29,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Item",
-    "path": "folders/Objects/Item.yy",
+    "path": "folders/EXAMPLE/Objects/Item.yy",
   },
   "resourceVersion": "1.0",
   "name": "item_legendary_hero",

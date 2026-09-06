@@ -32,7 +32,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Host",
-    "path": "folders/Objects/Shop/Host.yy",
+    "path": "folders/EXAMPLE/Objects/Shop/Host.yy",
   },
   "resourceVersion": "1.0",
   "name": "shop_host",

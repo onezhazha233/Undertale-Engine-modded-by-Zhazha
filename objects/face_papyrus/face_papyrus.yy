@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_face_papyrus",
-    "path": "sprites/spr_face_papyrus/spr_face_papyrus.yy",
+    "name": "spr_face_papyrus_0",
+    "path": "sprites/spr_face_papyrus_0/spr_face_papyrus_0.yy",
   },
   "solid": false,
   "visible": true,
@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Face",
-    "path": "folders/Objects/Face.yy",
+    "path": "folders/EXAMPLE/Objects/Face.yy",
   },
   "resourceVersion": "1.0",
   "name": "face_papyrus",

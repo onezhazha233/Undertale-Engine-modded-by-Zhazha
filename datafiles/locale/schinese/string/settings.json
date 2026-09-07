@@ -9,5 +9,7 @@
     "settings.border.dynamic": "动态",
     "settings.border.ruins": "遗迹",
     "settings.border.snowdin": "雪镇",
+    "settings.border.waterfall": "瀑布",
+    "settings.border.hotland": "热域",
     "settings.window_scale": "窗口缩放"
 }

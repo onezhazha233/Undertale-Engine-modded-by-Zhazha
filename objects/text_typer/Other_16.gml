@@ -785,31 +785,37 @@ function ChoiceSetCenterFromCursor(){
 
 function ChoiceCalcCenter(){
 	if(_choice_center_manual)return;
-	var _minx,_miny,_maxx,_maxy,_has=false;
-	for(var _i=0;_i<_choice_count;_i++){
-		if(!ChoiceHasSlot(_i))continue;
-		var _cx=_choice_x[_i];
-		var _cy=_choice_y[_i];
-		if(!_has){
-			_minx=_cx;
-			_miny=_cy;
-			_maxx=_cx;
-			_maxy=_cy;
-			_has=true;
-		}else{
-			_minx=min(_minx,_cx);
-			_miny=min(_miny,_cy);
-			_maxx=max(_maxx,_cx);
-			_maxy=max(_maxy,_cy);
+	if!(instance_exists(ui_dialog)){
+		var _minx,_miny,_maxx,_maxy,_has=false;
+		for(var _i=0;_i<_choice_count;_i++){
+			if(!ChoiceHasSlot(_i))continue;
+			var _cx=_choice_x[_i];
+			var _cy=_choice_y[_i];
+			if(!_has){
+				_minx=_cx;
+				_miny=_cy;
+				_maxx=_cx;
+				_maxy=_cy;
+				_has=true;
+			}else{
+				_minx=min(_minx,_cx);
+				_miny=min(_miny,_cy);
+				_maxx=max(_maxx,_cx);
+				_maxy=max(_maxy,_cy);
+			}
 		}
+		if(!_has){
+			_choice_cx=0;
+			_choice_cy=0;
+			return;
+		}
+		_choice_cx=(_minx+_maxx)*0.5;
+		_choice_cy=(_miny+_maxy)*0.5;
 	}
-	if(!_has){
-		_choice_cx=0;
-		_choice_cy=0;
-		return;
+	else{
+		_choice_cx=320-x;
+		_choice_cy=(ui_dialog._top ? (10+10+152)/2 : (320+320+152)/2)-y;
 	}
-	_choice_cx=(_minx+_maxx)*0.5;
-	_choice_cy=(_miny+_maxy)*0.5;
 }
 
 function ChoiceTargetPos(){

@@ -13,7 +13,7 @@
     "sign.choice.0": "* “我是选择和过场系统的测试牌子，&  首先测试的是普通的选择。”&{voice -1}{sleep 20}         {choice 0}好？        {sleep 30}{choice 1}已阅",
     "sign.choice.1.0": "* “看来你选了左边的选项。”",
     "sign.choice.1.1": "* “看来你选了右边的选项。”",
-    "sign.choice.2": "* “接下来就是DR同款选择，&  选择右边的箱子将要移动的方向。”{pause}{clear}{voice -1}{instant true}{choice_dir 3}{choice_none true}               {choice 0}向上& {choice 1}向左            {choice_center}            {choice 2}向右&               {choice 3}向下",
+    "sign.choice.2": "* “接下来就是DR同款选择，&  选择右边的箱子将要移动的方向。”{pause}{clear}{voice -1}{instant true}{choice_dir 3}{choice_none true}               {choice 0}向上& {choice 1}向左                        {choice 2}向右&               {choice 3}向下",
     "sign.choice.3.0": "* “听你差遣。”",
     "sign.choice.3.1": "* “听你差{color `yellow`}前{color `white`}。”",
     "sign.choice.4": "* “差不多就是这些了，&  你觉得怎么样？”&{voice -1}{sleep 20}        {choice 0}很酷         {sleep 30}{choice 1}太逊了",
@@ -81,5 +81,11 @@
     "cutscene.0": "{font 4}{voice 5}安黛因！{sleep 20}&你在哪里，安黛因！？{pause}{clear}...{pause}{clear}{char_dir 1 DIR.LEFT}我记得她让我&来这里碰头的...{pause}{clear}{char_move 1 DIR.RIGHT 30}这里是...{sleep 20}呃...{sleep 20}&测试房间的...{sleep 20}多少号来着！",
     "cutscene.1": "{font 4}{voice 5}{face 2}{char_link 1}一个人类！！{sleep 20}&在测试区域里！！{pause}{clear}我还不知道这里&还加了人类进来！！{pause}{clear}你好，同为测试对象&的人类！{pause}{clear}你见过安黛因吗？{sleep 20}&她是皇家守卫的队长！&{sleep 20}超酷的！{sleep 20}超强的！{pause}{clear}{font 0}{face -1}{voice 0}{char_unlink}* (你要怎么说？){sleep 20}&&{voice -1}         {choice 0}见过      {sleep 30}{choice 1}没有",
     "cutscene.2.0": "{font 4}{voice 5}{face 2}{char_link 1}真的？{sleep 20}太好了！{pause}{clear}如果你再见到她，&记得帮我转告一下&在这里等我！{pause}{clear}好了，那我就去&干别的事了！{pause}{clear}回见，人类！",
-    "cutscene.2.1": "{font 4}{voice 5}{face 2}{char_link 1}没有？{sleep 20}没关系！{pause}{clear}等等...{pause}{clear}如果这只是一个&测试房间，那岂不是...{pause}{clear}{face_emotion 1}她的资源根本就&没有被放进&这个项目里！？{pause}{clear}{face_emotion 0}算了，那我就去&干别的事了！{pause}{clear}回见，人类！"
+    "cutscene.2.1": "{font 4}{voice 5}{face 2}{char_link 1}没有？{sleep 20}没关系！{pause}{clear}等等...{pause}{clear}如果这只是一个&测试房间，那岂不是...{pause}{clear}{face_emotion 1}她的资源根本就&没有被放进&这个项目里！？{pause}{clear}{face_emotion 0}算了，那我就去&干别的事了！{pause}{clear}回见，人类！",
+
+    "door.0": "* (一个孤零零的门框。){sleep 20}&* (但不知为何，&  你看不到它后面的东西...)",
+    "door.1": "* (这是一扇门。)&* (你要去哪里？)",
+    "door.2": "* (门打开了...)",
+    "door.3": "* (神奇的是，你已经在那里了。)",
+    "door.choices": "{instant true}{choice_dir 3}{choice_none true}              {choice 0}瀑布& {choice 1}遗迹                        {choice 2}热域&             {choice 3}测试区"
 }

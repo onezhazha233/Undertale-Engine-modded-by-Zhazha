@@ -13,7 +13,7 @@
     "sign.choice.0": "* \"I'm the sign of choice and&  cutscene, normal choice first.\"&{voice -1}         {choice 0}Yes?        {choice 1}OK",
     "sign.choice.1.0": "* \"Seems like you chose&  the left one.\"",
     "sign.choice.1.1": "* \"Seems like you chose&  the right one.\"",
-    "sign.choice.2": "* \"Then, DR choice, choose the&  moving direction of that box.\"{pause}{clear}{voice -1}{instant true}{choice_dir 3}{choice_none true}               {choice 0}UP& {choice 1}LEFT            {choice_center}           {choice 2}RIGHT&              {choice 3}DOWN",
+    "sign.choice.2": "* \"Then, DR choice, choose the&  moving direction of that box.\"{pause}{clear}{voice -1}{instant true}{choice_dir 3}{choice_none true}               {choice 0}UP& {choice 1}LEFT                       {choice 2}RIGHT&              {choice 3}DOWN",
     "sign.choice.3.0": "* \"Up to you.\"",
     "sign.choice.3.1": "* \"{color `yellow`}Up{color `white`} to you.\"",
     "sign.choice.4": "* \"That's pretty much all of it,&  what do you think?\"&{voice -1}        {choice 0}Cool        {choice 1}Lame",
@@ -81,5 +81,11 @@
     "cutscene.0": "{font 4}{voice 5}UNDYNE!{sleep 20}&WHERE ARE YOU, UNDYNE!?{pause}{clear}...{pause}{clear}{char_dir 1 DIR.LEFT}I REMEMBER HER&TELLING ME TO&MEET HERE...{pause}{clear}{char_move 1 DIR.RIGHT 30}THIS IS...{sleep 20}UH...{sleep 20}&TEST ROOM NUMBER...{sleep 20}&WHATEVER!",
     "cutscene.1": "{font 4}{voice 5}{face 2}{char_link 1}A HUMAN!!{sleep 20}&IN THE TEST ZONE!!{pause}{clear}I DIDN'T KNOW THEY&ADDED A HUMAN TO&THIS PROJECT!!{pause}{clear}GREETINGS, FELLOW&TEST SUBJECT!{pause}{clear}HAVE YOU SEEN&UNDYNE?{pause}{clear}SHE'S THE CAPTAIN&OF THE ROYAL GUARD!{sleep 20}&COOL AND STRONG!{pause}{clear}{font 0}{face -1}{voice 0}{char_unlink}* (What do you say?){sleep 20}&&{voice -1}         {choice 0}Yes         {choice 1}No",
     "cutscene.2.0": "{font 4}{voice 5}{face 2}{char_link 1}REALLY?{sleep 20} GREAT!{pause}{clear}IF YOU SEE HER&AGAIN, TELL HER TO&WAIT FOR ME HERE!{pause}{clear}WELL, I'M OFF TO&DO OTHER THINGS!{pause}{clear}SEE YOU, HUMAN!",
-    "cutscene.2.1": "{font 4}{voice 5}{face 2}{char_link 1}NO?{sleep 20} THAT'S OKAY!{pause}{clear}WAIT...{pause}{clear}IF THIS IS JUST A&TEST ROOM, THEN...{pause}{clear}{face_emotion 1}HER ASSETS WEREN'T&EVEN IMPORTED INTO&THIS PROJECT!?{pause}{clear}{face_emotion 0}WHATEVER, I'M OFF TO&DO OTHER THINGS!{pause}{clear}SEE YOU, HUMAN!"
+    "cutscene.2.1": "{font 4}{voice 5}{face 2}{char_link 1}NO?{sleep 20} THAT'S OKAY!{pause}{clear}WAIT...{pause}{clear}IF THIS IS JUST A&TEST ROOM, THEN...{pause}{clear}{face_emotion 1}HER ASSETS WEREN'T&EVEN IMPORTED INTO&THIS PROJECT!?{pause}{clear}{face_emotion 0}WHATEVER, I'M OFF TO&DO OTHER THINGS!{pause}{clear}SEE YOU, HUMAN!",
+
+    "door.0": "* (It's a lone doorframe.){sleep 20}&* (But for some reason,&  you can't see through it...)",
+    "door.1": "* (It's a door.)&* (Where will you go?)",
+    "door.2": "* (The door opened...)",
+    "door.3": "* (Amazingly, you are&  already there.)",
+    "door.choices": "{instant true}{choice_dir 3}{choice_none true}            {choice 0}Waterfall& {choice 1}Ruins                    {choice 2}Hotland&            {choice 3}Test Zone"
 }

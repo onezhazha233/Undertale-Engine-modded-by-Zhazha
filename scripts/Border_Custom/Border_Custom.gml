@@ -5,5 +5,7 @@ function Border_Custom(){
 		{sprite: -1, name: "settings.border.dynamic", dynamic: true},
 		{sprite: spr_border_ruins, name: "settings.border.ruins"},
 		{sprite: spr_border_snowdin, name: "settings.border.snowdin"},
+		{sprite: spr_border_waterfall, name: "settings.border.waterfall"},
+		{sprite: spr_border_hotland, name: "settings.border.hotland"},
 	];
 }

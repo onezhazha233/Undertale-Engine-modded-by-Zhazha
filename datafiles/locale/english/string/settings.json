@@ -9,5 +9,7 @@
     "settings.border.dynamic": "Dynamic",
     "settings.border.ruins": "Ruins",
     "settings.border.snowdin": "Snowdin",
+    "settings.border.waterfall": "Waterfall",
+    "settings.border.hotland": "Hotland",
     "settings.window_scale": "WINDOW SCALE"
 }

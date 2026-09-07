@@ -100,7 +100,7 @@ function Init(){
     _align_offset_x=0;
     _align_offset_y=0;
 
-    _per_line_align=true;
+    _per_line_align=false;
     _line=0;
     _last_aligned_line=-1;
     _line_char_count=0;
@@ -197,21 +197,17 @@ function ChangeText(TEXT){
 }
 
 function AlignApply(){
-    if(_per_line_align&&_align_h==1){
-        _align_offset_x=-_measure_w/2;
-    }else{
-        switch(_align_h){
-            case 1: _align_offset_x=-_measure_w/2; break;
-            case 2: _align_offset_x=-_measure_w; break;
-            default: _align_offset_x=0; break;
-        }
+    switch(_align_h){
+        case 1: _align_offset_x=-_measure_w/2; break;
+        case 2: _align_offset_x=-_measure_w; break;
+        default: _align_offset_x=0; break;
     }
     switch(_align_v){
         case 1: _align_offset_y=-_measure_h/2; break;
         case 2: _align_offset_y=-_measure_h; break;
         default: _align_offset_y=0; break;
     }
-    _char_x=(_per_line_align&&_align_h==1) ? 0 : _align_offset_x;
+    _char_x=_per_line_align ? 0 : _align_offset_x;
     _char_y=_align_offset_y;
 }
 
@@ -1073,8 +1069,8 @@ function ChoiceCreateSubTypers(){
 		if(!is_string(_text)||_text=="")_text="";
 
 		var _prefix = "";
-		_prefix += "{instant true}{skippable false}{voice -1}{shadow " + (_shadow ? "true" : "false") + "}";
-		_prefix += "{gui " + (_gui ? "true" : "false") + "}";
+		_prefix += "{instant true}{skippable false}{voice -1}{shadow " + (_shadow ? "1" : "0") + "}{per_line_align true}";
+		_prefix += "{gui " + string(_gui ? 1 : 0) + "}";
 		_prefix += "{depth " + string(depth) + "}";
 		_prefix += "{font " + string(_font) + "}";
 		_prefix += "{scale " + string(_scale_x) + "}";

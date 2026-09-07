@@ -1,5 +1,5 @@
 ///@desc New Line
-if(_per_line_align&&_align_h==1){
+if(_per_line_align){
 	_char_x=0;
 }else{
 	_char_x=_align_offset_x;

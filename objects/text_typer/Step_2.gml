@@ -48,7 +48,7 @@ if(_char_proc<string_length(text)+1){
 			if(_char_frame_remain<=0){
 				do{
 					repeat(_char_per_frame){
-						while((string_char_at(text,_char_proc)=="{"||string_char_at(text,_char_proc)=="&"||(_skip_space&&(string_char_at(text,_char_proc)==" "||string_char_at(text,_char_proc)=="　")))&&((_sleep==0||_skipping||_instant)&&!_paused&&_char_proc<=string_length(text))){
+						while((string_char_at(text,_char_proc)=="{"||(string_char_at(text,_char_proc)=="&"&&!(_choice_dir==3&&_choice_skip_render))||(_skip_space&&(string_char_at(text,_char_proc)==" "||string_char_at(text,_char_proc)=="　")))&&((_sleep==0||_skipping||_instant)&&!_paused&&_char_proc<=string_length(text))){
 							while(string_char_at(text,_char_proc)=="{"&&((_sleep==0||_skipping||_instant)&&!_paused&&_char_proc<=string_length(text))){
 								_char_proc+=1;
 								ds_list_clear(_list_cmd);
@@ -95,7 +95,7 @@ if(_char_proc<string_length(text)+1){
 								}
 							}
 							
-							while(string_char_at(text,_char_proc)=="&"&&((_sleep==0||_skipping||_instant)&&!_paused&&_char_proc<=string_length(text))){
+							while(!(_choice_dir==3&&_choice_skip_render)&&string_char_at(text,_char_proc)=="&"&&((_sleep==0||_skipping||_instant)&&!_paused&&_char_proc<=string_length(text))){
 								event_user(1);
 								_char_proc+=1;
 							}

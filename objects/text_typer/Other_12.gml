@@ -328,6 +328,9 @@ switch(cmd[|0]){
 		if(is_bool(cmd[|1])){
 			_per_line_align=bool(cmd[|1]);
 			AlignApply();
+		}else if(is_real(cmd[|1])){
+			_per_line_align=cmd[|1]!=0;
+			AlignApply();
 		}
 		break;
 	

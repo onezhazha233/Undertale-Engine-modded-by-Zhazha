@@ -1,8 +1,21 @@
 ///@desc New Char
 if(_choice_dir==3 && _choice_skip_render){
 	if(_char!=" "&&_char!="　"){
-		_choice_collect_text+=_char;
+		if(_char=="\n"||_char=="\r"){
+			_choice_collect_text+="&";
+		}else{
+			_choice_collect_text+=_char;
+		}
 	}
+	exit;
+}
+
+// Handle newline characters (\n, \r) as line breaks
+if(_char=="\n"||_char=="\r"){
+	if(_char=="\r"&&_char_proc+1<=string_length(text)&&string_char_at(text,_char_proc+1)=="\n"){
+		_char_proc+=1;  // Skip \n after \r
+	}
+	event_user(1);  // Call New Line event
 	exit;
 }
 
@@ -79,7 +92,7 @@ if(_char!=" "&&_char!="　"){
 	}
 	ds_list_add(_list_inst,INST);
 
-	if(_per_line_align&&_align_h==1){
+	if(_per_line_align){
 		var min_x=999999;
 		var max_x=-999999;
 		var proc=0;
@@ -96,7 +109,11 @@ if(_char!=" "&&_char!="　"){
 			proc+=1;
 		}
 		if(min_x<999999){
-			var shift=-(min_x+max_x)/2;
+			var shift = -(min_x+max_x)/2;
+			switch(_align_h){
+				case 0: shift += _measure_w/2; break;
+				case 2: shift -= _measure_w/2; break;
+			}
 			var proc2=0;
 			repeat(ds_list_size(_list_inst)){
 				var INST2=ds_list_find_value(_list_inst,proc2);

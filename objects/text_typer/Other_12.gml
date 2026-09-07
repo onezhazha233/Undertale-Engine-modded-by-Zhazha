@@ -450,18 +450,73 @@ switch(cmd[|0]){
 		}
 		break;
 		
+	case "choice_number":
+		if(is_real(cmd[|1])){
+			_choice_number = clamp(real(cmd[|1]), 2, 4);
+		}
+		break;
+
+	case "choice_text":
+		if(is_real(cmd[|1]) && string_length(_curr_text) > 0){
+			var _idx = real(cmd[|1]);
+			if(_idx >= 0 && _idx < 5){
+				while(array_length(_choice_option_texts) <= _idx){
+					array_push(_choice_option_texts, "");
+				}
+				_choice_option_texts[_idx] = _curr_text;
+				_curr_text = "";
+			}
+		}
+		break;
+
 	case "choice":
 		if(is_real(cmd[|1])){
 			if(cmd[|1]>=0){
 				ChoiceRegister(cmd[|1]);
+				if(_choice_dir==3 && _choice_number > 0){
+					// Store previously collected text (if any)
+					if(_choice_collect_idx >= 0 && string_length(_choice_collect_text) > 0){
+						while(array_length(_choice_option_texts) <= _choice_collect_idx){
+							array_push(_choice_option_texts, "");
+						}
+						_choice_option_texts[_choice_collect_idx] = _choice_collect_text;
+					}
+					// Start collecting text for this option
+					_choice_skip_render = true;
+					_choice_collect_idx = real(cmd[|1]);
+					_choice_collect_text = "";
+				}
 			}
 		}else if(is_string(cmd[|1])||is_undefined(cmd[|1])){
 			_choice_macro=cmd[|1];
+			if(_choice_dir==3 && _choice_number > 0){
+				// Store last collected text
+				if(_choice_collect_idx >= 0 && string_length(_choice_collect_text) > 0){
+					while(array_length(_choice_option_texts) <= _choice_collect_idx){
+						array_push(_choice_option_texts, "");
+					}
+					_choice_option_texts[_choice_collect_idx] = _choice_collect_text;
+				}
+				_choice_skip_render = false;
+				_choice_collect_text = "";
+				ChoiceCalcLayoutPositions();
+			}
 			ChoiceActivate();
 		}
 		break;
 		
 	case "choice_end":
+		if(_choice_dir==3 && _choice_number > 0){
+			// Store last collected text
+			if(_choice_collect_idx >= 0 && string_length(_choice_collect_text) > 0){
+				while(array_length(_choice_option_texts) <= _choice_collect_idx){
+					array_push(_choice_option_texts, "");
+				}
+				_choice_option_texts[_choice_collect_idx] = _choice_collect_text;
+			}
+			_choice_skip_render = false;
+			_choice_collect_text = "";
+		}
 		ChoiceActivate();
 		break;
 	
@@ -577,6 +632,8 @@ switch(cmd[|0]){
 	case "gui":
 		if(is_bool(cmd[|1])){
 			_gui=cmd[|1];
+		}else if(is_real(cmd[|1])){
+			_gui=cmd[|1]!=0;
 		}
 		break;
 		

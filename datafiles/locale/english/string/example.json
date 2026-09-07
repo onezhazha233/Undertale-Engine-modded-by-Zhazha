@@ -13,7 +13,7 @@
     "sign.choice.0": "* \"I'm the sign of choice and&  cutscene, normal choice first.\"&{voice -1}         {choice 0}Yes?        {choice 1}OK",
     "sign.choice.1.0": "* \"Seems like you chose&  the left one.\"",
     "sign.choice.1.1": "* \"Seems like you chose&  the right one.\"",
-    "sign.choice.2": "* \"Then, DR choice, choose the&  moving direction of that box.\"{pause}{clear}{voice -1}{instant true}{choice_dir 3}{choice_none true}               {choice 0}UP& {choice 1}LEFT                       {choice 2}RIGHT&              {choice 3}DOWN",
+    "sign.choice.2": "* \"Then, DR choice, choose the&  moving direction of that box.\"{pause}{clear}{voice -1}{instant true}{choice_dir 3}{choice_number 4}{choice_none true}{choice 0}UP{choice 1}LEFT{choice 2}RIGHT{choice 3}DOWN",
     "sign.choice.3.0": "* \"Up to you.\"",
     "sign.choice.3.1": "* \"{color `yellow`}Up{color `white`} to you.\"",
     "sign.choice.4": "* \"That's pretty much all of it,&  what do you think?\"&{voice -1}        {choice 0}Cool        {choice 1}Lame",
@@ -87,5 +87,5 @@
     "door.1": "* (It's a door.)&* (Where will you go?)",
     "door.2": "* (The door opened...)",
     "door.3": "* (Amazingly, you are&  already there.)",
-    "door.choices": "{instant true}{choice_dir 3}{choice_none true}            {choice 0}Waterfall& {choice 1}Ruins                    {choice 2}Hotland&            {choice 3}Test Zone"
+    "door.choices": "{instant true}{choice_dir 3}{choice_number 4}{choice_none true}{choice 0}Waterfall{choice 1}Ruins{choice 2}Hotland{choice 3}Test Zone"
 }

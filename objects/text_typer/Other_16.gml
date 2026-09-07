@@ -49,6 +49,7 @@ function Init(){
     _list_inst=ds_list_create();
     _list_cmd=ds_list_create();
 	_list_mini=ds_list_create();
+	_list_choice=ds_list_create();
     _map_macro={};
     _face=noone;
     _face_linked=-1;
@@ -87,6 +88,12 @@ function Init(){
     _choice_confirm_snd=true;
     _choice_reject_snd=false;
     _choice_dir=0;
+    _choice_number=0;
+    _choice_layout_positions=[];
+    _choice_option_texts=[];
+    _choice_skip_render=false;
+    _choice_collect_text="";
+    _choice_collect_idx=0;
 
     _align_h=0;
     _align_v=0;
@@ -768,6 +775,22 @@ function ChoiceSoulAtCursor(){
 }
 
 function ChoiceRegister(_idx){
+	if(_choice_dir==3 && _choice_number > 0){
+		// Ensure layout positions are calculated
+		if(array_length(_choice_layout_positions) == 0){
+			ChoiceCalcLayoutPositions();
+		}
+		if(_idx < array_length(_choice_layout_positions)){
+			var _layout = _choice_layout_positions[_idx];
+			if(is_undefined(_layout))return;
+			while(array_length(_choice_reg)<=_idx)array_push(_choice_reg,false);
+			_choice_x[_idx]=_layout.x;
+			_choice_y[_idx]=_layout.y;
+			_choice_reg[_idx]=true;
+			_choice_count=max(_choice_count,_idx+1);
+			return;
+		}
+	}
 	var _pos=ChoiceSoulAtCursor();
 	while(array_length(_choice_reg)<=_idx)array_push(_choice_reg,false);
 	_choice_x[_idx]=_pos[0];
@@ -785,6 +808,52 @@ function ChoiceSetCenterFromCursor(){
 
 function ChoiceCalcCenter(){
 	if(_choice_center_manual)return;
+	if(_choice_dir==3 && _choice_number>0){
+		if(instance_exists(ui_dialog)){
+			// Calculate soul position at left center of each option's text
+			// based on text measurement and alignment
+			for(var _i=0; _i<_choice_count; _i++){
+				if(!ChoiceHasSlot(_i))continue;
+				var _layout = _choice_layout_positions[_i];
+				if(is_undefined(_layout))continue;
+				var _text = _choice_option_texts[_i];
+				if(!is_string(_text)||_text=="")_text="";
+				
+				// Measure the text using the same font/scale as the sub-typer
+				var m = Measure(_text, _font, _scale_x, _scale_y);
+				var _tw = m[0];
+				var _th = m[1];
+				
+				// Calculate left edge offset based on horizontal alignment
+				// ha: 0=left, 1=center, 2=right
+				var _left_offset = 0;
+				switch(_layout.ha){
+					case 1: _left_offset = -_tw / 2; break;  // center
+					case 2: _left_offset = -_tw; break;      // right
+				}
+				
+				// Calculate vertical center offset based on vertical alignment
+				// va: 0=top, 1=center, 2=bottom
+				var _center_offset = 0;
+				switch(_layout.va){
+					case 0: _center_offset = _th / 2; break;     // top -> center of text
+					case 1: _center_offset = 0; break;            // center -> already centered
+					case 2: _center_offset = -_th / 2; break;     // bottom -> center of text
+				}
+				
+				// Update soul position to left center of text
+				_choice_x[_i] = _layout.x + _left_offset-16;
+				_choice_y[_i] = _layout.y + _center_offset;
+			}
+			
+			// Set initial soul position to first option's left center
+			if(_choice_count > 0&&_choice_none){
+				_choice_cx = 320 - x;
+				_choice_cy = (ui_dialog._top ? (10+10+152)/2 : (320+320+152)/2)-y;
+			}
+		}
+		return;
+	}
 	if!(instance_exists(ui_dialog)){
 		var _minx,_miny,_maxx,_maxy,_has=false;
 		for(var _i=0;_i<_choice_count;_i++){
@@ -812,10 +881,6 @@ function ChoiceCalcCenter(){
 		_choice_cx=(_minx+_maxx)*0.5;
 		_choice_cy=(_miny+_maxy)*0.5;
 	}
-	else{
-		_choice_cx=320-x;
-		_choice_cy=(ui_dialog._top ? (10+10+152)/2 : (320+320+152)/2)-y;
-	}
 }
 
 function ChoiceTargetPos(){
@@ -831,6 +896,12 @@ function ChoiceSnapVisual(){
 }
 
 function ChoiceActivate(){
+	if(_choice_dir==3 && _choice_number>0){
+		if(array_length(_choice_layout_positions)==0){
+			ChoiceCalcLayoutPositions();
+		}
+		ChoiceCreateSubTypers();
+	}
 	ChoiceCalcCenter();
 	_choice_active=true;
 	_choice=(_choice_none)?-1:0;
@@ -899,11 +970,25 @@ function ChoiceStepLinear(){
 
 function ChoiceStep(){
 	if(!_choice_active)return;
-	if(_choice_dir==3){
-		if(Input_IsPressed(INPUT.UP))ChoiceTrySelect(0);
-		if(Input_IsPressed(INPUT.LEFT))ChoiceTrySelect(1);
-		if(Input_IsPressed(INPUT.RIGHT))ChoiceTrySelect(2);
-		if(Input_IsPressed(INPUT.DOWN))ChoiceTrySelect(3);
+	if(_choice_dir==3 && _choice_number>0){
+		// Custom navigation for choice_number layout
+		switch(_choice_number){
+			case 2:
+				if(Input_IsPressed(INPUT.LEFT))ChoiceTrySelect(0);
+				if(Input_IsPressed(INPUT.RIGHT))ChoiceTrySelect(1);
+				break;
+			case 3:
+				if(Input_IsPressed(INPUT.UP)||Input_IsPressed(INPUT.LEFT))ChoiceTrySelect(0);
+				if(Input_IsPressed(INPUT.RIGHT))ChoiceTrySelect(1);
+				if(Input_IsPressed(INPUT.DOWN))ChoiceTrySelect(2);
+				break;
+			case 4:
+				if(Input_IsPressed(INPUT.UP))ChoiceTrySelect(0);
+				if(Input_IsPressed(INPUT.LEFT))ChoiceTrySelect(1);
+				if(Input_IsPressed(INPUT.RIGHT))ChoiceTrySelect(2);
+				if(Input_IsPressed(INPUT.DOWN))ChoiceTrySelect(3);
+				break;
+		}
 	}else if(_choice_dir==2){
 		ChoiceStepGrid();
 	}else if(_choice_dir==0||_choice_dir==1){
@@ -935,4 +1020,90 @@ function ChoiceDraw(){
 	}else{
 		draw_sprite(spr_battle_soul_red,0,x+_pos[0],y+_pos[1]);
 	}
+}
+
+function ChoiceCalcLayoutPositions(){
+	if(_choice_number<2||_choice_number>4)return;
+
+	var _left_x = 40;
+	var _right_x = 640-x*2-40;
+	var _top_y = (ui_dialog._top ? 30+Lang_GetLayout("dialog.y_top") : 340+Lang_GetLayout("dialog.y_bottom"))-y;
+	var _center_y = (ui_dialog._top ? (10+10+152)/2 : (320+320+152)/2)-y;
+	draw_set_font(_group_font[_font,0]);
+	var _bottom_y = (string_height(" ")+_group_font_space_y[_font]+_space_y)*_group_font_scale_y[_font,0]*_scale_y*3;
+
+	switch(_choice_number){
+		case 2:
+			// 2 options: left (left-align, vertical-center) / right (right-align, vertical-center)
+			_choice_layout_positions[0] = {ha: 0, va: 1, x: _left_x, y: _center_y};
+			_choice_layout_positions[1] = {ha: 2, va: 1, x: _right_x, y: _center_y};
+			break;
+		case 3:
+			// 3 options: 0 upper-left (left-align), 1 upper-right (right-align), 2 bottom center
+			_choice_layout_positions[0] = {ha: 0, va: 0, x: _left_x, y: _top_y};
+			_choice_layout_positions[1] = {ha: 2, va: 0, x: _right_x, y: _top_y};
+			_choice_layout_positions[2] = {ha: 1, va: 2, x: 320-x, y: _bottom_y};
+			break;
+		case 4:
+			// 4 options: 0 top (center-x, top), 1 left (left, vertical-center), 2 right (right, vertical-center), 3 bottom (center-x, bottom)
+			_choice_layout_positions[0] = {ha: 1, va: 0, x: 320-x, y: _top_y};
+			_choice_layout_positions[1] = {ha: 0, va: 1, x: _left_x, y: _center_y};
+			_choice_layout_positions[2] = {ha: 2, va: 1, x: _right_x, y: _center_y};
+			_choice_layout_positions[3] = {ha: 1, va: 2, x: 320-x, y: _bottom_y};
+			break;
+	}
+}
+
+function ChoiceCreateSubTypers(){
+	if(_choice_number<=0||_choice_number>4)return;
+
+	for(var _i=0; _i<_choice_number; _i++){
+		if(!ChoiceHasSlot(_i))continue;
+
+		var _layout = _choice_layout_positions[_i];
+		if(is_undefined(_layout))continue;
+
+		var _wx = x + _layout.x;
+		var _wy = y + _layout.y;
+
+		var _align_h = _layout.ha;
+		var _align_v = _layout.va;
+
+		var _text = _choice_option_texts[_i];
+		if(!is_string(_text)||_text=="")_text="";
+
+		var _prefix = "";
+		_prefix += "{instant true}{skippable false}{voice -1}{shadow " + (_shadow ? "true" : "false") + "}";
+		_prefix += "{gui " + (_gui ? "true" : "false") + "}";
+		_prefix += "{depth " + string(depth) + "}";
+		_prefix += "{font " + string(_font) + "}";
+		_prefix += "{scale " + string(_scale_x) + "}";
+		_prefix += "{align_h " + string(_align_h) + "}";
+		_prefix += "{align_v " + string(_align_v) + "}";
+
+		var _child = instance_create_depth(_wx, _wy, 0, text_typer);
+		_child.override_alpha_enabled = true;
+		_child.override_alpha = 1;
+		_child.text = _prefix + _text;
+
+		ds_list_add(_list_choice, _child);
+	}
+}
+
+DrawMeasure = function(){
+	var xx = x;
+	if(_align_h = 1){
+		xx -= _measure_w/2;
+	}
+	if(_align_h = 2){
+		xx -= _measure_w;
+	}
+	var yy = y;
+	if(_align_v = 1){
+		yy -= _measure_h/2;
+	}
+	if(_align_v = 2){
+		yy -= _measure_h;
+	}
+	draw_sprite_ext(spr_pixel,0,xx,yy,_measure_w,_measure_h,image_angle,c_red,0.5);
 }

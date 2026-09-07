@@ -36,4 +36,16 @@ if(!is_mini&&variable_instance_exists(id,"_list_mini")&&ds_exists(_list_mini,ds_
 		mi+=1;
 	}
 	ds_list_clear(_list_mini);
+}
+
+if(!is_mini&&variable_instance_exists(id,"_list_choice")&&ds_exists(_list_choice,ds_type_list)){
+	var mi=0;
+	repeat(ds_list_size(_list_choice)){
+		var MINST=ds_list_find_value(_list_choice,mi);
+		if(instance_exists(MINST)){
+			instance_destroy(MINST);
+		}
+		mi+=1;
 	}
+	ds_list_clear(_list_choice);
+}

@@ -1,4 +1,11 @@
 ///@desc New Char
+if(_choice_dir==3 && _choice_skip_render){
+	if(_char!=" "&&_char!="　"){
+		_choice_collect_text+=_char;
+	}
+	exit;
+}
+
 var font=0;
 
 if(ord(_char)<128){

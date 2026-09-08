@@ -1088,18 +1088,12 @@ function ChoiceCreateSubTypers(){
 
 DrawMeasure = function(){
 	var xx = x;
-	if(_align_h = 1){
-		xx -= _measure_w/2;
-	}
-	if(_align_h = 2){
-		xx -= _measure_w;
+	if(_align_h > 0){
+		xx -= _measure_w/(3-_align_h);
 	}
 	var yy = y;
-	if(_align_v = 1){
-		yy -= _measure_h/2;
-	}
-	if(_align_v = 2){
-		yy -= _measure_h;
+	if(_align_v > 0){
+		yy -= _measure_h/(3-_align_v);
 	}
 	draw_sprite_ext(spr_pixel,0,xx,yy,_measure_w,_measure_h,image_angle,c_red,0.5);
 }

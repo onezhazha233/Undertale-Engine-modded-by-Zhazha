@@ -43,3 +43,5 @@ res_override=false;
 _talking_previous=!talking;
 _dir_previous=-1;
 _move_previous=-1;
+
+auto_depth=true;

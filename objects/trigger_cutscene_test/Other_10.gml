@@ -25,6 +25,6 @@ Event_AddFunction(cutscene_test,function(){
 	x = 250;
 	image_xscale = 2;
 	char_player.moveable = true;
-	camera.target = char_player;
+	camera.target = char_player.id;
 })
 Event_Launch(cutscene_test)

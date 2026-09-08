@@ -236,10 +236,10 @@ if(can_move){
 			inst=collision_rectangle_list(x-bW/3,y,x+bW/3,y+bH*1.5,char,true,true,inst_list,true);
 		}
 		if(dir==DIR.LEFT){
-			inst=collision_rectangle_list(x-bW,y-bH/3*2,x,y+bH/3,char,true,true,inst_list,true);
+			inst=collision_rectangle_list(x-bW,y-bH/3*2,x,y-1,char,true,true,inst_list,true);
 		}
 		if(dir==DIR.RIGHT){
-			inst=collision_rectangle_list(x,y-bH/3*2,x+bW,y+bH/3,char,true,true,inst_list,true);
+			inst=collision_rectangle_list(x,y-bH/3*2,x+bW,y-1,char,true,true,inst_list,true);
 		}
 		if(ds_list_size(inst_list)>0&&instance_exists(inst_list[|0])){
 			with(inst_list[|0]){

@@ -190,7 +190,7 @@ if(dying){
 		DelayFunction(function(){
 			char_player.moveable = true;
 			char_player.dir = DIR.DOWN;
-			camera.target = char_player;
+			camera.target = char_player.id;
 		},20);
 		controlling = false;
 		dying = false;

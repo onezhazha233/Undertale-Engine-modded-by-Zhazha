@@ -34,7 +34,7 @@ if(image_xscale = 2){
 		instance_destroy();
 		Player_SetPlot("cutscene_test",1);
 		char_player.moveable = true;
-		camera.target = char_player;
+		camera.target = char_player.id;
 	})
 	Event_Launch(cutscene_test);
 }

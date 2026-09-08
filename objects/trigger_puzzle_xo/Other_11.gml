@@ -1,0 +1,1 @@
+if(image_index<2)_triggered=false;

@@ -1,1 +1,1 @@
-depth=-2000-y;
+if(auto_depth)depth=-2000-y;

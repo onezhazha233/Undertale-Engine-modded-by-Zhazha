@@ -87,5 +87,22 @@
     "door.1": "* (It's a door.)&* (Where will you go?)",
     "door.2": "* (The door opened...)",
     "door.3": "* (Amazingly, you are&  already there.)",
-    "door.choices": "{instant true}{choice_dir 3}{choice_number 4}{choice_none true}{choice 0}Waterfall{choice 1}Ruins{choice 2}Hotland{choice 3}Test Zone"
+    "door.choices": "{instant true}{choice_dir 3}{choice_number 4}{choice_none true}{choice 0}Waterfall{choice 1}Ruins{choice 2}Hotland{choice 3}Test Zone",
+
+    "trigger.samsara": "* (You were going to leave,&  but...){pause}{clear}* (The scene ahead you see is&  no different from this room.)",
+
+    "ruins.sign.0": "* Didn't you read the sign&  downstairs?",
+    "ruins.sign.1": "* Please don't step on the&  leaves.",
+
+    "waterfall.sign.0": "* If an error is made, the Bell&  Blossom can call Bridge Seeds&  back to where they started.",
+    "waterfall.sign.1": "* Congratulations!{pause}{clear}* You failed the puzzle!",
+    "waterfall.cave": "* (You look inside the cave...){pause}{clear}* (There are countless purple&  and black blocks inside.)",
+
+    "sign.puzzle": "* Turn every X into an O.{sleep 20}&* Then press the switch.",
+    "sans.0": "{font 3}{voice 4}{face 1}* this puzzle...{sleep 20}&  my bro put me in charge&  of watching it.{pause}{clear}* he said if anyone solves&  it, that door over there&  will open.{pause}{clear}* not that i know what's&  behind it or anything.",
+    "sans.1": "{font 3}{voice 4}{face 1}* huh?{sleep 20} what's up?{sleep 20}&{font 0}{voice -1}{choice_dir 1}     {choice 0}You're in the way&     {choice 1}Nothing",
+    "sans.2": "{font 3}{voice 4}{face 1}{face_emotion 1}* oh, right.{sleep 20}&* i guess i am standing&  in your way.",
+    "sans.3": "{font 3}{voice 4}{face 1}* if someone would take&  my place...{pause}{clear}{face_emotion 1}* i'd have time to enjoy&  some extra paid leave.",
+    "sans.4": "{font 3}{voice 4}{face 1}* nice work, kid.{pause}{clear}* i heard there are more&  rooms behind that door.{sleep 20}{face_emotion 1}&* have fun.",
+    "sans.5": "{font 3}{voice 4}{face 1}* not many people make it&  here.{pause}{clear}* but if there were more,&  would they test us,&  or would we test them?"
 }

@@ -7,7 +7,7 @@ if(image_index = 1){
 		room_test_waterfall,
 		room_test_ruins,
 		room_test_hotland,
-		room_test_cutscene
+		room_test_puzzle
 	];
 	door_choice = -1;
 

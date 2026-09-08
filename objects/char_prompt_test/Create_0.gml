@@ -42,7 +42,7 @@ Leave = function(){
 	Anim_Create(camera,"y",ANIM_TWEEN.QUAD,ANIM_EASE.OUT,camera.y,cy-camera.y,20);
 	DelayFunction(function(){
 		char_player.moveable = true;
-		camera.target = char_player;
+		camera.target = char_player.id;
 	},20);
 	controlling = false;
 	paused = true;

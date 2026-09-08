@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_spike_disable",
-  "duration": 0.0,
+  "duration": 1.071429,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

@@ -10,3 +10,6 @@ if(Flag_Get(FLAG_TEMP,"ui_dialog_top_override")!=-1){
 	Flag_Set(FLAG_TEMP,"ui_dialog_top_override",-1);
 }
 _inst=noone;
+
+_duration=-1;
+_destroying=0;

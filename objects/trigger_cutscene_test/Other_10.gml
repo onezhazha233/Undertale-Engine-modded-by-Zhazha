@@ -6,7 +6,7 @@ Event_AddFunction(cutscene_test,function(){
 })
 Event_AddSleep(cutscene_test,30)
 Event_AddFunction(cutscene_test,function(){
-	camera.target = noone;
+	camera.SetTarget(noone);
 	cy = camera.y;
 	Anim_Create(camera,"y",0,0,camera.y,-camera.y+60,90);
 })
@@ -25,6 +25,6 @@ Event_AddFunction(cutscene_test,function(){
 	x = 250;
 	image_xscale = 2;
 	char_player.moveable = true;
-	camera.target = char_player.id;
+	camera.SetTarget(char_player);
 })
 Event_Launch(cutscene_test)

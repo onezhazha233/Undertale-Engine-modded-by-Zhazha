@@ -18,7 +18,7 @@ if(wrong = 0){
 		Event_AddFunction(solve,function(){
 			cx = camera.x;
 			cy = camera.y;
-			camera.target = noone;
+			camera.SetTarget(noone);
 			Anim_Create(camera,"x",0,0,cx,-cx,60);
 			Anim_Create(camera,"y",0,0,cy,-cy,60);
 		});
@@ -44,7 +44,7 @@ if(wrong = 0){
 		Event_AddFunction(solve,function(){
 			char_player.moveable = true;
 			char_player.dir = DIR.DOWN;
-			camera.target = char_player.id;
+			camera.SetTarget(char_player);
 		});
 		Event_Launch(solve);
 	}

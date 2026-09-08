@@ -3,12 +3,34 @@ _moveable_save&&_moveable_warp&&_moveable_encounter&&
 _moveable_box&&_moveable_shop);
 
 if(can_move){
-	move[DIR.UP]=0;
-	move[DIR.DOWN]=0;
-	move[DIR.LEFT]=0;
-	move[DIR.RIGHT]=0;
-	dir_locked=false;
-
+	if(run_enabled&&Input_IsHeld(INPUT.CANCEL)){
+		move_speed[DIR.UP]=3;
+		move_speed[DIR.DOWN]=3;
+		move_speed[DIR.LEFT]=3;
+		move_speed[DIR.RIGHT]=3;
+		res_move_speed[DIR.UP]=2/3;
+		res_move_speed[DIR.DOWN]=2/3;
+		res_move_speed[DIR.LEFT]=2/3;
+		res_move_speed[DIR.RIGHT]=2/3;
+		if(image_speed>0)image_speed=res_move_speed[DIR.RIGHT];
+	}
+	else{
+		move_speed[DIR.UP]=1.5;
+		move_speed[DIR.DOWN]=1.5;
+		move_speed[DIR.LEFT]=1.5;
+		move_speed[DIR.RIGHT]=1.5;
+		res_move_speed[DIR.UP]=1/3;
+		res_move_speed[DIR.DOWN]=1/3;
+		res_move_speed[DIR.LEFT]=1/3;
+		res_move_speed[DIR.RIGHT]=1/3;
+		if(image_speed>0)image_speed=res_move_speed[DIR.RIGHT];
+	}
+	
+	//move[DIR.UP]=0;
+	//move[DIR.DOWN]=0;
+	//move[DIR.LEFT]=0;
+	//move[DIR.RIGHT]=0;
+	
 	var _held_up=Input_IsHeld(INPUT.UP);
 	var _held_down=Input_IsHeld(INPUT.DOWN);
 	var _held_left=Input_IsHeld(INPUT.LEFT);

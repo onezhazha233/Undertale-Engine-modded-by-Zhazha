@@ -27,3 +27,5 @@ _moveable_encounter=true;
 _moveable_box=true;
 _moveable_shop=true;
 _moveable_shop=true;
+
+run_enabled=true;

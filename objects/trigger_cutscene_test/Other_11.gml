@@ -5,7 +5,7 @@ if(image_xscale = 2){
 		instance_create_depth(pap.x,pap.y-pap.sprite_height-4,0,exclamation);
 		audio_play_sound(snd_exclamation,0,0);
 		pap.dir = DIR.DOWN;
-		camera.target = noone;
+		camera.SetTarget(noone);
 		cy = camera.y;
 		Anim_Create(camera,"y",0,0,camera.y,-camera.y+60,20);
 	});
@@ -34,7 +34,7 @@ if(image_xscale = 2){
 		instance_destroy();
 		Player_SetPlot("cutscene_test",1);
 		char_player.moveable = true;
-		camera.target = char_player.id;
+		camera.SetTarget(char_player);
 	})
 	Event_Launch(cutscene_test);
 }

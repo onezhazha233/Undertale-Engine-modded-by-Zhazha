@@ -74,7 +74,7 @@
   "fzse": {
     "source": "fzse.ttf",
     "is_sprite": false,
-    "size": 11,
+    "size": 10.5,
     "bold": true,
     "italic": false,
     "first": 32,

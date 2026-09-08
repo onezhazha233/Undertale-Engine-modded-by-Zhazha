@@ -1,7 +1,7 @@
 event_inherited();
 
 char_player.moveable = false;
-camera.target = noone;
+camera.SetTarget(noone);
 cx = camera.x;
 cy = camera.y;
 Anim_Create(camera,"x",ANIM_TWEEN.QUAD,ANIM_EASE.OUT,cx,-cx,30);

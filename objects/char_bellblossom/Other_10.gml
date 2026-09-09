@@ -16,6 +16,7 @@ if(char_player.moveable = true){
 			Anim_Create(id,"image_alpha",0,0,0,1,25);
 			state = 0;
 			image_index = 0;
+			interact_enabled = true;
 		}
 		with(block){
 			if(variable_instance_exists(id,"open")){

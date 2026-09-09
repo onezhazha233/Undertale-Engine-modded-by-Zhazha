@@ -351,11 +351,10 @@ switch(cmd[|0]){
 			_audio_pitch=cmd[|1];
 		}
 		break;
-	
-	case "auto_destroy":
+		
+	case "autoend":
 		if(is_real(cmd[|1])){
-			_auto_destroy_delay=cmd[|1];
-			_auto_destroy=true;
+			alarm[0]=cmd[|1];
 		}
 		break;
 		

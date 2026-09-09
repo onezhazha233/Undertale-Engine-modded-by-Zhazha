@@ -104,5 +104,9 @@
     "sans.2": "{font 3}{voice 4}{face 1}{face_emotion 1}* oh, right.{sleep 20}&* i guess i am standing&  in your way.",
     "sans.3": "{font 3}{voice 4}{face 1}* if someone would take&  my place...{pause}{clear}{face_emotion 1}* i'd have time to enjoy&  some extra paid leave.",
     "sans.4": "{font 3}{voice 4}{face 1}* nice work, kid.{pause}{clear}* i heard there are more&  rooms behind that door.{sleep 20}{face_emotion 1}&* have fun.",
-    "sans.5": "{font 3}{voice 4}{face 1}* not many people make it&  here.{pause}{clear}* but if there were more,&  would they test us,&  or would we test them?"
+    "sans.5": "{font 3}{voice 4}{face 1}* not many people make it&  here.{pause}{clear}* but if there were more,&  would they test us,&  or would we test them?",
+
+    "owdialog.0": "{skippable false}I'm the overworld&dialog.{sleep 120}{end}",
+    "owdialog.1": "{skippable false}Nothing special,&like the battle dialog.{sleep 120}{end}",
+    "owdialog.2": "{skippable false}Just proceed and&finish the whole test.{sleep 120}{end}"
 }

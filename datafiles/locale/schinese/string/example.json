@@ -8,7 +8,7 @@
     "phone.toriel.name": "托丽尔的电话",
     "phone.toriel.call": "* 拨号中...{pause}{clear}* ...{pause}{clear}* 无人接听。",
 
-    "sign.introduction": "* 欢迎来到UTE渣渣版。{pause}{clear}* 该模板的使用方式和原版UTE&  基本一致，但增加了很多新功能。{pause}{clear}* 或者你只是单纯想逛逛？{sleep 20}&  那就去看看其它房间吧！{pause}{clear}* 你可以按住TAB+R来切换房间，&  或者是徒步去往其它房间。{pause}{clear}* 这个牌子的内容是对tlDR的&  拙劣模仿，当然整个测试区域都是。",
+    "sign.introduction": "* 欢迎来到UTE渣渣版。{pause}{clear}* 该模板的使用方式和原版UTE&  基本一致，但增加了很多新功能。{pause}{clear}* 或者你只是单纯想逛逛？{sleep 20}&  那就去看看其它房间吧！{pause}{clear}* 你可以按住TAB+R 来切换房间，&  或者是徒步去往其它房间。{pause}{clear}* 这个牌子的内容是对tlDR 的&  拙劣模仿，当然整个测试区域都是。",
     "sign.color": "* “我是字体颜色等效果&  的测试牌子。”{pause}{clear}* “白色，{color `yellow`}黄色{color `white`}，{color `red`}红色{color `white`}，&  {effect 0}抖动{effect -1}，{effect 1}波浪{effect -1}！{sleep 20}&  {font 3}杉斯{font 0}，{font 4}帕派瑞斯{font 0}。{mini `“应该没了吧？”`}”{pause}{clear}{effect 1}* “我挺喜欢波浪效果的，&  你觉得呢？”",
     "sign.choice.0": "* “我是选择和过场系统的测试牌子，&  首先测试的是普通的选择。”&{voice -1}{sleep 20}         {choice 0}好？        {sleep 30}{choice 1}已阅",
     "sign.choice.1.0": "* “看来你选了左边的选项。”",
@@ -104,5 +104,9 @@
     "sans.2": "{font 3}{voice 4}{face 1}{face_emotion 1}* 哦，对哦。{sleep 20}&* 我站在这里好像的确&  挡着你了。",
     "sans.3": "{font 3}{voice 4}{face 1}* 要是有人愿意替代我的&  岗位的话...{pause}{clear}{face_emotion 1}* 我就有时间去享受&  额外的法定假期了。",
     "sans.4": "{font 3}{voice 4}{face 1}* 干得不错，孩子。{pause}{clear}* 我听说门后面是更多的&  测试房间，{face_emotion 1}玩得开心。",
-    "sans.5": "{font 3}{voice 4}{face 1}* 来到过这里的人&  实在少之又少。{pause}{clear}* 但如果人多了，&  是他们在测试我们，&  还是我们在测试他们呢？"
+    "sans.5": "{font 3}{voice 4}{face 1}* 来到过这里的人&  实在少之又少。{pause}{clear}* 但如果人多了，&  是他们在测试我们，&  还是我们在测试他们呢？",
+
+    "owdialog.0": "{skippable false}我是主世界对话框。{sleep 120}{end}",
+    "owdialog.1": "{skippable false}没什么特别的，&跟战斗的基本一样。{sleep 120}{end}",
+    "owdialog.2": "{skippable false}继续前进，&结束这一切测试吧。{sleep 120}{end}"
 }

@@ -1,15 +1,13 @@
-auto_destroy = 1
+_auto_end = true
 var allAutoDestroy = true;
 
-for (i=0;i<instance_number(text_typer);i++) {
-    var obj = instance_find(text_typer,i);
-
-    if(obj.auto_destroy != 1) {
+for(var i=0;i<instance_number(text_typer);i++){
+    if(!instance_find(text_typer,i)._auto_end){
         allAutoDestroy = false;
         break;
     }
 }
 
-if(allAutoDestroy = 1) {
+if(allAutoDestroy){
     with(text_typer)instance_destroy();
 }

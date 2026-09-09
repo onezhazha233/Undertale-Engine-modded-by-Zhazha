@@ -124,17 +124,6 @@ if(_char_proc<string_length(text)+1){
 	}
 }
 
-if(_auto_destroy&&_char_proc>string_length(text)){
-	if(_auto_destroy_timer==-1){
-		_auto_destroy_timer=_auto_destroy_delay;
-	}
-	if(_auto_destroy_timer>0){
-		_auto_destroy_timer-=1;
-	}else{
-		instance_destroy();
-	}
-}
-
 if(_char_proc>string_length(text)&&!_end_callback_fired){
 	_end_callback_fired=true;
 	TriggerCallback(1);

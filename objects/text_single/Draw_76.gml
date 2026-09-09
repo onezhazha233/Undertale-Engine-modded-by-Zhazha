@@ -13,7 +13,13 @@ switch(effect){
 		break;
 	
 	case 1:
-		_offset_x = floor(lengthdir_x(1.5,_parent.torder[_line_order mod 10]));
-		_offset_y = floor(lengthdir_y(1.5,_parent.torder[_line_order mod 10]));
+		var xoff = lengthdir_x(1.5,_parent.torder[_line_order mod 10]);
+		var yoff = lengthdir_y(1.5,_parent.torder[_line_order mod 10]);
+		if(!gui){
+			xoff = floor(xoff);
+			yoff = floor(yoff);
+		}
+		_offset_x = xoff;
+		_offset_y = yoff;
 		break;
 }

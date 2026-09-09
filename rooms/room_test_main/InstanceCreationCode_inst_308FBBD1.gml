@@ -1,0 +1,2 @@
+target_room=room_test_owdialog;
+target_landmark=1;

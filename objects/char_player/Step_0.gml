@@ -263,6 +263,11 @@ if(can_move){
 		if(dir==DIR.RIGHT){
 			inst=collision_rectangle_list(x,y-bH/3*2,x+bW,y-1,char,true,true,inst_list,true);
 		}
+		for(var i=0;i<ds_list_size(inst_list);i+=1){
+			if(!inst_list[|i].interact_enabled){
+				ds_list_delete(inst_list,i);
+			}
+		}
 		if(ds_list_size(inst_list)>0&&instance_exists(inst_list[|0])){
 			with(inst_list[|0]){
 				event_user(0);

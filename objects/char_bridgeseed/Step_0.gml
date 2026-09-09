@@ -17,4 +17,5 @@ if(state = 5){
 	ds_list_destroy(_list);
 	
 	state = 6;
+	interact_enabled = false;
 }

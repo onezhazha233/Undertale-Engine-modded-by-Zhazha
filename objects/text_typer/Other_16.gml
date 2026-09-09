@@ -109,6 +109,7 @@ function Init(){
     _angle_follow=true;
 
     _skip_enabled=false;
+	_super_skip_enabled=true;
     _super_skip=false;
     _super_skip_mode=0;
     alarm[1]=1;
@@ -118,9 +119,7 @@ function Init(){
 
     _audio_pitch=1;
 
-    _auto_destroy=false;
-    _auto_destroy_delay=0;
-    _auto_destroy_timer=-1;
+	_auto_end=false;
 
     _callback_start={};
     _callback_end={};

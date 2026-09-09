@@ -45,3 +45,4 @@ _dir_previous=-1;
 _move_previous=-1;
 
 auto_depth=true;
+interact_enabled=true;//是否可被交互

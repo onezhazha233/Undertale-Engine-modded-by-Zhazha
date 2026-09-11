@@ -25,7 +25,7 @@
 * 尽可能还原原版 Undertale 的 KR 系统
 * 随机战斗菜单文本
 * 敌人位置检测
-* 多敌人战斗支持
+* 更好的多敌人战斗支持
 
 <img width="1280" height="960" alt="Sprite-0002" src="https://github.com/user-attachments/assets/722d4be3-ecf8-4615-9311-1b5c3d8340f4" />
 

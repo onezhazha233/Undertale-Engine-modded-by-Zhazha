@@ -55,7 +55,7 @@ The project focuses on expanding systems such as the battle board, blue soul, pl
 
 * Shop system
 * Rewritten localization system
-* Rewritten save / Flag system
+* Rewritten save system
 * Better readability and extensibility
 
 <img width="640" height="480" alt="Sprite-0005" src="https://github.com/user-attachments/assets/f05a7aa6-cd94-4e17-a6aa-84d7e571eb13" />

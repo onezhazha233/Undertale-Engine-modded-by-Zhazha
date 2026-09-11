@@ -1,4 +1,4 @@
-# UTE Zhazha Modded Edition
+# UTE Modded by Zhazha
 
 A deeply modified Undertale fangame development template based on the **Undertale Engine**.
 
@@ -8,7 +8,7 @@ A deeply modified Undertale fangame development template based on the **Undertal
 
 ## What is this?
 
-**UTE Zhazha Modded Edition** is a modified version of the Undertale Engine developed by **TangMengLu**.
+**UTE Modded by Zhazha** is a modified version of the Undertale Engine developed by **TML**.
 
 This project extends and rewrites multiple core systems based on the original UTE, providing a more complete development foundation for creating Undertale-style fangames using **GameMaker Studio 2**.
 
@@ -18,24 +18,19 @@ The project focuses on expanding systems such as the battle box, blue soul, boar
 
 ### Battle System
 
-* Custom-shaped battle boxes
-* Irregular-shaped battle boxes
-* Circular and rounded-rectangle battle boxes
-* Battle box color and transparency control
-* Custom battle box dimensions
-* Rewritten blue soul system
-* Rewritten board system
+* Custom-shaped battle boards
+* Blue soul
 * `global.is_moving` soul movement state detection
 * Faithful recreation of the original Undertale KR system
 * Random battle menu text
 * Enemy position detection
-* Multi-enemy battle support
+* Better multi-enemy battle support
 
 <img width="640" height="480" alt="Sprite-0002" src="https://github.com/user-attachments/assets/722d4be3-ecf8-4615-9311-1b5c3d8340f4" />
 
 ### Dialogue & Text
 
-* New typewriter text system
+* New text_typer system
 * Text rotation
 * Text alignment
 * Improved `char` system
@@ -48,7 +43,7 @@ The project focuses on expanding systems such as the battle box, blue soul, boar
 ### Overworld & Events
 
 * Cutscene event system
-* Hint system
+* Prompt system
 * Improved player movement
 
 <img width="640" height="480" alt="Sprite-0006" src="https://github.com/user-attachments/assets/749307e9-96eb-4a59-b0e8-2b14c7e70930" />
@@ -102,8 +97,8 @@ If you find a bug, please report it via GitHub Issues.
 
 ## Credits
 
-* **TangMengLu** — Original author of the Undertale Engine and GMU series-related features
+* **TML** — Original author of the Undertale Engine and GMU series-related features
 * **VMSIOnGithub** — New irregular battle box system
-* **ZheShiZhiYuan** — Shop, localization, and debugger systems
+* **Kite95** — Shop, localization, and debugger systems
 * **Sanesss et al.** — Testing and feedback on older versions
-* **1GeZhaZha** — Project integration, modifications, and feature development
+* **Zhazha** — Project integration, modifications, and feature development

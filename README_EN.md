@@ -4,9 +4,8 @@
 
 A deeply modified Undertale fangame development template based on the **Undertale Engine**.
 
-<img width="640" height="480" alt="Sprite-0001" src="https://github.com/user-attachments/assets/720ced79-752d-4b30-b75a-cdc76b7068c8" />
-<img width="640" height="480" alt="Sprite-0007" src="https://github.com/user-attachments/assets/e90293b4-fa4b-47dd-a2b8-8a0e80e18840" />
-
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/a6a3962c-a5a1-4605-98a7-7e12d93a907f" />
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/6ea62551-7c37-4dfa-a2eb-b7d7fba546d6" />
 
 ## What is this?
 
@@ -28,7 +27,7 @@ The project focuses on expanding systems such as the battle board, blue soul, pl
 * Enemy position detection
 * Better multi-enemy battle support
 
-<img width="640" height="480" alt="Sprite-0002" src="https://github.com/user-attachments/assets/722d4be3-ecf8-4615-9311-1b5c3d8340f4" />
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/ce9e785e-b5b4-432d-8c4f-adc0027280dc" />
 
 ### Dialogue & Text
 
@@ -39,8 +38,8 @@ The project focuses on expanding systems such as the battle board, blue soul, pl
 * Overworld dialogue box
 * Built-in Skeleton Brothers font support
 
-<img width="640" height="480" alt="Sprite-0003" src="https://github.com/user-attachments/assets/59d51f50-2c97-46ff-823c-5f0bf79813b8" />
-<img width="640" height="480" alt="Sprite-0013" src="https://github.com/user-attachments/assets/a658bcd0-dbe7-4a21-a912-c82f9a8c2365" />
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/2158f515-7a85-4b8d-8d63-b6a3d7000650" />
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/9f4e413d-9c1f-43d9-8ceb-756c70dcd4cd" />
 
 ### Overworld & Events
 
@@ -48,8 +47,8 @@ The project focuses on expanding systems such as the battle board, blue soul, pl
 * Prompt system
 * Improved player movement
 
-<img width="640" height="480" alt="Sprite-0006" src="https://github.com/user-attachments/assets/749307e9-96eb-4a59-b0e8-2b14c7e70930" />
-<img width="640" height="480" alt="Sprite-0004" src="https://github.com/user-attachments/assets/263ed574-402c-4946-ade1-5cfb99de1918" />
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/a826c48d-cd22-4f81-a5e5-8ccc48c297a5" />
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/bde2bc77-72cb-4096-b9ac-4ab75bc8b510" />
 
 ### Shop, Save & Localization
 
@@ -58,7 +57,7 @@ The project focuses on expanding systems such as the battle board, blue soul, pl
 * Rewritten save system
 * Better readability and extensibility
 
-<img width="640" height="480" alt="Sprite-0005" src="https://github.com/user-attachments/assets/f05a7aa6-cd94-4e17-a6aa-84d7e571eb13" />
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/345a7f62-9617-4017-b66b-9639b64c6011" />
 
 ### Development Tools
 
@@ -77,7 +76,7 @@ The project includes multiple test rooms and feature examples to demonstrate how
 
 These examples can also serve as references when creating Undertale fangames.
 
-<img width="640" height="480" alt="Sprite-0011" src="https://github.com/user-attachments/assets/3a8d76c3-da36-464b-a15a-e97a1d954d9e" />
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/97e6cc9b-9153-4bbc-8c24-049f25449fc3" />
 <img width="960" height="540" alt="Sprite-0009" src="https://github.com/user-attachments/assets/3fa56e73-221f-4be9-b560-ba10aeb81bc2" />
 
 

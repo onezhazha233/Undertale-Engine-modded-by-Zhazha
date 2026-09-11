@@ -93,7 +93,6 @@
     {"id":{"name":"spr_demo_recording","path":"sprites/spr_demo_recording/spr_demo_recording.yy",},"order":11,},
     {"id":{"name":"spr_demo_playing","path":"sprites/spr_demo_playing/spr_demo_playing.yy",},"order":12,},
     {"id":{"name":"item_legendary_hero","path":"objects/item_legendary_hero/item_legendary_hero.yy",},"order":2,},
-    {"id":{"name":"tile_ruins","path":"tilesets/tile_ruins/tile_ruins.yy",},"order":1,},
     {"id":{"name":"snd_menu_switch","path":"sounds/snd_menu_switch/snd_menu_switch.yy",},"order":1,},
     {"id":{"name":"overworld_dialog","path":"objects/overworld_dialog/overworld_dialog.yy",},"order":31,},
     {"id":{"name":"snd_menu_confirm","path":"sounds/snd_menu_confirm/snd_menu_confirm.yy",},"order":3,},

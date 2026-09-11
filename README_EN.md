@@ -79,7 +79,6 @@ These examples can also serve as references when creating Undertale fangames.
 <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/97e6cc9b-9153-4bbc-8c24-049f25449fc3" />
 <img width="960" height="540" alt="Sprite-0009" src="https://github.com/user-attachments/assets/3fa56e73-221f-4be9-b560-ba10aeb81bc2" />
 
-
 ## Getting Started
 
 The basic usage of this project is similar to the original Undertale Engine.

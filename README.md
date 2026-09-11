@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="README.md">🇨🇳 中文</a> |
+  <a href="README_EN.md">🇬🇧 English</a>
+</p>
+
 # UTE 渣渣整合版
 
 一个基于 **Undertale Engine** 深度修改的 Undertale 同人游戏开发模板。

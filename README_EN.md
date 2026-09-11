@@ -14,7 +14,7 @@ A deeply modified Undertale fangame development template based on the **Undertal
 
 This project extends and rewrites multiple core systems based on the original UTE, providing a more complete development foundation for creating Undertale fangames using **GameMaker Studio 2**.
 
-The project focuses on expanding systems such as the battle board, blue soul, dialogue, cutscene events, shop, save system, localization, and debugger.
+The project focuses on expanding systems such as the battle board, blue soul, platform, dialogue, cutscene events, shop, save system, localization, and debugger.
 
 ## Features
 

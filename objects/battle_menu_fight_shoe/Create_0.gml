@@ -3,7 +3,7 @@ event_inherited();
 depth=DEPTH_BATTLE.UI_HIGH;
 
 _input_acceptable=true;
-_num_targets=3+3;
+_num_targets=3;
 _target_speed=5;
 _crit_per_target=100;
 _anim_time=20;
@@ -26,12 +26,11 @@ _total_score=0;
 _crit=false;
 
 var left_edge=battle_board.x-battle_board.left;
-/*var _offsets=[
+var _offsets=[
 	-50,
 	choose(0,25,50),
 	choose(100,125,150)
-];*/
-for(i=0;i<6;i+=1)_offsets[i] = +50*i;
+];
 
 for(var i=0;i<_num_targets;i++){
 	array_push(_targets,{

@@ -7,7 +7,6 @@
 <img width="1280" height="960" alt="Sprite-0001" src="https://github.com/user-attachments/assets/720ced79-752d-4b30-b75a-cdc76b7068c8" />
 <img width="1280" height="960" alt="Sprite-0007" src="https://github.com/user-attachments/assets/e90293b4-fa4b-47dd-a2b8-8a0e80e18840" />
 
-
 ## 这是什么？
 
 **UTE 渣渣整合版** 是由 **糖萌芦** 开发的 Undertale Engine 的修改版本。
@@ -79,7 +78,6 @@
 
 <img width="1280" height="960" alt="Sprite-0011" src="https://github.com/user-attachments/assets/3a8d76c3-da36-464b-a15a-e97a1d954d9e" />
 <img width="960" height="540" alt="Sprite-0009" src="https://github.com/user-attachments/assets/3fa56e73-221f-4be9-b560-ba10aeb81bc2" />
-
 
 ## 开始使用
 

@@ -10,7 +10,7 @@ A deeply modified Undertale fangame development template based on the **Undertal
 
 **UTE Modded by Zhazha** is a modified version of the Undertale Engine developed by **TML**.
 
-This project extends and rewrites multiple core systems based on the original UTE, providing a more complete development foundation for creating Undertale-style fangames using **GameMaker Studio 2**.
+This project extends and rewrites multiple core systems based on the original UTE, providing a more complete development foundation for creating Undertale fangames using **GameMaker Studio 2**.
 
 The project focuses on expanding systems such as the battle box, blue soul, board, dialogue, cutscene events, shop, save system, localization, and debugger.
 
@@ -88,6 +88,8 @@ Due to the extensive modifications made to this project, **it cannot be migrated
 Please download this project directly and develop on top of it.
 
 ## Known Issues
+
+The project version is still 2.3.7.606
 
 There are currently no known critical issues.
 

@@ -1,3 +1,5 @@
+[中文](README.md) | [English](README_EN.md)
+
 # UTE Modded by Zhazha
 
 A deeply modified Undertale fangame development template based on the **Undertale Engine**.

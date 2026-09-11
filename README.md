@@ -1,47 +1,109 @@
-# UTE渣渣整合版
+# UTE 渣渣整合版
+
+一个基于 **Undertale Engine** 深度修改的 Undertale 同人游戏开发模板。
+
+<img width="640" height="480" alt="Sprite-0001" src="https://github.com/user-attachments/assets/720ced79-752d-4b30-b75a-cdc76b7068c8" />
+<img width="640" height="480" alt="Sprite-0007" src="https://github.com/user-attachments/assets/e90293b4-fa4b-47dd-a2b8-8a0e80e18840" />
+
+
 ## 这是什么？
-此为由我修改过的由糖萌芦开发的Undertale Engine，添加了一些原版ute没有的东西。
-## 改动什么？
-将原版ute的战斗框系统进行扩展，使你可以使用自定义节顶点创建不同形状的战斗框。
-添加了由我编写的蓝魂和板子。
-你可以直接检测[global.is_moving]变量来判断灵魂是否在移动（蓝魂滞空时一直都是移动状态）。
-添加了一些更便利的东西，如绕点旋转函数、获取框中心坐标函数、杂项管理器等。
-添加了商店（shop）、过场事件（event）系统。
-将原版ute自带的存档（flag）和本地化（lang）系统进行重写，扩展了其功能和可读性
-添加了调试器系统，使你可以更方便地进行切换房间等操作，长按tab+h后在引擎输出窗口或控制台查看说明
-优化了玩家的移动，使其更贴合原版ut手感
-修复了原版ute的部分bug，以及优化部分功能
 
-## 如何使用？
-使用方法和原版ute基本一致，因为该改版修改规模过大，所以无法通过yymps等方式迁移到另一个工程，请下载后在该工程中开发
-如果真的不会用，为什么不问问ai呢
-## 我找到了bug怎么办？
-给该仓库提交问题，或者发送邮件到1561536469@qq.com
-## 目前已知的问题
-没有，但缺少测试来找到更多问题
+**UTE 渣渣整合版** 是由 **糖萌芦** 开发的 Undertale Engine 的修改版本。
 
-## 感谢名单：
-由[vmsi]编写异形框系统，他的github名字是VMSIOnGithub
-由[1个渣渣]整合了这些代码，我的b站uid是25245703
-由[Sanesss]等人帮助测试（旧版本）
-ute以及其gmu系列功能由[糖萌芦]编写
-商店、本地化、调试器由[这是纸鸢]编写，他的b站uid是440126325
-剩下部分由[1个渣渣]编写
+本项目在原版 UTE 的基础上扩展并重写了多个核心系统，为使用 **GameMaker Studio 2** 制作 Undertale 风格同人游戏提供更加完整的开发基础。
 
-## 以下是版本更新概要
-v1.0 最初版本的整合版ute
-v1.1 框可以修改外框和背景的颜色了，修复了主框无法改变坐标和角度的问题
-v1.2 添加了圆形加框
-v1.3 改进了加框顶点连接处的视觉效果，把加框的旋转改为了逆时针
-v1.4 添加了圆角矩形的加框，本质上是两个矩形和四个圆形的组合
-v1.5 创建矩形加框的脚本可以设置更多参数了（从只能设置宽窄改成了可以设置上下左右的大小），修复了同时销毁多个加框会报错的问题
-v1.6 减框从可以设置宽窄改成了可以设置上下左右，也就是和原版ute的主框一样
-v1.7 用列表替换了存放框的数组，可能完全修复了销毁报错问题
-v1.8 重写了蓝魂和板子从而修复甩灵魂无效的问题
-v1.9 可改变框的背景和框架透明度，但减框透明度改变规律出于未知原因是非线性的，设置需谨慎
-v1.10 增加了菜单文本候选功能，可添加候选文本，游戏会在玩家回合开始时随机选择一个进行显示；增加了获取敌人位置功能，可根据敌人位置来判断对话框创建位置。这两个功能适用于多敌人战斗
-v1.11 更换了新的打字机，新的打字机支持文字旋转、设置对齐等功能；增加了商店系统
-v2.0 又换了个打字机，更换了更好的商店、本地化、存档系统，优化玩家移动，添加过场事件系统、提示系统，因更新太多把版本号改为2.0
-v2.1 扩展了打字机选项（四角、中心、缓动），优化了debugger列表
-v2.2 更换了由vmsi编写的新的异形框系统，旧的异形框系统已废弃
-v2.3 改进打字机和char，增加主世界对话框、战斗中的kr系统（尽量还原原版）、内置骷髅兄弟字体支持，增加了一些使用范例和几个测试房间以便用户熟悉新功能
+项目重点扩展了战斗框、蓝魂、板子、对话、过场事件、商店、存档、本地化以及调试器等系统。
+
+## 功能
+
+### 战斗系统
+
+* 自定义形状战斗框
+* 异形战斗框
+* 圆形及圆角矩形战斗框
+* 战斗框颜色与透明度控制
+* 自定义战斗框尺寸
+* 重写蓝魂系统
+* 重写板子系统
+* `global.is_moving` 灵魂移动状态检测
+* 尽可能还原原版 Undertale 的 KR 系统
+* 随机战斗菜单文本
+* 敌人位置检测
+* 多敌人战斗支持
+
+<img width="640" height="480" alt="Sprite-0002" src="https://github.com/user-attachments/assets/722d4be3-ecf8-4615-9311-1b5c3d8340f4" />
+
+### 对话与文字
+
+* 新版打字机系统
+* 文字旋转
+* 文字对齐
+* 改进的 `char` 系统
+* 主世界对话框
+* 内置骷髅兄弟字体支持
+
+<img width="640" height="480" alt="Sprite-0003" src="https://github.com/user-attachments/assets/59d51f50-2c97-46ff-823c-5f0bf79813b8" />
+<img width="640" height="480" alt="Sprite-0013" src="https://github.com/user-attachments/assets/a658bcd0-dbe7-4a21-a912-c82f9a8c2365" />
+
+### 主世界与事件
+
+* 过场事件系统
+* 提示系统
+* 改进的玩家移动
+
+<img width="640" height="480" alt="Sprite-0006" src="https://github.com/user-attachments/assets/749307e9-96eb-4a59-b0e8-2b14c7e70930" />
+<img width="640" height="480" alt="Sprite-0004" src="https://github.com/user-attachments/assets/263ed574-402c-4946-ade1-5cfb99de1918" />
+
+### 商店、存档与本地化
+
+* 商店系统
+* 重写的本地化系统
+* 重写的存档 / Flag 系统
+* 更好的可读性与扩展性
+
+<img width="640" height="480" alt="Sprite-0005" src="https://github.com/user-attachments/assets/f05a7aa6-cd94-4e17-a6aa-84d7e571eb13" />
+
+### 开发工具
+
+* 内置 Debugger
+* 房间切换
+* 调试信息
+
+长按 **Tab + H** 可以在引擎输出窗口或控制台中查看 Debugger 的使用说明。
+
+<img width="640" height="480" alt="Sprite-0012" src="https://github.com/user-attachments/assets/338f09a3-c8ff-44c8-978f-82232bf2b6ae" />
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/c6e9f63b-a903-4aa5-99fc-e22259f476c1" />
+
+## 示例
+
+项目内置多个测试房间和功能示例，用于展示各个系统的使用方式。
+
+这些示例也可以作为制作 Undertale 同人游戏时的参考。
+
+<img width="640" height="480" alt="Sprite-0011" src="https://github.com/user-attachments/assets/3a8d76c3-da36-464b-a15a-e97a1d954d9e" />
+<img width="960" height="540" alt="Sprite-0009" src="https://github.com/user-attachments/assets/3fa56e73-221f-4be9-b560-ba10aeb81bc2" />
+
+
+## 开始使用
+
+本项目的基本使用方式与原版 Undertale Engine 相似。
+
+由于本项目进行了大量修改，**无法通过 YYMPS 等方式迁移到其他工程**。
+
+请直接下载本项目，并在该工程的基础上进行开发。
+
+## 已知问题
+
+目前没有已知的严重问题。
+
+由于项目仍缺少充分测试，未来可能发现其他问题。
+
+如果发现 Bug，请通过 GitHub Issue 反馈。
+
+## 鸣谢
+
+* **糖萌芦** — Undertale Engine 原作者，以及 GMU 系列相关功能
+* **VMSIOnGithub** — 新版异形战斗框系统
+* **这是纸鸢** — 商店、本地化及调试器系统
+* **Sanesss 等人** — 旧版本测试与反馈
+* **1个渣渣** — 项目整合、修改及其他功能开发

@@ -48,7 +48,7 @@ Leave = function(){
 	paused = true;
 	if(!instance_exists(pause_typer) && instance_exists(char_prompt_test_screen)){
 		pause_typer = instance_create_depth(char_prompt_test_screen.x + 100, char_prompt_test_screen.y + 75, DEPTH_UI.TEXT, text_typer);
-		pause_typer.text = "{halign 1}{valign 1}" + Lang_GetString("prompt_test.pause");
+		pause_typer.text = "{halign 1}{valign 1}{instant true}" + Lang_GetString("prompt_test.pause");
 		with(pause_typer){ event_user(15); }
 		pause_typer.override_alpha_enabled = true;
 		pause_typer.override_alpha = 1;

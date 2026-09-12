@@ -1,12 +1,12 @@
 function Event_Step(){
 	var current_Room = room;
-	for(i=0;i<array_length(global.events);i+=1){
+	for(var i=0;i<array_length(global.events);i+=1){
 	    var ee = global.events[i];
 	    if(ee.active && !ee.paused) {
 	        if(ee.currentIndex < array_length(ee.functions)){
 	            ee.timer -= 1;
 	            if(ee.timer <= 0) {
-	                func = ee.functions[ee.currentIndex];
+	                var func = ee.functions[ee.currentIndex];
 	                if(ee.currentIndex != ee.lastCustomIndex){
 	                    func.init();
 	                    ee.lastCustomIndex = ee.currentIndex;

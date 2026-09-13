@@ -1,70 +1,75 @@
+//Removes running animations. TARGET may be:
+//- an anim struct (as returned by Anim_Create/Anim_CreateEx) or an array of them
+//- an instance id or object index: kills every anim of that instance/object
+//- global: kills every global-variable anim
+//VAR_NAME filters by variable name ("" = all), SKIP jumps the variable to its final value.
+//Killed anims do NOT fire their completion callback.
 function Anim_Destroy(TARGET, VAR_NAME="", SKIP=false){
 	var result=false;
 
-	if(TARGET<=-10){
-		if(ds_map_exists(global._gmu_anim_data,TARGET)){
-			var map=global._gmu_anim_data[?TARGET];
-			if(VAR_NAME==""||map[?ANIM_DATA.VAR_NAME]==VAR_NAME){
+	if(is_array(TARGET)){
+		for(var i=0;i<array_length(TARGET);i++){
+			if(_Anim_Remove(TARGET[i],VAR_NAME,SKIP)){
 				result=true;
-				if(SKIP){
-					if(instance_exists(map[?ANIM_DATA.TARGET])){
-						if(variable_instance_exists(map[?ANIM_DATA.TARGET],map[?ANIM_DATA.VAR_NAME])){
-							variable_instance_set(map[?ANIM_DATA.TARGET],map[?ANIM_DATA.VAR_NAME],map[?ANIM_DATA.START]+map[?ANIM_DATA.CHANGE]);
-						}
-					}
-				}
-				ds_map_destroy(map);
-				ds_map_delete(global._gmu_anim_data,TARGET);
 			}
 		}
-	}else if(instance_exists(TARGET)){
-		var proc=0;
-		repeat(ds_list_size(global._gmu_anim_list)){
-			var key=global._gmu_anim_list[|proc];
-			var map=global._gmu_anim_data[?key];
-			if(instance_exists(map[?ANIM_DATA.TARGET])){
-				if(map[?ANIM_DATA.TARGET]==TARGET||(map[?ANIM_DATA.TARGET]).object_index=TARGET){
-					if(VAR_NAME==""||map[?ANIM_DATA.VAR_NAME]==VAR_NAME){
-						result=true;
-						if(SKIP){
-							if(instance_exists(map[?ANIM_DATA.TARGET])){
-								if(variable_instance_exists(map[?ANIM_DATA.TARGET],map[?ANIM_DATA.VAR_NAME])){
-									variable_instance_set(map[?ANIM_DATA.TARGET],map[?ANIM_DATA.VAR_NAME],map[?ANIM_DATA.START]+map[?ANIM_DATA.CHANGE]);
-								}
-							}
-						}
-						ds_map_destroy(map);
-						ds_map_delete(global._gmu_anim_data,key);
-						ds_list_delete(global._gmu_anim_list,proc);
-						proc-=1;
-					}
-				}
-			}
-			proc+=1;
+		return result;
+	}
+	if(is_struct(TARGET) && TARGET!=global){
+		return _Anim_Remove(TARGET,VAR_NAME,SKIP);
+	}
+
+	if(!variable_global_exists("_gmu_anim_list") || !is_array(global._gmu_anim_list)){
+		return false;
+	}
+	var list=global._gmu_anim_list;
+	for(var i=array_length(list)-1;i>=0;i--){
+		var anim=list[i];
+		var t=anim.target;
+		var match=false;
+		if(is_array(t) || is_array(TARGET)){
+			match=(is_array(t) && is_array(TARGET) && t==TARGET);
+		}else if(t==global){
+			match=(TARGET==global);
+		}else{
+			match=(t==TARGET) || (TARGET!=global && instance_exists(t) && t.object_index==TARGET);
 		}
-	}else if(TARGET==global){
-		var proc=0;
-		repeat(ds_list_size(global._gmu_anim_list)){
-			var key=global._gmu_anim_list[|proc];
-			var map=global._gmu_anim_data[?key];
-			if(map[?ANIM_DATA.TARGET]==global){
-				if(VAR_NAME==""||map[?ANIM_DATA.VAR_NAME]==VAR_NAME){
-					result=true;
-					if(SKIP){
-						if(instance_exists(map[?ANIM_DATA.TARGET])){
-							if(variable_global_exists(map[?ANIM_DATA.VAR_NAME])){
-								variable_global_set(map[?ANIM_DATA.VAR_NAME],map[?ANIM_DATA.START]+map[?ANIM_DATA.CHANGE]);
-							}
-						}
-					}
-					ds_map_destroy(map);
-					ds_map_delete(global._gmu_anim_data,key);
-					ds_list_delete(global._gmu_anim_list,proc);
-					proc-=1;
-				}
+		if(match && (VAR_NAME=="" || anim.var_name==VAR_NAME)){
+			if(SKIP){
+				_Anim_SkipToEnd(anim);
 			}
-			proc+=1;
+			array_delete(list,i,1);
+			result=true;
 		}
 	}
 	return result;
+}
+
+//Removes one specific anim struct from the registry; returns false if it is not running.
+function _Anim_Remove(anim, VAR_NAME="", SKIP=false){
+	if(!is_struct(anim) || anim==global){
+		return false;
+	}
+	if(!variable_global_exists("_gmu_anim_list") || !is_array(global._gmu_anim_list)){
+		return false;
+	}
+	var list=global._gmu_anim_list;
+	for(var i=0;i<array_length(list);i++){
+		if(list[i]==anim){
+			if(VAR_NAME!="" && anim.var_name!=VAR_NAME){
+				return false;
+			}
+			if(SKIP){
+				_Anim_SkipToEnd(anim);
+			}
+			array_delete(list,i,1);
+			return true;
+		}
+	}
+	return false;
+}
+
+//Jumps the animated target to its final value (start+change); guarded by _Anim_SetValue.
+function _Anim_SkipToEnd(anim){
+	_Anim_SetValue(anim,anim.start+anim.change);
 }

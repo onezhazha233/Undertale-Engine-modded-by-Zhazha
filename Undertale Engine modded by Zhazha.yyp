@@ -372,6 +372,7 @@
     {"id":{"name":"Event_Choice","path":"scripts/Event_Choice/Event_Choice.yy",},"order":5,},
     {"id":{"name":"Anim_Step","path":"scripts/Anim_Step/Anim_Step.yy",},"order":11,},
     {"id":{"name":"Anim_Uninit","path":"scripts/Anim_Uninit/Anim_Uninit.yy",},"order":13,},
+    {"id":{"name":"Anim_CreateEx","path":"scripts/Anim_CreateEx/Anim_CreateEx.yy",},"order":15,},
     {"id":{"name":"Lang_Init","path":"scripts/Lang_Init/Lang_Init.yy",},"order":1,},
     {"id":{"name":"Lang_Custom","path":"scripts/Lang_Custom/Lang_Custom.yy",},"order":3,},
     {"id":{"name":"Item_GetSellable","path":"scripts/Item_GetSellable/Item_GetSellable.yy",},"order":36,},

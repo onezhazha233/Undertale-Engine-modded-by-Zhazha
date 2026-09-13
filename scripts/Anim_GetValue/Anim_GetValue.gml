@@ -39,7 +39,8 @@ function Anim_GetValue(TWEEN, EASE, TIME, ARG_0=0, ARG_1=0){
 					if(t<1){
 						r=c/2*t*t+b;
 					}else{
-						r=-c/2*((--t)*(t-2)-1)+b;
+						t-=1;
+						r=-c/2*(t*(t-2)-1)+b;
 					}
 					break;
 			}
@@ -128,17 +129,20 @@ function Anim_GetValue(TWEEN, EASE, TIME, ARG_0=0, ARG_1=0){
 					}
 					break;
 				case ANIM_EASE.IN_OUT:
-					if(t==0){
+					if(t<=0){
 						r=b;
+						break;
 					}
-					if(t==d){
+					if(t>=d){
 						r=b+c;
+						break;
 					}
 					t/=d/2;
 					if(t<1){
 						r=c/2*power(2,10*(t-1))+b;
 					}else{
-						r=c/2*(-power(2,-10*--t)+2)+b;
+						t-=1;
+						r=c/2*(-power(2,-10*t)+2)+b;
 					}
 					break;
 			}

@@ -1,9 +1,8 @@
 function Anim_Init(){
-	//GMU_Anim v3.0.0
+	//GMU_Anim v4.0.0 (struct-driven)
+	//Always a fresh registry on Game Start; structs are garbage-collected so nothing leaks.
 
-	global._gmu_anim_list=ds_list_create();
-	global._gmu_anim_data=ds_map_create();
-	global._gmu_anim_id=-10;
+	global._gmu_anim_list=[];
 
 	enum ANIM_TWEEN{
 		LINEAR,
@@ -23,20 +22,5 @@ function Anim_Init(){
 		IN,
 		OUT,
 		IN_OUT
-	};
-
-	enum ANIM_DATA{
-		TARGET,
-		VAR_NAME,
-		TWEEN,
-		EASE,
-		START,
-		CHANGE,
-		DURATION,
-		DELAY,
-		CALLBACK,
-		ARG_0,
-		ARG_1,
-		TIME
 	};
 }

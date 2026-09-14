@@ -113,7 +113,7 @@
       "space_y": 5
     },
     "sans": {
-      "ascii": { "font": "comic_sans", "scale": 1, "space_x": 1},
+      "ascii": { "font": "comic_sans", "scale": 1, "space_x": 1 ,"characters": { "offsets_y_default": [1, 0] }},
       "other": { "font": "fzse", "scale": 1, "space_x": 4 },
       "space_y": -1
     },

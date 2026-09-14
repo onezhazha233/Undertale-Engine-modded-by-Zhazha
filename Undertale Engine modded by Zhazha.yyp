@@ -1014,7 +1014,6 @@
     {"CopyToMask":-1,"filePath":"datafiles/locale/schinese/sprite","resourceVersion":"1.0","name":"battle_menu_fight_fist_press.png","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/locale/english/sprite","resourceVersion":"1.0","name":"battle_menu_fight_fist_press.png","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/font","resourceVersion":"1.0","name":"fzjkt.ttf","resourceType":"GMIncludedFile",},
-    {"CopyToMask":-1,"filePath":"datafiles/font","resourceVersion":"1.0","name":"fzse.ttf","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/font","resourceVersion":"1.0","name":"determination_mono.ttf","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/font","resourceVersion":"1.0","name":"determination_sans.ttf","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/font","resourceVersion":"1.0","name":"comic_sans.ttf","resourceType":"GMIncludedFile",},
@@ -1022,6 +1021,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/font","resourceVersion":"1.0","name":"papyrus.ttf","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/locale/english/string","resourceVersion":"1.0","name":"example.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/locale/schinese/string","resourceVersion":"1.0","name":"example.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/font","resourceVersion":"1.0","name":"fzse.ttf","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.7.606",

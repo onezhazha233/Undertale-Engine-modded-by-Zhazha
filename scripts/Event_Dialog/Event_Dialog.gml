@@ -7,7 +7,7 @@ function Event_Dialog(EVENT,TEXT){
 	function(){
 		if(is_array(TEXT)){
 			var len = array_length(TEXT);
-			for(i=0;i<len;++i){
+			for(var i=0;i<len;i+=1){
 				Dialog_Add(TEXT[i]);
 			}
 		}

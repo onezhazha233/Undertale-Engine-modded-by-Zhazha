@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 2,
-  "bbox_right": 99,
-  "bbox_top": 45,
-  "bbox_bottom": 164,
+  "bbox_left": 0,
+  "bbox_right": 50,
+  "bbox_top": 0,
+  "bbox_bottom": 50,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 100,
-  "height": 220,
+  "width": 51,
+  "height": 51,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,24 +24,24 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"2042bc44-506f-4184-ace5-d01135b355eb","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"2042bc44-506f-4184-ace5-d01135b355eb","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":{"name":"dbb50bc2-f6c2-4f63-8322-a94bcf8529dc","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"2042bc44-506f-4184-ace5-d01135b355eb","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"99a4b19b-7030-4487-a2df-ed6c88f3f4d8","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"99a4b19b-7030-4487-a2df-ed6c88f3f4d8","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":{"name":"dbb50bc2-f6c2-4f63-8322-a94bcf8529dc","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"99a4b19b-7030-4487-a2df-ed6c88f3f4d8","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"06a4124d-1460-4008-8cbd-883cfb9a6b41","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"06a4124d-1460-4008-8cbd-883cfb9a6b41","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":{"name":"dbb50bc2-f6c2-4f63-8322-a94bcf8529dc","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"06a4124d-1460-4008-8cbd-883cfb9a6b41","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"fcd19b59-b0b8-454b-b5ce-f2b642c48d90","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"fcd19b59-b0b8-454b-b5ce-f2b642c48d90","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":{"name":"dbb50bc2-f6c2-4f63-8322-a94bcf8529dc","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"fcd19b59-b0b8-454b-b5ce-f2b642c48d90","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"6745b07f-5335-4bf8-baf8-ad8049032570","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6745b07f-5335-4bf8-baf8-ad8049032570","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":{"name":"dbb50bc2-f6c2-4f63-8322-a94bcf8529dc","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"6745b07f-5335-4bf8-baf8-ad8049032570","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"63ed0e6d-df22-4617-ad46-959950cc825b","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"63ed0e6d-df22-4617-ad46-959950cc825b","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":{"name":"dbb50bc2-f6c2-4f63-8322-a94bcf8529dc","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"63ed0e6d-df22-4617-ad46-959950cc825b","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"c1b9e218-c18a-4f21-adbc-9360a55329ac","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"c1b9e218-c18a-4f21-adbc-9360a55329ac","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":{"name":"50d1d0eb-8285-44af-baf9-721e260c43b6","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"c1b9e218-c18a-4f21-adbc-9360a55329ac","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"26ca70ed-c236-4b6f-8c82-73068492c1a4","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"26ca70ed-c236-4b6f-8c82-73068492c1a4","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":{"name":"50d1d0eb-8285-44af-baf9-721e260c43b6","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"26ca70ed-c236-4b6f-8c82-73068492c1a4","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"01c351a6-ec7a-498b-aa84-7ea7d00de467","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"01c351a6-ec7a-498b-aa84-7ea7d00de467","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":{"name":"50d1d0eb-8285-44af-baf9-721e260c43b6","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"01c351a6-ec7a-498b-aa84-7ea7d00de467","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"29454891-aa2b-4ba7-95a3-5a53013ab6c9","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"29454891-aa2b-4ba7-95a3-5a53013ab6c9","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":{"name":"50d1d0eb-8285-44af-baf9-721e260c43b6","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"29454891-aa2b-4ba7-95a3-5a53013ab6c9","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"7e55f932-c0be-4374-a820-bcc90036e78d","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"7e55f932-c0be-4374-a820-bcc90036e78d","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":{"name":"50d1d0eb-8285-44af-baf9-721e260c43b6","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"7e55f932-c0be-4374-a820-bcc90036e78d","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"3bd6e5ac-8df4-424b-933a-567702d6fbee","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"3bd6e5ac-8df4-424b-933a-567702d6fbee","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"LayerId":{"name":"50d1d0eb-8285-44af-baf9-721e260c43b6","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","name":"3bd6e5ac-8df4-424b-933a-567702d6fbee","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},
@@ -56,12 +56,12 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"35cd65ed-6309-4511-8604-29320241ddd1","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2042bc44-506f-4184-ace5-d01135b355eb","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"09de0d7e-e329-4479-a596-a01fe55b877d","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"99a4b19b-7030-4487-a2df-ed6c88f3f4d8","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"03b65a1e-9174-4282-8028-8a8804f466af","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"06a4124d-1460-4008-8cbd-883cfb9a6b41","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"26f39f48-68f5-44fb-a0e1-246ed452d1f0","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fcd19b59-b0b8-454b-b5ce-f2b642c48d90","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"6fc26952-7479-4fe3-bdfc-4a2f76f08e26","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6745b07f-5335-4bf8-baf8-ad8049032570","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"95d3c019-faaa-4866-913e-13a25399ae42","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"63ed0e6d-df22-4617-ad46-959950cc825b","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"e5d5916a-958f-4f00-92a6-5469ecd2a4b7","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c1b9e218-c18a-4f21-adbc-9360a55329ac","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a3ceec99-3c53-4572-bd6e-dfaa031146b2","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"26ca70ed-c236-4b6f-8c82-73068492c1a4","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c6bb3b8f-9e80-4407-a8db-efd07fe8d6c2","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"01c351a6-ec7a-498b-aa84-7ea7d00de467","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c3912972-285d-46a8-8ab0-e0139dfa117a","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"29454891-aa2b-4ba7-95a3-5a53013ab6c9","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"23fc126a-6e8e-42fc-beb6-820ec06a72b0","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7e55f932-c0be-4374-a820-bcc90036e78d","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"ea636146-ba60-4fe5-bad5-389eddfc96e4","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3bd6e5ac-8df4-424b-933a-567702d6fbee","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -74,8 +74,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 50,
-    "yorigin": 110,
+    "xorigin": 25,
+    "yorigin": 25,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_battle_menu_fight_fist_punch_big","path":"sprites/spr_battle_menu_fight_fist_punch_big/spr_battle_menu_fight_fist_punch_big.yy",},
@@ -85,7 +85,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"dbb50bc2-f6c2-4f63-8322-a94bcf8529dc","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"50d1d0eb-8285-44af-baf9-721e260c43b6","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

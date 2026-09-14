@@ -15,7 +15,7 @@ function Event_CharMove(EVENT,CHAR,DIRECTION,DURATION){
 		DIRECTION: DIRECTION
 	},
 	function(){
-		return !(CHAR.move[DIRECTION]=0);
+		return !(CHAR.move[DIRECTION]==0);
 	}));
 	
 	return true;

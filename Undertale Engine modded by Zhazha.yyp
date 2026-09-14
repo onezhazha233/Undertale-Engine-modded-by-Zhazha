@@ -470,7 +470,7 @@
     {"id":{"name":"Input_Bind","path":"scripts/Input_Bind/Input_Bind.yy",},"order":3,},
     {"id":{"name":"Input_Unbind","path":"scripts/Input_Unbind/Input_Unbind.yy",},"order":5,},
     {"id":{"name":"Input_IsHeld","path":"scripts/Input_IsHeld/Input_IsHeld.yy",},"order":7,},
-    {"id":{"name":"bgm_anothermedium","path":"sounds/bgm_anothermedium/bgm_anothermedium.yy",},"order":2,},
+    {"id":{"name":"bgm_another_medium","path":"sounds/bgm_another_medium/bgm_another_medium.yy",},"order":2,},
     {"id":{"name":"battle_board_polygon","path":"objects/battle_board_polygon/battle_board_polygon.yy",},"order":12,},
     {"id":{"name":"Flag_RegisterType","path":"scripts/Flag_RegisterType/Flag_RegisterType.yy",},"order":10,},
     {"id":{"name":"trigger_ruins_goback","path":"objects/trigger_ruins_goback/trigger_ruins_goback.yy",},"order":3,},

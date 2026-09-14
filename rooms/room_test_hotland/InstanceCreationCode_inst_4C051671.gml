@@ -1,1 +1,1 @@
-bgm=bgm_anothermedium;
+bgm=bgm_another_medium;

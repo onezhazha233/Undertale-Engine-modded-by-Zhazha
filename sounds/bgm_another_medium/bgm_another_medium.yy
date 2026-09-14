@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "bgm_anothermedium.ogg",
+  "soundFile": "bgm_another_medium.ogg",
   "duration": 142.156921,
   "parent": {
     "name": "BGM",
     "path": "folders/EXAMPLE/Sounds/BGM.yy",
   },
   "resourceVersion": "1.0",
-  "name": "bgm_anothermedium",
+  "name": "bgm_another_medium",
   "tags": [],
   "resourceType": "GMSound",
 }

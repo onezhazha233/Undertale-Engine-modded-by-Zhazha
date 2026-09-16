@@ -1,4 +1,3 @@
 if(_gui){
-	ChoiceDraw();
-	//DrawMeasure();
+	Typer_ChoiceDraw();
 }

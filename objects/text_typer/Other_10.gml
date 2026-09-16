@@ -1,21 +1,10 @@
 ///@desc New Char
-if(_choice_dir==3 && _choice_skip_render){
-	if(_char!=" "&&_char!="　"){
-		if(_char=="\n"||_char=="\r"){
-			_choice_collect_text+="&";
-		}else{
-			_choice_collect_text+=_char;
-		}
+if(_choice_dir==3&&_choice_skip_render){
+	if(_char=="\n"||_char=="\r"){
+		_choice_collect_text+="&";
+	}else{
+		_choice_collect_text+=_char;
 	}
-	exit;
-}
-
-// Handle newline characters (\n, \r) as line breaks
-if(_char=="\n"||_char=="\r"){
-	if(_char=="\r"&&_char_proc+1<=string_length(text)&&string_char_at(text,_char_proc+1)=="\n"){
-		_char_proc+=1;  // Skip \n after \r
-	}
-	event_user(1);  // Call New Line event
 	exit;
 }
 
@@ -32,11 +21,12 @@ var wid_char=sprite_exists(_char_sprite) ? sprite_get_width(_char_sprite) : stri
 var scale_x=_group_font_scale_x[_font,font]*_scale_x;
 var next_ch=(_char_proc+1<=string_length(text)) ? string_char_at(text,_char_proc+1) : "";
 var chars=(variable_instance_exists(id,"_group_font_chars") ? _group_font_chars[_font,font] : undefined);
-var spacing=CharSpacing(chars,_char,next_ch);
+var spacing=Typer_CharSpacing(chars,_char,next_ch);
 var off_before=spacing[0]*scale_x;
 var off_after=spacing[1]*scale_x;
-var wid_cur=(wid_char+_group_font_space_x[_font,font]+_space_x+spacing[2])*scale_x;
-var off_y=CharOffsetY(chars,_char)*_group_font_scale_y[_font,font]*_scale_y;
+var next_face=(next_ch!=""&&ord(next_ch)<128)?0:1;
+var space_face=Typer_FaceSpaceX(_group_font_space_x[_font,font],_group_font_space_x[_font,next_face],_char,next_ch);
+var wid_cur=(wid_char+space_face+_space_x+spacing[2])*scale_x;
 _char_x+=off_before;
 
 if(_char!=" "&&_char!="　"){
@@ -44,6 +34,7 @@ if(_char!=" "&&_char!="　"){
 	var H1=string_height(" ");
 	draw_set_font(_group_font[_font,font]);
 	var H2=string_height(" ");
+	var off_y=Typer_CharOffsetY(chars,_char)*_group_font_scale_y[_font,font]*_scale_y;
 	var OFFSET=(H1-H2)/2*_scale_y+off_y;
 	
 	var rot=RotateXY(x+_char_x,y+_char_y+OFFSET,x,y,_angle);
@@ -109,10 +100,17 @@ if(_char!=" "&&_char!="　"){
 			proc+=1;
 		}
 		if(min_x<999999){
-			var shift = -(min_x+max_x)/2;
-			switch(_align_h){
-				case 0: shift += _measure_w/2; break;
-				case 2: shift -= _measure_w/2; break;
+			var shift=0;
+			switch(_halign){
+				case 1:
+					shift=-(min_x+max_x)/2;
+					break;
+				case 2:
+					shift=-max_x;
+					break;
+				default:
+					shift=0;
+					break;
 			}
 			var proc2=0;
 			repeat(ds_list_size(_list_inst)){
@@ -126,34 +124,12 @@ if(_char!=" "&&_char!="　"){
 				proc2+=1;
 			}
 			_char_x+=shift;
+			Typer_ChoiceShiftLine(_line,shift);
 		}
 	}
 	
 	if(!_voice_played&&!_skipping&&!_instant&&_voice>=0&&_voice_mode==0){
-		var sound=-1;
-		var sound_index=-1;
-		if(_voice_single>=0&&_voice_single<array_length(_group_voice[_voice])){
-			sound_index=_voice_single;
-			sound=_group_voice[_voice,sound_index];
-		}else{
-			sound_index=irandom(array_length(_group_voice[_voice])-1);
-			sound=_group_voice[_voice,sound_index];
-		}
-		if(audio_exists(sound)){
-			if(_group_voice_stop[_voice,sound_index]){
-				audio_stop_sound(sound);
-			}
-			var _snd=audio_play_sound(sound,0,false);
-			var _pitch=_audio_pitch;
-			if(is_method(_pitch)){
-				_pitch=_pitch();
-			}
-			if(_super_skip&&_super_skip_mode==1&&Input_IsHeld(INPUT.MENU)){
-				_pitch+=0.3;
-			}
-			if(_pitch!=1){
-				audio_sound_pitch(_snd,_pitch);
-			}
+		if(Typer_VoicePlay()!=-1){
 			_voice_played=true;
 		}
 	}
@@ -164,4 +140,14 @@ _char_x+=wid_cur+off_after;
 
 if(width<_char_x){
 	width=_char_x;
+}
+
+draw_set_font(_group_font[_font,0]);
+var line_h=(string_height(" ")+_group_font_space_y[_font]+_space_y)*_group_font_scale_y[_font,0]*_scale_y;
+if(sprite_exists(_char_sprite)){
+	line_h=max(line_h,(sprite_get_height(_char_sprite)-sprite_get_yoffset(_char_sprite)+_char_sprite_offset_y)*_scale_y);
+}
+var h=_char_y-_align_offset_y+line_h;
+if(height<h){
+	height=h;
 }

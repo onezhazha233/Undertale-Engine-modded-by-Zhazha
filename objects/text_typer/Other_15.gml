@@ -31,3 +31,5 @@ Typer_BindVoice(4,{sounds:[snd_text_voice_sans],stop:false});
 Typer_BindVoice(5,{sounds:[snd_text_voice_papyrus],stop:false});
 
 _group_face[0]=face;
+_group_face[1]=face_sans;
+_group_face[2]=face_papyrus;

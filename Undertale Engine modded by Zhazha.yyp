@@ -882,7 +882,7 @@
     {"folderPath":"folders/Scripts/GMU.yy","order":9,"resourceVersion":"1.0","name":"GMU","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/GMU/Anim.yy","order":1,"resourceVersion":"1.0","name":"Anim","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/GMU/Lang.yy","order":3,"resourceVersion":"1.0","name":"Lang","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Scripts/GMU/Typer.yy","order":4,"resourceVersion":"1.0","name":"Typer","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Scripts/Typer.yy","order":31,"resourceVersion":"1.0","name":"Typer","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/GMU/Console.yy","order":5,"resourceVersion":"1.0","name":"Console","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/GMU/Input.yy","order":7,"resourceVersion":"1.0","name":"Input","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Player.yy","order":10,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},

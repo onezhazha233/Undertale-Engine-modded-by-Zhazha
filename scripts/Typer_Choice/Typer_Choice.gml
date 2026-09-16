@@ -275,7 +275,7 @@ function Typer_ChoiceLayout() {
 	var CENTER_Y=0;
 	var DLG=instance_find(ui_dialog,0);
 	if(instance_exists(DLG)&&DLG._inst==id){
-		TOP_Y=DLG._dialog_y-y;
+		TOP_Y=(DLG._top ? 30+Lang_GetLayout("dialog.y_top") : 340+Lang_GetLayout("dialog.y_bottom"))-y;
 		CENTER_Y=(DLG._top ? 86 : 396)-y;
 	}else{
 		CENTER_Y=height/2;

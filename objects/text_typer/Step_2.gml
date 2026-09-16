@@ -62,7 +62,8 @@ if(_char_proc<string_length(text)+1){
 		}else{
 			if(_char_frame_remain>0){
 				_char_frame_remain-=1;
-			}else{
+			}
+			if(_char_frame_remain==0){
 				do{
 					var _cpf=_char_per_frame;
 					if(_hold_skip_held&&_hold_skip_mode==1){

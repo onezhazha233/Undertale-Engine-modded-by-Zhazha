@@ -1,5 +1,6 @@
 Flag_Clear(FLAG_STATIC);
 Flag_Clear(FLAG_DYNAMIC);
+Flag_Clear(FLAG_PLOT);
 Flag_Custom();
 Player_SetFun(irandom(100));
 Player_SetName(_naming_name);

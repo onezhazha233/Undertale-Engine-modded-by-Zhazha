@@ -2,7 +2,7 @@
 ///@arg phone_id
 function Phone_Set(SLOT, PHONE){
 	if(Phone_IsSlotValid(SLOT) && (Phone_IsValid(PHONE) || PHONE==-1)){
-		Flag_Set(FLAG_STATIC,"phone"+string(SLOT), PHONE);
+		Flag_Get(FLAG_STATIC,"phone").Set(SLOT, PHONE);
 		Phone_Update();
 		return true;
 	}else{
